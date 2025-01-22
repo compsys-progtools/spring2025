@@ -1,0 +1,15 @@
+# Testimonials from Fall 2024 Students
+
+The best way to be sucessful in this course is to be on top of your work. I know that sounds obvious and you should apply it to every class but for this class especially it matters a lot because what I struggled with was not really realizing I had work to do because it never felt like I did and I was so preoccupied with my other couses that I started feeling more and more behind. 
+Also this class in my opinion is a class thats more important than any calculus class you will take because you actually need to understand how to use github since it is so prevalent in companies today. 
+
+- The best way to be sucessful in this course is to stay on top of your work, use the resources offered to you, and to follow a plan to achieve the grade you want to achieve. I fell behind in the class due to personal reasons, I also fell behind because I thought I was caught up or thought I didn't have any particular work to complete but I actually did. I was also doing a decent amount of work in other classes and that took up a lot of my time, so I didn't prioritize this course heavily which is something I should've done. I also regret not using office hours as often or asking more questions in class time. Don't be shy it may seem intimidating but the professor will provide an answer that will definitely give you a better understanding. Lastly, just follow the plan you set for yourself and keep at it, it'll keep you in line and you can give or take depending on how you feel throughout the semester.
+
+
+- To succeed in this course make sure to stay on top of the assignments and start them as soon as possible. I made the mistake of letting a few pile up early on, and it was really hard to catch up while trying to learn new topics at the same time. It’s much easier to keep up with the work as it comes. Also, I think a student should take this course because it teaches important skills that computer scientists use in real life, like how to work with the terminal, Git, and GitHub. The class also teaches the basics of how computers work, like cryptographic hashing and number systems. These are skills that are super useful for any tech job, and this class gives us a chance to practice them in a way that helps to prepare for our future.
+
+
+-If you want to succeed in this course, start your assignments as early as possible. While the flexible submission deadlines might seem convenient, they make it easy to procrastinate, especially when juggling work from other classes. Starting early is rewarding as you fully understand the concepts taught in the course—especially git, GitHub, and Bash, which are essential tools for anyone planning a career in the software industry.
+
+By starting early, you not only avoid the pressure of rushing to complete assignments at the last minute but also give yourself the chance to truly understand these foundational skills.  Early submissions allow you to receive feedback and make necessary revisions, rather than submitting everything in bulk and scrapping to get everything done last second.
+

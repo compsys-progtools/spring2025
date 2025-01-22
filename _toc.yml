@@ -1,0 +1,59 @@
+format: jb-book
+root: index
+parts:
+  - caption: Syllabus
+    chapters:
+    # - file: syllabus/index
+    - file: syllabus/about
+    - file: syllabus/tools
+    - file: syllabus/grading
+    - file: syllabus/badges
+    - file: syllabus/badge_calc
+    - file: syllabus/schedule
+    - file: syllabus/uri_resources
+    - file: syllabus/uri_statements
+    - file: syllabus/communication
+  - caption: Notes
+    numbered: True
+    chapters:
+    - glob: notes/2025-*
+    # - file: notes/2025-01-23
+  - caption: Activities
+    chapters:
+    - file: activities/kwl
+    - file: activities/team
+    - file: activities/review
+    - file: activities/prepare
+    - file: activities/practice
+    - file: genindex
+    - file: activities/explore
+    - file: activities/build
+  - caption: FAQ
+    chapters:
+    - file: faq/syllabus
+    - file: faq/github
+    - file: faq/tools
+  - caption: Resources
+    chapters:
+    - file: resources/glossary
+    - file: resources/tips
+    - file: resources/learning
+    - file: resources/github
+    - file: resources/languages
+    - file: resources/gettinghelp
+    - file: resources/organization
+    - file: resources/more_info_on_cpus
+    - file: resources/windows
+    - url: https://introcompsys.github.io/spring2022/resources/testimonials.html
+      title: Advice from Spring 2022 Students
+    - url: https://introcompsys.github.io/fall2022/resources/testimonials.html
+      title: Advice from Fall 2022 Students
+    - url: https://introcompsys.github.io/spring2023/resources/testimonials.html
+      title: Advice from Spring 2023 Students
+    - url: https://introcompsys.github.io/fall2023/resources/testimonials.html
+      title: Advice from Fall 2023 Students
+    # - file: letters/index
+
+
+
+# - file: assignments/index
