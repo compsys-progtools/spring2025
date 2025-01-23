@@ -112,7 +112,7 @@ Contribute a TLDR set of tabs or mermaid visual to this section for a community 
 
 - use the badge issue for comments and @ mention instructors 
 - **send in advance, leave time for a response** 
-- **always** use issues in your repo for content directly related to assignments.  If you {term}`push` your partial work to the {term}`repository` and then open an {term}`issue`, we can see your work and your question at the same time and download it to run it if we need to debug something
+- **always** use issues in your repo for content directly related to assignments.  If you {term}`push (changes to a repository)` your partial work to the {term}`repository` and then open an {term}`issue`, we can see your work and your question at the same time and download it to run it if we need to debug something
 - use issues or discussions for questions about this syllabus or class notes. At the top right there's a {term}`GitHub` logo {fa}`github` that allows you to open a {term}`issue` (for a question) or suggest an edit (eg if you think there's a tpo or you find an additional helpful resource related to something)
 
 
