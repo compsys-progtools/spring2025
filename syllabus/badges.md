@@ -4,7 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.15.1
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -13,10 +13,11 @@ kernelspec:
 
 # Badge Deadlines and Procedures
 
-This page includes more visual versions of the information on the [grading](grading.md) page.  You should read both, but this one is often more helpful, because some of the processes take a lot of words to explain and make more sense with a diagram for a lot of people. 
+This page includes more visual versions of the information on the [grading](grading.md) page.  You should read both, but this one is often more helpful, because some of the processes take a lot of words to explain and make more sense with a diagram for a lot of people.
 
 ```{code-cell} ipython3
 :tags: [hide-input]
+
 %matplotlib inline
 import os
 from datetime import date,timedelta
@@ -29,6 +30,8 @@ from myst_nb import glue
 # for display on the course website, since Python is not the main outcome of this course
 # import constants from cspt
 from cspt import CourseDates
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 course_dates = CourseDates()
 
@@ -46,34 +49,29 @@ today = date.today()
 start_deadline = date.today() - timedelta(7)
 complete_deadline = date.today() - timedelta(14)
 
+#  created indexing bools with casting types first, then reuse them throughout below
+before_today = pd.to_datetime(badge_target_df['date']) <=pd.to_datetime(today)
+before_start = pd.to_datetime(badge_target_df['date']) <=pd.to_datetime(start_deadline)
+before_complete = pd.to_datetime(badge_target_df['date']) <=pd.to_datetime(complete_deadline)
+before_penalty = pd.to_datetime(badge_target_df['date']) <=pd.to_datetime(course_dates.penalty_free_end)
+badge_target_df['experience'][past_dates] = 'eligible'
 # mark eligible experience badges
-badge_target_df['experience'][date.fromisoformat(badge_target_df['date']) <= today] = 'eligible'
 # mark targets, cascading from most recent to oldest to not have to check < and >
-badge_target_df['review_target'][badge_target_df['date'] <= today] = 'active'
-badge_target_df['practice_target'][badge_target_df['date'] <= today] = 'active'
-badge_target_df['review_target'][badge_target_df['date']
-                          <= start_deadline] = 'started'
-badge_target_df['practice_target'][badge_target_df['date']
-                            <= start_deadline] = 'started'
-badge_target_df['review_target'][badge_target_df['date']
-                          <= complete_deadline] = 'completed'
-badge_target_df['practice_target'][badge_target_df['date']
-                            <= complete_deadline] = 'completed'
+badge_target_df['review_target'][before_today] = 'active'
+badge_target_df['practice_target'][before_today] = 'active'
+badge_target_df['review_target'][before_start] = 'started'
+badge_target_df['practice_target'][before_start] = 'started'
+badge_target_df['review_target'][before_complete] = 'completed'
+badge_target_df['practice_target'][before_complete] = 'completed'
 # mark enforced deadlines
-badge_target_df['review'][badge_target_df['date'] <= today] = 'active'
-badge_target_df['practice'][badge_target_df['date'] <= today] = 'active'
-badge_target_df['review'][badge_target_df['date']
-                          <= start_deadline] = 'started'
-badge_target_df['practice'][badge_target_df['date']
-                            <= start_deadline] = 'started'
-badge_target_df['review'][badge_target_df['date']
-                          <= complete_deadline] = 'completed'
-badge_target_df['practice'][badge_target_df['date']
-                            <= complete_deadline] = 'completed'
-badge_target_df['review'][badge_target_df['date']
-                          <= penalty_free_end] = 'penalty free'
-badge_target_df['practice'][badge_target_df['date']
-                          <= penalty_free_end] = 'penalty free'
+badge_target_df['review'][past_dates] = 'active'
+badge_target_df['practice'][past_dates] = 'active'
+badge_target_df['review'][before_start] = 'started'
+badge_target_df['practice'][before_start] = 'started'
+badge_target_df['review'][before_complete] = 'completed'
+badge_target_df['practice'][before_complete] = 'completed'
+badge_target_df['review'][before_penalty] = 'penalty free'
+badge_target_df['practice'][before_penalty] = 'penalty free'
 
 # convert to numbers and set dates as index for heatmap compatibility
 status_numbers_hm = {status:i+1 for i,status in enumerate(['future','eligible','active','penalty free','started','completed'])}
@@ -122,7 +120,7 @@ Who should you request/assign?
   - none requierd; merge to experience branch
 * - experience badge
   - N/A
-  - @VioletVex (will be automatic)
+  - TA asigned to your group (will be automatic after a few classes)
 * - practice badge
   - not required; can be student
   - @instuctors (will then convert to 1/3 people)
@@ -271,8 +269,7 @@ You can merge the prepare into the experience with a PR or on the command line, 
 Where the "approved" tag represents and approving reivew on the PR. 
 
 
-You can, once you know how, do this offline and do the merge with in the CLI instead of with a PR. 
-
+You can, once you know how, do this offline and do the merge with in the CLI instead of with a PR.
 
 +++
 
