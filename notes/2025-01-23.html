@@ -1,0 +1,949 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Welcome, Introduction, and Setup &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css?v=57efbcaa" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-01-23';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="Office Hours &amp; Communication" href="../syllabus/communication.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Computer Systems and Programming Tools - Home"/>
+    <img src="../_static/systools.png" class="logo__image only-dark pst-js-only" alt="Computer Systems and Programming Tools - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Deadlines and Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Detailed Grade Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Welcome, Introduction, and Setup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/tools.html">Other Course Software/tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/fall2022/resources/testimonials.html">Advice from Fall 2022 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2023/resources/testimonials.html">Advice from Spring 2023 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/fall2023/resources/testimonials.html">Advice from Fall 2023 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025/edit/main/notes/2025-01-23.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025/issues/new?title=Issue%20on%20page%20%2Fnotes/2025-01-23.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2025-01-23.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Welcome, Introduction, and Setup</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductions">1.1. Introductions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-think-like-a-computer">1.2. Why think like a computer?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github">1.3. GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prismia">1.4. Prismia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course-will-be-different">1.5. This course will be different</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-focus-is-for-you-to-learn">1.5.1. My focus is for you to learn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-comes-in-many-forms">1.5.2. Learning comes in many forms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-is-the-goal">1.6. Learning is the goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-ai">1.7. What about AI?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-a-college-course">1.8. This is a college course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-never-use-what-i-learned-in-college">1.9. “I never use what I learned in college”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-is-hard">1.10. Learning is hard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-this-work">1.11. How does this work?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class">1.11.1. In class:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outside-of-class">1.11.2. Outside of class:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">1.12. Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this-course-about">1.13. What is this course about?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-fits-into-your-cs-degree">1.13.1. How it fits into your CS degree</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-your-degree">1.14. In your degree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-docs-are-really-helpful-and-have-screenshots">1.15. GitHub Docs are really helpful and have screenshots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-and-github-terminology">1.16. Git and GitHub terminology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions">1.16.1. GitHub Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-credit-for-todays-class">1.16.2. Get Credit for Today’s class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fix-your-repo">1.16.3. Fix your repo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-the-edits">1.16.4. Make the edits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-forgotten-badge-action">1.16.5. Run forgotten badge action</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">1.17. Prepare for next class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">1.18. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-have-a-glossary">1.19. We have a Glossary!!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">1.20. Questions after class</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome-introduction-and-setup">
+<h1><span class="section-number">1. </span>Welcome, Introduction, and Setup<a class="headerlink" href="#welcome-introduction-and-setup" title="Link to this heading">#</a></h1>
+<p>Today:</p>
+<ul class="simple">
+<li><p>intros</p></li>
+<li><p>what the <em>learning</em> goals of the course are</p></li>
+<li><p>see how in class time will work</p></li>
+<li><p>start learning git/github by doing</p></li>
+</ul>
+<p>Not Today:</p>
+<ul class="simple">
+<li><p>syllabus review (on your own time/lab Monday)</p></li>
+<li><p>cours policy discussion (next week)</p></li>
+</ul>
+<section id="introductions">
+<h2><span class="section-number">1.1. </span>Introductions<a class="headerlink" href="#introductions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Ayman Sandouk</p></li>
+<li><p>Trevor Moy</p></li>
+<li><p>Elijah Smith-Antonides</p></li>
+</ul>
+</section>
+<section id="why-think-like-a-computer">
+<h2><span class="section-number">1.2. </span>Why think like a computer?<a class="headerlink" href="#why-think-like-a-computer" title="Link to this heading">#</a></h2>
+<p>With Large Language Models (LLMs) able to write code from English (or other spoken languages, but LLMs are generally worse at non English)</p>
+<p>Let’s discuss some examples.</p>
+<p>Many things in this course <em>are</em> things you will use <strong>everyday</strong> some of it is stuff that will help you in the trickest times.</p>
+<p>What differentiates LLM (Large Language Modules) from Computer Scientists?</p>
+</section>
+<section id="github">
+<h2><span class="section-number">1.3. </span>GitHub<a class="headerlink" href="#github" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>This class is not a GitHub class</p></li>
+<li><p>GitHub is the main tool that we will be using in this course</p></li>
+<li><p>Not expecting you to be familiar with it</p></li>
+<li><p>Homework is submitted through GitHub in a non-traditional way</p></li>
+<li><p>Great practice for real-life software development with a team or even individual work</p></li>
+<li><p>More on that later</p></li>
+</ul>
+<p>I look forward to getting to know you all better.</p>
+</section>
+<section id="prismia">
+<h2><span class="section-number">1.4. </span>Prismia<a class="headerlink" href="#prismia" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>instead of slides</p></li>
+<li><p>you can message us</p></li>
+<li><p>we can see all of your responses</p></li>
+<li><p>emoji!</p></li>
+</ul>
+<p>questions can  be “graded”</p>
+<ul class="simple">
+<li><p>this is instant feedback</p></li>
+<li><p>participation will be checked</p></li>
+<li><p>correctness will not impact your final grade (directly)</p></li>
+<li><p>this helps both me and you know how you are doing</p></li>
+</ul>
+<p>Questions can be multi-choice</p>
+<p>or open ended</p>
+<p>And I can share responses, grouped up</p>
+</section>
+<section id="this-course-will-be-different">
+<h2><span class="section-number">1.5. </span>This course will be different<a class="headerlink" href="#this-course-will-be-different" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>no Brightspace</p></li>
+<li><p>300 level = more independence</p></li>
+<li><p>I will give advice, but only hold you accountable to a minimal set</p></li>
+<li><p>High expectations, with a lot of flexibility</p></li>
+</ul>
+<blockquote>
+<div><p>as an aside <a class="reference external" href="https://www.insidehighered.com/opinion/career-advice/teaching/2024/08/28/learning-management-systems-help-make-college-do-list">another Professor describing</a> what she does not like about learning management systems (LMS). Brightspace is one, she talks about Canvas in the post, but they are similar.</p>
+</div></blockquote>
+<p>I will not chase you.</p>
+<p>I do not judge your reasons for missing class.</p>
+<ul class="simple">
+<li><p><strong>No need to tell me in advance</strong></p></li>
+<li><p>For 1 class no need to tell me why at all</p></li>
+<li><p>For 1 class, make it up and keep moving</p></li>
+<li><p>For longer absences, I will help you plan how to get caught up, and you must meet university criteria for excused absence</p></li>
+</ul>
+<section id="my-focus-is-for-you-to-learn">
+<h3><span class="section-number">1.5.1. </span>My focus is for you to learn<a class="headerlink" href="#my-focus-is-for-you-to-learn" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>that means, practice, feedback, and reflection</p></li>
+<li><p>you should know that you have learned</p></li>
+<li><p>you should be able to apply this material in other courses</p></li>
+</ul>
+</section>
+<section id="learning-comes-in-many-forms">
+<h3><span class="section-number">1.5.2. </span>Learning comes in many forms<a class="headerlink" href="#learning-comes-in-many-forms" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>different types of material are best remembered in different ways</p></li>
+<li><p>some things are hard to explain, but watching it is very concrete</p></li>
+</ul>
+</section>
+</section>
+<section id="learning-is-the-goal">
+<h2><span class="section-number">1.6. </span>Learning is the goal<a class="headerlink" href="#learning-is-the-goal" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>producing outputs as fast as possible is not learning</p></li>
+<li><p>in a job, you may get paid to do things fast</p></li>
+<li><p>your work also needs to be correct, without someone telling you it is</p></li>
+<li><p>in a job you are trusted to know your work is correct, your boss does not check your work or grade you</p></li>
+<li><p>to get a job, you have to interview, which means explaining, in words, to another person how to do something</p></li>
+</ul>
+</section>
+<section id="what-about-ai">
+<h2><span class="section-number">1.7. </span>What about AI?<a class="headerlink" href="#what-about-ai" title="Link to this heading">#</a></h2>
+<p>Large Language Models will change what programming looks like, but understanding is always going to be more effective than asking an AI.  Large language models actually do not know anything, they just know what languages loook like and generate text.</p>
+<p><em>if you cannot tell it when it’s wrong, you do not add value for a company, so why would they pay you?</em></p>
+</section>
+<section id="this-is-a-college-course">
+<h2><span class="section-number">1.8. </span>This is a college course<a class="headerlink" href="#this-is-a-college-course" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>more than getting you one job, a bootcamp gets you one job</p></li>
+<li><p>build a long (or maybe short, but fruitful) career</p></li>
+<li><p>build critical thinking skill that makes you adaptable</p></li>
+<li><p>have options</p></li>
+</ul>
+</section>
+<section id="i-never-use-what-i-learned-in-college">
+<h2><span class="section-number">1.9. </span>“I never use what I learned in college”<a class="headerlink" href="#i-never-use-what-i-learned-in-college" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>very common saying</p></li>
+<li><p>it’s actually a sign of deep learning</p></li>
+<li><p>when we have expertise, we do not even notice when we apply it</p></li>
+<li><p>college is not about the facts, but the processes</p></li>
+</ul>
+</section>
+<section id="learning-is-hard">
+<h2><span class="section-number">1.10. </span>Learning is hard<a class="headerlink" href="#learning-is-hard" title="Link to this heading">#</a></h2>
+</section>
+<section id="how-does-this-work">
+<h2><span class="section-number">1.11. </span>How does this work?<a class="headerlink" href="#how-does-this-work" title="Link to this heading">#</a></h2>
+<section id="in-class">
+<h3><span class="section-number">1.11.1. </span>In class:<a class="headerlink" href="#in-class" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Memory/ understanding check</p></li>
+<li><p>Review/ clarification as needed</p></li>
+<li><p>New topic demo with follow along, tiny practice</p></li>
+<li><p>Review, submit questions</p></li>
+</ol>
+</section>
+<section id="outside-of-class">
+<h3><span class="section-number">1.11.2. </span>Outside of class:<a class="headerlink" href="#outside-of-class" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Read notes Notes to refresh the material, check your understanding, and find more details</p></li>
+<li><p>Practice material that has been taught</p></li>
+<li><p>Activate your memory of related things to what we will cover</p></li>
+<li><p>Read articles/ watch videos to either fill in gaps or learn more details</p></li>
+<li><p>Bring questions to class</p></li>
+</ol>
+</section>
+</section>
+<section id="getting-started">
+<h2><span class="section-number">1.12. </span>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<p>Your KWL chart is where you will start by tracking what you know now/before we start and what you want to learn about each topic.  Then you will update it throughout the semester. You will also add material to the repository to produce evidence of your learning.</p>
+<p><a class="reference external" href="https://classroom.github.com/a/48GVZX2Q">Accept the assignment</a> to create your repository (aka repo)</p>
+<p>We have a glossary!!</p>
+<p><a class="reference external" href="https://compsys-progtools.github.io/spring2025/resources/glossary.html#term-repository">repository</a></p>
+<p>What is a directory?</p>
+<p><strong>pro tip: links are often hints or more information</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">{Commits}</span> <span class="pre">Commits</span> <span class="pre">represent</span> <span class="pre">a</span> <span class="pre">message</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">future</span> <span class="pre">self/teammates/viewers.</span>&#160; <span class="pre">They</span> <span class="pre">mark</span> <span class="pre">what</span> <span class="pre">signifigant</span> <span class="pre">change</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">made</span> <span class="pre">between</span> <span class="pre">one</span> <span class="pre">&quot;checkpoint&quot;</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">status</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">project</span> <span class="pre">and</span> <span class="pre">the</span> <span class="pre">next</span></code></p>
+</section>
+<section id="what-is-this-course-about">
+<h2><span class="section-number">1.13. </span>What is this course about?<a class="headerlink" href="#what-is-this-course-about" title="Link to this heading">#</a></h2>
+<p>In your KWL chart, there are a lot of different topics that are not obviously related, so what is this course really about?</p>
+<ul class="simple">
+<li><p>practical exposure to important tools</p></li>
+<li><p>design features of those tool categories</p></li>
+<li><p>basic knowledge of many parts of the CS core</p></li>
+<li><p>focus on the connections</p></li>
+</ul>
+<p>We will use learning the tools to understand how computer scientists think and work.</p>
+<p>Then we will use the tools to examine the field of Computer Science top to bottom (possibly out of order).</p>
+<section id="how-it-fits-into-your-cs-degree">
+<h3><span class="section-number">1.13.1. </span>How it fits into your CS degree<a class="headerlink" href="#how-it-fits-into-your-cs-degree" title="Link to this heading">#</a></h3>
+<p>knowing where you’ve been and where we’re going will help you understand and remember</p>
+</section>
+</section>
+<section id="in-your-degree">
+<h2><span class="section-number">1.14. </span>In your degree<a class="headerlink" href="#in-your-degree" title="Link to this heading">#</a></h2>
+<p><em>this describes the BS; BA drops some of the math</em></p>
+<p>In CSC110, you learn to program in python and see algorithms from a variety of domain areas where computer science is applied.</p>
+<p>Then in CSC 340 and 440 you study the algorithms more mathematically, their complexity, etc.</p>
+<p>In CSC211, 212, you learn the foundations of computer science: general programming and data structures.</p>
+<p>Then in 301, 305, 411, 412 you study different aspects of software design and how computers work.</p>
+<p>In this class, we’re going to connect different ideas. We are going to learn the tools used by computer scientists, deeply. You will understand why the tools are the way they are and how to use them even when things go wrong.</p>
+</section>
+<section id="github-docs-are-really-helpful-and-have-screenshots">
+<h2><span class="section-number">1.15. </span>GitHub Docs are really helpful and have screenshots<a class="headerlink" href="#github-docs-are-really-helpful-and-have-screenshots" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files">editing a file</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">pull request</a></p></li>
+</ul>
+<p>they pay people to update them so I direct you to theirs mostly instead of recreating them</p>
+<p>Today we did the following:</p>
+<ol class="arabic simple">
+<li><p>Accept the assignment to create your repo: <a class="reference external" href="https://classroom.github.com/a/48GVZX2Q">KWL Chart</a></p></li>
+<li><p>Edit the README to add your name by clicking the pencil icon (<a class="reference external" href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files">editing a file</a> step 2)</p></li>
+<li><p>adding a descriptive commit message (<a class="reference external" href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files">editing a file</a> step 5)</p></li>
+<li><p>adding prior knowledge</p></li>
+<li><p>created a new branch (named <code class="docutils literal notranslate"><span class="pre">prior_knowledge</span></code>) (<a class="reference external" href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files">editing a file</a> step 7-8)</p></li>
+<li><p>added a message to the Pull Request (<a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">pull request</a> step 5)</p></li>
+<li><p>Creating a pull request (<a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">pull request</a> step 6)</p></li>
+<li><p>Clicking Merge Pull Request</p></li>
+</ol>
+<p><a class="reference external" href="https://classroom.github.com/a/JwOYVIfr">join a team</a></p>
+<p>we will use this for discussions and see more in lab, but having you
+join now makes it easier for me to make you a member and give you access to
+a special member view</p>
+</section>
+<section id="git-and-github-terminology">
+<h2><span class="section-number">1.16. </span>Git and GitHub terminology<a class="headerlink" href="#git-and-github-terminology" title="Link to this heading">#</a></h2>
+<p>We also discussed some of the terminology for git. We will also come back to these ideas in greater detail later.</p>
+<section id="github-actions">
+<h3><span class="section-number">1.16.1. </span>GitHub Actions<a class="headerlink" href="#github-actions" title="Link to this heading">#</a></h3>
+<p>GitHub allows us to run scripts within our repos, the feature is called GitHub Actions and the individual items are called workflows.</p>
+<p>Navigate to your actions tab</p>
+</section>
+<section id="get-credit-for-todays-class">
+<h3><span class="section-number">1.16.2. </span>Get Credit for Today’s class<a class="headerlink" href="#get-credit-for-todays-class" title="Link to this heading">#</a></h3>
+<p>**Run your Experience Reflection (inclass) action on your kwl repo **</p>
+<p><em>talk with peers to make sure you remember what the right way to click on it is</em></p>
+<p>On the created PR, go to the <code class="docutils literal notranslate"><span class="pre">Files</span></code> section, edit the file, and commit the changes.</p>
+</section>
+<section id="fix-your-repo">
+<h3><span class="section-number">1.16.3. </span>Fix your repo<a class="headerlink" href="#fix-your-repo" title="Link to this heading">#</a></h3>
+<p>So, it is apparently a weird bug in GitHub, that the actions were not working,</p>
+<p>but it is easy (though a little annoying) to fix.</p>
+</section>
+<section id="make-the-edits">
+<h3><span class="section-number">1.16.4. </span>Make the edits<a class="headerlink" href="#make-the-edits" title="Link to this heading">#</a></h3>
+<p>On each file in the .github/workflows folder that ends in .yml edit in some small way</p>
+<p><code class="docutils literal notranslate"><span class="pre">{important}</span> <span class="pre">if</span> <span class="pre">the</span> <span class="pre">file</span> <span class="pre">has</span> <span class="pre">the</span> <span class="pre">word</span> <span class="pre">&quot;reviewer&quot;</span> <span class="pre">in,</span> <span class="pre">change</span> <span class="pre">the</span> <span class="pre">reviewer</span> <span class="pre">from</span> <span class="pre">&quot;brownsarahm&quot;</span> <span class="pre">to</span> <span class="pre">&quot;AymanBx&quot;</span></code></p>
+<p>else: make any small change (eg add an additional blank line in a place where there is a blank line already).</p>
+</section>
+<section id="run-forgotten-badge-action">
+<h3><span class="section-number">1.16.5. </span>Run forgotten badge action<a class="headerlink" href="#run-forgotten-badge-action" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Go to the actions tab of your repo</p></li>
+<li><p>Select the action that has the name <code class="docutils literal notranslate"><span class="pre">Forgotten</span> <span class="pre">Badge</span> <span class="pre">(Late,</span> <span class="pre">but</span> <span class="pre">was</span> <span class="pre">in</span> <span class="pre">class)</span></code></p></li>
+<li><p>In the blue banner that appears click <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Workflow</span></code></p></li>
+<li><p>leave the branch set to main</p></li>
+<li><p>Enter the date <code class="docutils literal notranslate"><span class="pre">2024-09-05</span></code></p></li>
+<li><p>Wait a minute or so for it to run, when it has a green checkmark, go to your PR tab</p></li>
+<li><p>select the PR with the title Experience Report 2024-09-05</p></li>
+<li><p>Go to the files tab of that PR and edit it (use the 3 dots menu in the top right of the file box)</p></li>
+<li><p>fill in the information and commit to the same branch (do not open an additional PR)</p></li>
+<li><p>assign &#64;instructors to review your PR.</p></li>
+</ol>
+<p>For screenshots, see the <a class="reference external" href="https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/manually-running-a-workflow">Manually running a workflow, on GitHub</a></p>
+</section>
+</section>
+<section id="prepare-for-next-class">
+<h2><span class="section-number">1.17. </span>Prepare for next class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>(for lab Monday) Read the syllabus section of the course website carefully and explore the whole course <a class="reference external" href="https://compsys-progtools.github.io/spring2025">website</a></p></li>
+<li><p>(for lab Monday) Bring questions about the course</p></li>
+<li><p>(for class Tuesday) Think about one thing you’ve learned really well (computing or not). Be prepared to discuss the following: How do you know that you know it? What was it llike to first learn it?  (nothing written to submit, but you can use the issue to take notes if you would like)</p></li>
+</ol>
+</section>
+<section id="badges">
+<h2><span class="section-number">1.18. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Review</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://classroom.github.com/a/JwOYVIfr">accept this assignment</a> and join the existing team to get access to more features in our course organization.</p></li>
+<li><p>Post an introduction to your classmates <a class="reference external" href="https://github.com/orgs/compsys-progtools/discussions/1">on our discussion forum</a>  (include link to your comment in PR comment, must accept above to see)</p></li>
+<li><p>Read the notes from today’s class carefully</p></li>
+<li><p>Fill in the first two columns of your KWL chart (content of the PR; named to match the badge name)</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Practice</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://classroom.github.com/a/JwOYVIfr">accept this assignment</a> and join the existing team to get access to more features in our course organization.</p></li>
+<li><p>Post an introduction to your classmates <a class="reference external" href="https://github.com/orgs/compsys-progtools/discussions/1">on our discussion forum</a>  (include link to your comment in PR comment, must accept above to see)</p></li>
+<li><p>Read the notes from today’s class carefully</p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/get-started/start-your-journey/setting-up-your-profile#adding-a-profile-readme">Create a profile readme</a> and include a screenshot of your profile</p></li>
+<li><p>Fill in the first two columns of your KWL chart (content of the PR; named to match the badge name)</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="we-have-a-glossary">
+<h2><span class="section-number">1.19. </span>We have a Glossary!!<a class="headerlink" href="#we-have-a-glossary" title="Link to this heading">#</a></h2>
+<p>For example, the term we used above:</p>
+<p><a class="reference external" href="https://compsys-progtools.github.io/spring2025/resources/glossary.html#term-repository">repository</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In class, on prismia, I will sometimes link like above, but you can also keep the page open if that is helpful for you.</p>
+</div>
+<p>In the course site, glossary terms will be linked as in the follwing list.</p>
+<p>Key terms for the first class:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../resources/glossary.html#term-repository"><span class="xref std std-term">repository</span></a></p></li>
+<li><p><a class="reference internal" href="../resources/glossary.html#term-git"><span class="xref std std-term">git</span></a></p></li>
+<li><p><a class="reference internal" href="../resources/glossary.html#term-GitHub"><span class="xref std std-term">github</span></a></p></li>
+<li><p><a class="reference internal" href="../resources/glossary.html#term-PR"><span class="xref std std-term">PR</span></a></p></li>
+</ul>
+</section>
+<section id="questions-after-class">
+<h2><span class="section-number">1.20. </span>Questions after class<a class="headerlink" href="#questions-after-class" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../syllabus/communication.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Office Hours &amp; Communication</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductions">1.1. Introductions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-think-like-a-computer">1.2. Why think like a computer?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github">1.3. GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prismia">1.4. Prismia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-course-will-be-different">1.5. This course will be different</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#my-focus-is-for-you-to-learn">1.5.1. My focus is for you to learn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-comes-in-many-forms">1.5.2. Learning comes in many forms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-is-the-goal">1.6. Learning is the goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-ai">1.7. What about AI?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-a-college-course">1.8. This is a college course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-never-use-what-i-learned-in-college">1.9. “I never use what I learned in college”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-is-hard">1.10. Learning is hard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-this-work">1.11. How does this work?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class">1.11.1. In class:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outside-of-class">1.11.2. Outside of class:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">1.12. Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this-course-about">1.13. What is this course about?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-fits-into-your-cs-degree">1.13.1. How it fits into your CS degree</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-your-degree">1.14. In your degree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-docs-are-really-helpful-and-have-screenshots">1.15. GitHub Docs are really helpful and have screenshots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-and-github-terminology">1.16. Git and GitHub terminology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions">1.16.1. GitHub Actions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-credit-for-todays-class">1.16.2. Get Credit for Today’s class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fix-your-repo">1.16.3. Fix your repo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-the-edits">1.16.4. Make the edits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-forgotten-badge-action">1.16.5. Run forgotten badge action</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">1.17. Prepare for next class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">1.18. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-have-a-glossary">1.19. We have a Glossary!!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">1.20. Questions after class</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  made with [jupyterbook](https://jupyterbook.org/en/stable/intro.html)
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
