@@ -54,9 +54,9 @@ before_today = pd.to_datetime(badge_target_df['date']) <=pd.to_datetime(today)
 before_start = pd.to_datetime(badge_target_df['date']) <=pd.to_datetime(start_deadline)
 before_complete = pd.to_datetime(badge_target_df['date']) <=pd.to_datetime(complete_deadline)
 before_penalty = pd.to_datetime(badge_target_df['date']) <=pd.to_datetime(course_dates.penalty_free_end)
-badge_target_df['experience'][past_dates] = 'eligible'
 # mark eligible experience badges
 # mark targets, cascading from most recent to oldest to not have to check < and >
+badge_target_df['experience'][before_today] = 'eligible'
 badge_target_df['review_target'][before_today] = 'active'
 badge_target_df['practice_target'][before_today] = 'active'
 badge_target_df['review_target'][before_start] = 'started'
@@ -64,8 +64,8 @@ badge_target_df['practice_target'][before_start] = 'started'
 badge_target_df['review_target'][before_complete] = 'completed'
 badge_target_df['practice_target'][before_complete] = 'completed'
 # mark enforced deadlines
-badge_target_df['review'][past_dates] = 'active'
-badge_target_df['practice'][past_dates] = 'active'
+badge_target_df['review'][before_today] = 'active'
+badge_target_df['practice'][before_today] = 'active'
 badge_target_df['review'][before_start] = 'started'
 badge_target_df['practice'][before_start] = 'started'
 badge_target_df['review'][before_complete] = 'completed'

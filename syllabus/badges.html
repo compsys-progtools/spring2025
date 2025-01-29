@@ -506,9 +506,9 @@
 <span class="n">before_start</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span> <span class="o">&lt;=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start_deadline</span><span class="p">)</span>
 <span class="n">before_complete</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span> <span class="o">&lt;=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">complete_deadline</span><span class="p">)</span>
 <span class="n">before_penalty</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span> <span class="o">&lt;=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">course_dates</span><span class="o">.</span><span class="n">penalty_free_end</span><span class="p">)</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">][</span><span class="n">past_dates</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;eligible&#39;</span>
 <span class="c1"># mark eligible experience badges</span>
 <span class="c1"># mark targets, cascading from most recent to oldest to not have to check &lt; and &gt;</span>
+<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">][</span><span class="n">before_today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;eligible&#39;</span>
 <span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review_target&#39;</span><span class="p">][</span><span class="n">before_today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
 <span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice_target&#39;</span><span class="p">][</span><span class="n">before_today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
 <span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review_target&#39;</span><span class="p">][</span><span class="n">before_start</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;started&#39;</span>
@@ -516,8 +516,8 @@
 <span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review_target&#39;</span><span class="p">][</span><span class="n">before_complete</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;completed&#39;</span>
 <span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice_target&#39;</span><span class="p">][</span><span class="n">before_complete</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;completed&#39;</span>
 <span class="c1"># mark enforced deadlines</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">][</span><span class="n">past_dates</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
-<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">][</span><span class="n">past_dates</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
+<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">][</span><span class="n">before_today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
+<span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">][</span><span class="n">before_today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
 <span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">][</span><span class="n">before_start</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;started&#39;</span>
 <span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;practice&#39;</span><span class="p">][</span><span class="n">before_start</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;started&#39;</span>
 <span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">][</span><span class="n">before_complete</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;completed&#39;</span>
@@ -560,19 +560,10 @@
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">37</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">before_complete</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span> <span class="o">&lt;=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">complete_deadline</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span> <span class="n">before_penalty</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span> <span class="o">&lt;=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">course_dates</span><span class="o">.</span><span class="n">penalty_free_end</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">37</span> <span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;experience&#39;</span><span class="p">][</span><span class="n">past_dates</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;eligible&#39;</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="c1"># mark eligible experience badges</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="c1"># mark targets, cascading from most recent to oldest to not have to check &lt; and &gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="n">badge_target_df</span><span class="p">[</span><span class="s1">&#39;review_target&#39;</span><span class="p">][</span><span class="n">before_today</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
-
-<span class="ne">NameError</span>: name &#39;past_dates&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Badge Status as of 2025-01-29&#39;)
 </pre></div>
 </div>
+<img alt="../_images/6a12e10c667c7817498afdf8cc17c023fa10ea19019e6cf5c8b408fb78212215.png" src="../_images/6a12e10c667c7817498afdf8cc17c023fa10ea19019e6cf5c8b408fb78212215.png" />
 </div>
 </div>
 <!-- **November 5 above will actually be on November 6**  -->
