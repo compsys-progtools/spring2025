@@ -226,11 +226,11 @@ The columns (and purple boxes) correspond to branches in your KWL repo and the y
 
 ```{mermaid}
 sequenceDiagram
-    participant P as prepare Sep 12
-    participant E as experience Sep 12
+    participant P as prepare Jan 28
+    participant E as experience Jan 28
     participant M as main 
-    note over P: complete prepare work<br/> between feb Sep 7 and Sep12
-    note over E: run experience badge workflow <br/> at the end of class Sep12
+    note over P: complete prepare work<br/> between feb Jan 23 and Jan 28
+    note over E: run experience badge workflow <br/> at the end of class Jan 28
     P ->> E: local merge or PR you that <br/> does not need approval
     note over E: fill in experience reflection 
     critical Badge review by instructor or TA
@@ -250,18 +250,18 @@ gitGraph
    commit
    commit
    checkout main
-   branch prepare-2023-09-12
-   checkout prepare-2023-09-12
+   branch prepare-2025-01-28
+   checkout prepare-2025-01-28
    commit id: "gitunderstanding.md"
    checkout main
-   branch experience-2023-09-12
-   checkout experience-2023-09-12
+   branch experience-2025-01-28
+   checkout experience-2025-01-28
    commit id: "initexp"
-   merge prepare-2023-09-12
+   merge prepare-2025-01-28
    commit id: "fillinexp"
    commit id: "revisions" tag:"approved"
    checkout main
-   merge experience-2023-09-12
+   merge experience-2025-01-28
 ```
 
 You can merge the prepare into the experience with a PR or on the command line, your choice. 
