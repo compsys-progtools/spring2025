@@ -7,7 +7,7 @@ This section is for materials that are not specific to this course, but are like
 - [how to e-mail professors](https://insidehighered.com/views/2015/04/16/advice-students-so-they-dont-sound-silly-emails-essay)
 
 ## Class Workflow
-~~~mermaid
+```mermaid
 flowchart TD
     Z{"START HERE"}--> A
     A["Finish Prepare Work before Class"] --> B["Class"]
@@ -33,4 +33,4 @@ flowchart TD
     %% Approval or Changes Loop %%
     L -- "Pull Request Approved" --> M["Merge Pull Request"] -- "REPEAT" --> A
     L -- "Changes Requested" --> N["Fix Changes"] --> O["Request Review"] --> L
-~~~
+```
