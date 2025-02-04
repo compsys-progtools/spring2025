@@ -432,6 +432,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-email">on email</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-workflow">Class Workflow</a></li>
 </ul>
             </nav>
         </div>
@@ -451,6 +452,36 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://insidehighered.com/views/2015/04/16/advice-students-so-they-dont-sound-silly-emails-essay">how to e-mail professors</a></p></li>
 </ul>
+</section>
+<section id="class-workflow">
+<h2>Class Workflow<a class="headerlink" href="#class-workflow" title="Link to this heading">#</a></h2>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart TD
+    Z{&quot;START HERE&quot;}--&gt; A
+    A[&quot;Finish Prepare Work before Class&quot;] --&gt; B[&quot;Class&quot;]
+    B --&gt; C[&quot;Run action for experience badge&quot;]
+    C --&gt; D[&quot;Fill out experience badge&quot;]
+    D --&gt; E[&quot;Link Preparework to experience badge from the Development option&quot;]
+    E --&gt; F{&quot;Choose Homework Type From Issues Tab&quot;}
+
+    F --&gt; G[&quot;Review Badge&quot;]
+    F --&gt; H[&quot;Practice Badge&quot;]
+
+    %% New &quot;Am I Lost?&quot; Decision Point AFTER selecting a badge %%
+    G --&gt; Q{&quot;Am I Lost?&quot;}
+    H --&gt; Q
+
+    Q -- &quot;Yes&quot; --&gt; R[&quot;Check Course Website Notes&quot;] --&gt; S[&quot;Ask Teacher/TA&quot;] --&gt; T[&quot;Attend Office Hours&quot;] --&gt; Q
+    Q -- &quot;No&quot; --&gt; I[&quot;Click Development and Create new branch, Make sure the date and badge type is in the name&quot;]
+
+    I --&gt; J[&quot;Upload Files/Commit to Branch Repo&quot;]
+    J --&gt; K[&quot;Create Pull Request, Make sure the date and badge type is in the name&quot;]
+    K --&gt; L[&quot;Wait for feedback from TA/Teacher&quot;]
+
+    %% Approval or Changes Loop %%
+    L -- &quot;Pull Request Approved&quot; --&gt; M[&quot;Merge Pull Request&quot;] -- &quot;REPEAT&quot; --&gt; A
+    L -- &quot;Changes Requested&quot; --&gt; N[&quot;Fix Changes&quot;] --&gt; O[&quot;Request Review&quot;] --&gt; L
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -520,6 +551,7 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-email">on email</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-workflow">Class Workflow</a></li>
 </ul>
   </nav></div>
 
