@@ -1,0 +1,1039 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5. Git Offline &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css?v=57efbcaa" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-02-04';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="3. Why Systems?" href="2025-01-30.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Computer Systems and Programming Tools - Home"/>
+    <img src="../_static/systools.png" class="logo__image only-dark pst-js-only" alt="Computer Systems and Programming Tools - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Deadlines and Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Detailed Grade Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2025-01-23.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-01-28.html">2. More orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-01-30.html">3. Why Systems?</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Git Offline</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/tools.html">Other Course Software/tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/fall2022/resources/testimonials.html">Advice from Fall 2022 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2023/resources/testimonials.html">Advice from Spring 2023 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/fall2023/resources/testimonials.html">Advice from Fall 2023 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025/edit/main/notes/2025-02-04.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025/issues/new?title=Issue%20on%20page%20%2Fnotes/2025-02-04.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2025-02-04.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Git Offline</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git">5.1. .git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-file-on-the-terminal">5.2. Creating a file on the terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.3. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">5.4. Prepare for next class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">5.5. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">5.6. Questions after class</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="git-offline">
+<h1><span class="section-number">5. </span>Git Offline<a class="headerlink" href="#git-offline" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="git">
+<h2><span class="section-number">5.1. </span>.git<a class="headerlink" href="#git" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Navigate to your inclass repo on your terminal</p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">/c/Users/ayman</span></code></p>
+<hr class="docutils" />
+<p>Which command will help me navigate between folders?</p>
+<ul class="simple">
+<li><p>[ ] ls</p></li>
+<li><p>[x] cd</p></li>
+<li><p>[ ] pwd</p></li>
+<li><p>[ ] mkdir</p></li>
+</ul>
+<hr class="docutils" />
+<p>What type of path do I use with the command <code class="docutils literal notranslate"><span class="pre">cd</span></code>?</p>
+<ul class="simple">
+<li><p>[ ] absolute path only</p></li>
+<li><p>[ ] relative path only</p></li>
+<li><p>[x] Either one will work</p></li>
+</ul>
+<hr class="docutils" />
+<p>Using absolute path means you know how to navigate to your desired folder starting from the root <code class="docutils literal notranslate"><span class="pre">/</span></code></p>
+<hr class="docutils" />
+<p>The <code class="docutils literal notranslate"><span class="pre">/</span></code> is the starting point to where all your files and folders can be found</p>
+<hr class="docutils" />
+<p>Using you <strong>relative</strong> path, means that you know how to reach your desired folder relative to where you are right now</p>
+<hr class="docutils" />
+<p>How do I get to Tyler 052?</p>
+<hr class="docutils" />
+<p>Absolute path: USA/Rhode Island/Kingston/Flag rd/Green house rd/Red building/052
+Relative path: leave Ranger 302 (…)/ leave Ranger Hall (…)/ Through quad/ pass by engineering/ Red building/ 052</p>
+<hr class="docutils" />
+<p>Which command will help me navigate between folders?</p>
+<ul class="simple">
+<li><p>[ ] ls</p></li>
+<li><p>[x] cd</p></li>
+<li><p>[ ] pwd</p></li>
+<li><p>[ ] mkdir</p></li>
+</ul>
+<hr class="docutils" />
+<p>The <code class="docutils literal notranslate"><span class="pre">/</span></code> between folder names means “from here, go to”
+We can separate the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command that contains <code class="docutils literal notranslate"><span class="pre">/</span></code> into multiple commands</p>
+<hr class="docutils" />
+<div class="highlight-cd notranslate"><div class="highlight"><pre><span></span>cd systems/
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">/c/Users/ayman/Documents/systems</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"> <span class="pre">cd</span> <span class="pre">../../</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">/c/Users/ayman</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"> <span class="pre">cd</span> <span class="pre">Documents/systems/</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">/c/Users/ayman/Documents/systems</span></code></p>
+<hr class="docutils" />
+<p>We got to the same destination</p>
+<hr class="docutils" />
+<p>Watch your steps carefully for this one (Don’t hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code>)
+<code class="docutils literal notranslate"> <span class="pre">cd</span> <span class="pre">gh-</span></code>
+Hit <code class="docutils literal notranslate"><span class="pre">Tab</span></code>
+<code class="docutils literal notranslate"> <span class="pre">cd</span> <span class="pre">gh-inclass-AymanBx</span></code>
+Now you can hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p>
+<hr class="docutils" />
+<p>‘’’{Notice}
+The terminal determined that the existing folders/files that begin with “gh-” are limited to only one and helped you complete it with the press of <code class="docutils literal notranslate"><span class="pre">tab</span></code></p>
+<hr class="docutils" />
+<p><strong>getting to GitHub from your local system</strong></p>
+<hr class="docutils" />
+<p>Now on the other side of things, navigate to your inclass repo on GitHub</p>
+<p>the step below requires that you have the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>repo<span class="w"> </span>view<span class="w"> </span>--web
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Did that <code class="docutils literal notranslate"><span class="pre">gh</span></code> command work for you?</p>
+<ul class="simple">
+<li><p>[ ] yes!</p></li>
+<li><p>[ ] no. I’ll send my gh username and os for help later (at the end of class)</p></li>
+</ul>
+<hr class="docutils" />
+<p>What files/folders can you see on there?</p>
+<hr class="docutils" />
+<p>.github/workflows</p>
+<hr class="docutils" />
+<p>How many branches do you have?</p>
+<hr class="docutils" />
+<p>main
+1-create-an-about-file</p>
+<hr class="docutils" />
+<p>Select the 1-create-an-about-file</p>
+<hr class="docutils" />
+<p>Same files so far (No changes made yet)</p>
+<hr class="docutils" />
+<p>Back to your terminal</p>
+<hr class="docutils" />
+<p>Let’s go back to comparing files between online and local repos</p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code></p>
+<hr class="docutils" />
+<p>Reminder: we used <code class="docutils literal notranslate"><span class="pre">-a</span></code> as an option for showing us hidden files/folders (anything that starts with a <code class="docutils literal notranslate"><span class="pre">.</span></code>)</p>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>          <span class="o">.</span><span class="n">git</span>
+<span class="o">..</span>         <span class="o">.</span><span class="n">github</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>We’ll notice a few things here</p>
+<hr class="docutils" />
+<p>We have three extra files/folders</p>
+<hr class="docutils" />
+<p>We know what <code class="docutils literal notranslate"><span class="pre">..</span></code> refers to by now. It’s a pointer to the parent direcctory</p>
+<hr class="docutils" />
+<p>The <code class="docutils literal notranslate"><span class="pre">.</span></code> is a pointer to where I am right now (the current directory)</p>
+<hr class="docutils" />
+<p>Let’s test out this theory
+<code class="docutils literal notranslate"> <span class="pre">pwd</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">/c/Users/ayman/Documents/systems/gh-inclass-AymanBx</span></code></p>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">.</span>
+<span class="n">pwd</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">/c/Users/ayman/Documents/systems/gh-inclass-AymanBx</span></code></p>
+<hr class="docutils" />
+<p>Our place didn’t change. It checks out!</p>
+<hr class="docutils" />
+<p>The third difference was the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder</p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">.git</span></code> folder is created by the <code class="docutils literal notranslate"><span class="pre">git</span></code> tool that we use on our terminal to hold special information about the project we’re working on</p>
+<hr class="docutils" />
+<p>Everytime we start a command with the word <code class="docutils literal notranslate"><span class="pre">git</span></code> we’re calling that tool and then telling it what we want it to do</p>
+<hr class="docutils" />
+<p>So far we saw <code class="docutils literal notranslate"><span class="pre">**git**</span> <span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">**git**</span> <span class="pre">fetch</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">status</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">fetch</span></code> were the commands that we asked git to execute</p>
+<hr class="docutils" />
+<p>.git is a black box ( until furhter notice ;-) )
+It holds tracking information about what changes were made locally and online</p>
+<hr class="docutils" />
+<p>We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> to update the .git box with changes that happed on the GitHub repo</p>
+<hr class="docutils" />
+<p>Let’s try it
+<code class="docutils literal notranslate"> <span class="pre">git</span> <span class="pre">fetch</span></code></p>
+<hr class="docutils" />
+<p>If you got nothing then your .git box is already up to date with the online <strong>repo</strong> (project)</p>
+<hr class="docutils" />
+<p>Check the current status of your project
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> is your friend, we will use it all the time to keep track of our movements</p>
+<hr class="docutils" />
+<p>Notice two key lines here</p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">branch</span> <span class="pre">is</span> <span class="pre">up</span> <span class="pre">to</span> <span class="pre">date</span> <span class="pre">with</span> <span class="pre">'origin/1-create-an-about-file'.</span></code> is telling you that your local project matches the online one at the moment (as far as it knows)</p>
+<hr class="docutils" />
+<p>More importantly, <code class="docutils literal notranslate"><span class="pre">nothing</span> <span class="pre">to</span> <span class="pre">commit,</span> <span class="pre">working</span> <span class="pre">tree</span> <span class="pre">clean</span></code> is telling you that your local repo (everything out side of the .git folder) matches the tracking information of git (everything inside the .git folder)</p>
+<hr class="docutils" />
+<p><strong>Much</strong> more on that later</p>
+<hr class="docutils" />
+<p>Lastly, one more small thing we noticed</p>
+<hr class="docutils" />
+<p>Github showed us <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> whereas <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code> only showed my <code class="docutils literal notranslate"><span class="pre">.github</span></code></p>
+<hr class="docutils" />
+<p>Who can tell me why that is?</p>
+<hr class="docutils" />
+<p>As discussed, the <code class="docutils literal notranslate"><span class="pre">/</span></code> tells us that this there is a file/folder within a folder</p>
+<hr class="docutils" />
+<p>Github combined them in one because there are no other files/folders on the .github folder</p>
+<hr class="docutils" />
+<p>How do we prove it?</p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"> <span class="pre">ls</span> <span class="pre">.github</span></code></p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">workflows/</span></code></p>
+<hr class="docutils" />
+<p>Listing the contents of .github showed us that it contains the folder “workflows” with it</p>
+<hr class="docutils" />
+<p>Conclusion: the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command can take an <strong>argument</strong> that is a path and it will list the contents of the folder passed in that path for us</p>
+</section>
+<hr class="docutils" />
+<section id="creating-a-file-on-the-terminal">
+<h2><span class="section-number">5.2. </span>Creating a file on the terminal<a class="headerlink" href="#creating-a-file-on-the-terminal" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>The <code class="docutils literal notranslate"><span class="pre">touch</span></code> command creates an empty file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>We can use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see our working directory now.</p>
+<hr class="docutils" />
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
+<span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">	about.md</span>
+
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Notice: Working tree is not clean anymore.
+There is one “untracked file”</p>
+<hr class="docutils" />
+<p>This means the working directory (everything outside .git) had changes but those changes were not <strong>added</strong> to the .git box to be <strong>tracked</strong></p>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
+</pre></div>
+</div>
+<p>What year are you in? When do you expect to graduate?</p>
+<hr class="docutils" />
+<p>Ctrl + s (Only windows users)
+Ctrl + x
+Enter (Only mac users would need this)</p>
+<hr class="docutils" />
+<p>we used the <a class="reference external" href="https://www.nano-editor.org/dist/latest/nano.html">nano text editor</a>.  <code class="docutils literal notranslate"><span class="pre">nano</span></code> is simpler than other text editors that tend to be more popular among experts, <code class="docutils literal notranslate"><span class="pre">vim</span></code> and <code class="docutils literal notranslate"><span class="pre">emacs</span></code>.  Getting comfortable with nano will get you used to the ideas, without putting as much burden on your memory.  This will set you up to learn those later, if you need a more powerful terminal text editor.</p>
+<hr class="docutils" />
+<p>We put some content in the file, any content then saved and exit.</p>
+<p>On the nano editor the <code class="docutils literal notranslate"><span class="pre">^</span></code> stands for control.</p>
+<p>and we can look at the contents of it.</p>
+<p>Now we will check again with git.</p>
+<hr class="docutils" />
+<p><code class="docutils literal notranslate"><span class="pre">cat</span></code> con<strong>cat</strong>enates the contents of a file to standard out, where all of the content that is shown on the terminal is.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Standard out is a special file in your device that your</p>
+</div>
+<hr class="docutils" />
+<p>and we can see the contents</p>
+<hr class="docutils" />
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>In this case both say to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to track or to include in what will be committed.  Under untracked files is it says <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;...</span></code>, in our case this would look like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">about.md</span></code>.  However, remember we learned that the <code class="docutils literal notranslate"><span class="pre">.</span></code>  that is always in every directory is a special “file” that points to the current directory, so we can use that to add <strong>all</strong> files. Since we have only one, the two are equivalent, and the <code class="docutils literal notranslate"><span class="pre">.</span></code> is a common shortcut, because most of the time we want to add everything we have recently worked on in a single commit.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> puts a file in the “staging area” we can use the staging area to group files together and put  changes to multiple files in a single commit. This is something we <strong>cannot</strong> do on GitHub in the browser, in order to save changes at all, we have to commit. Offline, we can save changes to our computer without commiting at all, and we can group many changes into a single commit.</p>
+<p>We will use <code class="docutils literal notranslate"><span class="pre">.</span></code> as our “file” to stage everythign in the current working directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>And again, we will check in with git</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```bash
+:tags: [&quot;skip-execution&quot;]
+git status
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
+<span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
+
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
+<span class="go">	new file:   about</span>
+</pre></div>
+</div>
+<p>Now that one file is marked as a new file and it is in the group “to be committed”. Git also tells us how to undo the thing we just did.</p>
+<hr class="docutils" />
+<div class="anchor admonition">
+<p class="admonition-title">Try this yourself</p>
+<p>Try making a change, adding it, then restoring it. Use git status to see what happens at each point</p>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you forget the <code class="docutils literal notranslate"><span class="pre">-m</span></code> you will be put into <code class="docutils literal notranslate"><span class="pre">vi</span></code> or <code class="docutils literal notranslate"><span class="pre">vim</span></code> text editor. Press <code class="docutils literal notranslate"><span class="pre">a</span></code> to enter <code class="docutils literal notranslate"><span class="pre">~insert&quot;</span> <span class="pre">mode</span> <span class="pre">(that</span> <span class="pre">will</span> <span class="pre">appear</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">bottom</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">terminal</span> <span class="pre">window),</span> <span class="pre">type</span> <span class="pre">your</span> <span class="pre">commit</span> <span class="pre">message,</span> <span class="pre">then</span> <span class="pre">press</span> </code>escape<code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">exit</span> <span class="pre">insert</span> <span class="pre">mode.</span> <span class="pre">Then</span> <span class="pre">type</span></code>:wq`and press enter/return  to write(save) and quit.</p>
+</div>
+</aside>
+<p>Next, we will commit the file.  We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> for this.  the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option allows us to put our commit message dirctly on the line when we commit.  Notice that unlike commiting on GitHub, we do not choose our branch with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command.  We have to be “on” that branch before the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
+<p>We used a <a class="reference external" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword">closing keyword</a> so that it will close the issue.</p>
+<hr class="docutils" />
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[1-create-an-about-file c7375fa] create about - closes #1</span>
+<span class="go"> 1 file changed, 3 insertions(+)</span>
+<span class="go"> create mode 100644 about.md</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>one more check</p>
+<hr class="docutils" />
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-a-readme</span>
+<span class="go">Your branch is ahead of &#39;origin/1-create-an-about-file&#39; by 1 commit.</span>
+<span class="go">  (use &quot;git push&quot; to publish your local commits)</span>
+
+<span class="go">nothing to commit, working tree clean</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>when you make your first commit you will need to do some <a class="reference external" href="https://git-scm.com/docs/git-config">config</a> steps to set your email and user name.</p>
+</div>
+<hr class="docutils" />
+<p>and push to send to <a class="reference external" href="http://github.com">github.com</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Enumerating objects: 4, done.</span>
+<span class="go">Counting objects: 100% (4/4), done.</span>
+<span class="go">Delta compression using up to 12 threads</span>
+<span class="go">Compressing objects: 100% (3/3), done.</span>
+<span class="go">Writing objects: 100% (3/3), 341 bytes | 341.00 KiB/s, done.</span>
+<span class="go">Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)</span>
+<span class="go">To https://github.com/compsys-progtools/gh-inclass-AymanBx</span>
+<span class="go">   98ca2d6..9e8a</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Now check out your online repo. Make sure your on the “1-create-an-about-file” branch</p>
+</section>
+<section id="summary">
+<h2><span class="section-number">5.3. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="mermaid">
+            flowchart TD
+    shell --&gt; |is used through| terminal
+    zsh --&gt; |is an example of a | shell
+    bash --&gt; |is an example of a | shell
+    powershell --&gt; |is an example of a | shell
+    shell --&gt; |interface to | os[Operating system]
+    git --&gt; |is a program used through | terminal
+        </div><p>Another way to think abut things (and adds some additional examples to help you differentiate between categories and examples of categories)</p>
+<div class="mermaid">
+            flowchart LR
+    subgraph programs
+    subgraph shell
+    bash
+    zsh
+    powershell
+    end
+    subgraph vcs[version control systems]
+    git
+    svn
+    mercurial
+    end
+    end
+    subgraph gh[git hosts]
+    GitHub
+    BitBucket
+    GitLab
+    end
+        </div><p>Today’s bash commands:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>command</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p></td>
+<td><p>print working directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;path&gt;</span></code></p></td>
+<td><p>change directory to path</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">&lt;name&gt;</span></code></p></td>
+<td><p>make a directory called name</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ls</span></code></p></td>
+<td><p>list, show the files</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">touch</span></code></p></td>
+<td><p>create an empty file</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We also learned some git commands</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>command</p></th>
+<th class="head"><p>explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></td>
+<td><p>describe what relationship between the working directory and git</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clone</span> <span class="pre">&lt;url&gt;</span></code></p></td>
+<td><p>make a new folder locally and download the repo into it from url, set up a remote to url</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">add</span>&#160; <span class="pre">&lt;file&gt;</span></code></p></td>
+<td><p>add file to staging area</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'message'</span></code></p></td>
+<td><p>commit using the message in quotes</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">push</span></code></p></td>
+<td><p>send to the remote</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="prepare-for-next-class">
+<h2><span class="section-number">5.4. </span>Prepare for next class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+<p>TBD Check back Wednsday</p>
+</section>
+<section id="badges">
+<h2><span class="section-number">5.5. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Review</label><div class="sd-tab-content docutils">
+<p>TBD</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Practice</label><div class="sd-tab-content docutils">
+<p>TBD</p>
+</div>
+</div>
+</section>
+<section id="questions-after-class">
+<h2><span class="section-number">5.6. </span>Questions after class<a class="headerlink" href="#questions-after-class" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2025-01-30.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Why Systems?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git">5.1. .git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-file-on-the-terminal">5.2. Creating a file on the terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.3. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">5.4. Prepare for next class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">5.5. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">5.6. Questions after class</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  made with [jupyterbook](https://jupyterbook.org/en/stable/intro.html)
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
