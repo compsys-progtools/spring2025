@@ -523,7 +523,7 @@ Now you can hit <code class="docutils literal notranslate"><span class="pre">Ent
 <hr class="docutils" />
 <p>Now on the other side of things, navigate to your inclass repo on GitHub</p>
 <p>the step below requires that you have the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>repo<span class="w"> </span>view<span class="w"> </span>--web
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">repo</span> <span class="n">view</span> <span class="o">--</span><span class="n">web</span>
 </pre></div>
 </div>
 <p>What files/folders can you see on there?</p>
@@ -636,7 +636,7 @@ Now you can hit <code class="docutils literal notranslate"><span class="pre">Ent
 <hr class="docutils" />
 <p>We can use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see our working directory now.</p>
 <hr class="docutils" />
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -644,18 +644,18 @@ Now you can hit <code class="docutils literal notranslate"><span class="pre">Ent
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
-<span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
 
-<span class="go">Untracked files:</span>
-<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
-<span class="go">	about.md</span>
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
 
-<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -684,12 +684,12 @@ Enter (Only mac users would need this)</p>
 <p class="admonition-title">Note</p>
 <p>Standard out is a special file in your device that your programs/commands executed will put their output into. The terminal prints the content of standard out (aka: std out), hence we get the output printed on the terminal</p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>about.md<span class="w"> </span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
 <p>and we can see the contents</p>
 <hr class="docutils" />
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -712,18 +712,17 @@ Enter (Only mac users would need this)</p>
 </div>
 <hr class="docutils" />
 <p>And again, we will check in with git</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-``` bash
-git status
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
-<span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
 
-<span class="go">Changes to be committed:</span>
-<span class="go">  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
-<span class="go">	new file:   about</span>
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+	<span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">about</span>
+
 </pre></div>
 </div>
 <p>Now that one file is marked as a new file and it is in the group “to be committed”. Git also tells us how to undo the thing we just did.</p>
@@ -734,7 +733,7 @@ git status
 <p>Try making a change, adding it, then restoring it. Use git status to see what happens at each point</p>
 </div>
 <p>Next, we will commit the file.  We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> for this. The <code class="docutils literal notranslate"><span class="pre">-m</span></code> option allows us to put our commit message dirctly on the line when we commit.  Notice that unlike commiting on GitHub, we do not choose our branch with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command.  We have to be “on” that branch before the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;create about - closes #1&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;create about - closes #1&quot;</span>
 </pre></div>
 </div>
 <p>We used a <a class="reference external" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword">closing keyword</a> so that it will close the issue.</p>
@@ -746,22 +745,22 @@ git status
 </div>
 </aside>
 <hr class="docutils" />
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[1-create-an-about-file c7375fa] create about - closes #1</span>
-<span class="go"> 1 file changed, 3 insertions(+)</span>
-<span class="go"> create mode 100644 about.md</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span> <span class="n">c7375fa</span><span class="p">]</span> <span class="n">create</span> <span class="n">about</span> <span class="o">-</span> <span class="n">closes</span> <span class="c1">#1</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">3</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
 <hr class="docutils" />
 <p>one more check</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-a-readme</span>
-<span class="go">Your branch is ahead of &#39;origin/1-create-an-about-file&#39; by 1 commit.</span>
-<span class="go">  (use &quot;git push&quot; to publish your local commits)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">readme</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="o">.</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git push&quot;</span> <span class="n">to</span> <span class="n">publish</span> <span class="n">your</span> <span class="n">local</span> <span class="n">commits</span><span class="p">)</span>
 
-<span class="go">nothing to commit, working tree clean</span>
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -780,14 +779,14 @@ git status
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Enumerating objects: 4, done.</span>
-<span class="go">Counting objects: 100% (4/4), done.</span>
-<span class="go">Delta compression using up to 12 threads</span>
-<span class="go">Compressing objects: 100% (3/3), done.</span>
-<span class="go">Writing objects: 100% (3/3), 341 bytes | 341.00 KiB/s, done.</span>
-<span class="go">Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)</span>
-<span class="go">To https://github.com/compsys-progtools/gh-inclass-AymanBx</span>
-<span class="go">   98ca2d6..9e8a</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">12</span> <span class="n">threads</span>
+<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">341</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">341.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="kn">from</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="n">To</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">compsys</span><span class="o">-</span><span class="n">progtools</span><span class="o">/</span><span class="n">gh</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">AymanBx</span>
+   <span class="mi">98</span><span class="n">ca2d6</span><span class="o">.</span><span class="mf">.9e8</span><span class="n">a</span>
 </pre></div>
 </div>
 <hr class="docutils" />
