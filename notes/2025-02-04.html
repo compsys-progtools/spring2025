@@ -434,10 +434,13 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-path-vs-relative-path">4.1. Absolute Path vs Relative Path</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git">4.2. .git</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-file-on-the-terminal">4.3. Creating a file on the terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.4. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">4.5. Prepare for next class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">4.6. Badges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">4.7. Questions after class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add">4.4. git add</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-commit">4.5. git commit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-push">4.6. git push</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.7. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">4.8. Prepare for next class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">4.9. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">4.10. Questions after class</a></li>
 </ul>
             </nav>
         </div>
@@ -741,7 +744,10 @@ Enter (Only mac users would need this)</p>
 <span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
 <hr class="docutils" />
+<section id="git-add">
+<h2><span class="section-number">4.4. </span>git add<a class="headerlink" href="#git-add" title="Link to this heading">#</a></h2>
 <p>In this case both say to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to track or to include in what will be committed.  Under untracked files is it says <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;...</span></code>, in our case this would look like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">about.md</span></code>.  However, remember we learned that the <code class="docutils literal notranslate"><span class="pre">.</span></code>  that is always in every directory is a special “file” that points to the current directory, so we can use that to add <strong>all</strong> files. Since we have only one, the two are equivalent, and the <code class="docutils literal notranslate"><span class="pre">.</span></code> is a common shortcut, because most of the time we want to add everything we have recently worked on in a single commit.</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> puts a file in the “staging area” we can use the staging area to group files together and put  changes to multiple files in a single commit. This is something we <strong>cannot</strong> do on GitHub in the browser, in order to save changes at all, we have to commit. Offline, we can save changes to our computer without commiting at all, and we can group many changes into a single commit.</p>
 <p>We will use <code class="docutils literal notranslate"><span class="pre">.</span></code> as our “file” to stage everything in the current working directory.</p>
@@ -770,6 +776,9 @@ Enter (Only mac users would need this)</p>
 <p class="admonition-title">Try this yourself</p>
 <p>Try making a change, adding it, then restoring it. Use git status to see what happens at each point</p>
 </div>
+</section>
+<section id="git-commit">
+<h2><span class="section-number">4.5. </span>git commit<a class="headerlink" href="#git-commit" title="Link to this heading">#</a></h2>
 <p>Next, we will commit the file.  We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> for this. The <code class="docutils literal notranslate"><span class="pre">-m</span></code> option allows us to put our commit message dirctly on the line when we commit.  Notice that unlike commiting on GitHub, we do not choose our branch with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command.  We have to be “on” that branch before the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;create about - closes #1&quot;</span>
 </pre></div>
@@ -783,6 +792,10 @@ Enter (Only mac users would need this)</p>
 </div>
 </aside>
 <hr class="docutils" />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you make your first commit you will need to do some <a class="reference external" href="https://git-scm.com/docs/git-config">config</a> steps to set your email and user name.</p>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span> <span class="n">c7375fa</span><span class="p">]</span> <span class="n">create</span> <span class="n">about</span> <span class="o">-</span> <span class="n">closes</span> <span class="c1">#1</span>
  <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">3</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
  <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
@@ -805,13 +818,11 @@ Enter (Only mac users would need this)</p>
 <p class="admonition-title">Note</p>
 <p>Now your working tree is clean again, but your <strong>local</strong> branch (as reflected inside the black box .git) now looks different from what’s on the online GitHub repo (Sometimes referred to as the “Upstream”)</p>
 </div>
-<hr class="docutils" />
+</section>
+<section id="git-push">
+<h2><span class="section-number">4.6. </span>git push<a class="headerlink" href="#git-push" title="Link to this heading">#</a></h2>
 <p>Git suggests that we use the <code class="docutils literal notranslate"><span class="pre">push</span></code> command to update the online repo with the local one.</p>
 <hr class="docutils" />
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>When you make your first commit you will need to do some <a class="reference external" href="https://git-scm.com/docs/git-config">config</a> steps to set your email and user name.</p>
-</div>
 <p>And push to send to <a class="reference external" href="http://github.com">github.com</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
 </pre></div>
@@ -832,7 +843,7 @@ Enter (Only mac users would need this)</p>
 <p><a class="reference external" href="http://about.md">about.md</a> should exist now on there!</p>
 </section>
 <section id="summary">
-<h2><span class="section-number">4.4. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.7. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <div class="mermaid">
             flowchart TD
     shell --&gt; |is used through| terminal
@@ -915,11 +926,11 @@ Enter (Only mac users would need this)</p>
 </div>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">4.5. </span>Prepare for next class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.8. </span>Prepare for next class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
 <p>TBD Check back Wednsday</p>
 </section>
 <section id="badges">
-<h2><span class="section-number">4.6. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.9. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
@@ -934,7 +945,7 @@ Practice</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="questions-after-class">
-<h2><span class="section-number">4.7. </span>Questions after class<a class="headerlink" href="#questions-after-class" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.10. </span>Questions after class<a class="headerlink" href="#questions-after-class" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1006,10 +1017,13 @@ Practice</label><div class="sd-tab-content docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-path-vs-relative-path">4.1. Absolute Path vs Relative Path</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git">4.2. .git</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-file-on-the-terminal">4.3. Creating a file on the terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.4. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">4.5. Prepare for next class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">4.6. Badges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">4.7. Questions after class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add">4.4. git add</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-commit">4.5. git commit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-push">4.6. git push</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.7. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">4.8. Prepare for next class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">4.9. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">4.10. Questions after class</a></li>
 </ul>
   </nav></div>
 
