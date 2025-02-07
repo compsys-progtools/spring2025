@@ -6,7 +6,8 @@ This section is for materials that are not specific to this course, but are like
 
 - [how to e-mail professors](https://insidehighered.com/views/2015/04/16/advice-students-so-they-dont-sound-silly-emails-essay)
 
-## Class Workflow
+## Class Workflow  
+
 ```{mermaid}
 flowchart TD
     Z{"START HERE"}--> A
