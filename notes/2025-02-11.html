@@ -452,7 +452,12 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">5.11. Prepare for Next Class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">5.12. Badges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">5.13. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">5.13. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-have-conflicts-betwen-local-branches">5.13.1. Can you have conflicts betwen local branches?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-where-there-are-multiple-people-working-offline-and-try-to-commit-all-at-the-same-time">5.13.2. What happens where there are multiple people working offline and try to commit all at the same time?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-when-to-use-hit-switch-and-when-to-use-for-checkout">5.13.3. How do I know when to use hit switch and when to use for checkout?</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -801,43 +806,37 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <section id="git-rebase">
 <h3><span class="section-number">5.5.2. </span>git rebase<a class="headerlink" href="#git-rebase" title="Link to this heading">#</a></h3>
 <p>If a repo is like this:</p>
-<p><strong>mermaid</strong>
-gitGraph
-commit id:“D”
-commit id:“E”
-branch topic
-checkout topic
-commit id:“A”
-checkout main
-commit id:“F”
-checkout topic
-commit id:“B”
-checkout main
-commit id:“G”
-checkout topic
-commit id:“C”
-chect main
-%% merge topic id:“H (contains A,B,C)”</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
----
-
-after:
-```{mermaid}
-gitGraph
+<div class="mermaid">
+            gitGraph
+    commit id:&quot;D&quot;
+    commit id:&quot;E&quot;
+    branch topic
+    checkout topic
+    commit id:&quot;A&quot;
+    checkout main
+    commit id:&quot;F&quot;
+    checkout topic
+    commit id:&quot;B&quot;
+    checkout main
+    commit id:&quot;G&quot;
+    checkout topic
+    commit id:&quot;C&quot;
+    chect main
+    %% merge topic id:&quot;H (contains A,B,C)&quot;
+        </div><p>after:</p>
+<div class="mermaid">
+            gitGraph
     commit id:&quot;D&quot;
     commit id:&quot;E&quot;
     commit id:&quot;F&quot;
     commit id:&quot;G&quot; 
     branch topic
     checkout topic
-    commit id:&quot;A&#39;&quot;
-    commit id:&quot;B&#39;&quot;
-    commit id:&quot;C&#39;&quot;
+    commit id:&quot;A'&quot;
+    commit id:&quot;B'&quot;
+    commit id:&quot;C'&quot;
     checkout main
-</pre></div>
-</div>
-<hr class="docutils" />
-</section>
+        </div></section>
 </section>
 <hr class="docutils" />
 <section id="git-pull">
@@ -1417,6 +1416,22 @@ Practice</label><div class="sd-tab-content docutils">
 </section>
 <section id="questions-after-todays-class">
 <h2><span class="section-number">5.13. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Link to this heading">#</a></h2>
+<section id="can-you-have-conflicts-betwen-local-branches">
+<h3><span class="section-number">5.13.1. </span>Can you have conflicts betwen local branches?<a class="headerlink" href="#can-you-have-conflicts-betwen-local-branches" title="Link to this heading">#</a></h3>
+<p>Absolutely you can. If any two branches whether both are local, both online or one of each edit the same file and try to merge you will get a conflict</p>
+</section>
+<section id="what-happens-where-there-are-multiple-people-working-offline-and-try-to-commit-all-at-the-same-time">
+<h3><span class="section-number">5.13.2. </span>What happens where there are multiple people working offline and try to commit all at the same time?<a class="headerlink" href="#what-happens-where-there-are-multiple-people-working-offline-and-try-to-commit-all-at-the-same-time" title="Link to this heading">#</a></h3>
+<p>Same as you would expect. There’s no such thing as exactly at the same time. One commit will get pushed before the other one and the other one will either get added to it if it doesn’t conflict with the first one or the branch will diverge as we saw in class and the person pushing the second commit will have to fix it.</p>
+</section>
+<section id="how-do-i-know-when-to-use-hit-switch-and-when-to-use-for-checkout">
+<h3><span class="section-number">5.13.3. </span>How do I know when to use hit switch and when to use for checkout?<a class="headerlink" href="#how-do-i-know-when-to-use-hit-switch-and-when-to-use-for-checkout" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> always good for switching between branches and it’s safe because it won’t create a new branch if one doesn’t already exist.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>: switches if a local branch exists. Creates a new branch ONLY if an online branch with the exact same name exits (and it links both branches to each other)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code>: literally creates a new branch first and then switches to it. It executes two commands: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">&lt;name&gt;</span></code> + <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;name&gt;</span></code></p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -1505,7 +1520,12 @@ Practice</label><div class="sd-tab-content docutils">
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">5.11. Prepare for Next Class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">5.12. Badges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">5.13. Questions After Today’s Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">5.13. Questions After Today’s Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-have-conflicts-betwen-local-branches">5.13.1. Can you have conflicts betwen local branches?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-where-there-are-multiple-people-working-offline-and-try-to-commit-all-at-the-same-time">5.13.2. What happens where there are multiple people working offline and try to commit all at the same time?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-when-to-use-hit-switch-and-when-to-use-for-checkout">5.13.3. How do I know when to use hit switch and when to use for checkout?</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
