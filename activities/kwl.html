@@ -67,7 +67,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Team Repo" href="team.html" />
-    <link rel="prev" title="5. How do git branches work?" href="../notes/2025-02-11.html" />
+    <link rel="prev" title="6. What is a commit?" href="../notes/2025-02-18.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -190,6 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../notes/2025-01-30.html">3. Why Systems?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/2025-02-04.html">4. Git Offline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes/2025-02-11.html">5. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/2025-02-18.html">6. What is a commit?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="current nav bd-sidenav">
@@ -529,39 +530,44 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_409c5">
+<table id="T_5dc28">
   <thead>
     <tr>
-      <th id="T_409c5_level0_col0" class="col_heading level0 col0" >date</th>
-      <th id="T_409c5_level0_col1" class="col_heading level0 col1" >file</th>
-      <th id="T_409c5_level0_col2" class="col_heading level0 col2" >type</th>
+      <th id="T_5dc28_level0_col0" class="col_heading level0 col0" >date</th>
+      <th id="T_5dc28_level0_col1" class="col_heading level0 col1" >file</th>
+      <th id="T_5dc28_level0_col2" class="col_heading level0 col2" >type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_409c5_row0_col0" class="data row0 col0" >2025-01-28</td>
-      <td id="T_409c5_row0_col1" class="data row0 col1" >brain.md</td>
-      <td id="T_409c5_row0_col2" class="data row0 col2" >/_practice</td>
+      <td id="T_5dc28_row0_col0" class="data row0 col0" >2025-01-28</td>
+      <td id="T_5dc28_row0_col1" class="data row0 col1" >brain.md</td>
+      <td id="T_5dc28_row0_col2" class="data row0 col2" >/_practice</td>
     </tr>
     <tr>
-      <td id="T_409c5_row1_col0" class="data row1 col0" >2025-01-30</td>
-      <td id="T_409c5_row1_col1" class="data row1 col1" >gitoffline.md</td>
-      <td id="T_409c5_row1_col2" class="data row1 col2" >/_review</td>
+      <td id="T_5dc28_row1_col0" class="data row1 col0" >2025-01-30</td>
+      <td id="T_5dc28_row1_col1" class="data row1 col1" >gitoffline.md</td>
+      <td id="T_5dc28_row1_col2" class="data row1 col2" >/_review</td>
     </tr>
     <tr>
-      <td id="T_409c5_row2_col0" class="data row2 col0" >2025-01-30</td>
-      <td id="T_409c5_row2_col1" class="data row2 col1" >gitoffline.md</td>
-      <td id="T_409c5_row2_col2" class="data row2 col2" >/_practice</td>
+      <td id="T_5dc28_row2_col0" class="data row2 col0" >2025-01-30</td>
+      <td id="T_5dc28_row2_col1" class="data row2 col1" >gitoffline.md</td>
+      <td id="T_5dc28_row2_col2" class="data row2 col2" >/_practice</td>
     </tr>
     <tr>
-      <td id="T_409c5_row3_col0" class="data row3 col0" >2025-02-11</td>
-      <td id="T_409c5_row3_col1" class="data row3 col1" >branches.md</td>
-      <td id="T_409c5_row3_col2" class="data row3 col2" >/_review</td>
+      <td id="T_5dc28_row3_col0" class="data row3 col0" >2025-02-11</td>
+      <td id="T_5dc28_row3_col1" class="data row3 col1" >branches.md</td>
+      <td id="T_5dc28_row3_col2" class="data row3 col2" >/_review</td>
     </tr>
     <tr>
-      <td id="T_409c5_row4_col0" class="data row4 col0" >2025-02-11</td>
-      <td id="T_409c5_row4_col1" class="data row4 col1" >branches-forks.md</td>
-      <td id="T_409c5_row4_col2" class="data row4 col2" >/_practice</td>
+      <td id="T_5dc28_row4_col0" class="data row4 col0" >2025-02-11</td>
+      <td id="T_5dc28_row4_col1" class="data row4 col1" >branches-forks.md</td>
+      <td id="T_5dc28_row4_col2" class="data row4 col2" >/_practice</td>
+    </tr>
+    <tr>
+      <td id="T_5dc28_row5_col0" class="data row5 col0" >2025-02-18</td>
+      <td id="T_5dc28_row5_col1" class="data row5 col1" >commit-def.md</td>
+      <td id="T_5dc28_row5_col2" class="data row5 col2" >/_review</td>
     </tr>
   </tbody>
 </table>
@@ -606,12 +612,12 @@ check_df['zone'] = check_df['date'].apply(zoner) --></section>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../notes/2025-02-11.html"
+       href="../notes/2025-02-18.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>How do git branches work?</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>What is a commit?</p>
       </div>
     </a>
     <a class="right-next"

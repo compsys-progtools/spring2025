@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-02-11';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="next" title="6. What is a commit?" href="2025-02-18.html" />
     <link rel="prev" title="4. Git Offline" href="2025-02-04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -190,6 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-01-30.html">3. Why Systems?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-02-04.html">4. Git Offline</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-18.html">6. What is a commit?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -688,7 +689,7 @@ Pay attention to what number that issue is assigned (Marked with a <code class="
 <p>#2 is referring to the issue <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">a</span> <span class="pre">README</span></code>. It is labeled #2 on GitHub</p>
 <hr class="docutils" />
 <p>Go check it out! Open the issues tab and click on <code class="docutils literal notranslate"><span class="pre">Closed</span></code><br />
-<img alt="image" src="img/issue_number.png" /></p>
+<img alt="image" src="../_images/issue_number.png" /></p>
 <hr class="docutils" />
 <p>What does that mean?</p>
 <hr class="docutils" />
@@ -1166,13 +1167,13 @@ turned out not to be.</p>
 <hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Auto-merging about.md</span>
 <span class="go">CONFLICT (content): Merge conflict in about.md</span>
-<span class="go">error: could not apply 62dcf61... local second fun fact</span>
+<span class="go">error: could not apply 62dcf61... local Added fun fact</span>
 <span class="go">hint: Resolve all conflicts manually, mark them as resolved with</span>
 <span class="go">hint: &quot;git add/rm &lt;conflicted_files&gt;&quot;, then run &quot;git rebase --continue&quot;.</span>
 <span class="go">hint: You can instead skip this commit: run &quot;git rebase --skip&quot;.</span>
 <span class="go">hint: To abort and get back to the state before &quot;git rebase&quot;, run &quot;git rebase --abort&quot;.</span>
 <span class="go">hint: Disable this message with &quot;git config advice.mergeConflict false&quot;</span>
-<span class="go">Could not apply 62dcf61... local second fun fact</span>
+<span class="go">Could not apply 62dcf61... local Added fun fact</span>
 </pre></div>
 </div>
 <p>it gets most of it, but gets stopped at a conflict.</p>
@@ -1183,7 +1184,7 @@ turned out not to be.</p>
 <hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">interactive rebase in progress; onto 462402f</span>
 <span class="go">Last command done (1 command done):</span>
-<span class="go">   pick 62dcf61 local second fun fact</span>
+<span class="go">   pick 62dcf61 local Added fun fact</span>
 <span class="go">No commands remaining.</span>
 <span class="go">You are currently rebasing branch &#39;main&#39; on &#39;462402f&#39;.</span>
 <span class="go">  (fix conflicts and then run &quot;git rebase --continue&quot;)</span>
@@ -1271,7 +1272,7 @@ In this case, we will choose to keep both, so my file looks like this in the end
 <hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">interactive rebase in progress; onto 462402f</span>
 <span class="go">Last command done (1 command done):</span>
-<span class="go">   pick 62dcf61 local second fun fact</span>
+<span class="go">   pick 62dcf61 local Added fun fact</span>
 <span class="go">No commands remaining.</span>
 <span class="go">You are currently editing a commit while rebasing branch &#39;main&#39; on &#39;462402f&#39;.</span>
 <span class="go">  (use &quot;git commit --amend&quot; to amend the current commit)</span>
@@ -1365,8 +1366,8 @@ In this case, we will choose to keep both, so my file looks like this in the end
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></p></td>
-<td><p>show list of commit history</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code></p></td>
+<td><p>merge specified branch into the one git is currently on</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code></p></td>
 <td><p>list branches in the repo</p></td>
@@ -1475,11 +1476,11 @@ Practice</label><div class="sd-tab-content docutils">
       </div>
     </a>
     <a class="right-next"
-       href="../activities/kwl.html"
+       href="2025-02-18.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">KWL Chart</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>What is a commit?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

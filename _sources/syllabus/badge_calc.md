@@ -91,7 +91,7 @@ the grade plans on the grading page and the thresholds above assume you earn the
     - 9
     - event
 *   - Early bird
-    - (review + practice) submitted by 9/26 >=5
+    - (review + practice) submitted by 02/21 >=5
     - 9
     - event
 *   - Descriptive commits
