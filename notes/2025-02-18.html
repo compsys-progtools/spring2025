@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. What is a commit? &#8212; Computer Systems and Programming Tools</title>
+    <title>7. What is a commit? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css?v=57efbcaa" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -66,11 +63,10 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-02-18';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
-    <link rel="prev" title="5. How do git branches work?" href="2025-02-11.html" />
+    <link rel="next" title="8. When do I get an advantage from git and bash?" href="2025-02-20.html" />
+    <link rel="prev" title="6. Terminal" href="2025-02-13.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,17 +157,21 @@
     
     
     <img src="../_static/systools.png" class="logo__image only-light" alt="Computer Systems and Programming Tools - Home"/>
-    <img src="../_static/systools.png" class="logo__image only-dark pst-js-only" alt="Computer Systems and Programming Tools - Home"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Computer Systems and Programming Tools - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -190,7 +201,9 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-01-30.html">3. Why Systems?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-02-04.html">4. Git Offline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-02-11.html">5. How do git branches work?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-13.html">6. Terminal</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-20.html">8. When do I get an advantage from git and bash?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -232,14 +245,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -400,16 +408,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -433,28 +449,28 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-commit-history">6.1. Viewing Commit History</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-that-help">6.1.1. How does that help?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-commit-history">7.1. Viewing Commit History</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-that-help">7.1.1. How does that help?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.2. What <em>is</em> a commit?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-terms">6.2.1. Defining terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2. What <em>is</em> a commit?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-terms">7.2.1. Defining terms</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptually-a-commit-is-a-snapshot">6.3. Conceptually, a commit is a snapshot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-commits-role-is-central-to-git">6.4. A commit’s role is central to git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-commit">6.5. Parts of a commit</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-pgp-signature">6.5.1. What is the PGP signature?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptually-a-commit-is-a-snapshot">7.3. Conceptually, a commit is a snapshot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-commits-role-is-central-to-git">7.4. A commit’s role is central to git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-commit">7.5. Parts of a commit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-pgp-signature">7.5.1. What is the PGP signature?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-parents-help-us-trace-back">6.6. Commit parents help us trace back</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-trees-are-the-hash-of-the-content">6.6.1. Commit trees are the hash of the content</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trees-point-to-blobs-of-the-file-content">6.6.2. Trees point to blobs of the file content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-parents-help-us-trace-back">7.6. Commit parents help us trace back</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-trees-are-the-hash-of-the-content">7.6.1. Commit trees are the hash of the content</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trees-point-to-blobs-of-the-file-content">7.6.2. Trees point to blobs of the file content</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commits-are-implemented-as-files">6.7. Commits are implemented as files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">6.8. Prepare for next class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">6.9. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commits-are-implemented-as-files">7.7. Commits are implemented as files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">7.8. Prepare for next class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">7.9. Badges</a></li>
 </ul>
             </nav>
         </div>
@@ -467,9 +483,9 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="what-is-a-commit">
-<h1><span class="section-number">6. </span>What is a commit?<a class="headerlink" href="#what-is-a-commit" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>What is a commit?<a class="headerlink" href="#what-is-a-commit" title="Link to this heading">#</a></h1>
 <section id="viewing-commit-history">
-<h2><span class="section-number">6.1. </span>Viewing Commit History<a class="headerlink" href="#viewing-commit-history" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Viewing Commit History<a class="headerlink" href="#viewing-commit-history" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
 <p>Navigate to your in-class repo</p>
 <hr class="docutils" />
@@ -530,7 +546,7 @@
 <p>Mine will look a bit different that yours because I filled out my <a class="reference external" href="http://README.md">README.md</a> later</p>
 <hr class="docutils" />
 <section id="how-does-that-help">
-<h3><span class="section-number">6.1.1. </span>How does that help?<a class="headerlink" href="#how-does-that-help" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.1.1. </span>How does that help?<a class="headerlink" href="#how-does-that-help" title="Link to this heading">#</a></h3>
 <hr class="docutils" />
 <p>Let’s compare</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>fun_fact
@@ -637,10 +653,10 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 </section>
 <hr class="docutils" />
 <section id="id1">
-<h2><span class="section-number">6.2. </span>What <em>is</em> a commit?<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>What <em>is</em> a commit?<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
 <section id="defining-terms">
-<h3><span class="section-number">6.2.1. </span>Defining terms<a class="headerlink" href="#defining-terms" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.1. </span>Defining terms<a class="headerlink" href="#defining-terms" title="Link to this heading">#</a></h3>
 <p>A commit is the most important unit of git. Later we will talk about what git as a whole is in more detail, but understanding a commit is essential to understanding how to fix things using git.</p>
 <hr class="docutils" />
 <p>In CS we often have multiple, overlapping definitions for a term depending on our goal.</p>
@@ -660,14 +676,14 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 </section>
 <hr class="docutils" />
 <section id="conceptually-a-commit-is-a-snapshot">
-<h2><span class="section-number">6.3. </span>Conceptually, a commit is a snapshot<a class="headerlink" href="#conceptually-a-commit-is-a-snapshot" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>Conceptually, a commit is a snapshot<a class="headerlink" href="#conceptually-a-commit-is-a-snapshot" title="Link to this heading">#</a></h2>
 <p><img alt="storing data as snapshots over time" src="https://git-scm.com/book/en/v2/images/snapshots.png" /></p>
 <p>git takes a full <em>snapshot</em> of the repo at each commit.</p>
 <p>Under the hood, it only makes a <em>new</em> copy of files that have changed because it uses the same technique to store each snapshot, so any files that have not changed, do not create new files inside of git.</p>
 </section>
 <hr class="docutils" />
 <section id="a-commits-role-is-central-to-git">
-<h2><span class="section-number">6.4. </span>A commit’s role is central to git<a class="headerlink" href="#a-commits-role-is-central-to-git" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>A commit’s role is central to git<a class="headerlink" href="#a-commits-role-is-central-to-git" title="Link to this heading">#</a></h2>
 <p>a commit is the basic unit of what git manages</p>
 <p>All other git things are defined relative to commits</p>
 <ul class="simple">
@@ -679,7 +695,7 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 </section>
 <hr class="docutils" />
 <section id="parts-of-a-commit">
-<h2><span class="section-number">6.5. </span>Parts of a commit<a class="headerlink" href="#parts-of-a-commit" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.5. </span>Parts of a commit<a class="headerlink" href="#parts-of-a-commit" title="Link to this heading">#</a></h2>
 <p>We will learn about the structure of a commit by inspecting it.</p>
 <hr class="docutils" />
 <p>First we will go back to our <code class="docutils literal notranslate"><span class="pre">gh-inclass</span></code> repo</p>
@@ -756,7 +772,7 @@ Keeping both fun facts
 </ul>
 <hr class="docutils" />
 <section id="what-is-the-pgp-signature">
-<h3><span class="section-number">6.5.1. </span>What is the PGP signature?<a class="headerlink" href="#what-is-the-pgp-signature" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.5.1. </span>What is the PGP signature?<a class="headerlink" href="#what-is-the-pgp-signature" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits">Signed commits</a> are extra authentication that you are who you say you are.</p>
 <p>The commits that are labeled with the <code class="docutils literal notranslate"><span class="pre">verified</span></code> tag on <a class="reference external" href="http://GitHub.com">GitHub.com</a></p>
 <hr class="docutils" />
@@ -765,7 +781,7 @@ Keeping both fun facts
 </section>
 <hr class="docutils" />
 <section id="commit-parents-help-us-trace-back">
-<h2><span class="section-number">6.6. </span>Commit parents help us trace back<a class="headerlink" href="#commit-parents-help-us-trace-back" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.6. </span>Commit parents help us trace back<a class="headerlink" href="#commit-parents-help-us-trace-back" title="Link to this heading">#</a></h2>
 <p>kind of like a linked list</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
@@ -782,7 +798,7 @@ Added fun fact
 </div>
 <hr class="docutils" />
 <section id="commit-trees-are-the-hash-of-the-content">
-<h3><span class="section-number">6.6.1. </span>Commit trees are the hash of the content<a class="headerlink" href="#commit-trees-are-the-hash-of-the-content" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.6.1. </span>Commit trees are the hash of the content<a class="headerlink" href="#commit-trees-are-the-hash-of-the-content" title="Link to this heading">#</a></h3>
 <p>This separation is helpful.</p>
 <hr class="docutils" />
 <p>The snapshot is stored via a tree, we can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code> to look at the tree object too.</p>
@@ -822,7 +838,7 @@ git cat-file -p 0689
 </section>
 <hr class="docutils" />
 <section id="trees-point-to-blobs-of-the-file-content">
-<h3><span class="section-number">6.6.2. </span>Trees point to blobs of the file content<a class="headerlink" href="#trees-point-to-blobs-of-the-file-content" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.6.2. </span>Trees point to blobs of the file content<a class="headerlink" href="#trees-point-to-blobs-of-the-file-content" title="Link to this heading">#</a></h3>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code> to view a blob.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 ```o use `git cat-file` to view a blob. 
@@ -848,7 +864,7 @@ the info on how the code
 </section>
 </section>
 <section id="commits-are-implemented-as-files">
-<h2><span class="section-number">6.7. </span>Commits are implemented as files<a class="headerlink" href="#commits-are-implemented-as-files" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.7. </span>Commits are implemented as files<a class="headerlink" href="#commits-are-implemented-as-files" title="Link to this heading">#</a></h2>
 <p>commits are stored in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory as files.  git itself <em>is</em> a file system, or a way of storing information.</p>
 <hr class="docutils" />
 <p>Everything the git program uses is stored in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory, you can think of that like all of the variables the program would need if it ran all the time.</p>
@@ -995,7 +1011,7 @@ LICENSE.md	docs
 </div>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">6.8. </span>Prepare for next class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8. </span>Prepare for next class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
 <p>Examine an open source software project and fill in the template below in a file called <span class="target" id="index-0"></span>software.md in your kwl repo on a branch that is linked to this issue. You do not need to try to understand how the <em>code</em> works for this exercise, but instead focus on how the repo is set up, what additional information is in there beyond the code.  You may pick any mature open source project, meaning a project with recent commits, active PRs and issues, multiple contributors. In class we will have a discussion and you will compare what you found with people who examined a different project.  Coordinate with peers (eg using the class discussion or in lab time) to look at different projects in order to discuss together in class.</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Software Reflection</span>
 
@@ -1036,7 +1052,7 @@ Project : &lt;markdown link to repo&gt;
 </ul>
 </section>
 <section id="badges">
-<h2><span class="section-number">6.9. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.9. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
@@ -1089,20 +1105,20 @@ Practice</label><div class="sd-tab-content docutils">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2025-02-11.html"
+       href="2025-02-13.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>How do git branches work?</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Terminal</p>
       </div>
     </a>
     <a class="right-next"
-       href="../activities/kwl.html"
+       href="2025-02-20.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">KWL Chart</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>When do I get an advantage from git and bash?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1113,8 +1129,7 @@ Practice</label><div class="sd-tab-content docutils">
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1123,28 +1138,28 @@ Practice</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-commit-history">6.1. Viewing Commit History</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-that-help">6.1.1. How does that help?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-commit-history">7.1. Viewing Commit History</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-that-help">7.1.1. How does that help?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.2. What <em>is</em> a commit?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-terms">6.2.1. Defining terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2. What <em>is</em> a commit?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-terms">7.2.1. Defining terms</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptually-a-commit-is-a-snapshot">6.3. Conceptually, a commit is a snapshot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-commits-role-is-central-to-git">6.4. A commit’s role is central to git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-commit">6.5. Parts of a commit</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-pgp-signature">6.5.1. What is the PGP signature?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptually-a-commit-is-a-snapshot">7.3. Conceptually, a commit is a snapshot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-commits-role-is-central-to-git">7.4. A commit’s role is central to git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-commit">7.5. Parts of a commit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-pgp-signature">7.5.1. What is the PGP signature?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-parents-help-us-trace-back">6.6. Commit parents help us trace back</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-trees-are-the-hash-of-the-content">6.6.1. Commit trees are the hash of the content</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trees-point-to-blobs-of-the-file-content">6.6.2. Trees point to blobs of the file content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-parents-help-us-trace-back">7.6. Commit parents help us trace back</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-trees-are-the-hash-of-the-content">7.6.1. Commit trees are the hash of the content</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trees-point-to-blobs-of-the-file-content">7.6.2. Trees point to blobs of the file content</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commits-are-implemented-as-files">6.7. Commits are implemented as files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">6.8. Prepare for next class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">6.9. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commits-are-implemented-as-files">7.7. Commits are implemented as files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">7.8. Prepare for next class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">7.9. Badges</a></li>
 </ul>
   </nav></div>
 
@@ -1196,8 +1211,8 @@ By Professor Sarah M Brown
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
