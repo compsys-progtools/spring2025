@@ -451,21 +451,20 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-gpg-signature">8.1. What is a GPG signature?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2. When do I get an advantage from git and bash?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-stage">8.3. Setting the stage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-references">8.4. Important references</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">8.5. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-review">8.6. Branches review</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-a-project-working-with-files">8.7. Organizing a project (working with files)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-redirects-git-restore">8.8. Files, Redirects, git restore</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-organized">8.9. Getting organized</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-multiple-files-with-patterns">8.9.1. Moving multiple files with patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-references">8.3. Important references</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">8.4. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-review">8.5. Branches review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-a-project-working-with-files">8.6. Organizing a project (working with files)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-redirects-git-restore">8.7. Files, Redirects, git restore</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-organized">8.8. Getting organized</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-multiple-files-with-patterns">8.8.1. Moving multiple files with patterns</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-files">8.10. Hidden files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-a-file">8.11. Copying a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-badge-with-a-file">8.12. experience badge with a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">8.13. Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">8.14. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-files">8.9. Hidden files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">8.10. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">8.11. Prepare for next class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">8.12. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">8.13. Questions after class</a></li>
 </ul>
             </nav>
         </div>
@@ -491,29 +490,8 @@ This is an extra way for collaborators to secure that the commit was made by the
 <p>so far we have used git and bash to accomplish familiar goals, and git and bash feel like just extra work for familiar goals.</p>
 <p>Today, we will start to see why git and bash are essential skills: they give you efficiency gains and time traveling super powers (within your work, only, sorry)</p>
 </section>
-<section id="setting-the-stage">
-<h2><span class="section-number">8.3. </span>Setting the stage<a class="headerlink" href="#setting-the-stage" title="Link to this heading">#</a></h2>
-<p>To prepare for today’s class you examined an open source project.</p>
-<p>Discuss your prepare work with your neighbors. Share what project you looked at and discuss the following.
-If you all looked at the same repo, split up and look at different ones now.</p>
-<ul class="simple">
-<li><p>What things were common across different repos?</p></li>
-<li><p>What was different?</p></li>
-</ul>
-<p>We noticed that while the contents inside and the distribution of languages used as well
-as the specific code, or the <em>content</em> of the files was all different, a lot of the
-<em>organization</em> was similar.</p>
-<p>Most had certain <a class="reference external" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file">community health files</a> and basic info files:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">CONTRIBUTING</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">README.MD</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GOVERNANCE.MD</span></code></p></li>
-</ul>
-</section>
 <section id="important-references">
-<h2><span class="section-number">8.4. </span>Important references<a class="headerlink" href="#important-references" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Important references<a class="headerlink" href="#important-references" title="Link to this heading">#</a></h2>
 <p>Use these for checking facts and resources.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.gnu.org/software/bash/manual/html_node/index.html">bash</a></p></li>
@@ -521,7 +499,7 @@ as the specific code, or the <em>content</em> of the files was all different, a 
 </ul>
 </section>
 <section id="setup">
-<h2><span class="section-number">8.5. </span>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <p>First, we’ll go back to our github inclass folder</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">AymanBx</span><span class="o">/</span>
 </pre></div>
@@ -534,7 +512,14 @@ as the specific code, or the <em>content</em> of the files was all different, a 
 </pre></div>
 </div>
 <p>and make sure we are up to date:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+Your branch is up to date with &#39;origin/main&#39;.
+
+nothing to commit, working tree clean
 </pre></div>
 </div>
 <p>We checked if there were any uncommited/unstaged changes that happened locally</p>
@@ -547,13 +532,56 @@ as the specific code, or the <em>content</em> of the files was all different, a 
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
+<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+Your branch is up to date with &#39;origin/main&#39;.
+
+nothing to commit, working tree clean
+</pre></div>
+</div>
 <p>Let’s check for existing prs in the repo</p>
 <p>Find your PR that I opened for you today that has the title, “2/20 in class activity”</p>
 <p>Note this is optional, and only works with the <code class="docutils literal notranslate"><span class="pre">gh</span></code> cli is installed</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">pr</span> <span class="nb">list</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Showing</span> <span class="mi">1</span> <span class="n">of</span> <span class="mi">1</span> <span class="nb">open</span> <span class="n">pull</span> <span class="n">requests</span> <span class="ow">in</span> <span class="n">compsys</span><span class="o">-</span><span class="n">progtools</span><span class="o">/</span><span class="n">gh</span><span class="o">-</span><span class="n">inclass</span><span class="o">-</span><span class="n">AymanBx</span>
+
+<span class="c1">#4    Feb 20 in class activity    organizing_ac      about 2 hours ago</span>
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">pr</span> <span class="n">view</span>
+</pre></div>
+</div>
+<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>Feb 20 in class activity #3
+Open • AymanBx wants to merge 1 commit into main from organizing_ac • about 2 hours ago
++17 -0 • No checks
+
+
+  this draft PR https://github.blog/2019-02-14-introducing-draft-pull-requests/ adds some example files that we will use
+  during class on 9/19.  \n\n wait until class time (or when you make up class by following the notes) to do anything 
+  with this PR
+
+
+View this pull request on GitHub: https://github.com/compsys-progtools/gh-inclass-AymanBx/pull/3
+</pre></div>
+</div>
+<p>Since there only is one pr in your repo (most of you) it will show you details of that pr (Title, body, etc.)</p>
+<p>If that doesn’t work try using the number shown next to the pr when we listed the prs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">pr</span> <span class="n">view</span> <span class="c1">#3</span>
+</pre></div>
+</div>
+<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>Feb 20 in class activity #3
+Open • AymanBx wants to merge 1 commit into main from organizing_ac • about 2 hours ago
++17 -0 • No checks
+
+
+  this draft PR https://github.blog/2019-02-14-introducing-draft-pull-requests/ adds some example files that we will use
+  during class on 9/19.  \n\n wait until class time (or when you make up class by following the notes) to do anything 
+  with this PR
+
+
+View this pull request on GitHub: https://github.com/compsys-progtools/gh-inclass-AymanBx/pull/3
 </pre></div>
 </div>
 <p>Next get the files for today’s activity:</p>
@@ -571,6 +599,7 @@ as the specific code, or the <em>content</em> of the files was all different, a 
 </div>
 <p>and merge them there.</p>
 <p>To get added to your main branch.</p>
+<p>Let’s make sure we’re on main</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
 </pre></div>
 </div>
@@ -605,7 +634,8 @@ nothing to commit, working tree clean
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">README</span><span class="o">.</span><span class="n">md</span>	<span class="n">about</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
-<p>Notice that it updated the .git, but not our working directory.</p>
+<p>Notice that it updated the .git, but not our working directory.
+It said <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">branch</span> <span class="pre">is</span> <span class="pre">behind</span> <span class="pre">'origin/main'</span> <span class="pre">by</span> <span class="pre">2</span> <span class="pre">commits</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
@@ -613,10 +643,63 @@ nothing to commit, working tree clean
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git pull
+Updating 162a47b..581ac5e
+Fast-forward
+ API.md                 | 1 +
+ CONTRIBUTING.md        | 1 +
+ LICENSE.md             | 1 +
+ _config.yml            | 1 +
+ _toc.yml               | 1 +
+ abstract_base_class.py | 1 +
+ alternative_classes.py | 1 +
+ example.md             | 1 +
+ helper_functions.py    | 1 +
+ important_classes.py   | 1 +
+ philosophy.md          | 1 +
+ scratch.ipynb          | 1 +
+ setup.py               | 1 +
+ tests_alt.py           | 1 +
+ tests_helpers.py       | 1 +
+ tests_imp.py           | 1 +
+ tsets_abc.py           | 1 +
+ 17 files changed, 17 insertions(+)
+ create mode 100644 API.md
+ create mode 100644 CONTRIBUTING.md
+ create mode 100644 LICENSE.md
+ create mode 100644 _config.yml
+ create mode 100644 _toc.yml
+ create mode 100644 abstract_base_class.py
+ create mode 100644 alternative_classes.py
+ create mode 100644 example.md
+ create mode 100644 helper_functions.py
+ create mode 100644 important_classes.py
+ create mode 100644 philosophy.md
+ create mode 100644 scratch.ipynb
+ create mode 100644 setup.py
+ create mode 100644 tests_alt.py
+ create mode 100644 tests_helpers.py
+ create mode 100644 tests_imp.py
+ create mode 100644 tsets_abc.py 
+</pre></div>
+</div>
 <p>this message tells us what updates were made</p>
+<p>Let’s check what we got now:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>API.md           abstract_base_class.py  setup.py
+CONTRIBUTING.md  alternative_classes.py  tests_alt.py
+LICENSE.md       example.md              tests_helpers.py
+README.md        helper_functions.py     tests_imp.py
+_config.yml      important_classes.py    tsets_abc.py
+_toc.yml         philosophy.md
+about.md         scratch.ipynb
+</pre></div>
+</div>
 </section>
 <section id="branches-review">
-<h2><span class="section-number">8.6. </span>Branches review<a class="headerlink" href="#branches-review" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>Branches review<a class="headerlink" href="#branches-review" title="Link to this heading">#</a></h2>
 <p>We can get a list of the branches we have locally</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
 </pre></div>
@@ -634,7 +717,7 @@ nothing to commit, working tree clean
 </div>
 </section>
 <section id="organizing-a-project-working-with-files">
-<h2><span class="section-number">8.7. </span>Organizing a project (working with files)<a class="headerlink" href="#organizing-a-project-working-with-files" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.6. </span>Organizing a project (working with files)<a class="headerlink" href="#organizing-a-project-working-with-files" title="Link to this heading">#</a></h2>
 <p>A common question is about how to organize projects.  While our main focus
 in this class session is the <code class="docutils literal notranslate"><span class="pre">bash</span></code> commands to do it, the <em>task</em> that we are
 going to do is to organize a hypothetical python project</p>
@@ -647,7 +730,6 @@ bash commands for moving files.</p>
 <li><p>none of these are functional files</p></li>
 <li><p>the phrases mean you can inspect them on the terminal</p></li>
 </ul>
-<p>\pin file extensions are for people; they do not specify what the file is actually written like</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>file extensions are for people; they do not specify what the file is actually written like</p>
@@ -660,29 +742,61 @@ bash commands for moving files.</p>
 <li><p>[x] cat my.file (short for concatenate)</p></li>
 <li><p>[ ] dis my.file (short for display)</p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>setup.py
+</pre></div>
+</div>
+<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>file with function with instructions for pip
+</pre></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">cat</span></code> concatenates the contents of a file to stdout, which is a special file that our terminal reads</p>
 <p>(think about in C you can write to STDOUT or STDERR, some IDEs have separate visual panels for these two places)</p>
 <p>create a new branch from main.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">organization</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b organization
+Switched to a new branch &#39;organization&#39;
+</pre></div>
+</div>
 <p>What advantage does making a new branch here give us?</p>
 <ul class="simple">
 <li><p>[ ] its required for changes</p></li>
-<li><p>[ ] allows us to test things before putting them on main</p></li>
+<li><p>[X] allows us to test things before putting them on main</p></li>
 <li><p>[ ] it creates a beautiful tree eventually</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stauts</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="p">:</span> <span class="s1">&#39;stauts&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">git</span> <span class="n">command</span><span class="o">.</span> <span class="n">See</span> <span class="s1">&#39;git --help&#39;</span><span class="o">.</span>
+
+<span class="n">The</span> <span class="n">most</span> <span class="n">similar</span> <span class="n">command</span> <span class="ow">is</span>
+        <span class="n">status</span>
+</pre></div>
+</div>
+<p>Typo…</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
 </pre></div>
 </div>
 </section>
 <section id="files-redirects-git-restore">
-<h2><span class="section-number">8.8. </span>Files, Redirects, git restore<a class="headerlink" href="#files-redirects-git-restore" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7. </span>Files, Redirects, git restore<a class="headerlink" href="#files-redirects-git-restore" title="Link to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Practice</span>
+
+<span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">Ayman</span>
+</pre></div>
+</div>
 <p>Echo allows us to send a message to stdout.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;age=36&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;age=27&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">27</span>
 </pre></div>
 </div>
 <p>Let’s connect what we are about to learn to something you have probably seen before.</p>
@@ -703,7 +817,8 @@ bash commands for moving files.</p>
 <li><p><a class="reference external" href="https://www.ibm.com/docs/en/zos/2.2.0?topic=functions-fopen-open-file">C language docs from IBM</a></p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#open">Python official docs</a></p></li>
 </ul>
-<p><em>C is not an open source language in the typical sense so there is no “official” C docs</em></p>
+<p><em>C is not an open source language in the typical sense so there is no “official” C docs</em>
+But multiple companies over the years have created compilers for the C language, so they created documntation to explain the language from their prespectivce</p>
 <p>We can <strong>redirect</strong> the contents of a command from stdout to a file in <code class="docutils literal notranslate"><span class="pre">bash</span></code>. Like file operations while programming there is a similar concept to this mode.</p>
 <p>There are two types of redirects, like there are two ways to write to a file, more generally:</p>
 <ul class="simple">
@@ -711,31 +826,60 @@ bash commands for moving files.</p>
 <li><p>append (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>)</p></li>
 </ul>
 <p>We can add contents to files with <code class="docutils literal notranslate"><span class="pre">echo</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;age=35&quot;</span> <span class="o">&gt;&gt;</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;age=27&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>README.md<span class="w"> </span>
 </pre></div>
 </div>
 <p>Then we check the contents of the file and we see that the new content is there.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>README.md<span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Practice</span>
+
+<span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">Ayman</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">27</span>
+</pre></div>
+</div>
+<p>let’s see what changes happened</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committd</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">workng</span> <span class="n">directory</span><span class="p">)</span>
+        <span class="n">modified</span><span class="p">:</span>   <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git comit -a&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>We can redirect other commands too:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span> <span class="o">&gt;&gt;</span> <span class="n">curgit</span>
 </pre></div>
 </div>
-<p>we see this created a new file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<p>Notice, We didn’t get the output from the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command this time</p>
+<p>But we can see this created a new file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>			<span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>	<span class="n">setup</span><span class="o">.</span><span class="n">py</span>
 <span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>		<span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>	<span class="n">test_alt</span><span class="o">.</span><span class="n">py</span>
-<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>		<span class="n">curgit</span>			<span class="n">test_help</span><span class="o">.</span><span class="n">py</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>		<span class="o">==</span><span class="n">curgit</span><span class="o">==</span>			<span class="n">test_help</span><span class="o">.</span><span class="n">py</span>
 <span class="n">README</span><span class="o">.</span><span class="n">md</span>		<span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>	<span class="n">test_imp</span><span class="o">.</span><span class="n">py</span>
 <span class="n">_config</span><span class="o">.</span><span class="n">yml</span>		<span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>	<span class="n">tests_abc</span><span class="o">.</span><span class="n">py</span>
-<span class="n">about</span><span class="o">.</span><span class="n">md</span>		<span class="n">overview</span><span class="o">.</span><span class="n">md</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>		<span class="n">example</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
 <p>and we can look at its contents too</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">curgit</span> 
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committd</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">workng</span> <span class="n">directory</span><span class="p">)</span>
+        <span class="n">modified</span><span class="p">:</span>   <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git comit -a&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>this is not a file we actually want, which gives us a chance to learn another new bash command:
@@ -746,19 +890,44 @@ bash commands for moving files.</p>
 <p>Note that this is a true, full, and complete DELETE, this does not put the file in your recycling bin or the apple trash can that you can recover the file from, it is <strong>gone</strong> for real.</p>
 <p>We will see soon a way around this, because git can help.</p>
 <p><em>use <code class="docutils literal notranslate"><span class="pre">rm</span></code> with great care</em></p>
-<p>Now we have made some changes we want, so let’s commit our changes.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;add age to readme&#39;</span>
+<p>Let’s confirm that it’s gone</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>           <span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>  <span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>       <span class="n">example</span><span class="o">.</span><span class="n">md</span>              <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>        <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>     <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>      <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>    <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>         <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>         <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
+</pre></div>
+</div>
+<p>Now we have made some changes we want, so let’s commit our changes.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;add age to readme&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">warning</span><span class="p">:</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">working</span> <span class="n">copy</span> <span class="n">of</span> <span class="s1">&#39;README.md&#39;</span><span class="p">,</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">rplaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">time</span> <span class="n">Git</span> <span class="n">touches</span> <span class="n">it</span>
+<span class="p">[</span><span class="n">organization</span> <span class="mi">4</span><span class="n">ccfb5f</span><span class="p">]</span> <span class="n">added</span> <span class="n">age</span> <span class="n">to</span> <span class="n">readme</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
 </pre></div>
 </div>
 <p>Now, let’s go back to thinking about redirects. We saw that with two <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> we appended to the file.  With just <em>one</em> what happens?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;age=35&quot;</span> <span class="o">&gt;</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;age = 27&quot;</span> <span class="o">&gt;</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
 <p>We check the file now</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>README.md<span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">27</span>
 </pre></div>
 </div>
 <p>It wrote over.  This would be bad, we lost content, but this is what git is for!</p>
@@ -768,16 +937,35 @@ bash commands for moving files.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committd</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">workng</span> <span class="n">directory</span><span class="p">)</span>
+        <span class="n">modified</span><span class="p">:</span>   <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git comit -a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Notice that it tells us what to do <code class="docutils literal notranslate"><span class="pre">(use</span> <span class="pre">&quot;git</span> <span class="pre">restore</span> <span class="pre">&lt;file&gt;...&quot;</span> <span class="pre">to</span> <span class="pre">discard</span> <span class="pre">changes</span> <span class="pre">in</span> <span class="pre">working</span> <span class="pre">directory)</span></code>.  The version of <a class="reference external" href="http://README.md">README.md</a> that we broke is in the working directory but not commited to git, so git refers to them as “changes” in the workign directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">restore</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>README.md<span class="w"> </span>
 </pre></div>
 </div>
 <p>this command has no output, so we can use git status to check first</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
 <p>and it looks like it did before the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> line. and we can check the file too</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>README.md<span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Practice</span>
+
+<span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">Ayman</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">27</span>
 </pre></div>
 </div>
 <p>Back how we wanted it!</p>
@@ -814,39 +1002,109 @@ We see there are sort of 5 groups of files:</p>
 </ul>
 <p>We also learn something about bash:
 using the open quote <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> then you stay inside that until you close it. when you press enter the command does not run until after you close the quotes</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>README.md<span class="w"> </span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Practice</span>
+
+<span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">Ayman</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">27</span>
+<span class="o">|</span><span class="n">file</span> <span class="o">|</span> <span class="n">contents</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="o">--|</span> <span class="o">--</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">core</span> <span class="n">abstract</span> <span class="n">classes</span> <span class="k">for</span> <span class="n">the</span> <span class="n">project</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">utitly</span> <span class="n">funtions</span> <span class="n">that</span> <span class="n">are</span> <span class="n">called</span> <span class="n">by</span> <span class="n">many</span> <span class="n">classes</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">classes</span> <span class="n">that</span> <span class="n">inherit</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">abc</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">classes</span> <span class="n">that</span> <span class="n">inherit</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">abc</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="n">the</span> <span class="n">info</span> <span class="n">on</span> <span class="n">how</span> <span class="n">the</span> <span class="n">code</span> <span class="n">can</span> <span class="n">be</span> <span class="n">reused</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="n">instructions</span> <span class="k">for</span> <span class="n">how</span> <span class="n">people</span> <span class="n">can</span> <span class="n">contribute</span> <span class="n">to</span> <span class="n">the</span> <span class="n">project</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">file</span> <span class="k">with</span> <span class="n">function</span> <span class="k">with</span> <span class="n">instructions</span> <span class="k">for</span> <span class="n">pip</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">test_abc</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">tests</span> <span class="k">for</span> <span class="n">constructors</span> <span class="ow">and</span> <span class="n">methods</span> <span class="ow">in</span> <span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">tests</span> <span class="k">for</span> <span class="n">constructors</span> <span class="ow">and</span> <span class="n">methods</span> <span class="ow">in</span> <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">tests</span> <span class="k">for</span> <span class="n">constructors</span> <span class="ow">and</span> <span class="n">methods</span> <span class="ow">in</span> <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">tests</span> <span class="k">for</span> <span class="n">constructors</span> <span class="ow">and</span> <span class="n">methods</span> <span class="ow">in</span> <span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">API</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="n">jupyterbook</span> <span class="n">file</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">api</span> <span class="n">documentation</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">_config</span><span class="o">.</span><span class="n">yml</span> <span class="o">|</span> <span class="n">jupyterbook</span> <span class="n">config</span> <span class="k">for</span> <span class="n">documentation</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span> <span class="o">|</span> <span class="n">jupyter</span> <span class="n">book</span> <span class="n">toc</span> <span class="n">file</span> <span class="k">for</span> <span class="n">documentation</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="n">overview</span> <span class="n">of</span> <span class="n">how</span> <span class="n">the</span> <span class="n">code</span> <span class="ow">is</span> <span class="n">organized</span> <span class="k">for</span> <span class="n">docs</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">example</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="n">myst</span> <span class="n">notebook</span> <span class="n">example</span> <span class="n">of</span> <span class="n">using</span> <span class="n">the</span> <span class="n">code</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span> <span class="o">|</span> <span class="n">jupyter</span> <span class="n">notebook</span> <span class="kn">from</span><span class="w"> </span><span class="nn">dev</span> <span class="o">|</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>           <span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>  <span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>       <span class="n">example</span><span class="o">.</span><span class="n">md</span>              <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>        <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>     <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>      <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>    <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>         <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>         <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
 </pre></div>
 </div>
 </section>
 <section id="getting-organized">
-<h2><span class="section-number">8.9. </span>Getting organized<a class="headerlink" href="#getting-organized" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.8. </span>Getting organized<a class="headerlink" href="#getting-organized" title="Link to this heading">#</a></h2>
 <p>First, we’ll make a directory with <code class="docutils literal notranslate"><span class="pre">mkdir</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">docs</span>
 </pre></div>
 </div>
-<p>next we will move a file there with <code class="docutils literal notranslate"><span class="pre">mv</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">overview</span><span class="o">.</span><span class="n">md</span> <span class="n">docs</span><span class="o">/</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
 </pre></div>
 </div>
-<p>what this does is change the path of the file from <code class="docutils literal notranslate"><span class="pre">.../github-inclass-AymanBx/overview.md</span></code> to <code class="docutils literal notranslate"><span class="pre">.../github-inclass-AymanBx/docs/overview.md</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>           <span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>  <span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>       <span class="n">docs</span><span class="o">/</span>                   <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>        <span class="n">example</span><span class="o">.</span><span class="n">md</span>              <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>      <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>     <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>         <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>    <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>         <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>next we will move a file there with <code class="docutils literal notranslate"><span class="pre">mv</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">example</span><span class="o">.</span><span class="n">md</span> <span class="n">docs</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>what this does is change the path of the file from <code class="docutils literal notranslate"><span class="pre">.../github-inclass-AymanBx/example.md</span></code> to <code class="docutils literal notranslate"><span class="pre">.../github-inclass-AymanBx/docs/example.md</span></code></p>
 <p>This doesn’t return anything, but we can see the effect with <code class="docutils literal notranslate"><span class="pre">ls</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>                  <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>
+<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>         <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>              <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>               <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>             <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>                <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>                <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+<span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+<span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+<span class="n">docs</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">ls</span></code> with a relative or absolute path of a directory to list tht location instead of our current working directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">docs</span><span class="o">/</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>docs/
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">overview</span><span class="o">.</span><span class="n">md</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
 <section id="moving-multiple-files-with-patterns">
-<h3><span class="section-number">8.9.1. </span>Moving multiple files with patterns<a class="headerlink" href="#moving-multiple-files-with-patterns" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.8.1. </span>Moving multiple files with patterns<a class="headerlink" href="#moving-multiple-files-with-patterns" title="Link to this heading">#</a></h3>
 <p>let’s look at the list of files again.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>                  <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>
+<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>         <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>              <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>               <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">_config</span><span class="o">.</span><span class="n">yml</span>             <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>                <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>                <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+<span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+<span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+<span class="n">docs</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>What patterns are there in the file names that relate to what the file is for?</p>
@@ -857,11 +1115,25 @@ files that are both for the documentation.</p>
 </pre></div>
 </div>
 <p>Again, we confirm it worked by seeing that they are no longer in the working directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>                  <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
+<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>         <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>              <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>               <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>                <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+<span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+<span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+<span class="n">docs</span><span class="o">/</span>                   <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+<span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>and that they <em>are</em> in <code class="docutils literal notranslate"><span class="pre">docs</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">docs</span><span class="o">/</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>docs/
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>  <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>  <span class="n">example</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
 <p>We see that most of the test files start with <code class="docutils literal notranslate"><span class="pre">tests_</span></code> but one starts with
@@ -869,30 +1141,74 @@ files that are both for the documentation.</p>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">mv</span></code> to change the name as well. This is because “moving” a file and
 is really about changing its path, not actually copying it from one location to
 another and the file name is a part of the path.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span> <span class="n">tests_abc</span><span class="o">.</span><span class="n">py</span> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mv<span class="w"> </span>tsets_abc.py<span class="w"> </span>tests_abc.py<span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>                  <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
+<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>         <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>              <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>               <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>                <span class="n">test_abc</span><span class="o">.</span><span class="n">py</span>
+<span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+<span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+<span class="n">docs</span><span class="o">/</span>                   <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+<span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>This changes the path from <code class="docutils literal notranslate"><span class="pre">.../tsets_abc.py</span></code> to <code class="docutils literal notranslate"><span class="pre">.../tests_abc.py</span></code> to. It is doing the same thing as when we use it to move a file from one folder to another folder,  but changing a different part of the path.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
-</pre></div>
-</div>
 <p>Now we make a new folder:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">tests</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>tests
 </pre></div>
 </div>
 <p>and move all of the test files there:</p>
 <p>this is why good file naming is important even if you have not organized the
 whole project yet, you can use the good conventions to help yourself later.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">test_</span><span class="o">*</span> <span class="n">tests</span><span class="o">/</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mv<span class="w"> </span>test_*<span class="w"> </span>tests/
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>                  <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
+<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>         <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>              <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>               <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>                <span class="n">tests</span><span class="o">/</span>
+<span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+<span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+<span class="n">docs</span><span class="o">/</span>                   <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+<span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Nothing changed because my pattern doesn’t match any existing patterns.
+I typed <code class="docutils literal notranslate"><span class="pre">test_*</span></code> instead of <code class="docutils literal notranslate"><span class="pre">tests_*</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mv<span class="w"> </span>tests_*<span class="w"> </span>tests/
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>           <span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>  <span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>       <span class="n">docs</span><span class="o">/</span>                   <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>        <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>     <span class="n">tests</span><span class="o">/</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>         <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>tests
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test_abc</span><span class="o">.</span><span class="n">py</span>   <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+<span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="hidden-files">
-<h2><span class="section-number">8.10. </span>Hidden files<a class="headerlink" href="#hidden-files" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.9. </span>Hidden files<a class="headerlink" href="#hidden-files" title="Link to this heading">#</a></h2>
 <p>We are going to make a special hidden file and an extra one. We will use the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="o">.</span><span class="n">secret</span> <span class="o">.</span><span class="n">gitignore</span>
 </pre></div>
@@ -903,112 +1219,187 @@ whole project yet, you can use the good conventions to help yourself later.</p>
 <li><p>lists in <code class="docutils literal notranslate"><span class="pre">bash</span></code> are separated by spaces and do not require brackets</p></li>
 </ul>
 <p>The <strong>list</strong> <code class="docutils literal notranslate"><span class="pre">.secret</span> <span class="pre">.gitignore</span></code> is a single <code class="docutils literal notranslate"><span class="pre">ARG</span></code> that was passed to the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">API</span><span class="o">.</span><span class="n">md</span>           <span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+<span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>  <span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>       <span class="n">docs</span><span class="o">/</span>                   <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>        <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>     <span class="n">tests</span><span class="o">/</span>
+<span class="n">about</span><span class="o">.</span><span class="n">md</span>         <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>We can’t see the files. Why is that?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-a
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span>          <span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>         <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span>
+<span class="o">../</span>         <span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>              <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span>
+<span class="o">.</span><span class="n">git</span><span class="o">/</span>       <span class="n">README</span><span class="o">.</span><span class="n">md</span>               <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span>
+<span class="o">.</span><span class="n">github</span><span class="o">/</span>    <span class="n">about</span><span class="o">.</span><span class="n">md</span>                <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="o">.</span><span class="n">gitignore</span>  <span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span>  <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<span class="o">.</span><span class="n">secrets</span>    <span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span>  <span class="n">tests</span><span class="o">/</span>
+<span class="n">API</span><span class="o">.</span><span class="n">md</span>      <span class="n">docs</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>We need the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option to ask the command to show <strong>a</strong>ll files</p>
 <p>lets put some content in the secret (it will actually <em>not</em> be going to GitHub)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;my dev secret&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">.</span><span class="n">secret</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;my dev secret&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.secret
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>.secrets
 </pre></div>
 </div>
-<p>gitignore lets us <em>not</em> track certain files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my</span> <span class="n">dev</span> <span class="n">secret</span>
+</pre></div>
+</div>
+<p>Let’s check the status of our project</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">example</span><span class="o">.</span><span class="n">md</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">gitignore</span>
+        <span class="o">.</span><span class="n">secrets</span>
+        <span class="n">docs</span><span class="o">/</span>
+        <span class="n">tests</span><span class="o">/</span>
+
+<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git commit -a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Notice that from git’s prespective, the files we moved were deleted from their original path, and saw them as new files in their respective folders. git just doesn’t recognize moves (changes of paths)</p>
+</div>
+<p>Also notice that it’s only showing folders as “untracked” files. It isn’t showing the separate files in them and that’s because all the files in them are new and untracked yet.</p>
+<p>.gitignore lets us <em>not</em> track certain files</p>
+<p>Making it so that git doesn’t track that file’s changes anymore…</p>
 <p>let’s ignore that <code class="docutils literal notranslate"><span class="pre">.secret</span></code> file</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;.secret&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">.</span><span class="n">gitigore</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<p>gitignore works on patterns too!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">my_secrets</span>
-<span class="n">cd</span> <span class="n">my_secrets</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="n">e</span> <span class="n">f</span> 
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;my_secrets/*&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">.</span><span class="n">gitignore</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
-</pre></div>
-</div>
-</section>
-<section id="copying-a-file">
-<h2><span class="section-number">8.11. </span>Copying a file<a class="headerlink" href="#copying-a-file" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">cp</span></code> copies</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>README.md<span class="w"> </span>docs/overview.md
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
-</pre></div>
-</div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch organization</span>
-<span class="go">Your branch is up to date with &#39;origin/organization&#39;.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">example</span><span class="o">.</span><span class="n">md</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
 
-<span class="go">Untracked files:</span>
-<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
-<span class="go">	docs/overview.md</span>
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">gitignore</span>
+        <span class="n">docs</span><span class="o">/</span>
+        <span class="n">tests</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Notice that .secrets is gone from the list of untracked files.</p>
+<p>.gitignore works on patterns too!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>my_secrets
+<span class="nb">cd</span><span class="w"> </span>my_secrets
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>a<span class="w"> </span>b<span class="w"> </span>c<span class="w"> </span>d<span class="w"> </span>e<span class="w"> </span>f<span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">example</span><span class="o">.</span><span class="n">md</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
 
-<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">gitignore</span>
+        <span class="n">docs</span><span class="o">/</span>
+        <span class="n">my_secrets</span><span class="o">/</span>
+        <span class="n">tests</span><span class="o">/</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;my_secrets/*&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
 </pre></div>
 </div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;include readme content&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>On branch organization
+Changes not staged for commit:
+  (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+        deleted:    _config.yml
+        deleted:    _toc.yml
+        deleted:    example.md
+        deleted:    tests_alt.py
+        deleted:    tests_helpers.py
+        deleted:    tests_imp.py
+        deleted:    tsets_abc.py
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        .gitignore
+        docs/
+        tests/```
+
+
++++{&quot;lesson_part&quot;: &quot;main&quot;}
+## Copying a file 
+
+`cp` copies 
+```bash
+
+cp README.md docs/overview.md
 </pre></div>
 </div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[organization 1e2ab92] include readmen content</span>
-<span class="go"> 1 file changed, 24 insertions(+)</span>
-<span class="go"> create mode 100644 docs/overview.md</span>
+<p>Notice that we copied the contents of the file and put it in a newly named file called <code class="docutils literal notranslate"><span class="pre">overview.md</span></code> all at once</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>docs
 </pre></div>
 </div>
-</section>
-<section id="experience-badge-with-a-file">
-<h2><span class="section-number">8.12. </span>experience badge with a file<a class="headerlink" href="#experience-badge-with-a-file" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Run the action to create the branch for today’s experience badge</p></li>
-<li><p>Open a PR to propose changes from your prepare work brach <em>to</em> the branch for today’s experience badge</p></li>
-<li><p>merge that PR</p></li>
-<li><p>See that in your experience badge, the prepare work is now visible</p></li>
-<li><p>fill in your experience badge</p></li>
-<li><p>request a review from &#64;instructors</p></li>
-</ol>
-</section>
-<section id="recap">
-<h2><span class="section-number">8.13. </span>Recap<a class="headerlink" href="#recap" title="Link to this heading">#</a></h2>
-<p>Why do I need a terminal</p>
-<ol class="arabic simple">
-<li><p>replication/automation</p></li>
-<li><p>it’s always there and doesn’t change</p></li>
-<li><p>it’s faster one you know it (also see above)</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>So, is the shell the feature that interacts with the operating system and then the terminal is the gui that interacts with the shell?
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>  <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>  <span class="n">example</span><span class="o">.</span><span class="n">md</span>  <span class="n">overview</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">your</span> <span class="n">push</span> <span class="n">gets</span> <span class="n">rejected</span><span class="p">,</span> <span class="n">read</span> <span class="n">the</span> <span class="n">hints</span><span class="p">,</span> <span class="n">it</span> <span class="n">probably</span> <span class="n">has</span> <span class="n">the</span> <span class="n">answer</span><span class="o">.</span>  <span class="n">We</span> <span class="n">will</span>
-<span class="n">come</span> <span class="n">back</span> <span class="n">to</span> <span class="n">that</span> <span class="n">error</span> <span class="n">though</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>docs/overview.md
 </pre></div>
 </div>
-<p>Do your experience badge.</p>
-<p>What is one question you have about today’s class?</p>
-<p>How was the pace of today’s class</p>
-<ul class="simple">
-<li><p>[ ] way too slow</p></li>
-<li><p>[ ] a little slow</p></li>
-<li><p>[ ] just right</p></li>
-<li><p>[ ] a little fast</p></li>
-<li><p>[ ] way too fast</p></li>
-</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Practice</span>
+
+<span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">Ayman</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">27</span>
+</pre></div>
+</div>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">8.14. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.10. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
 <p>Save your history with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">history</span> <span class="o">&gt;</span> <span class="n">activity</span><span class="o">-</span><span class="mi">2025</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mf">20.</span><span class="n">md</span>
 </pre></div>
@@ -1023,6 +1414,25 @@ ls<span class="w"> </span>docs/<span class="w"> </span>&gt;&gt;<span class="w"> 
 </pre></div>
 </div>
 <p>then edit that file (on terminal, any text editor, or an IDE) to make sure it only includes things from this activity.</p>
+</section>
+<section id="prepare-for-next-class">
+<h2><span class="section-number">8.11. </span>Prepare for next class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+</section>
+<section id="badges">
+<h2><span class="section-number">8.12. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Review</label><div class="sd-tab-content docutils">
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Practice</label><div class="sd-tab-content docutils">
+</div>
+</div>
+</section>
+<section id="questions-after-class">
+<h2><span class="section-number">8.13. </span>Questions after class<a class="headerlink" href="#questions-after-class" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1092,21 +1502,20 @@ ls<span class="w"> </span>docs/<span class="w"> </span>&gt;&gt;<span class="w"> 
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-gpg-signature">8.1. What is a GPG signature?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2. When do I get an advantage from git and bash?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-stage">8.3. Setting the stage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-references">8.4. Important references</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">8.5. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-review">8.6. Branches review</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-a-project-working-with-files">8.7. Organizing a project (working with files)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-redirects-git-restore">8.8. Files, Redirects, git restore</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-organized">8.9. Getting organized</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-multiple-files-with-patterns">8.9.1. Moving multiple files with patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-references">8.3. Important references</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">8.4. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branches-review">8.5. Branches review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-a-project-working-with-files">8.6. Organizing a project (working with files)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-redirects-git-restore">8.7. Files, Redirects, git restore</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-organized">8.8. Getting organized</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-multiple-files-with-patterns">8.8.1. Moving multiple files with patterns</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-files">8.10. Hidden files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-a-file">8.11. Copying a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-badge-with-a-file">8.12. experience badge with a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">8.13. Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">8.14. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-files">8.9. Hidden files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">8.10. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">8.11. Prepare for next class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">8.12. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">8.13. Questions after class</a></li>
 </ul>
   </nav></div>
 
