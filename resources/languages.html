@@ -512,6 +512,12 @@ document.write(`
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cat</span></code></p></td>
 <td><p>concatenate a file to standard out (show the file contents)</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">&lt;old_path&gt;</span> <span class="pre">&lt;new_path&gt;</span></code></p></td>
+<td><p>Moves file from path to another (can be used to rename only)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">&lt;file&gt;</span> <span class="pre">&lt;path&gt;</span></code></p></td>
+<td><p>Copies the content of the file from into a new file (can be with or without the same name)</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -557,6 +563,12 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">'msg'</span></code></p></td>
 <td><p>the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option adds modified files (but not untracked)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">&lt;file&gt;</span></code></p></td>
+<td><p>Undo changes made to file since last commit</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">--staged</span> <span class="pre">&lt;file&gt;</span></code></p></td>
+<td><p>Remove file from staging area to be commited without undoing the changes done to it</p></td>
 </tr>
 </tbody>
 </table>

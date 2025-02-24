@@ -36,6 +36,10 @@
   - remove (delete) `file`
 * - `cat`
   - concatenate a file to standard out (show the file contents)
+* - `mv <old_path> <new_path>`
+  - Moves file from path to another (can be used to rename only)
+* - `cp <file> <path>`
+  - Copies the content of the file from into a new file (can be with or without the same name)
 ```
 
 ## git commands
@@ -66,4 +70,8 @@
   - apply or fetch and apply changes from a remote branch to a local branch
 * - `git commit -a -m 'msg'`
   - the `-a` option adds modified files (but not untracked)
+* - `git restore <file>`
+  - Undo changes made to file since last commit
+* - `git restore --staged <file>`
+  - Remove file from staging area to be commited without undoing the changes done to it  
 ```
