@@ -1,0 +1,1476 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9. Unix Philosophy &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css?v=57efbcaa" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-02-25';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="8. When do I get an advantage from git and bash?" href="2025-02-20.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Computer Systems and Programming Tools - Home"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Computer Systems and Programming Tools - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Deadlines and Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Detailed Grade Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2025-01-23.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-01-28.html">2. More orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-01-30.html">3. Why Systems?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-04.html">4. Git Offline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-11.html">5. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-13.html">6. Terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-18.html">7. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-20.html">8. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Unix Philosophy</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/tools.html">Other Course Software/tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/fall2022/resources/testimonials.html">Advice from Fall 2022 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2023/resources/testimonials.html">Advice from Spring 2023 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/fall2023/resources/testimonials.html">Advice from Fall 2023 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025/edit/main/notes/2025-02-25.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025/issues/new?title=Issue%20on%20page%20%2Fnotes/2025-02-25.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2025-02-25.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Unix Philosophy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">9. Unix Philosophy</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-if-we-copy-to-a-folder-that-has-a-file-of-the-same-name">9.1. What happens if we copy to a folder that has a file of the same name?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-for-computer-systems">9.2. Why do we need this for computer systems?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-systems-are-designed-by-people">9.2.1. Computer Systems are designed by people</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-matters">9.2.2. Context Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-is-relative">9.2.3. Optimal is relative</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-these-tools-like-this">10. Why are these tools like this?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">10.1. Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design">10.2. Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-we-study-design">10.2.1. Why should we study design?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-studying-developer-tools">10.2.2. Why are we studying developer tools?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.3. Unix Philosophy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#philosophy-in-practice-using-pipes">10.4. Philosophy in practice, using pipes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-from-source">10.4.1. Installing from source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-design">10.4.2. Interactive Design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">10.5. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">10.6. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">10.7. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">10.8. Questions After Today’s Class</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="unix-philosophy">
+<h1><span class="section-number">9. </span>Unix Philosophy<a class="headerlink" href="#unix-philosophy" title="Link to this heading">#</a></h1>
+<p>today we will continue organizing the github inclass repo as our working example.</p>
+<p>Now we will add some text to the readme</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">echo</span> <span class="s2">&quot;|file | contents |</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="o">--|</span> <span class="o">--</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">core</span> <span class="n">abstract</span> <span class="n">classes</span> <span class="k">for</span> <span class="n">the</span> <span class="n">project</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">utitly</span> <span class="n">funtions</span> <span class="n">that</span> <span class="n">are</span> <span class="n">called</span> <span class="n">by</span> <span class="n">many</span> <span class="n">classes</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">classes</span> <span class="n">that</span> <span class="n">inherit</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">abc</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">classes</span> <span class="n">that</span> <span class="n">inherit</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">abc</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="n">the</span> <span class="n">info</span> <span class="n">on</span> <span class="n">how</span> <span class="n">the</span> <span class="n">code</span> <span class="n">can</span> <span class="n">be</span> <span class="n">reused</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="n">instructions</span> <span class="k">for</span> <span class="n">how</span> <span class="n">people</span> <span class="n">can</span> <span class="n">contribute</span> <span class="n">to</span> <span class="n">the</span> <span class="n">project</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">file</span> <span class="k">with</span> <span class="n">function</span> <span class="k">with</span> <span class="n">instructions</span> <span class="k">for</span> <span class="n">pip</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">test_abc</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">tests</span> <span class="k">for</span> <span class="n">constructors</span> <span class="ow">and</span> <span class="n">methods</span> <span class="ow">in</span> <span class="n">abstract_base_class</span><span class="o">.</span><span class="n">py</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">tests</span> <span class="k">for</span> <span class="n">constructors</span> <span class="ow">and</span> <span class="n">methods</span> <span class="ow">in</span> <span class="n">helper_functions</span><span class="o">.</span><span class="n">py</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">tests</span> <span class="k">for</span> <span class="n">constructors</span> <span class="ow">and</span> <span class="n">methods</span> <span class="ow">in</span> <span class="n">important_classes</span><span class="o">.</span><span class="n">py</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span> <span class="o">|</span> <span class="n">tests</span> <span class="k">for</span> <span class="n">constructors</span> <span class="ow">and</span> <span class="n">methods</span> <span class="ow">in</span> <span class="n">alternative_classes</span><span class="o">.</span><span class="n">py</span><span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">API</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="n">jupyterbook</span> <span class="n">file</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">api</span> <span class="n">documentation</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">_config</span><span class="o">.</span><span class="n">yml</span> <span class="o">|</span> <span class="n">jupyterbook</span> <span class="n">config</span> <span class="k">for</span> <span class="n">documentation</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span> <span class="o">|</span> <span class="n">jupyter</span> <span class="n">book</span> <span class="n">toc</span> <span class="n">file</span> <span class="k">for</span> <span class="n">documentation</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">philosophy</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="n">overview</span> <span class="n">of</span> <span class="n">how</span> <span class="n">the</span> <span class="n">code</span> <span class="ow">is</span> <span class="n">organized</span> <span class="k">for</span> <span class="n">docs</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">example</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="n">myst</span> <span class="n">notebook</span> <span class="n">example</span> <span class="n">of</span> <span class="n">using</span> <span class="n">the</span> <span class="n">code</span> <span class="o">|</span>
+<span class="o">&gt;</span> <span class="o">|</span> <span class="n">scratch</span><span class="o">.</span><span class="n">ipynb</span> <span class="o">|</span> <span class="n">jupyter</span> <span class="n">notebook</span> <span class="kn">from</span><span class="w"> </span><span class="nn">dev</span> <span class="o">|</span><span class="s2">&quot; &gt;&gt; README.md</span>
+</pre></div>
+</div>
+<section id="what-happens-if-we-copy-to-a-folder-that-has-a-file-of-the-same-name">
+<h2><span class="section-number">9.1. </span>What happens if we copy to a folder that has a file of the same name?<a class="headerlink" href="#what-happens-if-we-copy-to-a-folder-that-has-a-file-of-the-same-name" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>overview.md
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello hello... &quot;</span><span class="w"> </span>&gt;<span class="w"> </span>overview.md
+cat<span class="w"> </span>overview.md
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hello</span> <span class="n">hello</span><span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>docs/overview.md
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Practice</span>
+
+<span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">Ayman</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">27</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>overview.md<span class="w"> </span>docs/overview.md
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>docs/overview.md
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hello</span> <span class="n">hello</span><span class="o">...</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Terminal is not going to tell you “There’s already a file with the same name pick the one you want to keep or keep both etc…”
+Terminal expects you to be aware and responsible of your actions.</p>
+</div>
+<p>Let’s fix it with the new content we just added to readme</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>README.md<span class="w"> </span>docs/overview.md
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Not only did we copy the <strong>content</strong> of the README file to a new location. We gave the new file a different name at the same time.
+If using File Explorer you’d have to <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> from one place , <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">V</span></code> into the new place, then rename the file from <a class="reference external" href="http://README.md">README.md</a> to <a class="reference external" href="http://overview.md">overview.md</a>.
+We did all of that in one command!!</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch organization</span>
+<span class="go">Your branch is up to date with &#39;origin/organization&#39;.</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">	docs/overview.md</span>
+
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)On branch organization</span>
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">        deleted:    _config.yml</span>
+<span class="go">        deleted:    _toc.yml</span>
+<span class="go">        deleted:    example.md</span>
+<span class="go">        deleted:    tests_alt.py</span>
+<span class="go">        deleted:    tests_helpers.py</span>
+<span class="go">        deleted:    tests_imp.py</span>
+<span class="go">        deleted:    tsets_abc.py</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">        .gitignore</span>
+<span class="go">        README.md</span>
+<span class="go">        docs/</span>
+<span class="go">        tests/</span>
+
+<span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
+</pre></div>
+</div>
+<p>If I edited multiple files in a repo, how can I stage all of them?</p>
+<ul class="simple">
+<li><p>[ ] git add f1, f2, f3</p></li>
+<li><p>[x] git add .</p></li>
+<li><p>[ ] git add -a</p></li>
+<li><p>[ ] git add</p></li>
+</ul>
+<p>If I edited multiple files in a repo, why would I want NOT to stage all of them at once?</p>
+<p>We might not want to add everything all at once because we think specific changes ought to have their own commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>README.md
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+        <span class="n">modified</span><span class="p">:</span>   <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">example</span><span class="o">.</span><span class="n">md</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">gitignore</span>
+        <span class="n">docs</span><span class="o">/</span>
+        <span class="n">tests</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Added overview of files in readme.md&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch organization</span>
+<span class="go">Your branch is up to date with &#39;origin/organization&#39;.</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">	docs/overview.md</span>
+
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)On branch organization</span>
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go">        deleted:    _config.yml</span>
+<span class="go">        deleted:    _toc.yml</span>
+<span class="go">        deleted:    example.md</span>
+<span class="go">        deleted:    tests_alt.py</span>
+<span class="go">        deleted:    tests_helpers.py</span>
+<span class="go">        deleted:    tests_imp.py</span>
+<span class="go">        deleted:    tsets_abc.py</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">        .gitignore</span>
+<span class="go">        README.md</span>
+<span class="go">        docs/</span>
+<span class="go">        tests/</span>
+
+<span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
+</pre></div>
+</div>
+<p>Notice that the other files remain unchanged.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>*.yml
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+        <span class="n">renamed</span><span class="p">:</span>    <span class="n">_config</span><span class="o">.</span><span class="n">yml</span> <span class="o">-&gt;</span> <span class="n">docs</span><span class="o">/</span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">renamed</span><span class="p">:</span>    <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span> <span class="o">-&gt;</span> <span class="n">docs</span><span class="o">/</span><span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
+
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">example</span><span class="o">.</span><span class="n">md</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">gitignore</span>
+        <span class="n">docs</span><span class="o">/</span><span class="n">example</span><span class="o">.</span><span class="n">md</span>
+        <span class="n">docs</span><span class="o">/</span><span class="n">overview</span><span class="o">.</span><span class="n">md</span>
+        <span class="n">tests</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Notice how when we added <strong>all</strong> yml files. git added the new ones and the deleted ones (staged the deletion of the ones that were moved)
+It then recognized the moving of the files into the docs folder as “renaming” with two different paths being the old and new names.</p>
+<p>Notice also how now it specifies that there are two more files that are new to the docs/ directory and aren’t staged. One of which was moved from the main directory (<a class="reference external" href="http://example.md">example.md</a>)</p>
+<p>We also notice that two new files start with docs/
+Is there a quick way to add all of them?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>docs/*
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+        <span class="n">renamed</span><span class="p">:</span>    <span class="n">_config</span><span class="o">.</span><span class="n">yml</span> <span class="o">-&gt;</span> <span class="n">docs</span><span class="o">/</span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">renamed</span><span class="p">:</span>    <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span> <span class="o">-&gt;</span> <span class="n">docs</span><span class="o">/</span><span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">docs</span><span class="o">/</span><span class="n">example</span><span class="o">.</span><span class="n">md</span>
+        <span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">docs</span><span class="o">/</span><span class="n">overview</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">example</span><span class="o">.</span><span class="n">md</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">gitignore</span>
+        <span class="n">tests</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>example.md
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">organization</span>
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+        <span class="n">renamed</span><span class="p">:</span>    <span class="n">_config</span><span class="o">.</span><span class="n">yml</span> <span class="o">-&gt;</span> <span class="n">docs</span><span class="o">/</span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">renamed</span><span class="p">:</span>    <span class="n">_toc</span><span class="o">.</span><span class="n">yml</span> <span class="o">-&gt;</span> <span class="n">docs</span><span class="o">/</span><span class="n">_toc</span><span class="o">.</span><span class="n">yml</span>
+        <span class="n">renamed</span><span class="p">:</span>    <span class="n">example</span><span class="o">.</span><span class="n">md</span> <span class="o">-&gt;</span> <span class="n">docs</span><span class="o">/</span><span class="n">example</span><span class="o">.</span><span class="n">md</span>
+        <span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">docs</span><span class="o">/</span><span class="n">overview</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_alt</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_helpers</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tests_imp</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">deleted</span><span class="p">:</span>    <span class="n">tsets_abc</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">gitignore</span>
+        <span class="n">tests</span><span class="o">/</span>
+
+</pre></div>
+</div>
+<p>How do you feel about learning the social aspects of computing?</p>
+<p><em>pick one or send your own</em></p>
+<ul class="simple">
+<li><p>[ ] it helps me feel included and understand better</p></li>
+<li><p>[ ] it is practically useful, but I do not enjoy it</p></li>
+<li><p>[ ] I think it is pointless and should not be in CS courses</p></li>
+</ul>
+<!-- added from previous lecture -->
+</section>
+<section id="why-do-we-need-this-for-computer-systems">
+<h2><span class="section-number">9.2. </span>Why do we need this for computer systems?<a class="headerlink" href="#why-do-we-need-this-for-computer-systems" title="Link to this heading">#</a></h2>
+<section id="computer-systems-are-designed-by-people">
+<h3><span class="section-number">9.2.1. </span>Computer Systems are designed by people<a class="headerlink" href="#computer-systems-are-designed-by-people" title="Link to this heading">#</a></h3>
+<p>Computer Science is not a natural science like biology or physics where we try
+to understand some aspect of the world that we live in.  Computer Science as a
+discipline, like algorithms, mostly derives from Math.</p>
+<p>So, when we study computer science, while parts of it are limited by physics, most of it is essentially an
+imaginary world that is made by people.  Understanding how people think, both
+generally, and common patterns within the community of programmers
+understand how things work and why they are the way they are.  The why can also
+make it easier to remember, or, it can help you know what things you can find
+alternatives for, or even where you might invent a whole new thing that is
+better in some way.</p>
+<p>Of course, not <em>all</em> programmers think the same way, but when
+people spend time together and communicate, they start to share patterns in how
+they think. So, while you do <strong>not</strong> have to think the same way as these patterns,
+knowing what they are will help you reading code, and understanding things.</p>
+</section>
+<section id="context-matters">
+<h3><span class="section-number">9.2.2. </span>Context Matters<a class="headerlink" href="#context-matters" title="Link to this heading">#</a></h3>
+<p>This context of how things were developed can influence how we understand it.
+We will also talk about the history of computing as we go through different
+topics in class so that we can build that context up.</p>
+</section>
+<section id="optimal-is-relative">
+<h3><span class="section-number">9.2.3. </span>Optimal is relative<a class="headerlink" href="#optimal-is-relative" title="Link to this heading">#</a></h3>
+<p>The “best” way to do something is always relative to the context.  “Best” is a
+vague term.  It could be most computationally efficient theoretically,
+fastest to run on a particular type of hardware, or easiest for another programmer
+to read.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="why-are-these-tools-like-this">
+<h1><span class="section-number">10. </span>Why are these tools like this?<a class="headerlink" href="#why-are-these-tools-like-this" title="Link to this heading">#</a></h1>
+<section id="discussion">
+<h2><span class="section-number">10.1. </span>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
+<p>At your tables:</p>
+<ul class="simple">
+<li><p>share your responses to the work in the prep work for today’s topic</p></li>
+<li><p>discuss any similiarities or differences</p></li>
+<li><p>if any, send back questions you have</p></li>
+<li><p>if any, send points you want to share to the whole class</p></li>
+</ul>
+<p>How did the  processes, decisions, and practices that people at your table brought up compare to what you thought of?</p>
+</section>
+<section id="design">
+<h2><span class="section-number">10.2. </span>Design<a class="headerlink" href="#design" title="Link to this heading">#</a></h2>
+<p>In CS we tend to be more implicit about design, but that makes it hard to learn and keep track of.</p>
+<p>Today’s goal is to be more explicit, disucssing some principles and seeing how you have already interacted wit them.</p>
+<p>Today we’re going to do a bit more practical stuff, but we are also going to start to get into the philosophy of how things are organized.</p>
+<p>Understanding the context and principles will help you:</p>
+<ul class="simple">
+<li><p>remember how to do things</p></li>
+<li><p>form reliable hypotheses about how to fix problems you have not seen before</p></li>
+<li><p>help you understand when you should do things as they have always been done and when you should challenge and change things.</p></li>
+</ul>
+<section id="why-should-we-study-design">
+<h3><span class="section-number">10.2.1. </span>Why should we study design?<a class="headerlink" href="#why-should-we-study-design" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>it is easy to get distracted by implementation, syntax, algorithms</p></li>
+<li><p>but the core <em>principles</em> of design organize ideas into simpler rules</p></li>
+</ul>
+</section>
+<section id="why-are-we-studying-developer-tools">
+<h3><span class="section-number">10.2.2. </span>Why are we studying developer tools?<a class="headerlink" href="#why-are-we-studying-developer-tools" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>The best way to learn design is to study examples [Schon1984, Petre2016], and some of the best examples of software design come from the tools programmers use in their own work.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://third-bit.com/sdxjs/">Software design by example</a></p>
+<p><em>note</em></p>
+<ul class="simple">
+<li><p>we will talk about some history in this course</p></li>
+</ul>
+<p>This is because:</p>
+<ul class="simple">
+<li><p>I think that history is important context for making decisions</p></li>
+<li><p>when people are deeply influential, ignoring their role in history is not effective, we cannot undo what they did</p></li>
+<li><p>we do not have to admire them or even say their names to acknowledge the work</p></li>
+<li><p>computing technology has been used in Very Bad ways and in Definitely Good ways</p></li>
+</ul>
+</section>
+</section>
+<section id="id1">
+<h2><span class="section-number">10.3. </span>Unix Philosophy<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>sources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Unix_philosophy">wiki</a></p></li>
+<li><p><a class="reference external" href="http://www.catb.org/~esr/writings/taoup/html/ch01s06.html">a free book</a></p></li>
+<li><p>composability over monolithic design</p></li>
+<li><p>social conventions</p></li>
+</ul>
+<p>The tenets:</p>
+<ol class="arabic simple">
+<li><p>Make it easy to write, test, and run programs.</p></li>
+<li><p>Interactive use instead of batch processing.</p></li>
+<li><p>Economy and elegance of design due to size constraints (“salvation through suffering”).</p></li>
+<li><p>Self-supporting system: all Unix software is maintained under Unix.</p></li>
+</ol>
+<p>For better or <a class="reference external" href="http://www.ceri.memphis.edu/people/smalley/ESCI7205_misc_files/The_truth_about_Unix_cleaned.pdf">worse</a> unix philosophy is dominant, so understanding it is valuable.</p>
+<p>This critique is written that unix is not a good system for  “normal folks” not in its effectiveness as a context for <em>developers</em> which is where *nix (unix, linux) systems remain popular.</p>
+<p>context:<br />
+<em>“normal folks” is the author’s term; my guess is that it is attempting to describe a typical, nondeveloper computer user</em>
+<em>terminology to refer to people has changed a lot over time; when we study concepts from primary sources, we have to interpret the document through the lens of what was normal at the time the document was written, not to excuse bad behavior but to not be distracted and see what is there</em></p>
+<p>Today we will work in your main repo</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>spring2025-kwl-AymanBxm/
+</pre></div>
+</div>
+</section>
+<section id="philosophy-in-practice-using-pipes">
+<h2><span class="section-number">10.4. </span>Philosophy in practice, using pipes<a class="headerlink" href="#philosophy-in-practice-using-pipes" title="Link to this heading">#</a></h2>
+<p>open a codespace on the main branch of your KWL repo</p>
+<p>To check if your <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI is working:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">  Work seamlessly with GitHub from the command line.</span>
+
+<span class="go">USAGE</span>
+<span class="go">  gh &lt;command&gt; &lt;subcommand&gt; [flags]</span>
+
+<span class="go">CORE COMMANDS</span>
+<span class="go">  auth:        Authenticate gh and git with GitHub</span>
+<span class="go">  browse:      Open the repository in the browser</span>
+<span class="go">  codespace:   Connect to and manage codespaces</span>
+<span class="go">  gist:        Manage gists</span>
+<span class="go">  issue:       Manage issues</span>
+<span class="go">  org:         Manage organizations</span>
+<span class="go">  pr:          Manage pull requests</span>
+<span class="go">  project:     Work with GitHub Projects.</span>
+<span class="go">  release:     Manage releases</span>
+<span class="go">  repo:        Manage repositories</span>
+
+<span class="go">GITHUB ACTIONS COMMANDS</span>
+<span class="go">  cache:       Manage GitHub Actions caches</span>
+<span class="go">  run:         View details about workflow runs</span>
+<span class="go">  workflow:    View details about GitHub Actions workflows</span>
+
+<span class="go">EXTENSION COMMANDS</span>
+<span class="go">  classroom:   Extension classroom</span>
+
+<span class="go">ALIAS COMMANDS</span>
+<span class="go">  co:          Alias for &quot;pr checkout&quot;</span>
+
+<span class="go">ADDITIONAL COMMANDS</span>
+<span class="go">  alias:       Create command shortcuts</span>
+<span class="go">  api:         Make an authenticated GitHub API request</span>
+<span class="go">  attestation: Work with artifact attestations</span>
+<span class="go">  completion:  Generate shell completion scripts</span>
+<span class="go">  config:      Manage configuration for gh</span>
+<span class="go">  extension:   Manage gh extensions</span>
+<span class="go">  gpg-key:     Manage GPG keys</span>
+<span class="go">  label:       Manage labels</span>
+<span class="go">  ruleset:     View info about repo rulesets</span>
+<span class="go">  search:      Search for repositories, issues, and pull requests</span>
+<span class="go">  secret:      Manage GitHub secrets</span>
+<span class="go">  ssh-key:     Manage SSH keys</span>
+<span class="go">  status:      Print information about relevant issues, pull requests, and notifications across repositories</span>
+<span class="go">  variable:    Manage GitHub Actions variables</span>
+
+<span class="go">HELP TOPICS</span>
+<span class="go">  actions:     Learn about working with GitHub Actions</span>
+<span class="go">  environment: Environment variables that can be used with gh</span>
+<span class="go">  exit-codes:  Exit codes used by gh</span>
+<span class="go">  formatting:  Formatting options for JSON data exported from gh</span>
+<span class="go">  mintty:      Information about using gh with MinTTY</span>
+<span class="go">  reference:   A comprehensive reference of all gh commands</span>
+
+<span class="go">FLAGS</span>
+<span class="go">  --help      Show help for command</span>
+<span class="go">  --version   Show gh version</span>
+
+<span class="go">EXAMPLES</span>
+<span class="go">  gh issue create</span>
+<span class="go">  gh repo clone cli/cli</span>
+<span class="go">  gh pr checkout 321</span>
+
+<span class="go">LEARN MORE</span>
+<span class="go">  Use `gh &lt;command&gt; &lt;subcommand&gt; --help` for more information about a command.</span>
+<span class="go">  Read the manual at https://cli.github.com/manual</span>
+<span class="go">  Learn about exit codes using `gh help exit-codes`</span>
+<span class="go">  </span>
+</pre></div>
+</div>
+<p>When we use it without a subcommand, it gives us help output a list of all the commeands that we can use.  If it is <em>not</em> working, you would get a <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> error.</p>
+<aside class="sidebar">
+<p>In the course site, glossary terms will be linked as in the following list.</p>
+<p>Key terms that were disambiguated today</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../resources/glossary.html#term-terminal"><span class="xref std std-term">terminal</span></a></p></li>
+<li><p><a class="reference internal" href="../resources/glossary.html#term-shell"><span class="xref std std-term">shell</span></a></p></li>
+<li><p><a class="reference internal" href="../resources/glossary.html#term-git"><span class="xref std std-term">git</span></a></p></li>
+<li><p><a class="reference internal" href="../resources/glossary.html#term-bash"><span class="xref std std-term">bash</span></a></p></li>
+</ul>
+<div class="mermaid">
+            flowchart LR
+    subgraph programs
+    subgraph shell
+    bash
+    zsh
+    powershell
+    end
+    subgraph vcs[version control systems]
+    git
+    svn
+    mercurial
+    end
+    end
+    subgraph gh[git hosts]
+    GitHub
+    BitBucket
+    GitLab
+    end
+        </div></aside>
+<p>Let’s inpsect the action file that creates the issues for your badges.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>.github/workflows/getassignment.yml<span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>.github/workflows/getassignment.yml<span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">:emphasize-lines: 24,27,30</span>
+<span class="go">name: Create badge issues (Do not run manually)</span>
+<span class="go">on:</span>
+<span class="go">  workflow_dispatch</span>
+
+<span class="go">jobs:</span>
+<span class="go">  check-contents:</span>
+<span class="go">    runs-on: ubuntu-latest</span>
+<span class="go">    steps:</span>
+<span class="go">    - uses: actions/checkout@v4</span>
+<span class="go">    </span>
+<span class="gp">    # </span>Install<span class="w"> </span>dependencies
+<span class="go">    - name: Set up Python </span>
+<span class="go">      uses: actions/setup-python@v5</span>
+<span class="go">      with:</span>
+<span class="go">        python-version: 3.12</span>
+<span class="go">    </span>
+<span class="go">    - name: Install Utils</span>
+<span class="go">      run: |</span>
+<span class="go">        pip install git+https://github.com/compsys-progtools/courseutils@main</span>
+<span class="go">    - name: Get badge requirements</span>
+<span class="go">      run: |</span>
+<span class="gp">        # </span>prepare<span class="w"> </span>badge<span class="w"> </span>lines
+<span class="go">        pretitle=&quot;prepare-&quot;$(cspt getbadgedate --prepare)</span>
+<span class="go">        cspt getassignment --type prepare | gh issue create --title $pretitle --label prepare --body-file -</span>
+<span class="gp">        # </span>review<span class="w"> </span>badge<span class="w"> </span>lines
+<span class="go">        rtitle=&quot;review-&quot;$(cspt getbadgedate --review)</span>
+<span class="go">        cspt getassignment --type review | gh issue create --title $rtitle --label review --body-file -</span>
+<span class="gp">        # </span>practice<span class="w"> </span>badge<span class="w"> </span>lines
+<span class="go">        pratitle=&quot;practice-&quot;$(cspt getbadgedate --practice)</span>
+<span class="go">        cspt getassignment --type practice | gh issue create --title $pratitle --label practice --body-file -</span>
+<span class="go">      env:</span>
+<span class="go">        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}</span>
+<span class="gp">#  </span>edit<span class="w"> </span>the<span class="w"> </span>run<span class="w"> </span>step<span class="w"> </span>above<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>level<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>you<span class="w"> </span>want.<span class="w"> </span>
+<span class="gp">#  </span>You<span class="w"> </span>should<span class="w"> </span>keep<span class="w"> </span>the<span class="w"> </span>prepare,<span class="w"> </span>because<span class="w"> </span>they<span class="w"> </span>are<span class="w"> </span>required<span class="w"> </span><span class="k">for</span><span class="w"> </span>experience<span class="w"> </span>badges<span class="w"> </span>
+<span class="gp">#     </span>You<span class="w"> </span>may<span class="w"> </span>choose<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>only<span class="w"> </span>the<span class="w"> </span>review<span class="w"> </span>or<span class="w"> </span>only<span class="w"> </span>the<span class="w"> </span>practice<span class="w"> </span><span class="o">(</span>and<span class="w"> </span>change<span class="w"> </span>this<span class="w"> </span>any<span class="w"> </span><span class="nb">time</span><span class="o">)</span><span class="w"> </span>
+<span class="gp"># </span>added<span class="w"> </span>comment<span class="w"> </span>to<span class="w"> </span>fix
+</pre></div>
+</div>
+<p>A lot of this is familiar, but we are focused today on the three highlighed lines</p>
+<p>Here we see a few key things:</p>
+<ul class="simple">
+<li><p>on the last line it uses a pipe <code class="docutils literal notranslate"><span class="pre">|</span></code> to connect a command <code class="docutils literal notranslate"><span class="pre">sysgetassignment</span></code> to the <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">issue</span> <span class="pre">create</span></code> command.</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">issue</span> <span class="pre">create</span></code> command uses the <code class="docutils literal notranslate"><span class="pre">--body-file</span></code> option with a value  <code class="docutils literal notranslate"><span class="pre">-</span></code>; this uses std in, but since this is to the right of the pipe, it puts the output of the first command into this option</p></li>
+<li><p>the 2nd to last line creates a variable (we will learn this more later) and the last line uses that variable</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Utils</span></code> step, installs some custom code.</p></li>
+</ul>
+<p>We know that this action is what is used to create badge issues, so this custom code must be what gets information from the course website to get the assignments and prepare them for your badge issues.</p>
+<section id="installing-from-source">
+<h3><span class="section-number">10.4.1. </span>Installing from source<a class="headerlink" href="#installing-from-source" title="Link to this heading">#</a></h3>
+<p>As we saw in the action, we can install python packages from source via git.  let’s install the new version of the code</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/compsys-progtools/courseutils@main
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Collecting git+https://github.com/compsys-progtools/courseutils@main</span>
+<span class="go">  Cloning https://github.com/compsys-progtools/courseutils (to revision main) to /private/var/folders/8g/px8bm7bj0_j31j71yh6mfd_r0000gn/T/pip-req-build-gicd88lk</span>
+<span class="go">  Running command git clone --filter=blob:none --quiet https://github.com/compsys-progtools/courseutils /private/var/folders/8g/px8bm7bj0_j31j71yh6mfd_r0000gn/T/pip-req-build-gicd88lk</span>
+<span class="go">  Resolved https://github.com/compsys-progtools/courseutils to commit 395ac8754c55a119ffa2b3670afabfe4ba082c9e</span>
+<span class="go">  Preparing metadata (setup.py) ... done</span>
+<span class="go">Requirement already satisfied: Click in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from syscourseutils==1.0.6) (8.1.7)</span>
+<span class="go">Requirement already satisfied: pandas in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from syscourseutils==1.0.6) (2.2.2)</span>
+<span class="go">Requirement already satisfied: lxml in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from syscourseutils==1.0.6) (5.3.0)</span>
+<span class="go">Requirement already satisfied: pyyaml in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from syscourseutils==1.0.6) (6.0.2)</span>
+<span class="go">Requirement already satisfied: numpy in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from syscourseutils==1.0.6) (2.1.1)</span>
+<span class="go">Requirement already satisfied: requests in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from syscourseutils==1.0.6) (2.32.3)</span>
+<span class="go">Requirement already satisfied: html5lib in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from syscourseutils==1.0.6) (1.1)</span>
+<span class="go">Requirement already satisfied: six&gt;=1.9 in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from html5lib-&gt;syscourseutils==1.0.6) (1.16.0)</span>
+<span class="go">Requirement already satisfied: webencodings in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from html5lib-&gt;syscourseutils==1.0.6) (0.5.1)</span>
+<span class="go">Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from pandas-&gt;syscourseutils==1.0.6) (2.9.0.post0)</span>
+<span class="go">Requirement already satisfied: pytz&gt;=2020.1 in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from pandas-&gt;syscourseutils==1.0.6) (2024.1)</span>
+<span class="go">Requirement already satisfied: tzdata&gt;=2022.7 in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from pandas-&gt;syscourseutils==1.0.6) (2024.1)</span>
+<span class="go">Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from requests-&gt;syscourseutils==1.0.6) (3.3.2)</span>
+<span class="go">Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from requests-&gt;syscourseutils==1.0.6) (3.8)</span>
+<span class="go">Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from requests-&gt;syscourseutils==1.0.6) (1.26.20)</span>
+<span class="go">Requirement already satisfied: certifi&gt;=2017.4.17 in /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages (from requests-&gt;syscourseutils==1.0.6) (2024.8.30)</span>
+<span class="go">Building wheels for collected packages: syscourseutils</span>
+<span class="go">  Building wheel for syscourseutils (setup.py) ... done</span>
+<span class="go">  Created wheel for syscourseutils: filename=syscourseutils-1.0.6-py3-none-any.whl size=21580 sha256=9efce13a5eae8a7fd0d6a14dc2123117be62ecd35a9d09115ea0daa10a29f200</span>
+<span class="go">  Stored in directory: /private/var/folders/8g/px8bm7bj0_j31j71yh6mfd_r0000gn/T/pip-ephem-wheel-cache-6zv5pffq/wheels/74/14/ad/64dd25a774af520d19cd1f28a5e0d167ef58b12046c1fc7572</span>
+<span class="go">Successfully built syscourseutils</span>
+<span class="go">Installing collected packages: syscourseutils</span>
+<span class="go">  Attempting uninstall: syscourseutils</span>
+<span class="go">    Found existing installation: syscourseutils 1.0.6</span>
+<span class="go">    Uninstalling syscourseutils-1.0.6:</span>
+<span class="go">      Successfully uninstalled syscourseutils-1.0.6</span>
+<span class="go">Successfully installed syscourseutils-1.0.6</span>
+</pre></div>
+</div>
+<p>TO confirm it worked, we use its base command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cspt<span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Usage: cspt [OPTIONS] COMMAND [ARGS]...</span>
+
+<span class="go">Options:</span>
+<span class="go">  --help  Show this message and exit.</span>
+
+<span class="go">Commands:</span>
+<span class="go">  badgecounts     check if early bonus is met from output of `gh pr list...</span>
+<span class="go">  combinecounts   combine two yaml files by adding values</span>
+<span class="go">  createtoyfiles  from a yaml source file create a set of toy files with...</span>
+<span class="go">  earlybonus      check if early bonus is met from output of `gh pr list...</span>
+<span class="go">  exportac        export ac files for site from lesson</span>
+<span class="go">  exporthandout   export prismia version of the content</span>
+<span class="go">  exportprismia   export prismia version of the content</span>
+<span class="go">  getassignment   get the assignment text formatted</span>
+<span class="go">  getbadgedate    cli for calculate badge date</span>
+<span class="go">  grade           calculate a grade from yaml that had keys of...</span>
+<span class="go">  issuestat</span>
+<span class="go">  issuestatus     generate script to appy course issue statuse updates</span>
+<span class="go">  kwlcsv          generate the activity file csv file for the site...</span>
+<span class="go">  mkchecklist     transform input file to a gh markdown checklist, if the...</span>
+<span class="go">  parsedate       process select non dates</span>
+<span class="go">  prfixlist       check json output for titles that will not be counted...</span>
+<span class="go">  processexport   transform output from mac terminal export to myst...</span>
+<span class="go">  progressreport  list PR titles from json or - to use std in that have...</span>
+<span class="go">  titlecheck      check a single title</span>
+</pre></div>
+</div>
+<p>Let’s try the one we saw in the action</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cspt<span class="w"> </span>getassignment<span class="w"> </span>--type<span class="w"> </span>prepare
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">404: Not Found</span>
+</pre></div>
+</div>
+<p>With default settings, it says 404.</p>
+<p>We know that it goes online.  So, for example, if you turn your wifi off and then try it again, you will get a different error.</p>
+<p>To learn more about this, lets use the <code class="docutils literal notranslate"><span class="pre">--help</span></code> option.<br />
+A lot of CLI tools have this option.  In this program, that I made,
+the Python library <code class="docutils literal notranslate"><span class="pre">click</span></code> that I used to make this, provides the <code class="docutils literal notranslate"><span class="pre">help</span></code> option automatically to show the documentation or lets me as the developer add help text to options.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cspt<span class="w"> </span>getassignment<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Usage: cspt getassignment [OPTIONS]</span>
+
+<span class="go">  get the assignment text formatted</span>
+
+<span class="go">Options:</span>
+<span class="go">  --type TEXT  type can be {prepare, review, or practice}; default prepare</span>
+<span class="go">  --date TEXT  date should be YYYY-MM-DD of the tasks you want; default most</span>
+<span class="go">               recently posted</span>
+<span class="go">  --help       Show this message and exit.</span>
+</pre></div>
+</div>
+<p>Now we can see that it can take some options.</p>
+<p>If we do not provide a date, I can tell you (and I should add to the documentation), it uses today’s date.  Since we ran this on a day with class, before the badges were posted, the file it looked for did not exist, so we got 404.</p>
+<p>We can use the options to get the last posted prepare work</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cspt<span class="w"> </span>getassignment<span class="w"> </span>--type<span class="w"> </span>prepare<span class="w"> </span>--date<span class="w"> </span><span class="m">2024</span>-09-26
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- [ ] Think through and make some notes about what you have learned about design so far. Try to answer the questions below in `design_before.md`.  If you do not now know how to answer any of the questions, write in what questions you have. </span>
+
+<span class="go">``` </span>
+<span class="go">- What past experiences with making decisions about design of software do you have?</span>
+<span class="go">- what experiences studying design do you have? </span>
+<span class="go">- What processes, decisions, and practices come to mind when you think about designing software?</span>
+<span class="go">- From your experiences as a user, how you would describe the design of command line tools vs other GUI based tools?</span>
+<span class="go">```</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>issue<span class="w"> </span>create<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Create an issue on GitHub.</span>
+
+<span class="go">Adding an issue to projects requires authorization with the `project` scope.</span>
+<span class="go">To authorize, run `gh auth refresh -s project`.</span>
+
+
+<span class="go">USAGE</span>
+<span class="go">  gh issue create [flags]</span>
+
+<span class="go">ALIASES</span>
+<span class="go">  gh issue new</span>
+
+<span class="go">FLAGS</span>
+<span class="go">  -a, --assignee login   Assign people by their login. Use &quot;@me&quot; to self-assign.</span>
+<span class="go">  -b, --body string      Supply a body. Will prompt for one otherwise.</span>
+<span class="go">  -F, --body-file file   Read body text from file (use &quot;-&quot; to read from standard input)</span>
+<span class="go">  -e, --editor           Skip prompts and open the text editor to write the title and body in. The first line is the title and the remaining text is the body.</span>
+<span class="go">  -l, --label name       Add labels by name</span>
+<span class="go">  -m, --milestone name   Add the issue to a milestone by name</span>
+<span class="go">  -p, --project title    Add the issue to projects by title</span>
+<span class="go">      --recover string   Recover input from a failed run of create</span>
+<span class="go">  -T, --template file    Template file to use as starting body text</span>
+<span class="go">  -t, --title string     Supply a title. Will prompt for one otherwise.</span>
+<span class="go">  -w, --web              Open the browser to create an issue</span>
+
+<span class="go">INHERITED FLAGS</span>
+<span class="go">      --help                     Show help for command</span>
+<span class="go">  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format</span>
+
+<span class="go">EXAMPLES</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>create<span class="w"> </span>--title<span class="w"> </span><span class="s2">&quot;I found a bug&quot;</span><span class="w"> </span>--body<span class="w"> </span><span class="s2">&quot;Nothing works&quot;</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>create<span class="w"> </span>--label<span class="w"> </span><span class="s2">&quot;bug,help wanted&quot;</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>create<span class="w"> </span>--label<span class="w"> </span>bug<span class="w"> </span>--label<span class="w"> </span><span class="s2">&quot;help wanted&quot;</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>create<span class="w"> </span>--assignee<span class="w"> </span>monalisa,hubot
+
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>create<span class="w"> </span>--project<span class="w"> </span><span class="s2">&quot;Roadmap&quot;</span>
+<span class="gp">  $ </span>gh<span class="w"> </span>issue<span class="w"> </span>create<span class="w"> </span>--template<span class="w"> </span><span class="s2">&quot;bug_report.md&quot;</span>
+
+<span class="go">LEARN MORE</span>
+<span class="go">  Use `gh &lt;command&gt; &lt;subcommand&gt; --help` for more information about a command.</span>
+<span class="go">  Read the manual at https://cli.github.com/manual</span>
+<span class="go">  Learn about exit codes using `gh help exit-codes`</span>
+</pre></div>
+</div>
+</section>
+<section id="interactive-design">
+<h3><span class="section-number">10.4.2. </span>Interactive Design<a class="headerlink" href="#interactive-design" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>issue<span class="w"> </span>create
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Creating issue in compsys-progtools/compsys-progtools--spring2025-kwl-kwl-template</span>
+
+<span class="go">? Title tst</span>
+<span class="go">? Body &lt;Received&gt;</span>
+<span class="go">? What&#39;s next? Submit</span>
+<span class="go">https://github.com/compsys-progtools/compsys-progtools--spring2025-kwl-kwl-template/issues/43</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>issue<span class="w"> </span>list
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Showing 1 of 1 open issue in compsys-progtools/compsys-progtools--spring2025-kwl-kwl-template</span>
+
+<span class="go">ID   TITLE  LABELS  UPDATED               </span>
+<span class="gp">#</span><span class="m">43</span><span class="w">  </span>tst<span class="w">            </span>less<span class="w"> </span>than<span class="w"> </span>a<span class="w"> </span>minute<span class="w"> </span>ago
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>issue<span class="w"> </span>view<span class="w"> </span><span class="m">43</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tst compsys-progtools/compsys-progtools--spring2025-kwl-kwl-template#43</span>
+<span class="go">Open • AymanBxm opened about 1 minute ago • 0 comments</span>
+
+
+<span class="go">  No description provided</span>
+
+
+<span class="go">View this issue on GitHub: https://github.com/compsys-progtools/compsys-progtools--spring2025-kwl-kwl-template/issues/43</span>
+</pre></div>
+</div>
+<p>COmment also allows us to work interactively.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>issue<span class="w"> </span>comment<span class="w"> </span><span class="m">43</span>
+</pre></div>
+</div>
+<p>It uses <code class="docutils literal notranslate"><span class="pre">nano</span></code> which we have already been using, so you are well prepared for this!</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- Press Enter to draft your comment in nano... </span>
+<span class="go">? Submit? Yes</span>
+<span class="gp">https://github.com/compsys-progtools/compsys-progtools--spring2025-kwl-kwl-template/issues/43#</span>issuecomment-2377554046
+</pre></div>
+</div>
+<p>We can look again</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>issue<span class="w"> </span>view<span class="w"> </span><span class="m">43</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tst compsys-progtools/compsys-progtools--spring2025-kwl-kwl-template#43</span>
+<span class="go">Open • AymanBxm opened about 2 minutes ago • 1 comment</span>
+
+
+<span class="go">  No description provided</span>
+
+
+<span class="go">AymanBxm • 0m • Newest comment</span>
+
+<span class="go">  lksjflakjfladksjlf;kwhf;kwh                                                 </span>
+
+
+<span class="go">View this issue on GitHub: https://github.com/compsys-progtools/compsys-progtools--spring2025-kwl-kwl-template/issues/43</span>
+</pre></div>
+</div>
+<p>We can also close issues</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>issue<span class="w"> </span>close<span class="w"> </span><span class="m">43</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">✓ Closed issue compsys-progtools/compsys-progtools--spring2025-kwl-kwl-template#43 (tst)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="prepare-for-next-class">
+<h2><span class="section-number">10.5. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+<p>Read the <a class="reference external" href="http://README.md">README.md</a> file in <a class="reference internal" href="#"><span class="xref myst">courseutils</span></a>. in a file <span class="target" id="index-0"></span>courseutils write a summary of your findings.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Course Utils</span>
+
+<span class="gu">## Short description</span>
+&lt;!-- Short description of what you think this tool is for --&gt;
+
+
+<span class="gu">## Use cases </span>
+&lt;!-- These are bullet points. Add as many as you need --&gt;
+* 
+* 
+
+<span class="gu">## Summary</span>
+&lt;!-- Any thoughts about the tool --&gt;
+</pre></div>
+</div>
+</section>
+<section id="badges">
+<h2><span class="section-number">10.6. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Review</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Read today’s notes when they are posted. There are imporant tips and explanation to be sure you did.</p></li>
+<li><p>Most real projects partly adhere and at least partly deviate from any major design philosophy or paradigm. Review the open source project you looked at for the <code class="docutils literal notranslate"><span class="pre">software.md</span></code> file from before and decide if it primarily  adheres to or deviates from the unix philosophy. Add a <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Unix</span> <span class="pre">Philosophy</span> <span class="pre">&lt;Adherance/Deviation&gt;</span></code> section to your <span class="target" id="index-1"></span>software.md, setting the title to indicate your decision and explain your decision in that section (pick one). Provide at least two specific examples supporting your choice, using links to specific lines of code or specific sections in the documentation that support your claims.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Practice</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Read today’s notes when they are posted. There are imporant tips and explanation to be sure you did and ideas for explore/build badges.</p></li>
+<li><p>Most real projects partly adhere and at least partly deviate from any major design philosophy or paradigm. Add a <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Unix</span> <span class="pre">Philosophy</span></code> section to your <span class="target" id="index-2"></span>software.md about how that project adheres to and deviates from the unix philosophy. Be specific, using links to specific lines of code or specific sections in the documentation that support your claims. Provide at least one example of both adhering and deviating from the philosophy and three total examples (that is 2 examples for one side and one for the other).  You can see what badge <code class="docutils literal notranslate"><span class="pre">software.md</span></code> was previously assigned in and the original instructions <a class="reference external" href="https://compsys-progtools.github.io/spring2025/genindex.html">on the KWL file list</a>.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="experience-report-evidence">
+<h2><span class="section-number">10.7. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
+</section>
+<section id="questions-after-todays-class">
+<h2><span class="section-number">10.8. </span>Questions After Today’s Class<a class="headerlink" href="#questions-after-todays-class" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2025-02-20.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>When do I get an advantage from git and bash?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">9. Unix Philosophy</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-if-we-copy-to-a-folder-that-has-a-file-of-the-same-name">9.1. What happens if we copy to a folder that has a file of the same name?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-for-computer-systems">9.2. Why do we need this for computer systems?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-systems-are-designed-by-people">9.2.1. Computer Systems are designed by people</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-matters">9.2.2. Context Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-is-relative">9.2.3. Optimal is relative</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-these-tools-like-this">10. Why are these tools like this?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">10.1. Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design">10.2. Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-we-study-design">10.2.1. Why should we study design?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-studying-developer-tools">10.2.2. Why are we studying developer tools?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.3. Unix Philosophy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#philosophy-in-practice-using-pipes">10.4. Philosophy in practice, using pipes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-from-source">10.4.1. Installing from source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-design">10.4.2. Interactive Design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">10.5. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">10.6. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">10.7. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-todays-class">10.8. Questions After Today’s Class</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  made with [jupyterbook](https://jupyterbook.org/en/stable/intro.html)
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
