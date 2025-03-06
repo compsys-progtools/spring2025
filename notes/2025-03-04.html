@@ -465,17 +465,16 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-documentation">11.6. Building Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">11.7. Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">11.8. Quickly add YAML metadata for MyST Notebooks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">11.8.1. Retiring racist language</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">11.7. Starting a git repo locally</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">11.7.1. Retiring racist language</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-built-files">11.9. Handling Built files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">11.10. How do I push a repo that I made locally to GitHub?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">11.11. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">11.12. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">11.13. Badges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">11.14. Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-built-files">11.8. Handling Built files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">11.9. How do I push a repo that I made locally to GitHub?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">11.10. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">11.11. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">11.12. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">11.13. Questions</a></li>
 </ul>
             </nav>
         </div>
@@ -940,63 +939,48 @@ This page shows off a notebook written in MyST Markdown.
 
 With MyST Markdown, you can define code cells with a directive like so:
 
-```{code-cell}
+\`\`\`{code-cell}
 print(2 + 2)
-</pre></div>
-</div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
+\`\`\`
+
+When your book is built, the contents of any `{code-cell}` blocks will be
 executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
-</div>
-</section>
-<section id="create-a-notebook-with-myst-markdown">
-<h2><span class="section-number">11.7. </span>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Link to this heading">#</a></h2>
-<p>MyST Markdown notebooks are defined by two things:</p>
-<ol class="arabic simple">
-<li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-See the YAML at the top of this page for example.</p></li>
-<li><p>The presence of <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> directives, which will be executed with your book.</p></li>
-</ol>
-<p>That’s all that is needed to get started!</p>
-</section>
-<section id="quickly-add-yaml-metadata-for-myst-notebooks">
-<h2><span class="section-number">11.8. </span>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Link to this heading">#</a></h2>
-<p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
+in-line with the rest of your content.
+
+\`\`\`{seealso}
+Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
+\`\`\`
+
+## Create a notebook with MyST Markdown
+
+MyST Markdown notebooks are defined by two things:
+
+1. YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
+   See the YAML at the top of this page for example.
+2. The presence of `{code-cell}` directives, which will be executed with your book.
+
+That&#39;s all that is needed to get started!
+
+## Quickly add YAML metadata for MyST Notebooks
+
+If you have a markdown file and you&#39;d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:
+
+\`\`\`
+jupyter-book myst init path/to/markdownfile.md
+\`\`\`
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-cool, we can see that the content of that page is derived directly from this file
-
-
-+++{&quot;lesson_part&quot;: &quot;main&quot;}
-
-
-If you wanted to change the styling with sphinx you can use built in
-[themes](https://sphinx-themes.org/) which tell sphinx to put different
-files in the `_static` folder when it builds your site, but you don&#39;t have to change any of your content!  If you like working on front end things (which is great! it&#39;s just not alwasy the goal) you can even
-build [your own theme](https://www.sphinx-doc.org/en/master/development/theming.html) that can work with sphinx.
-
-
-
-
-+++{&quot;lesson_part&quot;: &quot;main&quot;}
-
-
-## Starting a git repo locally
-
-We made this folder, but we have not used any git operations on it yet, it is actually not a git repo, which we *could* tell from the output above, but let&#39;s use git to inspect and get another hint. 
-
-+++{&quot;lesson_part&quot;: &quot;main&quot;}
-
-We can try `git status`
-
-```bash
-
-git status
+<p>cool, we can see that the content of that page is derived directly from this file</p>
+<p>If you wanted to change the styling with sphinx you can use built in
+<a class="reference external" href="https://sphinx-themes.org/">themes</a> which tell sphinx to put different
+files in the <code class="docutils literal notranslate"><span class="pre">_static</span></code> folder when it builds your site, but you don’t have to change any of your content!  If you like working on front end things (which is great! it’s just not alwasy the goal) you can even
+build <a class="reference external" href="https://www.sphinx-doc.org/en/master/development/theming.html">your own theme</a> that can work with sphinx.</p>
+</section>
+<section id="starting-a-git-repo-locally">
+<h2><span class="section-number">11.7. </span>Starting a git repo locally<a class="headerlink" href="#starting-a-git-repo-locally" title="Link to this heading">#</a></h2>
+<p>We made this folder, but we have not used any git operations on it yet, it is actually not a git repo, which we <em>could</em> tell from the output above, but let’s use git to inspect and get another hint.</p>
+<p>We can try <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fatal: not a git repository (or any of the parent directories): .git</span>
@@ -1048,7 +1032,7 @@ This is because we simply created this folder <code class="docutils literal notr
 </div>
 <p>Here we are faced with a social aspect of computing that is <em>also</em> a good reminder about how git actually works</p>
 <section id="retiring-racist-language">
-<span id="nomaster"></span><h3><span class="section-number">11.8.1. </span>Retiring racist language<a class="headerlink" href="#retiring-racist-language" title="Link to this heading">#</a></h3>
+<span id="nomaster"></span><h3><span class="section-number">11.7.1. </span>Retiring racist language<a class="headerlink" href="#retiring-racist-language" title="Link to this heading">#</a></h3>
 <p>Historically the default branch was called master.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html">derived from a master/slave analogy</a> which is not even how git works, but was adopted terminology from other projects</p></li>
@@ -1093,7 +1077,7 @@ This is because we simply created this folder <code class="docutils literal notr
 </section>
 </section>
 <section id="handling-built-files">
-<h2><span class="section-number">11.9. </span>Handling Built files<a class="headerlink" href="#handling-built-files" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.8. </span>Handling Built files<a class="headerlink" href="#handling-built-files" title="Link to this heading">#</a></h2>
 <p>The built site files are compeltey redundant, content wise, to the original markdown files.</p>
 <p>We do not want to keep track of changes for the built files since they are generated from the source files. It’s redundant and makes it less clear where someone should update content.</p>
 <p>How can we tell it not to track the build folder?</p>
@@ -1170,7 +1154,7 @@ this is added to a <a class="reference internal" href="../resources/windows.html
 </div>
 </section>
 <section id="how-do-i-push-a-repo-that-i-made-locally-to-github">
-<h2><span class="section-number">11.10. </span>How do I push a repo that I made locally to GitHub?<a class="headerlink" href="#how-do-i-push-a-repo-that-i-made-locally-to-github" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.9. </span>How do I push a repo that I made locally to GitHub?<a class="headerlink" href="#how-do-i-push-a-repo-that-i-made-locally-to-github" title="Link to this heading">#</a></h2>
 <p>Right now, we do not have any remotes, so if we try to push it will fail. Next we will see how to fix that.</p>
 <p>First let’s confirm</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
@@ -1271,17 +1255,17 @@ hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; fo
 <p>This is telling us to that since the previous pull command didn’t execute successfuly we still haven’t linked the local main with the online main and we need to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">main</span></code></p>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">11.11. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.10. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>review the notes on <a class="reference external" href="https://compsys-progtools.github.io/spring2025/notes/2025-02-18.html">what is a commit</a>. In <span class="target" id="index-0"></span>gitdef.md on the branch for this issue, try to describe git in the four ways we described a commit.  <strong>the point here is to think about what you know for git and practice remembering it, not “get the right answer”; this is prepare work, we only check that it is complete, not correct</strong></p></li>
 <li><p>Start recording notes on <em>how</em> you use IDEs for the next couple of weeks using the template file below. We will come back to these notes in class later, but it is best to record over a time period instead of trying to remember at that time. Store your notes in your fall24 repo in <span class="target" id="index-1"></span>idethoughts.md on a dedicated <code class="docutils literal notranslate"><span class="pre">ide_prep</span></code> branch. <strong>This is prep for after a few weeks from now, <strong>not for October 8</strong>; keep this branch open until it is specifically asked for</strong></p></li>
 </ol>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">11.12. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.11. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
 </section>
 <section id="badges">
-<h2><span class="section-number">11.13. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.12. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
@@ -1302,7 +1286,7 @@ Practice</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="questions">
-<h2><span class="section-number">11.14. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.13. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1383,17 +1367,16 @@ Practice</label><div class="sd-tab-content docutils">
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-documentation">11.6. Building Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">11.7. Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">11.8. Quickly add YAML metadata for MyST Notebooks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">11.8.1. Retiring racist language</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">11.7. Starting a git repo locally</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">11.7.1. Retiring racist language</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-built-files">11.9. Handling Built files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">11.10. How do I push a repo that I made locally to GitHub?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">11.11. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">11.12. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">11.13. Badges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">11.14. Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-built-files">11.8. Handling Built files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">11.9. How do I push a repo that I made locally to GitHub?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">11.10. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">11.11. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">11.12. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">11.13. Questions</a></li>
 </ul>
   </nav></div>
 
