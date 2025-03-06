@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-03-04';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="next" title="12. What is git?" href="2025-03-06.html" />
     <link rel="prev" title="10. Unix Philosophy In Practice" href="2025-02-27.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -207,6 +207,7 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-02-25.html">9. Unix Philosophy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-02-27.html">10. Unix Philosophy In Practice</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">11. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-03-06.html">12. What <em>is</em> git?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -465,10 +466,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-documentation">11.6. Building Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">11.7. Starting a git repo locally</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">11.7.1. Retiring racist language</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">11.7. Starting a git repo locally</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-built-files">11.8. Handling Built files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">11.9. How do I push a repo that I made locally to GitHub?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">11.10. Prepare for Next Class</a></li>
@@ -1031,8 +1029,8 @@ This is because we simply created this folder <code class="docutils literal notr
 </pre></div>
 </div>
 <p>Here we are faced with a social aspect of computing that is <em>also</em> a good reminder about how git actually works</p>
-<section id="retiring-racist-language">
-<span id="nomaster"></span><h3><span class="section-number">11.7.1. </span>Retiring racist language<a class="headerlink" href="#retiring-racist-language" title="Link to this heading">#</a></h3>
+<aside class="sidebar">
+<h3 class="rubric" id="retiring-racist-language"><span id="nomaster"></span>Retiring racist language</h3>
 <p>Historically the default branch was called master.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html">derived from a master/slave analogy</a> which is not even how git works, but was adopted terminology from other projects</p></li>
@@ -1041,6 +1039,7 @@ This is because we simply created this folder <code class="docutils literal notr
 <li><p><a class="reference external" href="https://lore.kernel.org/git/pull.656.v4.git.1593009996.gitgitgadget&#64;gmail.com/">git allows you to make your default not be master</a></p></li>
 <li><p><a class="reference external" href="https://twitter.com/xpasky/status/1271477451756056577">literally the person who chose the names “master” and “origin” regrets that choice</a> the name main is a more accurate and not harmful term and the current convention.</p></li>
 </ul>
+</aside>
 <p>we’ll change our default branch to main</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>main
 </pre></div>
@@ -1074,7 +1073,6 @@ This is because we simply created this folder <code class="docutils literal notr
 <li><p>there are no previous commits</p></li>
 <li><p>all of the files are untracked</p></li>
 </ul>
-</section>
 </section>
 <section id="handling-built-files">
 <h2><span class="section-number">11.8. </span>Handling Built files<a class="headerlink" href="#handling-built-files" title="Link to this heading">#</a></h2>
@@ -1330,11 +1328,11 @@ Practice</label><div class="sd-tab-content docutils">
       </div>
     </a>
     <a class="right-next"
-       href="../activities/kwl.html"
+       href="2025-03-06.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">KWL Chart</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>What <em>is</em> git?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1367,10 +1365,7 @@ Practice</label><div class="sd-tab-content docutils">
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-documentation">11.6. Building Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">11.7. Starting a git repo locally</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retiring-racist-language">11.7.1. Retiring racist language</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-git-repo-locally">11.7. Starting a git repo locally</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-built-files">11.8. Handling Built files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-push-a-repo-that-i-made-locally-to-github">11.9. How do I push a repo that I made locally to GitHub?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">11.10. Prepare for Next Class</a></li>
