@@ -483,11 +483,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <ol class="arabic simple">
-<li><p>review the notes on <a class="reference external" href="https://compsys-progtools.github.io/spring2024/notes/2024-10-01.html">what is a commit</a>. In <span class="target" id="index-0"></span>gitdef.md on the branch for this issue, try to describe git in the four ways we described a commit.  <strong>the point here is to think about what you know for git and practice remembering it, not “get the right answer”; this is prepare work, we only check that it is complete, not correct</strong></p></li>
-<li><p>Start recording notes on <em>how</em> you use IDEs for the next couple of weeks using the template file below. We will come back to these notes in class later, but it is best to record over a time period instead of trying to remember at that time. Store your notes in your fall24 repo in <span class="target" id="index-1"></span>idethoughts.md on a dedicated <code class="docutils literal notranslate"><span class="pre">ide_prep</span></code> branch. <strong>This is prep for after a few weeks from now, <strong>not for October 8</strong>; keep this branch open until it is specifically asked for</strong></p></li>
-</ol>
-<section class="tex2jax_ignore mathjax_ignore" id="what-is-git">
+  <section class="tex2jax_ignore mathjax_ignore" id="what-is-git">
 <h1><span class="section-number">12. </span>What <em>is</em> git?<a class="headerlink" href="#what-is-git" title="Link to this heading">#</a></h1>
 <p>Last class we created a local repo, then created an empty repo on GitHub.
 Linked both repos and attmpted to push local changes on the <strong>“empty”</strong> repo but weren’t successful</p>
@@ -495,6 +491,18 @@ Linked both repos and attmpted to push local changes on the <strong>“empty”<
 When we used GitHub Classroom to fork my template tiny-book repo as your new empty repo GitHub made two commits.
 Making it not an empty repo.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>Documents/systems/tiny-book
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>To https://github.com/compsys-progtools/tiny-book-AymanBx
+ ! [rejected]        main -&gt; main (non-fast-forward)
+error: failed to push some refs to &#39;https://github.com/compsys-progtools/tiny-book-AymanBx&#39;
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use &#39;git pull&#39; before pushing again.
+hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
 </pre></div>
 </div>
 <p>Let’s check it out</p>
@@ -779,20 +787,6 @@ We <code class="docutils literal notranslate"><span class="pre">rebase</span></c
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is a pointer to the currently checked out branch. Do you remember where we see this pointer?</p>
 <p>The other files with <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> in their name are similarly pointers to other references, named corresponding to other things.</p>
-<p>Imagine you had a copy of a git repo on a computer without the program git.</p>
-<p>You ran the command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">.git/</span></code> in the repo and got the following output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COMMIT_EDITMSG</span>  <span class="n">HEAD</span>    <span class="n">description</span>  <span class="n">index</span>  <span class="n">logs</span><span class="o">/</span>     <span class="n">refs</span><span class="o">/</span>
-<span class="n">FETCH_HEAD</span>      <span class="n">config</span>  <span class="n">hooks</span><span class="o">/</span>       <span class="n">info</span><span class="o">/</span>  <span class="n">objects</span><span class="o">/</span>
-</pre></div>
-</div>
-<!-- HERE -->
-<p>How could you find out what branch was checked out using only bash in one command?</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>.git/HEAD
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ref</span><span class="p">:</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
-</pre></div>
-</div>
 </section>
 <section id="git-objects">
 <h2><span class="section-number">12.9. </span>Git Objects<a class="headerlink" href="#git-objects" title="Link to this heading">#</a></h2>
@@ -841,11 +835,210 @@ We <code class="docutils literal notranslate"><span class="pre">rebase</span></c
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cat</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span><span class="n">t</span> 
 </pre></div>
 </div>
+<p>Let’s do so in the inclass repo</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>../gh-inclass-AymanBx/
+</pre></div>
+</div>
+<p>Let’s remember what has been done in this repo</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">99</span><span class="n">c73d4f2c0c87c3aef7a61366e56e3894a040a5</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">organization</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">organization</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">AymanBx</span> <span class="o">&lt;</span><span class="n">ayman_sandouk</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Feb</span> <span class="mi">25</span> <span class="mi">13</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">20</span> <span class="mi">2025</span> <span class="o">-</span><span class="mi">0500</span>
+
+    <span class="n">Organized</span> <span class="nb">all</span> <span class="n">documentation</span> <span class="n">files</span><span class="o">.</span>
+
+<span class="n">commit</span> <span class="mi">93</span><span class="n">d4ae322683efa703dedbb9acb8431807a38afd</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">AymanBx</span> <span class="o">&lt;</span><span class="n">ayman_sandouk</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Tue</span> <span class="n">Feb</span> <span class="mi">25</span> <span class="mi">12</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">36</span> <span class="mi">2025</span> <span class="o">-</span><span class="mi">0500</span>
+
+    <span class="n">Added</span> <span class="n">overview</span> <span class="n">of</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">readme</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">commit</span> <span class="mi">4</span><span class="n">ccfb5fe36073d15eaa4271d5f1355c0d9e1635b</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">AymanBx</span> <span class="o">&lt;</span><span class="n">ayman_sandouk</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Feb</span> <span class="mi">20</span> <span class="mi">13</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mi">59</span> <span class="mi">2025</span> <span class="o">-</span><span class="mi">0500</span>
+
+    <span class="n">added</span> <span class="n">age</span> <span class="n">to</span> <span class="n">readme</span>
+
+<span class="n">commit</span> <span class="mi">581</span><span class="n">ac5ef92ba5b4a647f30fc91a9d405e6900007</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">HEAD</span><span class="p">,</span> <span class="n">main</span><span class="p">)</span>
+<span class="n">Merge</span><span class="p">:</span> <span class="mi">162</span><span class="n">a47b</span> <span class="mi">7</span><span class="n">b56104</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Ayman</span> <span class="n">Sandouk</span> <span class="o">&lt;</span><span class="mi">111829133</span><span class="o">+</span><span class="n">AymanBx</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Feb</span> <span class="mi">20</span> <span class="mi">11</span><span class="p">:</span><span class="mi">19</span><span class="p">:</span><span class="mi">10</span> <span class="mi">2025</span> <span class="o">-</span><span class="mi">0500</span>
+
+    <span class="n">Merge</span> <span class="n">pull</span> <span class="n">request</span> <span class="c1">#3 from compsys-progtools/organizing_ac</span>
+
+    <span class="n">Feb</span> <span class="mi">20</span> <span class="ow">in</span> <span class="k">class</span><span class="w"> </span><span class="nc">activity</span>
+
+<span class="n">commit</span> <span class="mi">7</span><span class="n">b561041f188ea7c2fa4d66d32957f639c574bd5</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">organizing_ac</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">AymanBx</span> <span class="o">&lt;</span><span class="n">ayman_sandouk</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Feb</span> <span class="mi">20</span> <span class="mi">11</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mi">56</span> <span class="mi">2025</span> <span class="o">-</span><span class="mi">0500</span>
+
+    <span class="n">add</span> <span class="n">files</span> <span class="k">for</span> <span class="n">organizing</span> <span class="n">activity</span>
+</pre></div>
+</div>
+<p>What branch are we on at the moment?
+We can tell from <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> or from what we saw on <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>
+But all these commands are really getting their info from the HEAD pointer, and we now know how to do so our selves:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>.git/HEAD
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ref</span><span class="p">:</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">organization</span>
+</pre></div>
+</div>
+<p>Let’s try to trace what we can find in that file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>.git/refs/heads/organization
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">99</span><span class="n">c73d4f2c0c87c3aef7a61366e56e3894a040a5</span>
+</pre></div>
+</div>
+<p>We see a hash (made of 32 characters)
+A hash in git can be a representation of multiple things.
+One of its uses is that it is used as a names of git objects that hold the different information of a git repository.</p>
+<p>Let’s confirm that we can find that file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>.git/objects/
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">f</span><span class="o">/</span>  <span class="mi">23</span><span class="o">/</span>  <span class="mi">39</span><span class="o">/</span>  <span class="mi">4</span><span class="n">e</span><span class="o">/</span>  <span class="mi">56</span><span class="o">/</span>  <span class="mi">76</span><span class="o">/</span>  <span class="mi">83</span><span class="o">/</span>  <span class="mi">99</span><span class="o">/</span>  <span class="n">a6</span><span class="o">/</span>  <span class="n">ce</span><span class="o">/</span>  <span class="n">e4</span><span class="o">/</span>
+<span class="mi">16</span><span class="o">/</span>  <span class="mi">2</span><span class="n">d</span><span class="o">/</span>  <span class="mi">3</span><span class="n">a</span><span class="o">/</span>  <span class="mi">4</span><span class="n">f</span><span class="o">/</span>  <span class="mi">58</span><span class="o">/</span>  <span class="mi">7</span><span class="n">b</span><span class="o">/</span>  <span class="mi">8</span><span class="n">b</span><span class="o">/</span>  <span class="mi">9</span><span class="n">d</span><span class="o">/</span>  <span class="n">a9</span><span class="o">/</span>  <span class="n">d7</span><span class="o">/</span>  <span class="n">f9</span><span class="o">/</span>
+<span class="mi">1</span><span class="n">e</span><span class="o">/</span>  <span class="mi">33</span><span class="o">/</span>  <span class="mi">3</span><span class="n">c</span><span class="o">/</span>  <span class="mi">50</span><span class="o">/</span>  <span class="mi">63</span><span class="o">/</span>  <span class="mi">7</span><span class="n">f</span><span class="o">/</span>  <span class="mi">92</span><span class="o">/</span>  <span class="mi">9</span><span class="n">e</span><span class="o">/</span>  <span class="n">ab</span><span class="o">/</span>  <span class="n">d8</span><span class="o">/</span>  <span class="n">info</span><span class="o">/</span>
+<span class="mi">1</span><span class="n">f</span><span class="o">/</span>  <span class="mi">35</span><span class="o">/</span>  <span class="mi">4</span><span class="n">c</span><span class="o">/</span>  <span class="mi">54</span><span class="o">/</span>  <span class="mi">65</span><span class="o">/</span>  <span class="mi">80</span><span class="o">/</span>  <span class="mi">93</span><span class="o">/</span>  <span class="n">a2</span><span class="o">/</span>  <span class="n">b0</span><span class="o">/</span>  <span class="n">e0</span><span class="o">/</span>  <span class="n">pack</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>The first two characters of the hash can be found here as a directory <code class="docutils literal notranslate"><span class="pre">99/</span></code></p>
+<p>If we look at the contents of that folder</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>.git/objects/99
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span><span class="n">c3c00dcde51d52a1c110413522043eca07cd</span>
+<span class="n">c73d4f2c0c87c3aef7a61366e56e3894a040a5</span>
+</pre></div>
+</div>
+<p>We see two files, one of them is <code class="docutils literal notranslate"><span class="pre">c73d4f2c0c87c3aef7a61366e56e3894a040a5</span></code> which is the remainder of that hash</p>
+<p>Can we read what’s in that file?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>.git/objects/99/c73d4f2c0c87c3aef7a61366e56e3894a040a5
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>x▒▒mj1▒;▒xP▒▒D▒
+               򒼴▒▒D▒    hO▒G迁a`B]▒▒A(▒▒▒&quot;▒▒U&gt;  2Ih▒▒▒▒!R:▒▒r8{`▒▒▒ ▒B▒B&#39;)▒▒&quot;E▒▒Scٞ▒▒Z ▒▒={P▒P▒r}▒▒b▒u▒ϣ▒=▒q▒▒*▒▒ъ▒n▒▒▒`▒▒▒}a▒?▒b
+</pre></div>
+</div>
+<p>Not very readable. But We’ve talked about how this is supposed to represent a status of the repository. It is supposed to represent a commit. We can confirm that by looking at the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> from earlier. The very first commit was represented by that same hash!</p>
+<p>Let’s see if there’s another way to view the content of that file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>cat-file<span class="w"> </span>-t<span class="w"> </span>99c73
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span>
+</pre></div>
+</div>
+<p>That’s the type <code class="docutils literal notranslate"><span class="pre">-t</span></code>!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>cat-file<span class="w"> </span>-p<span class="w"> </span>99c73
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="mi">7</span><span class="n">fc74e8f774bf2e6f25652bbab56ee45f21703c0</span>
+<span class="n">parent</span> <span class="mi">93</span><span class="n">d4ae322683efa703dedbb9acb8431807a38afd</span>
+<span class="n">author</span> <span class="n">AymanBx</span> <span class="o">&lt;</span><span class="n">ayman_sandouk</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span> <span class="mi">1740506540</span> <span class="o">-</span><span class="mi">0500</span>
+<span class="n">committer</span> <span class="n">AymanBx</span> <span class="o">&lt;</span><span class="n">ayman_sandouk</span><span class="nd">@uri</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span> <span class="mi">1740506540</span> <span class="o">-</span><span class="mi">0500</span>
+
+<span class="n">Organized</span> <span class="nb">all</span> <span class="n">documentation</span> <span class="n">files</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>We see that the contetns is detailed information about the last commit, we see some of this in the log. But here we find all the information.
+We had to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code> specifically to view the content, because if we view it in its raw shape we get a bunch of weird characters. That’s because git compressed this information in binary to save disk space. Making the way git saves its information more space efficient.</p>
+<p>Cool!
+Let’s try one more thing. How can I find how the contents of a file is saved by git.
+Lets try to find a <code class="docutils literal notranslate"><span class="pre">blob</span></code> object.
+Let’s check out the other file that was in the <code class="docutils literal notranslate"><span class="pre">99/</span></code> directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>cat-file<span class="w"> </span>-t<span class="w"> </span>9942c
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span>
+</pre></div>
+</div>
+<p>Ok, we found another commit. Let’s view it</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>cat-file<span class="w"> </span>-p<span class="w"> </span>9942c
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="n">a2ea9badc19dc1d94af5957a8f6f128a3b316f49</span>
+<span class="n">parent</span> <span class="mi">8</span><span class="n">bd4ea38fe31186b9e5d0c1e19c9aef748c6dce6</span>
+<span class="n">author</span> <span class="n">Ayman</span> <span class="n">Sandouk</span> <span class="o">&lt;</span><span class="mi">111829133</span><span class="o">+</span><span class="n">AymanBx</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="mi">1739298243</span> <span class="o">-</span><span class="mi">0500</span>
+<span class="n">committer</span> <span class="n">GitHub</span> <span class="o">&lt;</span><span class="n">noreply</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="mi">1739298243</span> <span class="o">-</span><span class="mi">0500</span>
+<span class="n">gpgsig</span> <span class="o">-----</span><span class="n">BEGIN</span> <span class="n">PGP</span> <span class="n">SIGNATURE</span><span class="o">-----</span>
+
+ <span class="n">wsFcBAABCAAQBQJnq5XECRC1aQ7uu5UhlAAARUEQAB</span><span class="o">+</span><span class="n">Dnsi</span><span class="o">+</span><span class="n">XCvn</span><span class="o">+</span><span class="n">Vnb202qnpST</span>
+ <span class="n">E8WlCMlKStERUEjHItTWHv</span><span class="o">+</span><span class="n">mY9YODKi66uBTDNvtJVZFr6DLJ2Xyr</span><span class="o">+</span><span class="n">Z5ee1T3nEE</span>
+ <span class="n">FwA4xDjh3uegfJnleL2n</span><span class="o">/</span><span class="n">ebwlmQ</span><span class="o">+</span><span class="mi">8</span><span class="n">xhtlzfTvPg3rHHZwOB9kKQC1QbTiYO</span><span class="o">/</span><span class="n">FmMJ</span>
+ <span class="n">yhu3KNS</span><span class="o">/</span><span class="mi">7</span><span class="n">piXPjp7C8dYAI5sAyGUHBH</span><span class="o">/</span><span class="n">uGlVkvIkRmfuK8UgkLxQjlk3By5zHNLx</span>
+ <span class="o">/</span><span class="mi">4</span><span class="n">SlPB8NTf0qFMdag6DszlTn994FVKNPfbLikU433CeUw0yEUYUUZ0fil6f8nHnQ</span>
+ <span class="mi">4</span><span class="n">pju9SIbhMWwUcVRVaiA85XWW4EezqloaoMeZnBKgF</span><span class="o">/</span><span class="n">TekpzsDuPAIv7mRCa8Sbc</span>
+ <span class="n">gk6NpHldfG9IOBYzFE7jSNa</span><span class="o">/</span><span class="n">JVT</span><span class="o">+</span><span class="n">em8IQq42pkXBB7Mu7ndKIovLAOSHLawquezd</span>
+ <span class="n">thvwOf01TvaHkVhH9Cd7Noq9kjf</span><span class="o">/</span><span class="n">qKq9sHJXRKUNNlhPM6FiNV9MWmaAGwgHvljg</span>
+ <span class="n">HjrN</span><span class="o">/</span><span class="mi">9</span><span class="n">ANxpakpW6tVGWkLCyCi</span><span class="o">+</span><span class="n">Ip9o22MSUYOYntI9cfKvEmeUYYv0zvMvJoIndZ</span>
+ <span class="mi">9</span><span class="n">krQr2zsfMHryG8U536</span><span class="o">+</span><span class="n">esEWQl7L9SFYZJljDakrRRY58lISXt4Un</span><span class="o">+</span><span class="n">D2zeMYNUIS</span>
+ <span class="n">CY09UaZ5CIMHT0znKgWjaR</span><span class="o">+</span><span class="n">pQGKM4960QxhFN6s22B5</span><span class="o">+</span><span class="mi">6</span><span class="n">InzQuWbetIOlCWXu</span><span class="o">/</span><span class="n">pa</span>
+ <span class="n">fcqFgLJibxp0Zup3wABx</span>
+ <span class="o">=</span><span class="n">tYyc</span>
+ <span class="o">-----</span><span class="n">END</span> <span class="n">PGP</span> <span class="n">SIGNATURE</span><span class="o">-----</span>
+
+
+<span class="n">Update</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>Looks like we updated the <a class="reference external" href="http://about.md">about.md</a> file in this commit. Let’s keep tracing. This commit is made of the tree <code class="docutils literal notranslate"><span class="pre">a2ea9badc19dc1d94af5957a8f6f128a3b316f49</span></code>. Let’s check it out</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>cat-file<span class="w"> </span>-p<span class="w"> </span>a2ea9
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">040000</span> <span class="n">tree</span> <span class="mi">263</span><span class="n">fb9d22090e88edd2bf1847c24c3511de91b49</span>    <span class="o">.</span><span class="n">github</span>
+<span class="mi">100644</span> <span class="n">blob</span> <span class="mf">920e41</span><span class="n">a47826309b0bca92645e1ce0c734830ed0</span>    <span class="n">about</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>Cool, we found that blob that represents the <a class="reference external" href="http://about.md">about.md</a> at that particular commit.
+Let’s keep digging</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>cat-file<span class="w"> </span>-t<span class="w"> </span>920e4
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blob</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>cat-file<span class="w"> </span>-p<span class="w"> </span>920e4
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Second</span> <span class="n">semster</span> <span class="n">Masters</span>
+
+<span class="n">Expected</span> <span class="n">graduation</span> <span class="n">May</span> <span class="mi">2026</span>
+<span class="o">-</span> <span class="n">I</span> <span class="n">graduated</span> <span class="n">highschool</span> <span class="n">abroad</span>
+</pre></div>
+</div>
+<p>Hmm interesting. I remember <a class="reference external" href="http://about.md">about.md</a> being different than that. wait,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>about.md
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Second</span> <span class="n">semster</span> <span class="n">Masters</span>
+
+<span class="n">Expected</span> <span class="n">graduation</span> <span class="n">May</span> <span class="mi">2026</span>
+<span class="o">-</span> <span class="n">I</span> <span class="n">got</span> <span class="n">my</span> <span class="n">BS</span> <span class="ow">in</span> <span class="mi">2023</span>
+<span class="o">-</span> <span class="n">I</span> <span class="n">graduated</span> <span class="n">highschool</span> <span class="n">abroad</span>
+</pre></div>
+</div>
+<p>Yeah, that’s write, we had added another fun fact that time we got a merge conflict.</p>
+<p>So that confirms it. We were just able to find an old version of <a class="reference external" href="http://about.md">about.md</a> from an old commit.
+This is how git stores all the information that tracks all the changes that occurred.</p>
+<p>One final thing, what happens if we try to view the contents of that hash without using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code>?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>.git/objects/92/0e41a47826309b0bca92645e1ce0c734830ed0
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>xK▒▒OR▒0NM▒▒KQ(N▒-.I-R▒MQ▒\\▒▒▒%▒)
+▒E▒)▒▒%▒▒y@▒J##3.]O▒8PEFfzFqrF~~▒BbRQ~b
+▒6▒
+</pre></div>
+</div>
+<p>Same as earlier, we just get a bunch of weird characters because of how git compresses the information into a binary.</p>
 </section>
 <section id="prepare-for-next-class">
 <h2><span class="section-number">12.11. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Take a few minutes to think what you know about hashing and numbers. Create <span class="target" id="index-2"></span>hash_num_prep.md with two sections: <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Hashing</span></code> with a few bullet points summarzing key points about hashing, and <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Numbers</span></code> with what types of number representations you know.</p></li>
+<li><p>Take a few minutes to think what you know about hashing and numbers. Create <span class="target" id="index-0"></span>hash_num_prep.md with two sections: <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Hashing</span></code> with a few bullet points summarzing key points about hashing, and <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Numbers</span></code> with what types of number representations you know.</p></li>
 <li><p>Review notes from <a class="reference external" href="https://compsys-progtools.github.io/spring2025/notes/2025-02-11.html">How do git branches work</a>. Focus on resolving merge conflict in preperation to next lab.</p></li>
 <li><p>Review notes from <a class="reference external" href="https://compsys-progtools.github.io/spring2025/notes/2025-02-18.html">What is a commit</a> &amp; <a class="reference external" href="https://compsys-progtools.github.io/spring2025/notes/2025-03-06.html">What is git</a> (Both notes should be fixed by 3/10) to be fully prepared for this class after a nice break. Bring questions if you come up with any. You may qualify for a community badge if you post/contribute in a <a class="reference external" href="https://github.com/orgs/compsys-progtools/discussions/categories/class-discussions">discussion thread</a> related to the concepts mentioned in said classes if your ask meaningful questions that your classmates feel intrigued to discuss.</p></li>
 </ol>
@@ -861,10 +1054,10 @@ We <code class="docutils literal notranslate"><span class="pre">rebase</span></c
 <label class="sd-tab-label" for="sd-tab-item-0">
 Review</label><div class="sd-tab-content docutils">
 <ol class="arabic simple">
-<li><p>Read about different workflows in git and describe which one you prefer to work with and why in <span class="target" id="index-3"></span>favorite_git_workflow.md in your kwl repo. Two good places to read from are <a class="reference external" href="https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#ch05-distributed-git">Git Book</a> and the <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows">atlassian Docs</a></p></li>
+<li><p>Read about different workflows in git and describe which one you prefer to work with and why in <span class="target" id="index-1"></span>favorite_git_workflow.md in your kwl repo. Two good places to read from are <a class="reference external" href="https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#ch05-distributed-git">Git Book</a> and the <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows">atlassian Docs</a></p></li>
 <li><p>Update your kwl chart with what you have learned or new questions in the want to know column</p></li>
 <li><p>Separate from what you added from the previous step. Add to your kwl table the following rows and fill them out. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branches</span></code>, <code class="docutils literal notranslate"><span class="pre">merge</span> <span class="pre">conflicts</span></code>, <code class="docutils literal notranslate"><span class="pre">commits</span></code>. Try to include an older understanding about them in the <code class="docutils literal notranslate"><span class="pre">know</span></code> column and a newer understanding in the <code class="docutils literal notranslate"><span class="pre">learned</span></code> column</p></li>
-<li><p>In <span class="target" id="index-4"></span>commit_contents.md, redirect the content of your most recent commit, its tree, and the contents of one blob. Edit the file or use <code class="docutils literal notranslate"><span class="pre">echo</span></code> to put markdown headings between the different objects. Add a title <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Complete</span> <span class="pre">Commit</span></code> to the file and at the bottom of the file add <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Reflection</span></code> subheading with some notes on how, if at all this excercise helps you understand what a commit is.</p></li>
+<li><p>In <span class="target" id="index-2"></span>commit_contents.md, redirect the content of your most recent commit, its tree, and the contents of one blob. Edit the file or use <code class="docutils literal notranslate"><span class="pre">echo</span></code> to put markdown headings between the different objects. Add a title <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Complete</span> <span class="pre">Commit</span></code> to the file and at the bottom of the file add <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Reflection</span></code> subheading with some notes on how, if at all this excercise helps you understand what a commit is.</p></li>
 </ol>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> to see most recent commit
@@ -877,10 +1070,10 @@ Review</label><div class="sd-tab-content docutils">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Practice</label><div class="sd-tab-content docutils">
 <ol class="arabic simple">
-<li><p>Read about different workflows in git and add responses to the below in a <span class="target" id="index-5"></span>workflows.md in your kwl repo. Two good places to read from are <a class="reference external" href="https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#ch05-distributed-git">Git Book</a> and the <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows">atlassian Docs</a></p></li>
+<li><p>Read about different workflows in git and add responses to the below in a <span class="target" id="index-3"></span>workflows.md in your kwl repo. Two good places to read from are <a class="reference external" href="https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows#ch05-distributed-git">Git Book</a> and the <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows">atlassian Docs</a></p></li>
 <li><p>Update your kwl chart with what you have learned or new questions in the want to know column</p></li>
 <li><p>Separate from what you added from the previous step. Add to your kwl table the following rows and fill them out. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branches</span></code>, <code class="docutils literal notranslate"><span class="pre">merge</span> <span class="pre">conflicts</span></code>, <code class="docutils literal notranslate"><span class="pre">commits</span></code>. Try to include an older understanding about them in the <code class="docutils literal notranslate"><span class="pre">know</span></code> column and a newer understanding in the <code class="docutils literal notranslate"><span class="pre">learned</span></code> column</p></li>
-<li><p>Add the hash of the content of your completed <span class="target" id="index-6"></span>workflows.md file and put that in the comment of your badge PR for this badge. <em>Try to do this from your local CLI, but full credit even if you use the website interface</em></p></li>
+<li><p>Add the hash of the content of your completed <span class="target" id="index-4"></span>workflows.md file and put that in the comment of your badge PR for this badge. <em>Try to do this from your local CLI, but full credit even if you use the website interface</em></p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>## Workflow Reflection
 
