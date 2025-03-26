@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-03-20';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="next" title="15. Why did we learn the plubming commands?" href="2025-03-25.html" />
     <link rel="prev" title="13. How does git make a commit?" href="2025-03-18.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -210,6 +210,7 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-03-06.html">12. What <em>is</em> git?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-03-18.html">13. How does git make a commit?</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">14. How can I automate things with bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-03-25.html">15. Why did we learn the plubming commands?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -1356,6 +1357,14 @@ gh<span class="w"> </span>issue<span class="w"> </span>list<span class="w"> </sp
 </section>
 <section id="prepare-for-next-class">
 <h2><span class="section-number">14.12. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Read the notes from March 18th. We will build on these directly in the future. <strong>You need to have the <code class="docutils literal notranslate"><span class="pre">test</span></code> repo with the same status as me</strong></p></li>
+<li><p>Add to your IDE <span class="target" id="index-0"></span>idethoughts.md file if you have not in a few days on a dedicated <code class="docutils literal notranslate"><span class="pre">ide_prep</span></code> branch. <strong>This is prep for after a few weeks from now, <strong>not for 03/25</strong>; keep this branch open until it is specifically asked for</strong></p>
+<ul class="simple">
+<li><p>I have not posted an outline for <span class="target" id="index-1"></span>idethoughts.md. Start with sections like <code class="docutils literal notranslate"><span class="pre">preference</span></code>, <code class="docutils literal notranslate"><span class="pre">debugging</span> <span class="pre">metods</span></code>, <code class="docutils literal notranslate"><span class="pre">organizations</span></code>, <code class="docutils literal notranslate"><span class="pre">tools/extentions</span></code> Add any other thoughts on using different IDEs you can think of. These sections are not limiting nor are they mandated</p></li>
+</ul>
+</li>
+</ol>
 </section>
 <section id="badges">
 <h2><span class="section-number">14.13. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
@@ -1363,10 +1372,27 @@ gh<span class="w"> </span>issue<span class="w"> </span>list<span class="w"> </sp
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
 Review</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Update your KWL Chart learned column with what you’ve learned</p></li>
+<li><p>write a bash script to make it so that <code class="docutils literal notranslate"><span class="pre">cat</span></code>ing the the files in your <code class="docutils literal notranslate"><span class="pre">gh_inclass</span></code> repo does not make the prompt move</p></li>
+</ol>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Practice</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Update your KWL Chart learned column with what you’ve learned</p></li>
+<li><p>prevent <code class="docutils literal notranslate"><span class="pre">badges.json</span></code> and <code class="docutils literal notranslate"><span class="pre">badges.yml</span></code> from being tracked by git in your kwl repo</p></li>
+<li><p>write a bash script that prevents <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> from giving warnings about files not having a heading by using the file name as a temporary title. (see the badge from 03/04 where you should have converted your repo, or do that one first, this counts as an extension on that if you have not done it)</p></li>
+</ol>
+<p>Hint: Use <a class="reference external" href="https://www.gnu.org/software/sed/manual/sed.html"><code class="docutils literal notranslate"><span class="pre">sed</span></code></a>’s insert option and <a class="reference external" href="https://man7.org/linux/man-pages/man1/head.1.html">head</a> as needed.</p>
+<h2 class="rubric" id="explore-idea">Explore idea</h2>
+<p>modify your script to use <a class="reference external" href="https://ollama.com/library/llama3.2">a small llm from ollama</a> to automatically insert a sensible title by summarizing the file. <strong>using a commercial chat interface does not qualify, but using an llm locally does</strong></p>
+<ol class="arabic simple">
+<li><p>Write a bash script that updates your badges.json file and then generates your progress report using <a class="reference external" href="https://compsys-progtools.github.io/courseutils/index.html">courseutils</a> and posts it as an issue  <em>we will use this in lab next week</em></p></li>
+<li><p>Write a bash script generates a progress report and computes your current grade using <a class="reference external" href="https://compsys-progtools.github.io/courseutils/index.html">courseutils</a> and posts it as an issue <em>we will use this in lab next week</em></p></li>
+</ol>
+<p><em>hint</em> you might use a temp file that you would also not want to track</p>
 </div>
 </div>
 </section>
@@ -1415,11 +1441,11 @@ Practice</label><div class="sd-tab-content docutils">
       </div>
     </a>
     <a class="right-next"
-       href="../activities/kwl.html"
+       href="2025-03-25.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">KWL Chart</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Why did we learn the plubming commands?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
