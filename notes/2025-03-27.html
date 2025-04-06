@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-03-27';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="18. What happens when I build code in C?" href="2025-04-01.html" />
+    <link rel="next" title="17. What happens when I build code in C?" href="2025-04-01.html" />
     <link rel="prev" title="15. Why did we learn the plubming commands?" href="2025-03-25.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -212,8 +212,9 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-03-20.html">14. How can I automate things with bash?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-03-25.html">15. Why did we learn the plubming commands?</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">16. How can I work on a remote server?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-01.html">17. What happens when I build code in C?</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="2025-04-01.html">18. What happens when I build code in C?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-03.html">19. What happens when we run code?</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
@@ -460,27 +461,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">16. How can I work on a remote server?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-authenticate-more-securely-from-a-terminal">17. How can I authenticate more securely from a terminal?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-remote-servers-and-hpc-systems">17.1. What are remote servers and HPC systems?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-seawulf">17.2. Connecting to Seawulf</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files">17.3. Downloading files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-large-files">17.4. Working with large files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-permissions">17.5. File permissions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-ssh-keys">17.6. Creating SSH Keys</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys-to-authenticate">17.7. Using ssh keys to authenticate</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-key-pair">17.8. Generating a Key Pair</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-the-public-key-to-a-server">17.9. Sending the public key to a server</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in">17.10. Logging in</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">17.11. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">17.12. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">17.13. Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">17.14. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">17.15. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-authenticate-more-securely-from-a-terminal">16.1. How can I authenticate more securely from a terminal?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-remote-servers-and-hpc-systems">16.2. What are remote servers and HPC systems?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-seawulf">16.3. Connecting to Seawulf</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files">16.4. Downloading files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-large-files">16.5. Working with large files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-permissions">16.6. File permissions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">16.7. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">16.8. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">16.9. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">16.10. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">16.11. Questions</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -511,15 +503,15 @@ document.write(`
 </ol>
 <section class="tex2jax_ignore mathjax_ignore" id="how-can-i-work-on-a-remote-server">
 <h1><span class="section-number">16. </span>How can I work on a remote server?<a class="headerlink" href="#how-can-i-work-on-a-remote-server" title="Link to this heading">#</a></h1>
+<section id="how-can-i-authenticate-more-securely-from-a-terminal">
+<h2><span class="section-number">16.1. </span>How can I authenticate more securely from a terminal?<a class="headerlink" href="#how-can-i-authenticate-more-securely-from-a-terminal" title="Link to this heading">#</a></h2>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="how-can-i-authenticate-more-securely-from-a-terminal">
-<h1><span class="section-number">17. </span>How can I authenticate more securely from a terminal?<a class="headerlink" href="#how-can-i-authenticate-more-securely-from-a-terminal" title="Link to this heading">#</a></h1>
 <section id="what-are-remote-servers-and-hpc-systems">
-<h2><span class="section-number">17.1. </span>What are remote servers and HPC systems?<a class="headerlink" href="#what-are-remote-servers-and-hpc-systems" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.2. </span>What are remote servers and HPC systems?<a class="headerlink" href="#what-are-remote-servers-and-hpc-systems" title="Link to this heading">#</a></h2>
 <p>Today we will connect to a remote server and learn new bash commands for working with the <em>content</em> of files.</p>
 </section>
 <section id="connecting-to-seawulf">
-<h2><span class="section-number">17.2. </span>Connecting to Seawulf<a class="headerlink" href="#connecting-to-seawulf" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.3. </span>Connecting to Seawulf<a class="headerlink" href="#connecting-to-seawulf" title="Link to this heading">#</a></h2>
 <p>We connect with secure shell or <code class="docutils literal notranslate"><span class="pre">ssh</span></code> from our terminal (GitBash or Putty on windows) to URI’s teaching High Performance Computing (HPC) Cluster <a class="reference external" href="https://web.uri.edu/hpc-research-computing/using-seawulf/">Seawulf</a>.</p>
 <p>This cluster is for course related purposes at URI, if you want to use a HPC system of some sort for a side project, consider Amazon Web Services, Google Cloud, or Microsoft Azul services, you can get some allocation for free a a student.</p>
 <p>If you are doing research supervised by a URI professor, there are other servers on campus and URI participates in a regional HPC resource as well.</p>
@@ -567,7 +559,7 @@ Connection to seawulf.uri.edu closed.
 <p>Notice that the prompt says <code class="docutils literal notranslate"><span class="pre">uriusername&#64;seawulf</span></code> to indicate that you are logged into the server, not working locally.</p>
 </section>
 <section id="downloading-files">
-<h2><span class="section-number">17.3. </span>Downloading files<a class="headerlink" href="#downloading-files" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.4. </span>Downloading files<a class="headerlink" href="#downloading-files" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">wget</span></code> allows you to get files from the web.</p>
 <p>we are going to download some genetics data that is compressed as a practice tool</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">hpc</span><span class="o">-</span><span class="n">carpentry</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">hpc</span><span class="o">-</span><span class="n">shell</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="n">bash</span><span class="o">-</span><span class="n">lesson</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
@@ -586,7 +578,7 @@ Connection to seawulf.uri.edu closed.
 <p>we can use the <code class="docutils literal notranslate"><span class="pre">man</span></code> command to learn about a command from the “man(ual) page”</p>
 </section>
 <section id="working-with-large-files">
-<h2><span class="section-number">17.4. </span>Working with large files<a class="headerlink" href="#working-with-large-files" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.5. </span>Working with large files<a class="headerlink" href="#working-with-large-files" title="Link to this heading">#</a></h2>
 <p>One of these files, contains the entire genome for the common fruitfly, let’s take a look at it: \</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">dmel</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">r6</span><span class="mf">.19</span><span class="o">.</span><span class="n">gtf</span>
 </pre></div>
@@ -673,7 +665,7 @@ Connection to seawulf.uri.edu closed.
 </div>
 </section>
 <section id="file-permissions">
-<h2><span class="section-number">17.5. </span>File permissions<a class="headerlink" href="#file-permissions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.6. </span>File permissions<a class="headerlink" href="#file-permissions" title="Link to this heading">#</a></h2>
 <p>Let’s make a small script, recalling what we have learned so far:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;echo &#39;script works&#39;&quot;</span> <span class="o">&gt;&gt;</span> <span class="n">demo</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
@@ -955,232 +947,48 @@ Connection to seawulf.uri.edu closed.
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@seawulf ~]$ exit
 </pre></div>
 </div>
+<p>Remember to logout to be curtious to others who are sharing the resources with you. We don’t want to be reserving resources that we aren’t using.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logout</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connection</span> <span class="n">to</span> <span class="n">seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span> <span class="n">closed</span><span class="o">.</span>
 </pre></div>
 </div>
+<!-- required to make mcq above work -->
 </section>
-<section id="creating-ssh-keys">
-<h2><span class="section-number">17.6. </span>Creating SSH Keys<a class="headerlink" href="#creating-ssh-keys" title="Link to this heading">#</a></h2>
+<section id="experience-report-evidence">
+<h2><span class="section-number">16.7. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
 </section>
-<section id="using-ssh-keys-to-authenticate">
-<h2><span class="section-number">17.7. </span>Using ssh keys to authenticate<a class="headerlink" href="#using-ssh-keys-to-authenticate" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>generate a key pair</p></li>
-<li><p>store the public key on the server</p></li>
-<li><p>Request to login, tell server your public key, get back a session ID from the server</p></li>
-<li><p>if it has that public key, then it generates a random string, encrypts it with your public key and sends it back to your computer</p></li>
-<li><p>On your computer, it decrypts the message + the session ID with your private key then hashes the message and sends it back</p></li>
-<li><p>the server then hashes its copy of the message and session ID and if the hash received and calculated match, then you are loggied in</p></li>
-</ol>
-<p><a class="reference external" href="https://thatsmaths.com/2016/08/11/a-toy-example-of-rsa-encryption/">a toy example</a></p>
-<p><img alt="cheatsheet on ssh from julia evans" src="https://wizardzines.com/comics/ssh/ssh.png" /></p>
-<p><a class="reference external" href="https://wizardzines.com/comics/ssh/">from wizardzines</a></p>
-<p>Lots more networking detals in the <a class="reference external" href="https://wizardzines.com/zines/bite-size-networking/">full zine</a> available for purchase or I can locate a copy if you want to borrow it.</p>
-</section>
-<section id="generating-a-key-pair">
-<h2><span class="section-number">17.8. </span>Generating a Key Pair<a class="headerlink" href="#generating-a-key-pair" title="Link to this heading">#</a></h2>
-<p>We can use <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> to create a keys.</p>
+<section id="prepare-for-next-class">
+<h2><span class="section-number">16.8. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-f</span></code> option allows us to specify the file name of the keys.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-t</span></code> option allows us to specify the encryption algorithm</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-b</span></code> option allows us to specify the size of the key in bits</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">f</span> <span class="o">~/</span><span class="n">seawulf</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="o">-</span><span class="n">b</span> <span class="mi">1024</span>
-</pre></div>
-</div>
-</section>
-<section id="sending-the-public-key-to-a-server">
-<h2><span class="section-number">17.9. </span>Sending the public key to a server<a class="headerlink" href="#sending-the-public-key-to-a-server" title="Link to this heading">#</a></h2>
-<p>again <code class="docutils literal notranslate"><span class="pre">-i</span></code> to specify the file name</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/</span><span class="n">seawulf</span> <span class="n">ayman_sandouk</span><span class="nd">@seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span><span class="p">:</span> <span class="n">INFO</span><span class="p">:</span> <span class="n">Source</span> <span class="n">of</span> <span class="n">key</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">to</span> <span class="n">be</span> <span class="n">installed</span><span class="p">:</span> <span class="s2">&quot;/Users/ayman_sandouk/seawulf.pub&quot;</span>
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span><span class="p">:</span> <span class="n">INFO</span><span class="p">:</span> <span class="n">attempting</span> <span class="n">to</span> <span class="n">log</span> <span class="ow">in</span> <span class="k">with</span> <span class="n">the</span> <span class="n">new</span> <span class="n">key</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">to</span> <span class="nb">filter</span> <span class="n">out</span> <span class="nb">any</span> <span class="n">that</span> <span class="n">are</span> <span class="n">already</span> <span class="n">installed</span>
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span><span class="p">:</span> <span class="n">INFO</span><span class="p">:</span> <span class="mi">1</span> <span class="n">key</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">remain</span> <span class="n">to</span> <span class="n">be</span> <span class="n">installed</span> <span class="o">--</span> <span class="k">if</span> <span class="n">you</span> <span class="n">are</span> <span class="n">prompted</span> <span class="n">now</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">install</span> <span class="n">the</span> <span class="n">new</span> <span class="n">keys</span>
-<span class="n">ayman_sandouk</span><span class="nd">@seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span><span class="s1">&#39;s password: </span>
-
-<span class="n">Number</span> <span class="n">of</span> <span class="n">key</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">added</span><span class="p">:</span>        <span class="mi">1</span>
-
-<span class="n">Now</span> <span class="k">try</span> <span class="n">logging</span> <span class="n">into</span> <span class="n">the</span> <span class="n">machine</span><span class="p">,</span> <span class="k">with</span><span class="p">:</span>   <span class="s2">&quot;ssh &#39;ayman_sandouk@seawulf.uri.edu&#39;&quot;</span>
-<span class="ow">and</span> <span class="n">check</span> <span class="n">to</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">that</span> <span class="n">only</span> <span class="n">the</span> <span class="n">key</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">you</span> <span class="n">wanted</span> <span class="n">were</span> <span class="n">added</span><span class="o">.</span>
-
-</pre></div>
-</div>
-</section>
-<section id="logging-in">
-<h2><span class="section-number">17.10. </span>Logging in<a class="headerlink" href="#logging-in" title="Link to this heading">#</a></h2>
-<p>To login without usng a password you have to tell ssh which key to use:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">seawulf</span> <span class="n">ayman_sandouk</span><span class="nd">@seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span>
-</pre></div>
-</div>
-<p>Or you can add the following to your <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">seawulf</span>
-  <span class="n">Hostname</span> <span class="n">seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span>
-  <span class="n">Username</span> <span class="n">ayman_sandouk</span>
-  <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">seawulf</span>
-</pre></div>
-</div>
-<p>and then use</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">seawulf</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ayman_sandouk</span><span class="nd">@seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span><span class="s1">&#39;s password: </span>
-<span class="n">Last</span> <span class="n">login</span><span class="p">:</span> <span class="n">Thu</span> <span class="n">Mar</span> <span class="mi">30</span> <span class="mi">13</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">24</span> <span class="mi">2023</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pool</span><span class="o">-</span><span class="mi">72</span><span class="o">-</span><span class="mi">87</span><span class="o">-</span><span class="mi">118</span><span class="o">-</span><span class="mf">171.</span><span class="n">prvdri</span><span class="o">.</span><span class="n">fios</span><span class="o">.</span><span class="n">verizon</span><span class="o">.</span><span class="n">net</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@seawulf ~]$ pwd
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ayman_sandouk</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@seawulf ~]$ lshw
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@seawulf ~]$ interactive
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salloc</span><span class="p">:</span> <span class="n">Granted</span> <span class="n">job</span> <span class="n">allocation</span> <span class="mi">26471</span>
-<span class="n">salloc</span><span class="p">:</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">resource</span> <span class="n">configuration</span>
-<span class="n">salloc</span><span class="p">:</span> <span class="n">Nodes</span> <span class="n">n005</span> <span class="n">are</span> <span class="n">ready</span> <span class="k">for</span> <span class="n">job</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@n005 ~]$ ls
-bash-lesson.tar.gz                           SRR307024_2.fastq
-bash-lesson.tar.gz.1                         SRR307025_1.fastq
-demo.sh                                      SRR307025_2.fastq
-dmel-all-r6.19.gtf                           SRR307026_1.fastq
-dmel_unique_protein_isoforms_fb_2016_01.tsv  SRR307026_2.fastq
-example                                      SRR307027_1.fastq
-gene_association.fb                          SRR307027_2.fastq
-linecounts.txt                               SRR307028_1.fastq
-my_job.sh                                    SRR307028_2.fastq
-results                                      SRR307029_1.fastq
-slurm-23950.out                              SRR307029_2.fastq
-SRR307023_1.fastq                            SRR307030_1.fastq
-SRR307023_2.fastq                            SRR307030_2.fastq
-SRR307024_1.fastq
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@n005 ~]$ cat demo.sh 
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s1">&#39;script works&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@n005 ~]$ ./demo.sh 
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">script</span> <span class="n">works</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@n005 ~]$ ls my_job.sh 
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_job</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@n005 ~]$ cat my_job.sh 
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH -t 1:00:00</span>
-<span class="c1">#SBATCH --nodes=1 --ntasks-per-node=1</span>
-<span class="o">./</span><span class="n">single_job</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@n005 ~]$ exit
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logout</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salloc</span><span class="p">:</span> <span class="n">Relinquishing</span> <span class="n">job</span> <span class="n">allocation</span> <span class="mi">26471</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@seawulf ~]$ interactive -t 0:03:00
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">interactive</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">J</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">w</span><span class="p">]</span>
-
-<span class="n">Optional</span> <span class="n">arguments</span><span class="p">:</span>
-    <span class="o">-</span><span class="n">c</span><span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">CPU</span> <span class="n">cores</span> <span class="n">to</span> <span class="n">request</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="o">-</span><span class="n">p</span><span class="p">:</span> <span class="n">partition</span> <span class="n">to</span> <span class="n">run</span> <span class="n">job</span> <span class="ow">in</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">general</span><span class="p">)</span>
-    <span class="o">-</span><span class="n">J</span><span class="p">:</span> <span class="n">job</span> <span class="n">name</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">interactive</span><span class="p">)</span>
-    <span class="o">-</span><span class="n">w</span><span class="p">:</span> <span class="n">node</span> <span class="n">name</span>
-
-<span class="n">NB</span><span class="p">:</span> <span class="n">interactive</span> <span class="n">jobs</span> <span class="n">have</span> <span class="n">a</span> <span class="n">time</span> <span class="n">limit</span> <span class="n">of</span> <span class="mi">8</span> <span class="n">hours</span><span class="o">.</span>
-
-<span class="n">Written</span> <span class="n">by</span><span class="p">:</span> <span class="n">Alan</span> <span class="n">Orth</span> <span class="o">&lt;</span><span class="n">a</span><span class="o">.</span><span class="n">orth</span><span class="nd">@cgiar</span><span class="o">.</span><span class="n">org</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@seawulf ~]$ interactive -c 4 
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salloc</span><span class="p">:</span> <span class="n">Granted</span> <span class="n">job</span> <span class="n">allocation</span> <span class="mi">26490</span>
-<span class="n">salloc</span><span class="p">:</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">resource</span> <span class="n">configuration</span>
-<span class="n">salloc</span><span class="p">:</span> <span class="n">Nodes</span> <span class="n">n005</span> <span class="n">are</span> <span class="n">ready</span> <span class="k">for</span> <span class="n">job</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@n005 ~]$ exit
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logout</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salloc</span><span class="p">:</span> <span class="n">Relinquishing</span> <span class="n">job</span> <span class="n">allocation</span> <span class="mi">26490</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@seawulf ~]$ interactive
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salloc</span><span class="p">:</span> <span class="n">Granted</span> <span class="n">job</span> <span class="n">allocation</span> <span class="mi">26499</span>
-<span class="n">salloc</span><span class="p">:</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">resource</span> <span class="n">configuration</span>
-<span class="n">salloc</span><span class="p">:</span> <span class="n">Nodes</span> <span class="n">n005</span> <span class="n">are</span> <span class="n">ready</span> <span class="k">for</span> <span class="n">job</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@n005 ~]$ python3
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@n005 ~]$ python3
-</pre></div>
-</div>
-<p>How was the pace of today’s class?</p>
-<ul class="simple">
-<li><p>[ ] way too slow</p></li>
-<li><p>[ ] a little slow</p></li>
-<li><p>[ ] just right</p></li>
-<li><p>[ ] a little fast</p></li>
-<li><p>[ ] way too fast</p></li>
+<li><p>[ ] Ensure you can log into seawulf</p></li>
 </ul>
 </section>
 <section id="review-todays-class">
-<h2><span class="section-number">17.11. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.9. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Link to this heading">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This is an <a class="reference internal" href="../syllabus/grading.html#integrative"><span class="std std-ref">integrative</span></a> 2x badge.</p>
 </div>
 </section>
-<section id="prepare-for-next-class">
-<h2><span class="section-number">17.12. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
-</section>
-<section id="practice">
-<h2><span class="section-number">17.13. </span>Practice<a class="headerlink" href="#practice" title="Link to this heading">#</a></h2>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>This is an <a class="reference internal" href="../syllabus/grading.html#integrative"><span class="std std-ref">integrative</span></a> 2x badge.</p>
+<section id="badges">
+<h2><span class="section-number">16.10. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Review</label><div class="sd-tab-content docutils">
+<p>TBD</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Practice</label><div class="sd-tab-content docutils">
+<p>TBD</p>
+</div>
 </div>
 </section>
-<section id="experience-report-evidence">
-<h2><span class="section-number">17.14. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
-<!-- required to make mcq above work -->
-</section>
-<section id="id1">
-<h2><span class="section-number">17.15. </span>Experience Report Evidence<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="questions">
+<h2><span class="section-number">16.11. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Answer the following in <span class="target" id="index-0"></span>hpc.md of your KWL repo:  (to think about how the design of the system we used in class impacts programming and connect it to other ideas taught in CS)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. What kinds of things would your code need to do if you were going to run it on an HPC system? 
@@ -1275,7 +1083,7 @@ SRR307024_1.fastq
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>What happens when I build code in C?</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>What happens when I build code in C?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1295,27 +1103,18 @@ SRR307024_1.fastq
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">16. How can I work on a remote server?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-authenticate-more-securely-from-a-terminal">17. How can I authenticate more securely from a terminal?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-remote-servers-and-hpc-systems">17.1. What are remote servers and HPC systems?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-seawulf">17.2. Connecting to Seawulf</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files">17.3. Downloading files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-large-files">17.4. Working with large files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-permissions">17.5. File permissions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-ssh-keys">17.6. Creating SSH Keys</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys-to-authenticate">17.7. Using ssh keys to authenticate</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-key-pair">17.8. Generating a Key Pair</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-the-public-key-to-a-server">17.9. Sending the public key to a server</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in">17.10. Logging in</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">17.11. Review today’s class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">17.12. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">17.13. Practice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">17.14. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">17.15. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-authenticate-more-securely-from-a-terminal">16.1. How can I authenticate more securely from a terminal?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-remote-servers-and-hpc-systems">16.2. What are remote servers and HPC systems?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-seawulf">16.3. Connecting to Seawulf</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files">16.4. Downloading files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-large-files">16.5. Working with large files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-permissions">16.6. File permissions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">16.7. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">16.8. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-todays-class">16.9. Review today’s class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">16.10. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">16.11. Questions</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
