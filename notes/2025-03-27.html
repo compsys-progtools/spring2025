@@ -215,8 +215,7 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-04-01.html">17. What happens when I build code in C?</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="2025-04-03.html">19. What happens when we run code?</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">21. What <em>is</em> an IDE?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">20. What <em>is</em> an IDE?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -970,7 +969,7 @@ Connection to seawulf.uri.edu closed.
 <h2><span class="section-number">16.9. </span>Review today’s class<a class="headerlink" href="#review-todays-class" title="Link to this heading">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>This is an <a class="reference internal" href="../syllabus/grading.html#integrative"><span class="std std-ref">integrative</span></a> 2x badge.</p>
+<p>Today’s badges are <a class="reference internal" href="../syllabus/grading.html#integrative"><span class="std std-ref">integrative</span></a> 2x badges.</p>
 </div>
 </section>
 <section id="badges">
@@ -979,64 +978,45 @@ Connection to seawulf.uri.edu closed.
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
 Review</label><div class="sd-tab-content docutils">
-<p>TBD</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is an <a class="reference internal" href="../syllabus/grading.html#integrative"><span class="std std-ref">integrative</span></a> 2x badge.</p>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-Practice</label><div class="sd-tab-content docutils">
-<p>TBD</p>
-</div>
-</div>
-</section>
-<section id="questions">
-<h2><span class="section-number">16.11. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Answer the following in <span class="target" id="index-0"></span>hpc.md of your KWL repo:  (to think about how the design of the system we used in class impacts programming and connect it to other ideas taught in CS)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. What kinds of things would your code need to do if you were going to run it on an HPC system? 
-1. What sbatch options seem the most helpful?
-1. How might you go about setting the time limits for a script? How could you estimate how long a script will take?
-</pre></div>
-</div>
-</li>
-<li><p>File permissions are represented numerically often in octal, by transforming the permissions for each level (owner, group, all) as binary into a number. Add <span class="target" id="index-1"></span>octal.md to your KWL repo and answer the following. Try to think through it on your own, but you may look up the answers, as long as you link to (or ideally cite using jupyterbook citations) a high quality source.</p>
+<li><p>File permissions are represented numerically often in octal, by transforming the permissions for each level (owner, group, all) as binary into a number. Add <span class="target" id="index-0"></span>octal.md to your KWL repo and answer the following. Try to think through it on your own, but you may look up the answers, as long as you link to (or ideally cite using jupyterbook citations) a high quality source.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Describe how to transform the permissions [`r--`, `rw-`, `rwx`] to octal, by treating each set as three bits.
 1. Transform the permission we changed our script to `rwxr-xr-x` to octal.
 1. Which of the following would prevent a file from being edited by other people 777 or 755 and why?
 </pre></div>
 </div>
 </li>
+<li><p>Read through this <a class="reference external" href="https://people.cs.pitt.edu/~kirk/cs1501/notes/rsademo/">rsa encryption demo site</a> to review how it works. Find 2 other encyrption algorithms that could be used wiht ssh (hint: try <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ssh</span></code> or <a class="reference external" href="https://man7.org/linux/man-pages/man1/ssh.1.html">read it online</a>) and compare them in <span class="target" id="index-1"></span>encyryption_compare.md.  Your comparison should be enough to advise someone which is best and why, but need not get into the details.</p></li>
 </ol>
-<ol class="arabic">
-<li><p>Answer the following in <span class="target" id="index-2"></span>hpc.md of your KWL repo:  (to think about how the design of the system we used in class impacts programming and connect it to other ideas taught in CS)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. What kinds of things would your code need to do if you were going to run it on an HPC system? 
-1. What sbatch options seem the most helpful?
-1. How might you go about setting the time limits for a script? How could you estimate how long a script will take?
-</pre></div>
 </div>
-</li>
-<li><p>Read through this <a class="reference external" href="https://people.cs.pitt.edu/~kirk/cs1501/notes/rsademo/">rsa encryption demo site</a> to review how it works. Find 2 other encyrption algorithms that could be used wiht ssh (hint: try <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ssh</span></code> or <a class="reference external" href="https://man7.org/linux/man-pages/man1/ssh.1.html">read it online</a>) and compare them in <span class="target" id="index-3"></span>encyryption_compare.  Your comparison should be enough to advise someone which is best and why, but need not get into the details.</p></li>
-<li><p>Post your public key and then decrypte the message we give you back.</p></li>
-<li></li>
-<li><p>Answer the following in <span class="target" id="index-4"></span>hpc.md of your KWL repo:  (to think about how the design of the system we used in class impacts programming and connect it to other ideas taught in CS)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. What kinds of things would your code need to do if you were going to run it on an HPC system? 
-2. What sbatch options seem the most helpful?
-3. How might you go about setting the time limits for a script? How could you estimate how long a script will take?
-</pre></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Practice</label><div class="sd-tab-content docutils">
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is an <a class="reference internal" href="../syllabus/grading.html#integrative"><span class="std std-ref">integrative</span></a> 2x badge.</p>
 </div>
-</li>
-</ol>
 <ol class="arabic">
-<li><p>Answer the following in <span class="target" id="index-5"></span>hpc.md of your KWL repo:  (to think about how the design of the system we used in class impacts programming and connect it to other ideas taught in CS)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. What kinds of things would your code need to do if you were going to run it on an HPC system? 
-2. What sbatch options seem the most helpful?
-3. How might you go about setting the time limits for a script? How could you estimate how long a script will take?
+<li><p>File permissions are represented numerically often in octal, by transforming the permissions for each level (owner, group, all) as binary into a number. Add <span class="target" id="index-2"></span>octal.md to your KWL repo and answer the following. Try to think through it on your own, but you may look up the answers, as long as you link to (or ideally cite using jupyterbook citations) a high quality source.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Describe how to transform the permissions [`r--`, `rw-`, `rwx`] to octal, by treating each set as three bits.
+1. Transform the permission we changed our script to `rwxr-xr-x` to octal.
+1. Which of the following would prevent a file from being edited by other people 777 or 755 and why?
 </pre></div>
 </div>
 </li>
 <li><p>configure <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">ssh keys for your github account</a></p></li>
-<li><p>Find 2 other encyrption algorithms that could be used wiht ssh (hint: try <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ssh</span></code> or <a class="reference external" href="https://man7.org/linux/man-pages/man1/ssh.1.html">read it online</a>) and compare them in <span class="target" id="index-6"></span>encyryption_compare.  Your comparison should be enough to advise someone which is best and why, but need not get into the details.</p></li>
-<li><p>Read through this <a class="reference external" href="https://people.cs.pitt.edu/~kirk/cs1501/notes/rsademo/">rsa encryption demo site</a> site and use it to show what, for a particular public/private key pair (based on small primes) it would look like to pass a message, “It is spring now!” encrypted.  (that is encypt it, and decrypt it with the site, show it’s encrypted version and the key pair and describe what would go where). Put your example in <span class="target" id="index-7"></span>rsademo.md.</p></li>
+<li><p>Read through this <a class="reference external" href="https://people.cs.pitt.edu/~kirk/cs1501/notes/rsademo/">rsa encryption demo site</a> site and use it to show what, for a particular public/private key pair (based on small primes) it would look like to pass a message, “It is spring now!” encrypted.  (that is encypt it, and decrypt it with the site, show it’s encrypted version and the key pair and describe what would go where). Put your example in <span class="target" id="index-3"></span>rsademo.md.</p></li>
+<li><p>Find 2 other encyrption algorithms that could be used wiht ssh (hint: try <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ssh</span></code> or <a class="reference external" href="https://man7.org/linux/man-pages/man1/ssh.1.html">read it online</a>) and compare them in <span class="target" id="index-4"></span>encyryption_compare.md.  Your comparison should be enough to advise someone which is best and why, but need not get into the details.</p></li>
 </ol>
+</div>
+</div>
+</section>
+<section id="questions">
+<h2><span class="section-number">16.11. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
