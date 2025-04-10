@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-04-01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="19. What happens when we run code?" href="2025-04-03.html" />
+    <link rel="next" title="18. What happens when we run code?" href="2025-04-03.html" />
     <link rel="prev" title="16. How can I work on a remote server?" href="2025-03-27.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -213,9 +213,9 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-03-25.html">15. Why did we learn the plubming commands?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-03-27.html">16. How can I work on a remote server?</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">17. What happens when I build code in C?</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="2025-04-03.html">19. What happens when we run code?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">20. What <em>is</em> an IDE?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-03.html">18. What happens when we run code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -461,37 +461,31 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">17. What happens when I build code in C?</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-buiding-code">17.1. What is <em>buiding</em> code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-authenticate-more-securely-from-a-terminal">17.2. How can I authenticate more securely from a terminal?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-seawulf">17.3. remember seawulf?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-ssh-keys">17.4. Creating SSH Keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys-to-authenticated">17.5. Using ssh keys to authenticated</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-key-pair">17.6. Generating a Key Pair</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-the-public-key-to-a-server">17.7. Sending the public key to a server</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in">17.8. Logging in</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys">17.9. Using SSH Keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-interactive-session">17.10. Using an interactive session</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overview">17.11. An overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">17.12. An overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-program">17.13. A simple program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-with-gcc">17.14. Preprocessing with gcc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">17.15. Compiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembling">17.16. Assembling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking">17.17. Linking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">17.18. Putting it all together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-multiple-files">17.19. Working with multiple files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-jobs">17.20. batch jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">17.21. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">17.22. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">17.23. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">17.24. Questions</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-authenticate-more-securely-from-a-terminal">18. How can I authenticate more securely from a terminal?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-seawulf">18.1. remember seawulf?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-ssh-keys">18.2. Creating SSH Keys</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys-to-authenticated">18.3. Using ssh keys to authenticated</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-key-pair">18.4. Generating a Key Pair</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-the-public-key-to-a-server">18.5. Sending the public key to a server</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in">18.6. Logging in</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys">18.7. Using SSH Keys</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-interactive-session">18.8. Using an interactive session</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overview">18.9. An overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">18.10. An overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-program">18.11. A simple program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-with-gcc">18.12. Preprocessing with gcc</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">18.13. Compiling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembling">18.14. Assembling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking">18.15. Linking</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">18.16. Putting it all together</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-multiple-files">18.17. Working with multiple files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-jobs">18.18. batch jobs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">18.19. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">18.20. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">18.21. Badges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">18.22. Questions</a></li>
-</ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -525,17 +519,17 @@ document.write(`
 <li><p>get enough understanding of what happens to know where to look when debugging</p></li>
 </ul>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="how-can-i-authenticate-more-securely-from-a-terminal">
-<h1><span class="section-number">18. </span>How can I authenticate more securely from a terminal?<a class="headerlink" href="#how-can-i-authenticate-more-securely-from-a-terminal" title="Link to this heading">#</a></h1>
+<section id="how-can-i-authenticate-more-securely-from-a-terminal">
+<h2><span class="section-number">17.2. </span>How can I authenticate more securely from a terminal?<a class="headerlink" href="#how-can-i-authenticate-more-securely-from-a-terminal" title="Link to this heading">#</a></h2>
 <p>Previous notes:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://introcompsys.github.io/spring2022/notes/2022-03-08.html">sp22 server</a></p></li>
 <li><p><a class="reference external" href="https://introcompsys.github.io/spring2022/notes/2022-03-10.html">sp22 ssh keys</a></p></li>
 <li><p><a class="reference external" href="https://introcompsys.github.io/fall2022/notes/2022-10-26.html">f22 server</a></p></li>
 </ul>
+</section>
 <section id="remember-seawulf">
-<h2><span class="section-number">18.1. </span>remember seawulf?<a class="headerlink" href="#remember-seawulf" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.3. </span>remember seawulf?<a class="headerlink" href="#remember-seawulf" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-l<span class="w"> </span>ayman_sandouk<span class="w"> </span>seawulf.uri.edu
 </pre></div>
 </div>
@@ -557,10 +551,10 @@ document.write(`
 </div>
 </section>
 <section id="creating-ssh-keys">
-<h2><span class="section-number">18.2. </span>Creating SSH Keys<a class="headerlink" href="#creating-ssh-keys" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.4. </span>Creating SSH Keys<a class="headerlink" href="#creating-ssh-keys" title="Link to this heading">#</a></h2>
 </section>
 <section id="using-ssh-keys-to-authenticated">
-<h2><span class="section-number">18.3. </span>Using ssh keys to authenticated<a class="headerlink" href="#using-ssh-keys-to-authenticated" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.5. </span>Using ssh keys to authenticated<a class="headerlink" href="#using-ssh-keys-to-authenticated" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>generate a key pair</p></li>
 <li><p>store the public key on the server</p></li>
@@ -576,7 +570,7 @@ document.write(`
 <p>this <em>free zine</em> describes networks at a lower level <a class="reference external" href="https://jvns.ca/networking-zine.pdf">full zine</a> but does not include ssh</p>
 </section>
 <section id="generating-a-key-pair">
-<h2><span class="section-number">18.4. </span>Generating a Key Pair<a class="headerlink" href="#generating-a-key-pair" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.6. </span>Generating a Key Pair<a class="headerlink" href="#generating-a-key-pair" title="Link to this heading">#</a></h2>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> to create a keys.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-f</span></code> option allows us to specify the file name of the keys.</p></li>
@@ -588,14 +582,14 @@ document.write(`
 </div>
 </section>
 <section id="sending-the-public-key-to-a-server">
-<h2><span class="section-number">18.5. </span>Sending the public key to a server<a class="headerlink" href="#sending-the-public-key-to-a-server" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.7. </span>Sending the public key to a server<a class="headerlink" href="#sending-the-public-key-to-a-server" title="Link to this heading">#</a></h2>
 <p>again <code class="docutils literal notranslate"><span class="pre">-i</span></code> to specify the file name</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/seawulf<span class="w"> </span>ayman_sandouk@seawulf.uri.edu
 </pre></div>
 </div>
 </section>
 <section id="logging-in">
-<h2><span class="section-number">18.6. </span>Logging in<a class="headerlink" href="#logging-in" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.8. </span>Logging in<a class="headerlink" href="#logging-in" title="Link to this heading">#</a></h2>
 <p>To login without usng a password you have to tell ssh which key to use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">seawulf</span> <span class="n">ayman_sandouk</span><span class="nd">@seawulf</span><span class="o">.</span><span class="n">uri</span><span class="o">.</span><span class="n">edu</span>
 </pre></div>
@@ -614,7 +608,7 @@ document.write(`
 <!-- Without config... -->
 </section>
 <section id="using-ssh-keys">
-<h2><span class="section-number">18.7. </span>Using SSH Keys<a class="headerlink" href="#using-ssh-keys" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.9. </span>Using SSH Keys<a class="headerlink" href="#using-ssh-keys" title="Link to this heading">#</a></h2>
 <p>We are going to work on seawulf so that we all have the same compiler.</p>
 <p>To use it we use he <code class="docutils literal notranslate"><span class="pre">-i</span></code> option and then the path to the private key file</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-i<span class="w"> </span>~/seawulf<span class="w"> </span>ayman_sandouk@seawulf.uri.edu
@@ -625,7 +619,7 @@ document.write(`
 </div>
 </section>
 <section id="using-an-interactive-session">
-<h2><span class="section-number">18.8. </span>Using an interactive session<a class="headerlink" href="#using-an-interactive-session" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.10. </span>Using an interactive session<a class="headerlink" href="#using-an-interactive-session" title="Link to this heading">#</a></h2>
 <p>Last class we worked on the login node, but that is not best practice.</p>
 <p>Today we will use an interactive session using the <code class="docutils literal notranslate"><span class="pre">interactive</span></code> program.</p>
 <p>The login node has limited resources, and is only usually used to connect to the server and possibly run batch jobs from there. The login node resources are shared among many users, so, out of courtesy, we try not to occupy these resources too much or for too long</p>
@@ -691,14 +685,14 @@ SRR307025_2.fastq                            SRR307030_2.fastq
 </div>
 </section>
 <section id="an-overview">
-<h2><span class="section-number">18.9. </span>An overview<a class="headerlink" href="#an-overview" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.11. </span>An overview<a class="headerlink" href="#an-overview" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://mermaid.live/edit#pako:eNplkk1vhCAQhv8KmbNrtKzx49DTXntqT9VNgzp2SUEMYHat-t-Lq7tptyQQ3uF5h2HCCJWqETJohDpXJ6YteTsULXGD5bkZjEVJGi7QHI9kt3smk-ClryYiePuFeiXPmlscrytZ0s0rKYePTqtPzaRfTaTT6FSFxihNVt-f0KOFk8klk527e7vmpv6hZiLMGJTlcrgVf9eP8L32jdzEA-aRXxa84ER0345urg9crWWelz0XNam5vrXnhKJD_btD4IFELRmvXZvHxVmAPaHEAjK3rbFhvbAFFO3sUNZb9Tq0FWRW9-hB39XM4oGzpRLIGiaMi3asfVdK3iAnIRvhAhmNQz-J0jBMg6c9pUnkwQBZSv2AulAY0SilUZzOHnxf_YEfJUkU7NM4CGIae4A1t0q_rJ_i-jfmH7qlte8"><img alt="" src="https://mermaid.ink/img/pako:eNplkk1vhCAQhv8KmbNrtKzx49DTXntqT9VNgzp2SUEMYHat-t-Lq7tptyQQ3uF5h2HCCJWqETJohDpXJ6YteTsULXGD5bkZjEVJGi7QHI9kt3smk-ClryYiePuFeiXPmlscrytZ0s0rKYePTqtPzaRfTaTT6FSFxihNVt-f0KOFk8klk527e7vmpv6hZiLMGJTlcrgVf9eP8L32jdzEA-aRXxa84ER0345urg9crWWelz0XNam5vrXnhKJD_btD4IFELRmvXZvHxVmAPaHEAjK3rbFhvbAFFO3sUNZb9Tq0FWRW9-hB39XM4oGzpRLIGiaMi3asfVdK3iAnIRvhAhmNQz-J0jBMg6c9pUnkwQBZSv2AulAY0SilUZzOHnxf_YEfJUkU7NM4CGIae4A1t0q_rJ_i-jfmH7qlte8?type=png" /></a></p>
 </section>
 <section id="id1">
-<h2><span class="section-number">18.10. </span>An overview<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.12. </span>An overview<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 </section>
 <section id="a-simple-program">
-<h2><span class="section-number">18.11. </span>A simple program<a class="headerlink" href="#a-simple-program" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.13. </span>A simple program<a class="headerlink" href="#a-simple-program" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>nano<span class="w"> </span>hello.c
 </pre></div>
 </div>
@@ -721,7 +715,7 @@ program</p>
 </div>
 </section>
 <section id="preprocessing-with-gcc">
-<h2><span class="section-number">18.12. </span>Preprocessing with gcc<a class="headerlink" href="#preprocessing-with-gcc" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.14. </span>Preprocessing with gcc<a class="headerlink" href="#preprocessing-with-gcc" title="Link to this heading">#</a></h2>
 <p>First we handle the preprocessing which pulls in headers that are included in our source code.  We will use the compiler <a class="reference external" href="https://man7.org/linux/man-pages/man1/gcc.1.html">gcc</a></p>
 <p>We will use <code class="docutils literal notranslate"><span class="pre">gcc</span></code> for many steps. We will use different options that it offers to do subsets of the complete compile task:</p>
 <ul class="simple">
@@ -810,7 +804,7 @@ program</p>
 </aside>
 </section>
 <section id="compiling">
-<h2><span class="section-number">18.13. </span>Compiling<a class="headerlink" href="#compiling" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.15. </span>Compiling<a class="headerlink" href="#compiling" title="Link to this heading">#</a></h2>
 <p>Next we take our preprocessed file and compile it to get assembly code.</p>
 <p>Again, we use <code class="docutils literal notranslate"><span class="pre">gcc</span></code>:</p>
 <ul class="simple">
@@ -874,7 +868,7 @@ main:
 </div>
 </section>
 <section id="assembling">
-<h2><span class="section-number">18.14. </span>Assembling<a class="headerlink" href="#assembling" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.16. </span>Assembling<a class="headerlink" href="#assembling" title="Link to this heading">#</a></h2>
 <p>Assembling is to take the assembly code and get object code.  Assembly is relatively broad and there are families of assembly code, it is also still written <em>for humans</em> to understand it readily.  It’s more complex than source code because it is closer to the hardware.  The object code however, is specific instructions to your machine and not human readable.</p>
 <p>Again, with <code class="docutils literal notranslate"><span class="pre">gcc</span></code>:</p>
 <ul class="simple">
@@ -929,7 +923,7 @@ K                                                               A?C
 <p>This is not human readable, though:</p>
 </section>
 <section id="linking">
-<h2><span class="section-number">18.15. </span>Linking<a class="headerlink" href="#linking" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.17. </span>Linking<a class="headerlink" href="#linking" title="Link to this heading">#</a></h2>
 <p>Now we can link it all together; in this program there are not a lot of other depdencies, but this fills in anything from libraries and outputs an executble</p>
 <p>once again with <code class="docutils literal notranslate"><span class="pre">gcc</span></code>:</p>
 <ul class="simple">
@@ -954,7 +948,7 @@ K                                                               A?C
 </div>
 </section>
 <section id="putting-it-all-together">
-<h2><span class="section-number">18.16. </span>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.18. </span>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Link to this heading">#</a></h2>
 <p>We can repeat with a different name and work directly from source to executable:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>gcc<span class="w"> </span>-o<span class="w"> </span>demohello<span class="w"> </span>hello.c<span class="w"> </span>-lm
 </pre></div>
@@ -994,7 +988,7 @@ K                                                               A?C
 This information is crucial for debuggers like GDB, allowing developers to step through code, inspect variables, and understand the program’s execution flow.</p>
 </section>
 <section id="working-with-multiple-files">
-<h2><span class="section-number">18.17. </span>Working with multiple files<a class="headerlink" href="#working-with-multiple-files" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.19. </span>Working with multiple files<a class="headerlink" href="#working-with-multiple-files" title="Link to this heading">#</a></h2>
 <p>This all looks a bit different if we have our code split across files.</p>
 <p>we will make a new file <code class="docutils literal notranslate"><span class="pre">main.c</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>nano<span class="w"> </span>main.c
@@ -1147,7 +1141,7 @@ gcc<span class="w"> </span>-o<span class="w"> </span>demo<span class="w"> </span
 <!-- AS: after fixing muiltiple file link figure out if we have enough time to do any of the shit below or do ssh keys?? -->
 </section>
 <section id="batch-jobs">
-<h2><span class="section-number">18.18. </span>batch jobs<a class="headerlink" href="#batch-jobs" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.20. </span>batch jobs<a class="headerlink" href="#batch-jobs" title="Link to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH -t 1:00:00</span>
 <span class="c1">#SBATCH --nodes=1 --ntasks-per-node=1</span>
@@ -1156,14 +1150,14 @@ gcc<span class="w"> </span>-o<span class="w"> </span>demo<span class="w"> </span
 </div>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">18.19. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.21. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">18.20. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.22. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
 <p>TBD</p>
 </section>
 <section id="badges">
-<h2><span class="section-number">18.21. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.23. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
@@ -1187,7 +1181,7 @@ Practice</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="questions">
-<h2><span class="section-number">18.22. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.24. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1235,7 +1229,7 @@ Practice</label><div class="sd-tab-content docutils">
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">19. </span>What happens when we run code?</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>What happens when we run code?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1255,37 +1249,31 @@ Practice</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">17. What happens when I build code in C?</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-buiding-code">17.1. What is <em>buiding</em> code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-authenticate-more-securely-from-a-terminal">17.2. How can I authenticate more securely from a terminal?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-seawulf">17.3. remember seawulf?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-ssh-keys">17.4. Creating SSH Keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys-to-authenticated">17.5. Using ssh keys to authenticated</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-key-pair">17.6. Generating a Key Pair</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-the-public-key-to-a-server">17.7. Sending the public key to a server</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in">17.8. Logging in</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys">17.9. Using SSH Keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-interactive-session">17.10. Using an interactive session</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overview">17.11. An overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">17.12. An overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-program">17.13. A simple program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-with-gcc">17.14. Preprocessing with gcc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">17.15. Compiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembling">17.16. Assembling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking">17.17. Linking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">17.18. Putting it all together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-multiple-files">17.19. Working with multiple files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-jobs">17.20. batch jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">17.21. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">17.22. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">17.23. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">17.24. Questions</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-authenticate-more-securely-from-a-terminal">18. How can I authenticate more securely from a terminal?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-seawulf">18.1. remember seawulf?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-ssh-keys">18.2. Creating SSH Keys</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys-to-authenticated">18.3. Using ssh keys to authenticated</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-key-pair">18.4. Generating a Key Pair</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-the-public-key-to-a-server">18.5. Sending the public key to a server</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in">18.6. Logging in</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys">18.7. Using SSH Keys</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-interactive-session">18.8. Using an interactive session</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overview">18.9. An overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">18.10. An overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-program">18.11. A simple program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-with-gcc">18.12. Preprocessing with gcc</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">18.13. Compiling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembling">18.14. Assembling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking">18.15. Linking</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">18.16. Putting it all together</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-multiple-files">18.17. Working with multiple files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-jobs">18.18. batch jobs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">18.19. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">18.20. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">18.21. Badges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">18.22. Questions</a></li>
-</ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

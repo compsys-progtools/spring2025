@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>19. What happens when we run code? &#8212; Computer Systems and Programming Tools</title>
+    <title>18. What happens when we run code? &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-04-03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="20. What is an IDE?" href="2025-04-08.html" />
+    <link rel="next" title="19. What is an IDE?" href="2025-04-08.html" />
     <link rel="prev" title="17. What happens when I build code in C?" href="2025-04-01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -213,9 +213,9 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-03-25.html">15. Why did we learn the plubming commands?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-03-27.html">16. How can I work on a remote server?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-01.html">17. What happens when I build code in C?</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">19. What happens when we run code?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">20. What <em>is</em> an IDE?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. What happens when we run code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -461,21 +461,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-mac-linux">19.1. on Mac/Linux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-windows">19.2. On Windows:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-work-on-the-online-supported-version">19.3. To work on the online supported version</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-cpu-emulator">19.4. Starting the CPU Emulator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-program">19.5. Loading a program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-computer-actually-add-constants">19.6. How does the computer actually add constants?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-max-between-two-numbers">19.7. The max between two numbers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-ideas">19.8. Explore ideas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-the-object-file-not-human-readable">19.9. Why is the object file not human readable?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelude-repl">19.10. Prelude: REPL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#characters-to-integers">19.10.1. Characters to Integers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-mac-linux">18.1. on Mac/Linux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-windows">18.2. On Windows:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-work-on-the-online-supported-version">18.3. To work on the online supported version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-cpu-emulator">18.4. Starting the CPU Emulator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-program">18.5. Loading a program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-computer-actually-add-constants">18.6. How does the computer actually add constants?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-max-between-two-numbers">18.7. The max between two numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-ideas">18.8. Explore ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-the-object-file-not-human-readable">18.9. Why is the object file not human readable?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelude-repl">18.10. Prelude: REPL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#characters-to-integers">18.10.1. Characters to Integers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">19.11. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">19.12. Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">18.11. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">18.12. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">18.13. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">18.14. Questions</a></li>
 </ul>
             </nav>
         </div>
@@ -496,7 +498,7 @@ document.write(`
 <p>On Windows:
 Double click on the CPUEmulator.bat file</p>
 <section class="tex2jax_ignore mathjax_ignore" id="what-happens-when-we-run-code">
-<h1><span class="section-number">19. </span>What happens when we run code?<a class="headerlink" href="#what-happens-when-we-run-code" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">18. </span>What happens when we run code?<a class="headerlink" href="#what-happens-when-we-run-code" title="Link to this heading">#</a></h1>
 <p>How are you today?</p>
 <p>Are the explore options on the IDE practice badge helpful?</p>
 <p><em>pick the most appropriate first, but you can also free-response to expand</em></p>
@@ -519,7 +521,7 @@ ls
 </pre></div>
 </div>
 <section id="on-mac-linux">
-<h2><span class="section-number">19.1. </span>on Mac/Linux<a class="headerlink" href="#on-mac-linux" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.1. </span>on Mac/Linux<a class="headerlink" href="#on-mac-linux" title="Link to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">nand2tetris</span><span class="o">/</span><span class="n">tools</span>
 </pre></div>
 </div>
@@ -530,17 +532,17 @@ ls
 <p>or in file explorer, Double click on the <code class="docutils literal notranslate"><span class="pre">CPUEmulator.bat</span></code> file</p>
 </section>
 <section id="on-windows">
-<h2><span class="section-number">19.2. </span>On Windows:<a class="headerlink" href="#on-windows" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.2. </span>On Windows:<a class="headerlink" href="#on-windows" title="Link to this heading">#</a></h2>
 <p>Double click on the CPUEmulator.bat file</p>
 <p><strong>you can submit an issue to the coursewebsite if you figure out a CLI way to start it on windows</strong></p>
 </section>
 <section id="to-work-on-the-online-supported-version">
-<h2><span class="section-number">19.3. </span>To work on the online supported version<a class="headerlink" href="#to-work-on-the-online-supported-version" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.3. </span>To work on the online supported version<a class="headerlink" href="#to-work-on-the-online-supported-version" title="Link to this heading">#</a></h2>
 <p>Follow this link for CPU emulator
 <a class="reference external" href="https://nand2tetris.github.io/web-ide/cpu">https://nand2tetris.github.io/web-ide/cpu</a></p>
 </section>
 <section id="starting-the-cpu-emulator">
-<h2><span class="section-number">19.4. </span>Starting the CPU Emulator<a class="headerlink" href="#starting-the-cpu-emulator" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.4. </span>Starting the CPU Emulator<a class="headerlink" href="#starting-the-cpu-emulator" title="Link to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
@@ -563,7 +565,7 @@ Windows</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="loading-a-program">
-<h2><span class="section-number">19.5. </span>Loading a program<a class="headerlink" href="#loading-a-program" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.5. </span>Loading a program<a class="headerlink" href="#loading-a-program" title="Link to this heading">#</a></h2>
 <p>We’re not going to <em>do</em> project 5, which is to <strong>build</strong> a CPU, but instead to use the test programs designed to check if a student’s CPU works with the CPU Emulator they provide to <em>understand</em> a simple canonical CPU.</p>
 <p>For more on how the emulator works see the <a class="reference external" href="https://www.nand2tetris.org/_files/ugd/44046b_24b3a15aa628404fbf6dacd86d7da3af.pdf">CPU Emulator Tutorial</a>.</p>
 <p>For much more detail about how this all works <a class="reference external" href="https://www.nand2tetris.org/_files/ugd/44046b_d70026d8c1424487a451eaba3e372132.pdf">chapter 4</a> of the related text book has description of the machine code and assembly language.</p>
@@ -574,7 +576,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ol>
 </section>
 <section id="how-does-the-computer-actually-add-constants">
-<h2><span class="section-number">19.6. </span>How does the computer actually add constants?<a class="headerlink" href="#how-does-the-computer-actually-add-constants" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.6. </span>How does the computer actually add constants?<a class="headerlink" href="#how-does-the-computer-actually-add-constants" title="Link to this heading">#</a></h2>
 <p>We’ll use <code class="docutils literal notranslate"><span class="pre">add.hack</span></code> first.</p>
 <p>This program adds constants, 2+3.</p>
 <p>It is a program, assembly code that we are loading to the simulator’s ROM, which is memory that gets read only by the CPU.</p>
@@ -600,7 +602,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ul>
 </section>
 <section id="the-max-between-two-numbers">
-<h2><span class="section-number">19.7. </span>The max between two numbers<a class="headerlink" href="#the-max-between-two-numbers" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.7. </span>The max between two numbers<a class="headerlink" href="#the-max-between-two-numbers" title="Link to this heading">#</a></h2>
 <p>To compute the maximum value <code class="docutils literal notranslate"><span class="pre">max.hack</span></code>:</p>
 <ul class="simple">
 <li><p>subtracts  the two numbers</p></li>
@@ -611,7 +613,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ul>
 </section>
 <section id="explore-ideas">
-<h2><span class="section-number">19.8. </span>Explore ideas<a class="headerlink" href="#explore-ideas" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.8. </span>Explore ideas<a class="headerlink" href="#explore-ideas" title="Link to this heading">#</a></h2>
 <p>Create some experiments in the simulator and write new programs.  Here are some ideas, but you can try anything you are curious about.</p>
 <ul class="simple">
 <li><p>What line do you change to change where it outputs the data?</p></li>
@@ -621,7 +623,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ul>
 </section>
 <section id="why-is-the-object-file-not-human-readable">
-<h2><span class="section-number">19.9. </span>Why is the object file not human readable?<a class="headerlink" href="#why-is-the-object-file-not-human-readable" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.9. </span>Why is the object file not human readable?<a class="headerlink" href="#why-is-the-object-file-not-human-readable" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://learning.oreilly.com/library/view/beautiful-code/9780596510046/ch17.html#from_code_to_pointers">https://learning.oreilly.com/library/view/beautiful-code/9780596510046/ch17.html#from_code_to_pointers</a></p>
 <p>The object file displayed as random weird characters because it is written to disk in a different format than our terminal reads it in.
 It is the specific instructions (from the assembly) and memory addresses written to a file in binary.
@@ -629,7 +631,7 @@ Our terminal reads it one byte (8bits) at a time and interprets those as charact
 <p>Today, we will see how characters are represented as integers, then binary, and read and write files in binary of strings we know to see how it what happens and mimic something like how that object file happened by writing as binary and then reading it as characters.</p>
 </section>
 <section id="prelude-repl">
-<h2><span class="section-number">19.10. </span>Prelude: REPL<a class="headerlink" href="#prelude-repl" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.10. </span>Prelude: REPL<a class="headerlink" href="#prelude-repl" title="Link to this heading">#</a></h2>
 <p>One way we can use many interpreted languages, including Python is to treat the interpreter like an application and then interact with it in the terminal.</p>
 <p>This is called the Read, Execute, Print Loop or REPL.</p>
 <p>We can execute simple expressions like mathemeatical expressions:</p>
@@ -655,7 +657,7 @@ Our terminal reads it one byte (8bits) at a time and interprets those as charact
 </pre></div>
 </div>
 <section id="characters-to-integers">
-<h3><span class="section-number">19.10.1. </span>Characters to Integers<a class="headerlink" href="#characters-to-integers" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">18.10.1. </span>Characters to Integers<a class="headerlink" href="#characters-to-integers" title="Link to this heading">#</a></h3>
 <p>Python provides a builtin function <a class="reference external" href="https://docs.python.org/3.10/library/functions.html?highlight=ord#ord"><code class="docutils literal notranslate"><span class="pre">ord</span></code></a> to find the Unicode key for a character.</p>
 <p>This structure, the <code class="docutils literal notranslate"><span class="pre">[]</span></code> is called a list comprehension. It
 executes a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in order to build a <code class="docutils literal notranslate"><span class="pre">list</span></code>.  In the REPL,
@@ -759,11 +761,49 @@ in the <code class="docutils literal notranslate"><span class="pre">open</span><
 </section>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">19.11. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.11. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
 <p>Add in your experience report the modifcations to the code as above.</p>
 </section>
+<section id="prepare-for-next-class">
+<h2><span class="section-number">18.12. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+<p>2025-04-08.md1. Review your <a class="reference external" href="https://compsys-progtools.github.io/spring2025/notes/2025-03-04.html#prepare-for-next-class"><code class="docutils literal notranslate"><span class="pre">idethoughts.md</span></code></a> from a few weeks ago and add some summary notes.</p>
+<ol class="arabic simple">
+<li><p>Think about what features or extensions in your favorite IDE you like the most and that you think others may not know about be preppared to share.</p></li>
+</ol>
+</section>
+<section id="badges">
+<h2><span class="section-number">18.13. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Review</label><div class="sd-tab-content docutils">
+<ol class="arabic">
+<li><p>Run and examine how rect.hack and max.hack in the <code class="docutils literal notranslate"><span class="pre">nand2tetris/projects/05/</span></code> folder work. Make notes and answer the questions below in <span class="target" id="index-0"></span>assemblyexplore.md.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Write an excerpt of code in a high level compiled language that would compile into this `max.hack``.
+2. What does rect.hack do?
+3. What did you learn trying to figure out how it works?
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Practice</label><div class="sd-tab-content docutils">
+<ol class="arabic">
+<li><p>Run and examine how rect.hack and max.hack in the <code class="docutils literal notranslate"><span class="pre">nand2tetris/projects/05/</span></code> folder work. Make notes and answer the questions below in <span class="target" id="index-1"></span>assemblyexplore.md.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. What does rect.hack do?  
+2. What did you learn trying to figure out how it works?
+3. Write an excerpt of code in a high level compiled language that would compile into this `max.hack``. Try writing multiple different versions.
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</section>
 <section id="questions">
-<h2><span class="section-number">19.12. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">18.14. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -811,7 +851,7 @@ in the <code class="docutils literal notranslate"><span class="pre">open</span><
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">20. </span>What <em>is</em> an IDE?</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>What <em>is</em> an IDE?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -831,21 +871,23 @@ in the <code class="docutils literal notranslate"><span class="pre">open</span><
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-mac-linux">19.1. on Mac/Linux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-windows">19.2. On Windows:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-work-on-the-online-supported-version">19.3. To work on the online supported version</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-cpu-emulator">19.4. Starting the CPU Emulator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-program">19.5. Loading a program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-computer-actually-add-constants">19.6. How does the computer actually add constants?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-max-between-two-numbers">19.7. The max between two numbers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-ideas">19.8. Explore ideas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-the-object-file-not-human-readable">19.9. Why is the object file not human readable?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelude-repl">19.10. Prelude: REPL</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#characters-to-integers">19.10.1. Characters to Integers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-mac-linux">18.1. on Mac/Linux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-windows">18.2. On Windows:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-work-on-the-online-supported-version">18.3. To work on the online supported version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-cpu-emulator">18.4. Starting the CPU Emulator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-program">18.5. Loading a program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-computer-actually-add-constants">18.6. How does the computer actually add constants?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-max-between-two-numbers">18.7. The max between two numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-ideas">18.8. Explore ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-the-object-file-not-human-readable">18.9. Why is the object file not human readable?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelude-repl">18.10. Prelude: REPL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#characters-to-integers">18.10.1. Characters to Integers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">19.11. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">19.12. Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">18.11. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">18.12. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">18.13. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">18.14. Questions</a></li>
 </ul>
   </nav></div>
 
