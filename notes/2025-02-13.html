@@ -217,6 +217,16 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-15.html">21. How can we use logical operations?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. Let’s start with a dictionary</a></li>
+
+
+
+
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -492,10 +502,10 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cspt<span class="w"> </span>checktitle<span class="w"> </span><span class="s2">&quot;pracitce  2-11&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>Usage: cspt [OPTIONS] COMMAND [ARGS]...
-Try &#39;cspt --help&#39; for help.
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Usage: cspt [OPTIONS] COMMAND [ARGS]...</span>
+<span class="go">Try &#39;cspt --help&#39; for help.</span>
 
-Error: No such command &#39;checktitle&#39;.
+<span class="go">Error: No such command &#39;checktitle&#39;.</span>
 </pre></div>
 </div>
 <p>Hmmm…
@@ -509,35 +519,35 @@ What went wrong?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cspt<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>Usage: cspt [OPTIONS] COMMAND [ARGS]...
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Usage: cspt [OPTIONS] COMMAND [ARGS]...</span>
 
-Options:
-  --help  Show this message and exit.
+<span class="go">Options:</span>
+<span class="go">  --help  Show this message and exit.</span>
 
-Commands:
-  badge           log an additional badge that is not in the pr list
-  badgecounts     check if early bonus is met from output of `gh pr list...
-  combinecounts   combine two yaml files by adding all keys and summing...
-  createtoyfiles  from a yaml source file create a set of toy files with...
-  earlybonus      check if early bonus is met from output of `gh pr list...
-  eventbonus      award a bonus,
-  exportac        export ac files for site from lesson
-  exporthandout   export prismia version of the content
-  exportprismia   export prismia version of the content
-  getassignment   get the assignment text formatted
-  getbadgedate    cli for calculate badge date
-  glossify        overwrite a file with all glossary terms using the term...
-  grade           calculate a grade from yaml that had keys of...
-  issuestat
-  issuestatus     generate script to appy course issue statuse updates
-  kwlcsv          generate the activity file csv file for the site...
-  logquestion     award a bonus,
-  mkchecklist     transform input file to a gh markdown checklist, if the...
-  parsedate       process select non dates
-  prfixlist       check json output for titles that will not be counted...
-  processexport   transform output from mac terminal export to myst...
-  progressreport  list PR titles from json or - to use std in that have...
-  titlecheck      check a single title
+<span class="go">Commands:</span>
+<span class="go">  badge           log an additional badge that is not in the pr list</span>
+<span class="go">  badgecounts     check if early bonus is met from output of `gh pr list...</span>
+<span class="go">  combinecounts   combine two yaml files by adding all keys and summing...</span>
+<span class="go">  createtoyfiles  from a yaml source file create a set of toy files with...</span>
+<span class="go">  earlybonus      check if early bonus is met from output of `gh pr list...</span>
+<span class="go">  eventbonus      award a bonus,</span>
+<span class="go">  exportac        export ac files for site from lesson</span>
+<span class="go">  exporthandout   export prismia version of the content</span>
+<span class="go">  exportprismia   export prismia version of the content</span>
+<span class="go">  getassignment   get the assignment text formatted</span>
+<span class="go">  getbadgedate    cli for calculate badge date</span>
+<span class="go">  glossify        overwrite a file with all glossary terms using the term...</span>
+<span class="go">  grade           calculate a grade from yaml that had keys of...</span>
+<span class="go">  issuestat</span>
+<span class="go">  issuestatus     generate script to appy course issue statuse updates</span>
+<span class="go">  kwlcsv          generate the activity file csv file for the site...</span>
+<span class="go">  logquestion     award a bonus,</span>
+<span class="go">  mkchecklist     transform input file to a gh markdown checklist, if the...</span>
+<span class="go">  parsedate       process select non dates</span>
+<span class="go">  prfixlist       check json output for titles that will not be counted...</span>
+<span class="go">  processexport   transform output from mac terminal export to myst...</span>
+<span class="go">  progressreport  list PR titles from json or - to use std in that have...</span>
+<span class="go">  titlecheck      check a single title</span>
 </pre></div>
 </div>
 <p>This line <code class="docutils literal notranslate"><span class="pre">Usage:</span> <span class="pre">cspt</span> <span class="pre">[OPTIONS]</span> <span class="pre">COMMAND</span> <span class="pre">[ARGS]...</span></code> is what I like to call a signiture line.</p>
@@ -562,24 +572,24 @@ Or when we created a new local branch with the <code class="docutils literal not
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cspt<span class="w"> </span>titlecheck<span class="w"> </span><span class="s2">&quot;pracitce  2-11&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>Usage: cspt titlecheck [OPTIONS]
-Try &#39;cspt titlecheck --help&#39; for help.
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Usage: cspt titlecheck [OPTIONS]</span>
+<span class="go">Try &#39;cspt titlecheck --help&#39; for help.</span>
 
-Error: Got unexpected extra argument (pracitce  2-11)
+<span class="go">Error: Got unexpected extra argument (pracitce  2-11)</span>
 </pre></div>
 </div>
 <p>Ok, my command is still missing something, or has something extra (it says extra agrs, but is that really the problem?)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cspt<span class="w"> </span>titlecheck<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>Usage: cspt titlecheck [OPTIONS]
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Usage: cspt titlecheck [OPTIONS]</span>
 
-  check a single title
+<span class="go">  check a single title</span>
 
-Options:
-  -t, --pr-title TEXT  title to check as string
-  -g, --ghpr FILENAME  pass title as file, or gh pr view output through pipe
-  --help               Show this message and exit.
+<span class="go">Options:</span>
+<span class="go">  -t, --pr-title TEXT  title to check as string</span>
+<span class="go">  -g, --ghpr FILENAME  pass title as file, or gh pr view output through pipe</span>
+<span class="go">  --help               Show this message and exit.</span>
 </pre></div>
 </div>
 <p>Looks like we’re missing an option. Aha, not so optional this time…</p>
@@ -598,7 +608,7 @@ And these are not rules that if you don’t abide by your program will crash. Th
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cspt<span class="w"> </span>titlecheck<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;pracitce  2-11&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>missing a badge type keyword.
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">missing a badge type keyword.</span>
 </pre></div>
 </div>
 <p>Getting closer. I misspelled <code class="docutils literal notranslate"><span class="pre">Practice</span></code>.</p>
@@ -760,32 +770,32 @@ And it has commands that it recognizes <code class="docutils literal notranslate
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>Usage: cat [OPTION]... [FILE]...
-Concatenate FILE(s) to standard output.
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Usage: cat [OPTION]... [FILE]...</span>
+<span class="go">Concatenate FILE(s) to standard output.</span>
 
-With no FILE, or when FILE is -, read standard input.
+<span class="go">With no FILE, or when FILE is -, read standard input.</span>
 
-  -A, --show-all           equivalent to -vET
-  -b, --number-nonblank    number nonempty output lines, overrides -n
-  -e                       equivalent to -vE
-  -E, --show-ends          display $ at end of each line
-  -n, --number             number all output lines
-  -s, --squeeze-blank      suppress repeated empty output lines
-  -t                       equivalent to -vT
-  -T, --show-tabs          display TAB characters as ^I
-  -u                       (ignored)
-  -v, --show-nonprinting   use ^ and M- notation, except for LFD and TAB
-      --help     display this help and exit
-      --version  output version information and exit
+<span class="go">  -A, --show-all           equivalent to -vET</span>
+<span class="go">  -b, --number-nonblank    number nonempty output lines, overrides -n</span>
+<span class="go">  -e                       equivalent to -vE</span>
+<span class="go">  -E, --show-ends          display $ at end of each line</span>
+<span class="go">  -n, --number             number all output lines</span>
+<span class="go">  -s, --squeeze-blank      suppress repeated empty output lines</span>
+<span class="go">  -t                       equivalent to -vT</span>
+<span class="go">  -T, --show-tabs          display TAB characters as ^I</span>
+<span class="go">  -u                       (ignored)</span>
+<span class="go">  -v, --show-nonprinting   use ^ and M- notation, except for LFD and TAB</span>
+<span class="go">      --help     display this help and exit</span>
+<span class="go">      --version  output version information and exit</span>
 
-Examples:
-  cat f - g  Output f&#39;s contents, then standard input, then g&#39;s contents.
-  cat        Copy standard input to standard output.
+<span class="go">Examples:</span>
+<span class="go">  cat f - g  Output f&#39;s contents, then standard input, then g&#39;s contents.</span>
+<span class="go">  cat        Copy standard input to standard output.</span>
 
-GNU coreutils online help: &lt;https://www.gnu.org/software/coreutils/&gt;
-Report any translation bugs to &lt;https://translationproject.org/team/&gt;
-Full documentation &lt;https://www.gnu.org/software/coreutils/cat&gt;
-or available locally via: info &#39;(coreutils) cat invocation&#39;
+<span class="go">GNU coreutils online help: &lt;https://www.gnu.org/software/coreutils/&gt;</span>
+<span class="go">Report any translation bugs to &lt;https://translationproject.org/team/&gt;</span>
+<span class="go">Full documentation &lt;https://www.gnu.org/software/coreutils/cat&gt;</span>
+<span class="go">or available locally via: info &#39;(coreutils) cat invocation&#39;</span>
 </pre></div>
 </div>
 <p>AH!! <code class="docutils literal notranslate"><span class="pre">cat</span></code> didn’t have the <strong>short option</strong> for the option <code class="docutils literal notranslate"><span class="pre">--help</span></code></p>

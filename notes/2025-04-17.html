@@ -1,0 +1,917 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>22. Let’s start with a dictionary &#8212; Computer Systems and Programming Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/course_admonitions.css?v=57efbcaa" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-04-17';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="prev" title="21. How can we use logical operations?" href="2025-04-15.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/systools.png" class="logo__image only-light" alt="Computer Systems and Programming Tools - Home"/>
+    <script>document.write(`<img src="../_static/systools.png" class="logo__image only-dark" alt="Computer Systems and Programming Tools - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About this Site
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/about.html">Computer Systems and Programming Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/tools.html">Tools and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/grading.html">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badges.html">Badge Deadlines and Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/badge_calc.html">Detailed Grade Calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_resources.html">Support Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/uri_statements.html">General Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus/communication.html">Office Hours &amp; Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2025-01-23.html">1. Welcome, Introduction, and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-01-28.html">2. More orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-01-30.html">3. Why Systems?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-04.html">4. Git Offline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-11.html">5. How do git branches work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-13.html">6. Terminal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-18.html">7. What is a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-20.html">8. When do I get an advantage from git and bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-25.html">9. Unix Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-02-27.html">10. Unix Philosophy In Practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-03-04.html">11. How do programmers communicate about code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-03-06.html">12. What <em>is</em> git?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-03-18.html">13. How does git make a commit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-03-20.html">14. How can I automate things with bash?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-03-25.html">15. Why did we learn the plubming commands?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-03-27.html">16. How can I work on a remote server?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-01.html">17. What happens when I build code in C?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-03.html">18. What happens when we run code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-15.html">21. How can we use logical operations?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">22. Let’s start with a dictionary</a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activities/kwl.html">KWL Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/team.html">Team Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/review.html">Review Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/prepare.html">Prepare for the next class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/practice.html">Practice Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/explore.html">Explore Badges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/build.html">Build Badges</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq/syllabus.html">Syllabus and Grading FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/github.html">Git and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/tools.html">Other Course Software/tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/tips.html">General Tips and Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/learning.html">How to Study in this class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/github.html">GitHub Interface reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/languages.html">Language/Shell Specific References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/gettinghelp.html">Getting Help with Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/organization.html">Getting Organized for class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/more_info_on_cpus.html">More info on cpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/windows.html">Windows Help &amp; Notes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2022/resources/testimonials.html">Advice from Spring 2022 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/fall2022/resources/testimonials.html">Advice from Fall 2022 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/spring2023/resources/testimonials.html">Advice from Spring 2023 Students</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://introcompsys.github.io/fall2023/resources/testimonials.html">Advice from Fall 2023 Students</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025/edit/main/notes/2025-04-17.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/compsys-progtools/spring2025/issues/new?title=Issue%20on%20page%20%2Fnotes/2025-04-17.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notes/2025-04-17.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Let’s start with a dictionary</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">22. Let’s start with a dictionary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-people">22.1. Computers as people</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-machines">22.2. Computers as Machines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-do-we-talk-about-computers">22.3. How much do we talk about computers?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-calculators">23. Mechanical Calculators</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-this-change-over-time">24. How did this change over time?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-adder-1937">24.1. Model K Adder (1937)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971">24.2. Intel 4004 (1971)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-these-thigns-actually-work">24.3. So how do these thigns actually work</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#early-computers">25. Early Computers</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#von-neumann-architecture">26. von Neumann Architecture</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apollo-guidance-computer-agc">27. Apollo Guidance Computer (AGC)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#storage">28. Storage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">29. Questions After Class</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do">29.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-motherboard-work-with-all-of-these">29.2. how does a motherboard work with all of these</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">29.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">29.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon">29.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">30. Questions After Class</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">30.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">30.2. how does a motherboard work with all of these</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">30.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">30.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">30.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduling-jobs">31. Scheduling Jobs</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a class="reference external" href="https://www.instagram.com/p/C5BlJlDNxbi/?igsh=ODJndGo2dHRoNGNz">some dev jokes</a></p>
+<ul class="simple">
+<li><p>how, physically, do we get the components we have seen?</p></li>
+<li><p>what other components do we need?</p></li>
+<li><p>how are those implemented</p></li>
+</ul>
+<p>How have computers changed over time?</p>
+<ul class="simple">
+<li><p>at the physical level</p></li>
+<li><p>what was the context and motivation for these advances?</p></li>
+<li><p>how does that context influence how we use computers today?</p></li>
+<li><p>how does that influence computing as a discipline?</p></li>
+</ul>
+<section id="lets-start-with-a-dictionary">
+<h1><span class="section-number">22. </span>Let’s start with a dictionary<a class="headerlink" href="#lets-start-with-a-dictionary" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.oed.com/dictionary/computer_n?tab=meaning_and_use">we can start with a dictionary definition</a></p>
+<ul class="simple">
+<li><p>note that this starts with reference to a person.</p></li>
+</ul>
+<section id="computers-as-people">
+<h2><span class="section-number">22.1. </span>Computers as people<a class="headerlink" href="#computers-as-people" title="Link to this heading">#</a></h2>
+<p>from this example we see that this particular dictionary is useful because it also includes where the term originated and where in that particular usage it started appearing and so these are pretty all right this is starting 1646 1707</p>
+<ul class="simple">
+<li><p>Use of the word computer to refer people was still common as recently as the 1950s</p></li>
+<li><p>the movie <a class="reference external" href="https://www.imdb.com/title/tt4846340/">hidden figures</a> talks about black women mathematicians who helped the US win the space race.</p></li>
+<li><p>the book <a class="reference external" href="https://uri-primo.hosted.exlibrisgroup.com/permalink/f/10nopmq/01URI_ALMA21128298920002396">hidden figures</a> is available at URI’s library</p></li>
+</ul>
+</section>
+<section id="computers-as-machines">
+<h2><span class="section-number">22.2. </span>Computers as Machines<a class="headerlink" href="#computers-as-machines" title="Link to this heading">#</a></h2>
+<p>Computers as machines started later. We started with mechanical, analog and then moved to electronic and then digital.</p>
+</section>
+<section id="how-much-do-we-talk-about-computers">
+<h2><span class="section-number">22.3. </span>How much do we talk about computers?<a class="headerlink" href="#how-much-do-we-talk-about-computers" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://books.google.com/ngrams/graph?year_start=1800&amp;amp;year_end=2019&amp;amp;corpus=26&amp;amp;smoothing=7&amp;amp;case_insensitive=on&amp;amp;content=computer&amp;amp;direct_url=t4%3B%2Ccomputer%3B%2Cc0%3B%2Cs0%3B%3Bcomputer%3B%2Cc0%3B%3BComputer%3B%2Cc0%3B%3BCOMPUTER%3B%2Cc0#t4%3B%2Ccomputer%3B%2Cc0%3B%2Cs0%3B%3Bcomputer%3B%2Cc0%3B%3BComputer%3B%2Cc0%3B%3BCOMPUTER%3B%2Cc0">how much do we talk about them change over time </a></p>
+</section>
+</section>
+<section id="mechanical-calculators">
+<h1><span class="section-number">23. </span>Mechanical Calculators<a class="headerlink" href="#mechanical-calculators" title="Link to this heading">#</a></h1>
+<p>how do we actually like physically make it be machine</p>
+<p><img alt="pascal" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Pascaline-CnAM_823-1-IMG_1506-black.jpg" /></p>
+<ul class="simple">
+<li><p>Pascaline</p></li>
+<li><p>Pascal 1642</p></li>
+<li><p>Originally created to perform addition and subtraction</p></li>
+<li><p>Used by a tax collector</p></li>
+</ul>
+<p><strong>Why did he make this?</strong></p>
+<p>He was 18 and  his father was a tax commissioner in France and he wanted to reduce his father’s workload</p>
+<p>so he invented this calulator machine and received royal privilege from France in 1649 to be only person allowed to build and sell calculating machines.
+Computer here is a mechanical calculators</p>
+<p><img alt="pascal schematic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Pascaline_-_top_view_and_mechanism.jpg/1920px-Pascaline_-_top_view_and_mechanism.jpg" /></p>
+<p>Contrast this royal privelege with the 1970s where in resolving some other conflict, a court that declared the content of the computer cannot be copyrighted and it’s free for anyone to use the concept of a computer</p>
+</section>
+<section id="how-did-this-change-over-time">
+<h1><span class="section-number">24. </span>How did this change over time?<a class="headerlink" href="#how-did-this-change-over-time" title="Link to this heading">#</a></h1>
+<p>calculators remained analog, working with mechanical systems for over a hundred years until using electricity becomes easier</p>
+<p>we then start doing electrical signal processing so we can move from analog signals</p>
+<p>between Springs and dampers, the mechanical things are used to build these mechanical calculators and the electrical components so resistors and transistors.</p>
+<p><a class="reference external" href="https://www.computerhistory.org/timeline/computers/">timeline of computing</a></p>
+<section id="model-k-adder-1937">
+<h2><span class="section-number">24.1. </span>Model K Adder (1937)<a class="headerlink" href="#model-k-adder-1937" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>George Stibitz took some pieces at home from work at Bell Laboratory and got it working on his kitchen table.</p></li>
+<li><p>it can do four bit addition</p></li>
+<li><p>uses a telephone relay switchs or an electromechanical</p></li>
+</ul>
+<p>Relays are designed to repeat, or relay, a signal  to the next circuit to compelte long distance telegraphs and early telphone. As the signal transpits down the cable (one circuit) it gets weaker due to loss, so it has to be repeated at some point to amplify the magnitude of it for the next length of the journey.</p>
+<p>precursor to the complex number calculator
+he demonstrated how this works in combination with Telegraph
+for the first remote access</p>
+<ul class="simple">
+<li><p>complex number calulator was at Bell Labs in New York City at the time in 1940
+at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to do remote calculations on this calculator and bring them the numbers back</p></li>
+</ul>
+</section>
+<section id="intel-4004-1971">
+<h2><span class="section-number">24.2. </span>Intel 4004 (1971)<a class="headerlink" href="#intel-4004-1971" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>First commercially produced microprocessor</p></li>
+<li><p>2,250 transistors</p></li>
+<li><p>Could perform up to 90,000 operations per second in four bit chunks</p></li>
+<li><p>740 kHz clock speed</p></li>
+</ul>
+</section>
+<section id="so-how-do-these-thigns-actually-work">
+<h2><span class="section-number">24.3. </span>So how do these thigns actually work<a class="headerlink" href="#so-how-do-these-thigns-actually-work" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=GcDshWmhF4A">We can build an adder mechanically with marbles and wood</a></p></li>
+</ul>
+<p>As electricity became more available, they realized that in terms of mathematical operations, electrical components resemble springs and switches</p>
+</section>
+</section>
+<section id="early-computers">
+<h1><span class="section-number">25. </span>Early Computers<a class="headerlink" href="#early-computers" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>first vaccuum tubes: or diodes</p></li>
+<li><p>diodes prevent flow of electricity in one direction and allow in the other. they can be used to create circuits that behave like the logical operations, and create the gates.</p></li>
+<li><p>diodes only are easy for <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> gates,</p></li>
+<li><p>transistors can operate as a switch or amplifier and can also be used to build logic gates</p></li>
+<li><p>they’re faster, smaller, and better at more types of gates than diodes</p></li>
+</ul>
+<p>During this time small, lots of small computers were made, but each was completely made by its creators, there was no standards per se.</p>
+<p>These computers were also stored program computers. Meaning their operation at a program level was fixed by the circuitry.</p>
+<p>switch the circuit to do different things between the numbers so this would get us bitwise operations of an indoor and outdoor on our numbers</p>
+</section>
+<section id="von-neumann-architecture">
+<h1><span class="section-number">26. </span>von Neumann Architecture<a class="headerlink" href="#von-neumann-architecture" title="Link to this heading">#</a></h1>
+<p><img alt="Von Neumann Architecturediagram " src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Von_Neumann_Architecture.svg/2560px-Von_Neumann_Architecture.svg.png" /></p>
+<p><img alt="a bit mroe detail" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Computer_Systems_-_Von_Neumann_Architecture_Large_poster_anchor_chart.svg" /></p>
+<p>what else do we need besides ALU for to have a whole computer</p>
+<p>we eventually need clocks to time and synchronize things to know ofr instance when to clear and when to change memory values so that you if we wanted to do multiple things in sequence we could do that</p>
+<p>In 1945 we get a draft of a general template. This is basically what we use today.</p>
+</section>
+<section id="apollo-guidance-computer-agc">
+<h1><span class="section-number">27. </span>Apollo Guidance Computer (AGC)<a class="headerlink" href="#apollo-guidance-computer-agc" title="Link to this heading">#</a></h1>
+<p>The AGC was the onboard computer for NASA’s Apollo programs. It provided navigation for the control capsule as well as controlled the spacecraft during moon landings. The AGC had only 72KB of fixed memory (589,824 bits). Unlike many earlier computers, the software for the AGC was stored in its memory and was not physically built into its hardware’s circuitry.</p>
+<p>Additionally, this computer had RAM, which was memory that could be changed by the computer while it was running. This memory had a capacity of only 4KB (32,768 bits), which was still enough to store all the data needed to perform all calculations necessary for the missions. The AGC could be controlled by the astronauts in the command capsule by sending commands via a numeric keyboard. Its user interface consisted of a simple screen and a set of status lights that relayed information to the astronauts.</p>
+<p>This computer is very similar to how modern computers work in the sense that it can keep data in its fixed memory even while the computer is off.</p>
+<p>To learn more about the AGC and how it worked, you can view <a class="reference external" href="https://bigthink.com/hard-science/phone-computer-moon-landing/">this</a> article, or view the <a class="reference external" href="https://history.nasa.gov/computers/Ch2-5.html">official NASA public docs</a> on it.</p>
+</section>
+<section id="storage">
+<h1><span class="section-number">28. </span>Storage<a class="headerlink" href="#storage" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>there are some thigns we have not yet seen in detail in that diagram</p></li>
+<li><p>Ram Is Random Access we can access it whenever we want we can read and write to it</p></li>
+<li><p>ROM: is read only memory; instructions are permanently saved in it</p></li>
+</ul>
+<p>In the stored program computers, the programs were in ROM.</p>
+<p>The very earliest computers could not store any values without power.</p>
+<ul class="simple">
+<li><p>Register: data currently processing</p></li>
+<li><p>Memory: will be required for processing</p></li>
+<li><p>Disk: long term storage</p></li>
+</ul>
+<p>How was the pace of today’s class</p>
+<ul class="simple">
+<li><p>[ ] way too slow</p></li>
+<li><p>[ ] a little slow</p></li>
+<li><p>[ ] just right</p></li>
+<li><p>[ ] a little fast</p></li>
+<li><p>[ ] way too fast</p></li>
+</ul>
+<!-- required to make mcq above work -->
+</section>
+<section id="questions-after-class">
+<h1><span class="section-number">29. </span>Questions After Class<a class="headerlink" href="#questions-after-class" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>these are last semesters. i’m behind on the new ones</p>
+</div>
+<section id="what-are-the-pc-mar-mdr-etc-and-what-do-they-do">
+<h2><span class="section-number">29.1. </span>What are the PC, MAR, MDR, etc. and what do they do<a class="headerlink" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do" title="Link to this heading">#</a></h2>
+<p>They are various registers that each have a specific role.  Learning all of these these in more detail is a good Explore badge or a single one is in more practice.</p>
+</section>
+<section id="how-does-a-motherboard-work-with-all-of-these">
+<h2><span class="section-number">29.2. </span>how does a motherboard work with all of these<a class="headerlink" href="#how-does-a-motherboard-work-with-all-of-these" title="Link to this heading">#</a></h2>
+<p>A motherboard contains all most of those components.  This is also a good Deeper explroation.</p>
+</section>
+<section id="when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">
+<h2><span class="section-number">29.3. </span>When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?<a class="headerlink" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones" title="Link to this heading">#</a></h2>
+<p>What definition dependsd on the context.  If you are talking to a child who is trying to learn basic typing they need to know different things than a teenager trying to choose what type of comptuer to bring to college, which is different than the model you need to keep in mind when you’re working in a high level language, which is different than what you need when you are writing drivers.</p>
+</section>
+<section id="how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">
+<h2><span class="section-number">29.4. </span>How do Quantum computer logic gates differ from what we use now exactly<a class="headerlink" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly" title="Link to this heading">#</a></h2>
+<p>Quantum computers operate on a fundamentally different object, instead of bits they have <a class="reference external" href="https://quantum-computing.ibm.com/composer/docs/iqx/guide/the-qubit">qubits</a>.  There represent, essetially some uncertainty, or randomness in the behavior, so then there are different operations needed.</p>
+<p>URI has a <a class="reference external" href="https://web.uri.edu/physics/quantum/">MS in Quantum Computing in the Physics Dept</a></p>
+</section>
+<section id="intel-4004-1971-how-it-worked-by-tyler-hanlon">
+<h2><span class="section-number">29.5. </span>Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon<a class="headerlink" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon" title="Link to this heading">#</a></h2>
+<p>This was the first general purpose programmable processor which people could buy and then make or buy their own software to customize it with. This was a breakthorugh in computing as it allowed consumers to have a say in what software was used in their electronics without having to make their own. This was extremely influential advancmenet inearly comuting technologies becuase it made multiple softwares more accessible and deliverable to a wider audience. It is one of the smallest microprocessors ever made, and was develope for use in a Japanese calculator company, but was powerful enought o actually be used for a wide variety of functions.</p>
+<p>Sources:
+<a class="reference external" href="https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html#:~:text=That's%20when%20the%20Intel%C2%AE,wide%20variety%20of%20electronic%20devices">https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html#:~:text=That’s when the Intel®,wide variety of electronic devices</a>.</p>
+<p><a class="reference external" href="https://spectrum.ieee.org/chip-hall-of-fame-intel-4004-microprocessor">https://spectrum.ieee.org/chip-hall-of-fame-intel-4004-microprocessor</a></p>
+</section>
+</section>
+<section id="id1">
+<h1><span class="section-number">30. </span>Questions After Class<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>these are last semesters. i’m behind on the new ones</p>
+</div>
+<section id="id2">
+<h2><span class="section-number">30.1. </span>What are the PC, MAR, MDR, etc. and what do they do<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>They are various registers that each have a specific role.  Learning all of these these in more detail is a good Explore badge or a single one is in more practice.</p>
+</section>
+<section id="id3">
+<h2><span class="section-number">30.2. </span>how does a motherboard work with all of these<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>A motherboard contains all most of those components.  This is also a good Deeper explroation.</p>
+</section>
+<section id="id4">
+<h2><span class="section-number">30.3. </span>When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>What definition dependsd on the context.  If you are talking to a child who is trying to learn basic typing they need to know different things than a teenager trying to choose what type of comptuer to bring to college, which is different than the model you need to keep in mind when you’re working in a high level language, which is different than what you need when you are writing drivers.</p>
+</section>
+<section id="id5">
+<h2><span class="section-number">30.4. </span>How do Quantum computer logic gates differ from what we use now exactly<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Quantum computers operate on a fundamentally different object, instead of bits they have <a class="reference external" href="https://quantum-computing.ibm.com/composer/docs/iqx/guide/the-qubit">qubits</a>.  There represent, essetially some uncertainty, or randomness in the behavior, so then there are different operations needed.</p>
+<p>URI has a <a class="reference external" href="https://web.uri.edu/physics/quantum/">MS in Quantum Computing in the Physics Dept</a></p>
+</section>
+<section id="id6">
+<h2><span class="section-number">30.5. </span>Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>This was the first general purpose programmable processor which people could buy and then make or buy their own software to customize it with. This was a breakthorugh in computing as it allowed consumers to have a say in what software was used in their electronics without having to make their own. This was extremely influential advancmenet inearly comuting technologies becuase it made multiple softwares more accessible and deliverable to a wider audience. It is one of the smallest microprocessors ever made, and was develope for use in a Japanese calculator company, but was powerful enought o actually be used for a wide variety of functions.</p>
+<p>Sources:
+<a class="reference external" href="https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html#:~:text=That's%20when%20the%20Intel%C2%AE,wide%20variety%20of%20electronic%20devices">https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html#:~:text=That’s when the Intel®,wide variety of electronic devices</a>.</p>
+<p><a class="reference external" href="https://spectrum.ieee.org/chip-hall-of-fame-intel-4004-microprocessor">https://spectrum.ieee.org/chip-hall-of-fame-intel-4004-microprocessor</a></p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="scheduling-jobs">
+<h1><span class="section-number">31. </span>Scheduling Jobs<a class="headerlink" href="#scheduling-jobs" title="Link to this heading">#</a></h1>
+<p>Now that we’re done with some history talk, let’s go back to talking about connecting and working with remote servers.</p>
+<p>What happens when we login to seawulf?
+Well, seawulf is a high performane computing (HPC) cluster. In this cluster we have a combination of computing power, CPU, GPU, RAM, along with Storage.</p>
+<p>Servers like this is created because day by day we evlove and we expand and we try to discover and learn more about the world. That includes a lot of data collection and data processing. And to be able to do just that we need to a lot of computing power that most of us can’t to afford put on our desks.
+That’s how remote servers came to life. We have this computing power that is shared among a large number of us.
+And so to be able to share these resources correctly, we need to be respectful to the others sharing the resources with us and sometimes we have to wait a turn to get to use some of this power especially if it’s a big chunk that we’re trying to use.</p>
+<p>So first, let’s remember that when we login to seawulf the collection of resources that we access is called the “login node”. And that login node is immediately shared by a large number of people. So it is not very considerate to do any computations on that node because it is meant to be used by users to login and schedule jobs.</p>
+<p>From here, we have two options, we either</p>
+<ul class="simple">
+<li><p>start an interactive session and reserve the required resources for that using <code class="docutils literal notranslate"><span class="pre">salloc</span></code> or <code class="docutils literal notranslate"><span class="pre">interactive</span></code>
+or</p></li>
+<li><p>schedule a job with the estimated required resources and time limit using <code class="docutils literal notranslate"><span class="pre">sbatch</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">salloc</span></code> or <code class="docutils literal notranslate"><span class="pre">interactive</span></code> are used to reserve resource in real time and use them in a live session. We use that for debugging purposes and using power in an interactive session</p>
+<p><code class="docutils literal notranslate"><span class="pre">sbatch</span></code> is used to schedule a job to run at a time that the resources are available and the queue is clear. We use that when we want to do some data processing without needing to work interactively with the files or the program.</p>
+<p>We saw how to use <code class="docutils literal notranslate"><span class="pre">interactive</span></code> the last time.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> we need a batch script that starts with <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code>
+and then we can wither specify the requested resources within the batch script using <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> at the begining of the line and the argument right after it.
+Or we can use the same arguments in the command line with the <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>.
+We can later view the outputs of the job in a <code class="docutils literal notranslate"><span class="pre">.out</span></code> file that holds the STDOUT and the STDERR content of that batch script.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">--help</span></code> and <code class="docutils literal notranslate"><span class="pre">salloc</span> <span class="pre">--help</span></code> to learn more about the both commands.</p>
+<p>Also read the <a class="reference external" href="https://slurm.schedmd.com/quickstart.html">documentation</a></p>
+<hr class="docutils" />
+<p>Don’t forget to logout of seawulf when done</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ayman_sandouk@seawulf ~]$ logout
+Connection to seawulf.uri.edu closed.
+</pre></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2025-04-15.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">21. </span>How can we use logical operations?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activities/kwl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KWL Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">22. Let’s start with a dictionary</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-people">22.1. Computers as people</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-machines">22.2. Computers as Machines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-do-we-talk-about-computers">22.3. How much do we talk about computers?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-calculators">23. Mechanical Calculators</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-this-change-over-time">24. How did this change over time?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-adder-1937">24.1. Model K Adder (1937)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971">24.2. Intel 4004 (1971)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-these-thigns-actually-work">24.3. So how do these thigns actually work</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#early-computers">25. Early Computers</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#von-neumann-architecture">26. von Neumann Architecture</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apollo-guidance-computer-agc">27. Apollo Guidance Computer (AGC)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#storage">28. Storage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">29. Questions After Class</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do">29.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-motherboard-work-with-all-of-these">29.2. how does a motherboard work with all of these</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">29.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">29.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon">29.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">30. Questions After Class</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">30.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">30.2. how does a motherboard work with all of these</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">30.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">30.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">30.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduling-jobs">31. Scheduling Jobs</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor Sarah M Brown
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  made with [jupyterbook](https://jupyterbook.org/en/stable/intro.html)
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

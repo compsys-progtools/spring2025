@@ -217,6 +217,16 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-15.html">21. How can we use logical operations?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. Let’s start with a dictionary</a></li>
+
+
+
+
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -567,7 +577,7 @@ document.write(`
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;fun_fact&#39;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to branch &#39;fun_fact&#39;</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -575,26 +585,26 @@ document.write(`
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>commit 804055399f6565aca3cb188fe771ef2dca99f959 (HEAD -&gt; fun_fact)
-Author: AymanBx &lt;ayman_sandouk@uri.edu&gt;
-Date:   Tue Feb 11 13:20:41 2025 -0500
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 804055399f6565aca3cb188fe771ef2dca99f959 (HEAD -&gt; fun_fact)</span>
+<span class="go">Author: AymanBx &lt;ayman_sandouk@uri.edu&gt;</span>
+<span class="go">Date:   Tue Feb 11 13:20:41 2025 -0500</span>
 
-    Added fun fact
+<span class="go">    Added fun fact</span>
 
-commit 8bd4ea38fe31186b9e5d0c1e19c9aef748c6dce6 (my_branch)
-Merge: e427044 9e8a8b6
-Author: Ayman Sandouk &lt;111829133+AymanBx@users.noreply.github.com&gt;
-Date:   Tue Feb 11 12:55:21 2025 -0500
+<span class="go">commit 8bd4ea38fe31186b9e5d0c1e19c9aef748c6dce6 (my_branch)</span>
+<span class="go">Merge: e427044 9e8a8b6</span>
+<span class="go">Author: Ayman Sandouk &lt;111829133+AymanBx@users.noreply.github.com&gt;</span>
+<span class="go">Date:   Tue Feb 11 12:55:21 2025 -0500</span>
 
-    Merge pull request #2 from compsys-progtools/1-create-an-about-file
+<span class="go">    Merge pull request #2 from compsys-progtools/1-create-an-about-file</span>
 
-    Created an about file. Closes #1
+<span class="go">    Created an about file. Closes #1</span>
 
-commit e427044744061f5f38b0c3d1ff76b56552e8355d
-Author: AymanBx &lt;ayman_sandouk@uri.edu&gt;
-Date:   Tue Feb 11 00:43:36 2025 -0500
+<span class="go">commit e427044744061f5f38b0c3d1ff76b56552e8355d</span>
+<span class="go">Author: AymanBx &lt;ayman_sandouk@uri.edu&gt;</span>
+<span class="go">Date:   Tue Feb 11 00:43:36 2025 -0500</span>
 
-    removed file
+<span class="go">    removed file</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -624,7 +634,7 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 </ul>
 <hr class="docutils" />
 <p>Let’s try to make sense of the number in Merge:</p>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>8040553 9942c3c
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">8040553 9942c3c</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -665,7 +675,7 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>bash: cd: .git/HEAD: Not a directory
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bash: cd: .git/HEAD: Not a directory</span>
 </pre></div>
 </div>
 </section>
@@ -733,7 +743,7 @@ git log
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>&lt;log_here&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;log_here&gt;</span>
 </pre></div>
 </div>
 <p>here we see some parts:</p>
@@ -770,14 +780,14 @@ git cat-file -p 1e2a
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>:emphasize-lines: 2,3
-tree a9ebb362bb6ccac3d4cd637d4afa34d39a874a9b
-parent 804055399f6565aca3cb188fe771ef2dca99f959
-parent 9942c3c00dcde51d52a1c110413522043eca07cd
-author AymanBx &lt;ayman_sandouk@uri.edu&gt; 1739298941 -0500
-committer AymanBx &lt;ayman_sandouk@uri.edu&gt; 1739298941 -0500
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">:emphasize-lines: 2,3</span>
+<span class="go">tree a9ebb362bb6ccac3d4cd637d4afa34d39a874a9b</span>
+<span class="go">parent 804055399f6565aca3cb188fe771ef2dca99f959</span>
+<span class="go">parent 9942c3c00dcde51d52a1c110413522043eca07cd</span>
+<span class="go">author AymanBx &lt;ayman_sandouk@uri.edu&gt; 1739298941 -0500</span>
+<span class="go">committer AymanBx &lt;ayman_sandouk@uri.edu&gt; 1739298941 -0500</span>
 
-Keeping both fun facts
+<span class="go">Keeping both fun facts</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -806,13 +816,13 @@ Keeping both fun facts
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>:emphasize-lines: 2
-tree 657c82a4b3c0aca11df1d3f9f3db46f067753120
-parent 8bd4ea38fe31186b9e5d0c1e19c9aef748c6dce6
-author AymanBx &lt;ayman_sandouk@uri.edu&gt; 1739298041 -0500
-committer AymanBx &lt;ayman_sandouk@uri.edu&gt; 1739298041 -0500
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">:emphasize-lines: 2</span>
+<span class="go">tree 657c82a4b3c0aca11df1d3f9f3db46f067753120</span>
+<span class="go">parent 8bd4ea38fe31186b9e5d0c1e19c9aef748c6dce6</span>
+<span class="go">author AymanBx &lt;ayman_sandouk@uri.edu&gt; 1739298041 -0500</span>
+<span class="go">committer AymanBx &lt;ayman_sandouk@uri.edu&gt; 1739298041 -0500</span>
 
-Added fun fact
+<span class="go">Added fun fact</span>
 </pre></div>
 </div>
 <hr class="docutils" />

@@ -217,6 +217,16 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-15.html">21. How can we use logical operations?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. Let’s start with a dictionary</a></li>
+
+
+
+
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -533,11 +543,11 @@ This is an extra way for collaborators to secure that the commit was made by the
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>$ git status
-On branch main
-Your branch is up to date with &#39;origin/main&#39;.
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
+<span class="go">On branch main</span>
+<span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 
-nothing to commit, working tree clean
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <p>We checked if there were any uncommited/unstaged changes that happened locally</p>
@@ -550,11 +560,11 @@ nothing to commit, working tree clean
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>$ git status
-On branch main
-Your branch is up to date with &#39;origin/main&#39;.
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
+<span class="go">On branch main</span>
+<span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 
-nothing to commit, working tree clean
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <p>Let’s check for existing prs in the repo</p>
@@ -571,17 +581,17 @@ nothing to commit, working tree clean
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">pr</span> <span class="n">view</span>
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>Feb 20 in class activity #3
-Open • AymanBx wants to merge 1 commit into main from organizing_ac • about 2 hours ago
-+17 -0 • No checks
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Feb 20 in class activity #3</span>
+<span class="go">Open • AymanBx wants to merge 1 commit into main from organizing_ac • about 2 hours ago</span>
+<span class="go">+17 -0 • No checks</span>
 
 
-  this draft PR https://github.blog/2019-02-14-introducing-draft-pull-requests/ adds some example files that we will use
-  during class on 9/19.  \n\n wait until class time (or when you make up class by following the notes) to do anything 
-  with this PR
+<span class="go">  this draft PR https://github.blog/2019-02-14-introducing-draft-pull-requests/ adds some example files that we will use</span>
+<span class="go">  during class on 9/19.  \n\n wait until class time (or when you make up class by following the notes) to do anything </span>
+<span class="go">  with this PR</span>
 
 
-View this pull request on GitHub: https://github.com/compsys-progtools/gh-inclass-AymanBx/pull/3
+<span class="go">View this pull request on GitHub: https://github.com/compsys-progtools/gh-inclass-AymanBx/pull/3</span>
 </pre></div>
 </div>
 <p>Since there only is one pr in your repo (most of you) it will show you details of that pr (Title, body, etc.)</p>
@@ -589,17 +599,17 @@ View this pull request on GitHub: https://github.com/compsys-progtools/gh-inclas
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">pr</span> <span class="n">view</span> <span class="c1">#3</span>
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>Feb 20 in class activity #3
-Open • AymanBx wants to merge 1 commit into main from organizing_ac • about 2 hours ago
-+17 -0 • No checks
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Feb 20 in class activity #3</span>
+<span class="go">Open • AymanBx wants to merge 1 commit into main from organizing_ac • about 2 hours ago</span>
+<span class="go">+17 -0 • No checks</span>
 
 
-  this draft PR https://github.blog/2019-02-14-introducing-draft-pull-requests/ adds some example files that we will use
-  during class on 9/19.  \n\n wait until class time (or when you make up class by following the notes) to do anything 
-  with this PR
+<span class="go">  this draft PR https://github.blog/2019-02-14-introducing-draft-pull-requests/ adds some example files that we will use</span>
+<span class="go">  during class on 9/19.  \n\n wait until class time (or when you make up class by following the notes) to do anything </span>
+<span class="go">  with this PR</span>
 
 
-View this pull request on GitHub: https://github.com/compsys-progtools/gh-inclass-AymanBx/pull/3
+<span class="go">View this pull request on GitHub: https://github.com/compsys-progtools/gh-inclass-AymanBx/pull/3</span>
 </pre></div>
 </div>
 <p>Next get the files for today’s activity:</p>
@@ -625,25 +635,25 @@ View this pull request on GitHub: https://github.com/compsys-progtools/gh-inclas
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>fetch
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>remote: Enumerating objects: 20, done.
-remote: Counting objects: 100% (20/20), done.
-remote: Compressing objects: 100% (9/9), done.
-remote: Total 19 (delta 0), reused 18 (delta 0), pack-reused 0 (from 0)
-Unpacking objects: 100% (19/19), 2.55 KiB | 84.00 KiB/s, done.
-From https://github.com/compsys-progtools/gh-inclass-AymanBx
-   162a47b..581ac5e  main          -&gt; origin/main
- * [new branch]      organizing_ac -&gt; origin/organizing_ac
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">remote: Enumerating objects: 20, done.</span>
+<span class="go">remote: Counting objects: 100% (20/20), done.</span>
+<span class="go">remote: Compressing objects: 100% (9/9), done.</span>
+<span class="go">remote: Total 19 (delta 0), reused 18 (delta 0), pack-reused 0 (from 0)</span>
+<span class="go">Unpacking objects: 100% (19/19), 2.55 KiB | 84.00 KiB/s, done.</span>
+<span class="go">From https://github.com/compsys-progtools/gh-inclass-AymanBx</span>
+<span class="go">   162a47b..581ac5e  main          -&gt; origin/main</span>
+<span class="go"> * [new branch]      organizing_ac -&gt; origin/organizing_ac</span>
 </pre></div>
 </div>
 <p>And let’s check for changes</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>On branch main
-Your branch is behind &#39;origin/main&#39; by 2 commits, and can be fast-forwarded.
-  (use &quot;git pull&quot; to update your local branch)
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
+<span class="go">Your branch is behind &#39;origin/main&#39; by 2 commits, and can be fast-forwarded.</span>
+<span class="go">  (use &quot;git pull&quot; to update your local branch)</span>
 
-nothing to commit, working tree clean
+<span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
@@ -706,13 +716,13 @@ Fast-forward
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>API.md           abstract_base_class.py  setup.py
-CONTRIBUTING.md  alternative_classes.py  tests_alt.py
-LICENSE.md       example.md              tests_helpers.py
-README.md        helper_functions.py     tests_imp.py
-_config.yml      important_classes.py    tsets_abc.py
-_toc.yml         philosophy.md
-about.md         scratch.ipynb
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">API.md           abstract_base_class.py  setup.py</span>
+<span class="go">CONTRIBUTING.md  alternative_classes.py  tests_alt.py</span>
+<span class="go">LICENSE.md       example.md              tests_helpers.py</span>
+<span class="go">README.md        helper_functions.py     tests_imp.py</span>
+<span class="go">_config.yml      important_classes.py    tsets_abc.py</span>
+<span class="go">_toc.yml         philosophy.md</span>
+<span class="go">about.md         scratch.ipynb</span>
 </pre></div>
 </div>
 </section>
@@ -763,7 +773,7 @@ bash commands for moving files.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>setup.py
 </pre></div>
 </div>
-<div class="highlight-consol notranslate"><div class="highlight"><pre><span></span>file with function with instructions for pip
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">file with function with instructions for pip</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">cat</span></code> concatenates the contents of a file to stdout, which is a special file that our terminal reads</p>
