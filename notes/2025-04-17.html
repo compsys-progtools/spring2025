@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>22. Let’s start with a dictionary &#8212; Computer Systems and Programming Tools</title>
+    <title>22. What is a computer &#8212; Computer Systems and Programming Tools</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notes/2025-04-17';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="KWL Chart" href="../activities/kwl.html" />
+    <link rel="next" title="23. How does timing work in a computer?" href="2025-04-22.html" />
     <link rel="prev" title="21. How can we use logical operations?" href="2025-04-15.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -217,16 +217,8 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-15.html">21. How can we use logical operations?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">22. Let’s start with a dictionary</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">22. What is a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-22.html">23. How does timing work in a computer?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -462,7 +454,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Let’s start with a dictionary</h1>
+    <h1>What is a computer</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -472,42 +464,41 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">22. Let’s start with a dictionary</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-people">22.1. Computers as people</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-machines">22.2. Computers as Machines</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-do-we-talk-about-computers">22.3. How much do we talk about computers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-start-with-a-dictionary">22.1. Let’s start with a dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-people">22.1.1. Computers as people</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-machines">22.1.2. Computers as Machines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-do-we-talk-about-computers">22.1.3. How much do we talk about computers?</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-calculators">23. Mechanical Calculators</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-this-change-over-time">24. How did this change over time?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-adder-1937">24.1. Model K Adder (1937)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971">24.2. Intel 4004 (1971)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-these-thigns-actually-work">24.3. So how do these thigns actually work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-calculators">22.2. Mechanical Calculators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-this-change-over-time">22.3. How did this change over time?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-adder-1937">22.3.1. Model K Adder (1937)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971">22.3.2. Intel 4004 (1971)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-these-thigns-actually-work">22.3.3. So how do these thigns actually work</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#early-computers">25. Early Computers</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#von-neumann-architecture">26. von Neumann Architecture</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apollo-guidance-computer-agc">27. Apollo Guidance Computer (AGC)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#storage">28. Storage</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">29. Questions After Class</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do">29.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-motherboard-work-with-all-of-these">29.2. how does a motherboard work with all of these</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">29.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">29.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon">29.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#early-computers">22.4. Early Computers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#von-neumann-architecture">22.5. von Neumann Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apollo-guidance-computer-agc">22.6. Apollo Guidance Computer (AGC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storage">22.7. Storage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">22.8. Questions After Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do">22.8.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-motherboard-work-with-all-of-these">22.8.2. how does a motherboard work with all of these</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">22.8.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">22.8.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon">22.8.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">30. Questions After Class</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">30.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">30.2. how does a motherboard work with all of these</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">30.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">30.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">30.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">22.9. Questions After Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">22.9.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">22.9.2. how does a motherboard work with all of these</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">22.9.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">22.9.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">22.9.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduling-jobs">31. Scheduling Jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduling-jobs">22.10. Scheduling Jobs</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -518,7 +509,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a class="reference external" href="https://www.instagram.com/p/C5BlJlDNxbi/?igsh=ODJndGo2dHRoNGNz">some dev jokes</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="what-is-a-computer">
+<h1><span class="section-number">22. </span>What is a computer<a class="headerlink" href="#what-is-a-computer" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.instagram.com/p/C5BlJlDNxbi/?igsh=ODJndGo2dHRoNGNz">some dev jokes</a></p>
 <ul class="simple">
 <li><p>how, physically, do we get the components we have seen?</p></li>
 <li><p>what other components do we need?</p></li>
@@ -532,13 +525,13 @@ document.write(`
 <li><p>how does that influence computing as a discipline?</p></li>
 </ul>
 <section id="lets-start-with-a-dictionary">
-<h1><span class="section-number">22. </span>Let’s start with a dictionary<a class="headerlink" href="#lets-start-with-a-dictionary" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">22.1. </span>Let’s start with a dictionary<a class="headerlink" href="#lets-start-with-a-dictionary" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://www.oed.com/dictionary/computer_n?tab=meaning_and_use">we can start with a dictionary definition</a></p>
 <ul class="simple">
 <li><p>note that this starts with reference to a person.</p></li>
 </ul>
 <section id="computers-as-people">
-<h2><span class="section-number">22.1. </span>Computers as people<a class="headerlink" href="#computers-as-people" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.1.1. </span>Computers as people<a class="headerlink" href="#computers-as-people" title="Link to this heading">#</a></h3>
 <p>from this example we see that this particular dictionary is useful because it also includes where the term originated and where in that particular usage it started appearing and so these are pretty all right this is starting 1646 1707</p>
 <ul class="simple">
 <li><p>Use of the word computer to refer people was still common as recently as the 1950s</p></li>
@@ -547,16 +540,16 @@ document.write(`
 </ul>
 </section>
 <section id="computers-as-machines">
-<h2><span class="section-number">22.2. </span>Computers as Machines<a class="headerlink" href="#computers-as-machines" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.1.2. </span>Computers as Machines<a class="headerlink" href="#computers-as-machines" title="Link to this heading">#</a></h3>
 <p>Computers as machines started later. We started with mechanical, analog and then moved to electronic and then digital.</p>
 </section>
 <section id="how-much-do-we-talk-about-computers">
-<h2><span class="section-number">22.3. </span>How much do we talk about computers?<a class="headerlink" href="#how-much-do-we-talk-about-computers" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.1.3. </span>How much do we talk about computers?<a class="headerlink" href="#how-much-do-we-talk-about-computers" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://books.google.com/ngrams/graph?year_start=1800&amp;amp;year_end=2019&amp;amp;corpus=26&amp;amp;smoothing=7&amp;amp;case_insensitive=on&amp;amp;content=computer&amp;amp;direct_url=t4%3B%2Ccomputer%3B%2Cc0%3B%2Cs0%3B%3Bcomputer%3B%2Cc0%3B%3BComputer%3B%2Cc0%3B%3BCOMPUTER%3B%2Cc0#t4%3B%2Ccomputer%3B%2Cc0%3B%2Cs0%3B%3Bcomputer%3B%2Cc0%3B%3BComputer%3B%2Cc0%3B%3BCOMPUTER%3B%2Cc0">how much do we talk about them change over time </a></p>
 </section>
 </section>
 <section id="mechanical-calculators">
-<h1><span class="section-number">23. </span>Mechanical Calculators<a class="headerlink" href="#mechanical-calculators" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">22.2. </span>Mechanical Calculators<a class="headerlink" href="#mechanical-calculators" title="Link to this heading">#</a></h2>
 <p>how do we actually like physically make it be machine</p>
 <p><img alt="pascal" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Pascaline-CnAM_823-1-IMG_1506-black.jpg" /></p>
 <ul class="simple">
@@ -573,13 +566,13 @@ Computer here is a mechanical calculators</p>
 <p>Contrast this royal privelege with the 1970s where in resolving some other conflict, a court that declared the content of the computer cannot be copyrighted and it’s free for anyone to use the concept of a computer</p>
 </section>
 <section id="how-did-this-change-over-time">
-<h1><span class="section-number">24. </span>How did this change over time?<a class="headerlink" href="#how-did-this-change-over-time" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">22.3. </span>How did this change over time?<a class="headerlink" href="#how-did-this-change-over-time" title="Link to this heading">#</a></h2>
 <p>calculators remained analog, working with mechanical systems for over a hundred years until using electricity becomes easier</p>
 <p>we then start doing electrical signal processing so we can move from analog signals</p>
 <p>between Springs and dampers, the mechanical things are used to build these mechanical calculators and the electrical components so resistors and transistors.</p>
 <p><a class="reference external" href="https://www.computerhistory.org/timeline/computers/">timeline of computing</a></p>
 <section id="model-k-adder-1937">
-<h2><span class="section-number">24.1. </span>Model K Adder (1937)<a class="headerlink" href="#model-k-adder-1937" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.3.1. </span>Model K Adder (1937)<a class="headerlink" href="#model-k-adder-1937" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>George Stibitz took some pieces at home from work at Bell Laboratory and got it working on his kitchen table.</p></li>
 <li><p>it can do four bit addition</p></li>
@@ -595,7 +588,7 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </ul>
 </section>
 <section id="intel-4004-1971">
-<h2><span class="section-number">24.2. </span>Intel 4004 (1971)<a class="headerlink" href="#intel-4004-1971" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.3.2. </span>Intel 4004 (1971)<a class="headerlink" href="#intel-4004-1971" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>First commercially produced microprocessor</p></li>
 <li><p>2,250 transistors</p></li>
@@ -604,7 +597,7 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </ul>
 </section>
 <section id="so-how-do-these-thigns-actually-work">
-<h2><span class="section-number">24.3. </span>So how do these thigns actually work<a class="headerlink" href="#so-how-do-these-thigns-actually-work" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.3.3. </span>So how do these thigns actually work<a class="headerlink" href="#so-how-do-these-thigns-actually-work" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=GcDshWmhF4A">We can build an adder mechanically with marbles and wood</a></p></li>
 </ul>
@@ -612,7 +605,7 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </section>
 </section>
 <section id="early-computers">
-<h1><span class="section-number">25. </span>Early Computers<a class="headerlink" href="#early-computers" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">22.4. </span>Early Computers<a class="headerlink" href="#early-computers" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>first vaccuum tubes: or diodes</p></li>
 <li><p>diodes prevent flow of electricity in one direction and allow in the other. they can be used to create circuits that behave like the logical operations, and create the gates.</p></li>
@@ -625,7 +618,7 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 <p>switch the circuit to do different things between the numbers so this would get us bitwise operations of an indoor and outdoor on our numbers</p>
 </section>
 <section id="von-neumann-architecture">
-<h1><span class="section-number">26. </span>von Neumann Architecture<a class="headerlink" href="#von-neumann-architecture" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">22.5. </span>von Neumann Architecture<a class="headerlink" href="#von-neumann-architecture" title="Link to this heading">#</a></h2>
 <p><img alt="Von Neumann Architecturediagram " src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Von_Neumann_Architecture.svg/2560px-Von_Neumann_Architecture.svg.png" /></p>
 <p><img alt="a bit mroe detail" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Computer_Systems_-_Von_Neumann_Architecture_Large_poster_anchor_chart.svg" /></p>
 <p>what else do we need besides ALU for to have a whole computer</p>
@@ -633,14 +626,14 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 <p>In 1945 we get a draft of a general template. This is basically what we use today.</p>
 </section>
 <section id="apollo-guidance-computer-agc">
-<h1><span class="section-number">27. </span>Apollo Guidance Computer (AGC)<a class="headerlink" href="#apollo-guidance-computer-agc" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">22.6. </span>Apollo Guidance Computer (AGC)<a class="headerlink" href="#apollo-guidance-computer-agc" title="Link to this heading">#</a></h2>
 <p>The AGC was the onboard computer for NASA’s Apollo programs. It provided navigation for the control capsule as well as controlled the spacecraft during moon landings. The AGC had only 72KB of fixed memory (589,824 bits). Unlike many earlier computers, the software for the AGC was stored in its memory and was not physically built into its hardware’s circuitry.</p>
 <p>Additionally, this computer had RAM, which was memory that could be changed by the computer while it was running. This memory had a capacity of only 4KB (32,768 bits), which was still enough to store all the data needed to perform all calculations necessary for the missions. The AGC could be controlled by the astronauts in the command capsule by sending commands via a numeric keyboard. Its user interface consisted of a simple screen and a set of status lights that relayed information to the astronauts.</p>
 <p>This computer is very similar to how modern computers work in the sense that it can keep data in its fixed memory even while the computer is off.</p>
 <p>To learn more about the AGC and how it worked, you can view <a class="reference external" href="https://bigthink.com/hard-science/phone-computer-moon-landing/">this</a> article, or view the <a class="reference external" href="https://history.nasa.gov/computers/Ch2-5.html">official NASA public docs</a> on it.</p>
 </section>
 <section id="storage">
-<h1><span class="section-number">28. </span>Storage<a class="headerlink" href="#storage" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">22.7. </span>Storage<a class="headerlink" href="#storage" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>there are some thigns we have not yet seen in detail in that diagram</p></li>
 <li><p>Ram Is Random Access we can access it whenever we want we can read and write to it</p></li>
@@ -664,30 +657,30 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 <!-- required to make mcq above work -->
 </section>
 <section id="questions-after-class">
-<h1><span class="section-number">29. </span>Questions After Class<a class="headerlink" href="#questions-after-class" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">22.8. </span>Questions After Class<a class="headerlink" href="#questions-after-class" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>these are last semesters. i’m behind on the new ones</p>
 </div>
 <section id="what-are-the-pc-mar-mdr-etc-and-what-do-they-do">
-<h2><span class="section-number">29.1. </span>What are the PC, MAR, MDR, etc. and what do they do<a class="headerlink" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.8.1. </span>What are the PC, MAR, MDR, etc. and what do they do<a class="headerlink" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do" title="Link to this heading">#</a></h3>
 <p>They are various registers that each have a specific role.  Learning all of these these in more detail is a good Explore badge or a single one is in more practice.</p>
 </section>
 <section id="how-does-a-motherboard-work-with-all-of-these">
-<h2><span class="section-number">29.2. </span>how does a motherboard work with all of these<a class="headerlink" href="#how-does-a-motherboard-work-with-all-of-these" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.8.2. </span>how does a motherboard work with all of these<a class="headerlink" href="#how-does-a-motherboard-work-with-all-of-these" title="Link to this heading">#</a></h3>
 <p>A motherboard contains all most of those components.  This is also a good Deeper explroation.</p>
 </section>
 <section id="when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">
-<h2><span class="section-number">29.3. </span>When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?<a class="headerlink" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.8.3. </span>When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?<a class="headerlink" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones" title="Link to this heading">#</a></h3>
 <p>What definition dependsd on the context.  If you are talking to a child who is trying to learn basic typing they need to know different things than a teenager trying to choose what type of comptuer to bring to college, which is different than the model you need to keep in mind when you’re working in a high level language, which is different than what you need when you are writing drivers.</p>
 </section>
 <section id="how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">
-<h2><span class="section-number">29.4. </span>How do Quantum computer logic gates differ from what we use now exactly<a class="headerlink" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.8.4. </span>How do Quantum computer logic gates differ from what we use now exactly<a class="headerlink" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly" title="Link to this heading">#</a></h3>
 <p>Quantum computers operate on a fundamentally different object, instead of bits they have <a class="reference external" href="https://quantum-computing.ibm.com/composer/docs/iqx/guide/the-qubit">qubits</a>.  There represent, essetially some uncertainty, or randomness in the behavior, so then there are different operations needed.</p>
 <p>URI has a <a class="reference external" href="https://web.uri.edu/physics/quantum/">MS in Quantum Computing in the Physics Dept</a></p>
 </section>
 <section id="intel-4004-1971-how-it-worked-by-tyler-hanlon">
-<h2><span class="section-number">29.5. </span>Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon<a class="headerlink" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.8.5. </span>Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon<a class="headerlink" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon" title="Link to this heading">#</a></h3>
 <p>This was the first general purpose programmable processor which people could buy and then make or buy their own software to customize it with. This was a breakthorugh in computing as it allowed consumers to have a say in what software was used in their electronics without having to make their own. This was extremely influential advancmenet inearly comuting technologies becuase it made multiple softwares more accessible and deliverable to a wider audience. It is one of the smallest microprocessors ever made, and was develope for use in a Japanese calculator company, but was powerful enought o actually be used for a wide variety of functions.</p>
 <p>Sources:
 <a class="reference external" href="https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html#:~:text=That's%20when%20the%20Intel%C2%AE,wide%20variety%20of%20electronic%20devices">https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html#:~:text=That’s when the Intel®,wide variety of electronic devices</a>.</p>
@@ -695,39 +688,39 @@ at a Confrence at Dartmouth in Hanover New Hampshire and he use a telegraph to d
 </section>
 </section>
 <section id="id1">
-<h1><span class="section-number">30. </span>Questions After Class<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">22.9. </span>Questions After Class<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>these are last semesters. i’m behind on the new ones</p>
 </div>
 <section id="id2">
-<h2><span class="section-number">30.1. </span>What are the PC, MAR, MDR, etc. and what do they do<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.9.1. </span>What are the PC, MAR, MDR, etc. and what do they do<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>They are various registers that each have a specific role.  Learning all of these these in more detail is a good Explore badge or a single one is in more practice.</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">30.2. </span>how does a motherboard work with all of these<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.9.2. </span>how does a motherboard work with all of these<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>A motherboard contains all most of those components.  This is also a good Deeper explroation.</p>
 </section>
 <section id="id4">
-<h2><span class="section-number">30.3. </span>When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.9.3. </span>When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>What definition dependsd on the context.  If you are talking to a child who is trying to learn basic typing they need to know different things than a teenager trying to choose what type of comptuer to bring to college, which is different than the model you need to keep in mind when you’re working in a high level language, which is different than what you need when you are writing drivers.</p>
 </section>
 <section id="id5">
-<h2><span class="section-number">30.4. </span>How do Quantum computer logic gates differ from what we use now exactly<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.9.4. </span>How do Quantum computer logic gates differ from what we use now exactly<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Quantum computers operate on a fundamentally different object, instead of bits they have <a class="reference external" href="https://quantum-computing.ibm.com/composer/docs/iqx/guide/the-qubit">qubits</a>.  There represent, essetially some uncertainty, or randomness in the behavior, so then there are different operations needed.</p>
 <p>URI has a <a class="reference external" href="https://web.uri.edu/physics/quantum/">MS in Quantum Computing in the Physics Dept</a></p>
 </section>
 <section id="id6">
-<h2><span class="section-number">30.5. </span>Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">22.9.5. </span>Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>This was the first general purpose programmable processor which people could buy and then make or buy their own software to customize it with. This was a breakthorugh in computing as it allowed consumers to have a say in what software was used in their electronics without having to make their own. This was extremely influential advancmenet inearly comuting technologies becuase it made multiple softwares more accessible and deliverable to a wider audience. It is one of the smallest microprocessors ever made, and was develope for use in a Japanese calculator company, but was powerful enought o actually be used for a wide variety of functions.</p>
 <p>Sources:
 <a class="reference external" href="https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html#:~:text=That's%20when%20the%20Intel%C2%AE,wide%20variety%20of%20electronic%20devices">https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html#:~:text=That’s when the Intel®,wide variety of electronic devices</a>.</p>
 <p><a class="reference external" href="https://spectrum.ieee.org/chip-hall-of-fame-intel-4004-microprocessor">https://spectrum.ieee.org/chip-hall-of-fame-intel-4004-microprocessor</a></p>
+</section>
+</section>
 <hr class="docutils" />
-</section>
-</section>
 <section id="scheduling-jobs">
-<h1><span class="section-number">31. </span>Scheduling Jobs<a class="headerlink" href="#scheduling-jobs" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">22.10. </span>Scheduling Jobs<a class="headerlink" href="#scheduling-jobs" title="Link to this heading">#</a></h2>
 <p>Now that we’re done with some history talk, let’s go back to talking about connecting and working with remote servers.</p>
 <p>What happens when we login to seawulf?
 Well, seawulf is a high performane computing (HPC) cluster. In this cluster we have a combination of computing power, CPU, GPU, RAM, along with Storage.</p>
@@ -756,6 +749,7 @@ We can later view the outputs of the job in a <code class="docutils literal notr
 Connection to seawulf.uri.edu closed.
 </pre></div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -798,11 +792,11 @@ Connection to seawulf.uri.edu closed.
       </div>
     </a>
     <a class="right-next"
-       href="../activities/kwl.html"
+       href="2025-04-22.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">KWL Chart</p>
+        <p class="prev-next-title"><span class="section-number">23. </span>How does timing work in a computer?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -822,42 +816,41 @@ Connection to seawulf.uri.edu closed.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">22. Let’s start with a dictionary</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-people">22.1. Computers as people</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-machines">22.2. Computers as Machines</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-do-we-talk-about-computers">22.3. How much do we talk about computers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-start-with-a-dictionary">22.1. Let’s start with a dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-people">22.1.1. Computers as people</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-as-machines">22.1.2. Computers as Machines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-do-we-talk-about-computers">22.1.3. How much do we talk about computers?</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-calculators">23. Mechanical Calculators</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-this-change-over-time">24. How did this change over time?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-adder-1937">24.1. Model K Adder (1937)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971">24.2. Intel 4004 (1971)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-these-thigns-actually-work">24.3. So how do these thigns actually work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-calculators">22.2. Mechanical Calculators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-this-change-over-time">22.3. How did this change over time?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-adder-1937">22.3.1. Model K Adder (1937)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971">22.3.2. Intel 4004 (1971)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-how-do-these-thigns-actually-work">22.3.3. So how do these thigns actually work</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#early-computers">25. Early Computers</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#von-neumann-architecture">26. von Neumann Architecture</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apollo-guidance-computer-agc">27. Apollo Guidance Computer (AGC)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#storage">28. Storage</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">29. Questions After Class</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do">29.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-motherboard-work-with-all-of-these">29.2. how does a motherboard work with all of these</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">29.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">29.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon">29.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#early-computers">22.4. Early Computers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#von-neumann-architecture">22.5. von Neumann Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apollo-guidance-computer-agc">22.6. Apollo Guidance Computer (AGC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storage">22.7. Storage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-after-class">22.8. Questions After Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-pc-mar-mdr-etc-and-what-do-they-do">22.8.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-motherboard-work-with-all-of-these">22.8.2. how does a motherboard work with all of these</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-defining-a-computer-is-it-best-to-define-the-most-current-model-of-a-computer-or-how-everything-functions-bare-bones">22.8.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-quantum-computer-logic-gates-differ-from-what-we-use-now-exactly">22.8.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intel-4004-1971-how-it-worked-by-tyler-hanlon">22.8.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">30. Questions After Class</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">30.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">30.2. how does a motherboard work with all of these</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">30.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">30.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">30.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">22.9. Questions After Class</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">22.9.1. What are the PC, MAR, MDR, etc. and what do they do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">22.9.2. how does a motherboard work with all of these</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">22.9.3. When defining a computer, is it best to define the most current model of a computer? Or how everything functions bare bones?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">22.9.4. How do Quantum computer logic gates differ from what we use now exactly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">22.9.5. Intel 4004 (1971) -&gt; How it worked by Tyler Hanlon</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduling-jobs">31. Scheduling Jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduling-jobs">22.10. Scheduling Jobs</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

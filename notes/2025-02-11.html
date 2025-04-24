@@ -217,16 +217,8 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-15.html">21. How can we use logical operations?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. Let’s start with a dictionary</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. What is a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-22.html">23. How does timing work in a computer?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -527,31 +519,25 @@ document.write(`
 <li><p>We commited the change to our local repo using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&lt;message&gt;</span></code></p></li>
 <li><p>We pushed the changes to the online repo using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></li>
 </ul>
-<hr class="docutils" />
 <p>Let’s pull up our project on the terminal first</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Documents/systems/gh-inclass-AymanBx
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Let’s also pull up the folder in the file explorer</p>
-<hr class="docutils" />
 <p>Always remember to check up on the status of your project</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch 1-create-an-about-file</span>
 <span class="go">Your branch is up to date with &#39;origin/1-create-an-about-file&#39;.</span>
 
 <span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Let’s take a look at our files</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.         .git</span>
 <span class="go">..        .github</span>
 <span class="go">about.md</span>
@@ -560,46 +546,36 @@ document.write(`
 </section>
 <section id="its-not-magic">
 <h2><span class="section-number">5.2. </span>It’s not magic<a class="headerlink" href="#its-not-magic" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
 <p>What happens if we switch branches?
 Keep an eye on the folder on the side while you switch branches</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Let’s take a look at our files now</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.         .git</span>
 <span class="go">..        .github</span>
 </pre></div>
 </div>
 <p>We can’t see the file <code class="docutils literal notranslate"><span class="pre">about.md</span></code></p>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 
 <span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Obviously no changes have been done to main both locally or on GitHub yet which makes sense</p>
-<hr class="docutils" />
 <p>And finally, Let’s pull up the repo online</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>repo<span class="w"> </span>view<span class="w"> </span>--web
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>If we’re on main we can’t see the <code class="docutils literal notranslate"><span class="pre">about.md</span></code> file. Let’s change the branch to <code class="docutils literal notranslate"><span class="pre">1-create-an-about-file</span></code></p>
-<hr class="docutils" />
 <p>Now we can see the about file on the online inclass repo but only in the <code class="docutils literal notranslate"><span class="pre">create-about</span></code> branch</p>
-<hr class="docutils" />
 <p>How do we apply the changes (new file) to main?</p>
 <ul class="simple">
 <li><p>[ ] commit</p></li>
@@ -607,37 +583,28 @@ Keep an eye on the folder on the side while you switch branches</p>
 <li><p>[x] pull request &amp; merge</p></li>
 <li><p>[ ] close the issue</p></li>
 </ul>
-<hr class="docutils" />
 <p>If GitHub prompts you, select <code class="docutils literal notranslate"><span class="pre">compare</span> <span class="pre">and</span> <span class="pre">pull</span> <span class="pre">request</span></code>
 Or click on <code class="docutils literal notranslate"><span class="pre">contribute</span></code> and then <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">pull</span> <span class="pre">request</span></code></p>
-<hr class="docutils" />
 <p>Merge pull request</p>
-<hr class="docutils" />
 <p>Back to code section. Now we can see the <a class="reference external" href="http://about.md">about.md</a> file!</p>
-<hr class="docutils" />
 <p>We can also see the the number of issues went down by 1 (from 1 to none)
 That’s because of two reasons, one of them is because the branch was created from the development section of the issue (effectively liking the issue to the branch and later to the pr).
 The other reason is because of the commit message that we wrote when we created the about file. We’ll see this actually take affect in a few minutes.</p>
-<hr class="docutils" />
 <p>On the terminal</p>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.         .git</span>
 <span class="go">..        .github</span>
 </pre></div>
 </div>
 <p>The local repo is still unaware of the changes.</p>
 </section>
-<hr class="docutils" />
 <section id="sync">
 <h2><span class="section-number">5.3. </span>Sync<a class="headerlink" href="#sync" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>fetch
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">remote: Enumerating objects: 4, done.</span>
 <span class="go">remote: Counting objects: 100% (4/4), done.</span>
 <span class="go">remote: Compressing objects: 100% (2/2), done.</span>
@@ -647,11 +614,9 @@ The other reason is because of the commit message that we wrote when we created 
 <span class="go">   98ca2d6..4f26167  main       -&gt; origin/main</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Your branch is behind &#39;origin/main&#39; by 1 commit, and can be fast-forwarded.</span>
 <span class="go">  (use &quot;git pull&quot; to update your local branch)</span>
@@ -659,24 +624,18 @@ The other reason is because of the commit message that we wrote when we created 
 <span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.         .git</span>
 <span class="go">..        .github</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>git is aware of some changes that were made. But the changes still aren’t reflected on the file system locally.</p>
-<hr class="docutils" />
 <p>git is so nice. It always gives us pointers as to where to go from here…</p>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Updating 98ca2d6..4f26167</span>
 <span class="go">Fast-forward</span>
 <span class="go"> about.md | 3 +</span>
@@ -684,12 +643,10 @@ The other reason is because of the commit message that we wrote when we created 
 <span class="go"> create mode 100644 about.md</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>And finally. One last time</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.         .git</span>
 <span class="go">..        .github</span>
 <span class="go">about.md</span>
@@ -698,72 +655,51 @@ The other reason is because of the commit message that we wrote when we created 
 </section>
 <section id="closing-an-issue-with-a-commit-message">
 <h2><span class="section-number">5.4. </span>Closing an issue with a commit message<a class="headerlink" href="#closing-an-issue-with-a-commit-message" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
 <p>Let’s create a new issue (if you don’t already have one) called <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">a</span> <span class="pre">README</span></code>
 Pay attention to what number that issue is assigned (Marked with a <code class="docutils literal notranslate"><span class="pre">#</span></code>)</p>
-<hr class="docutils" />
 <p>Back to the code section. Click on add a README button and use the following content</p>
-<hr class="docutils" />
 <p>contents:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># GitHub Practice</span>
 
 <span class="n">Name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">name</span> <span class="n">here</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Before you commit, take a look at the issues tab above (don’t open it). What is the number showing next to the word <code class="docutils literal notranslate"><span class="pre">issues</span></code>?</p>
-<hr class="docutils" />
 <p>Commit directly to main. Add to the commit message <code class="docutils literal notranslate"><span class="pre">closes</span> <span class="pre">#&lt;number_of_issue&gt;</span></code></p>
-<hr class="docutils" />
 <p>Now take another look at the number of issues.</p>
-<hr class="docutils" />
 <p>What happened?</p>
-<hr class="docutils" />
 <p>We put the special keyword <code class="docutils literal notranslate"><span class="pre">closes</span></code> in the commit message when we commited the change.</p>
-<hr class="docutils" />
 <p>“closes #2”</p>
-<hr class="docutils" />
 <p>What does that mean? What is #2?</p>
-<hr class="docutils" />
 <p>#2 is referring to the issue <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">a</span> <span class="pre">README</span></code>. It is labeled #2 on GitHub</p>
-<hr class="docutils" />
 <p>Go check it out! Open the issues tab and click on <code class="docutils literal notranslate"><span class="pre">Closed</span></code><br />
 <img alt="image" src="../_images/issue_number.png" /></p>
-<hr class="docutils" />
 <p>What does that mean?</p>
-<hr class="docutils" />
 <p>When we use the <a class="reference external" href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests#linking-a-pull-request-to-an-issue"><code class="docutils literal notranslate"><span class="pre">closes</span></code></a> keyword in a commit message, GitHub recognizes that the commit message said <code class="docutils literal notranslate"><span class="pre">closes</span> <span class="pre">#2</span></code> and close the issue for us!</p>
 <p>Other words that may work: <code class="docutils literal notranslate"><span class="pre">fixes</span></code>, <code class="docutils literal notranslate"><span class="pre">resolves</span></code>, etc.</p>
 </section>
-<hr class="docutils" />
 <section id="branches-do-not-sync-automatically">
 <h2><span class="section-number">5.5. </span>Branches do not sync automatically<a class="headerlink" href="#branches-do-not-sync-automatically" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
 <p>Now we go back to the main branch</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to branch &#39;main&#39;</span>
 <span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 </pre></div>
 </div>
 <p>It thinks that we are up to date because it does not know about the changes to <code class="docutils literal notranslate"><span class="pre">origin/main</span></code> yet.</p>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">about.md</span>
 </pre></div>
 </div>
 <p>the file is missing.  It said it was up to date with origin main, but that is the most recent time we checked github only.  It’s up to date with our local record of what is on GitHub, not the current GitHub.</p>
-<hr class="docutils" />
 <p>Next, we will update locally, with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>fetch
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">remote: Enumerating objects: 1, done.</span>
 <span class="go">remote: Counting objects: 100% (1/1), done.</span>
 <span class="go">remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)</span>
@@ -777,17 +713,14 @@ The “remote” lines are what <code class="docutils literal notranslate"><span
 other lines are what <code class="docutils literal notranslate"><span class="pre">git</span></code> on your local computer said.</p>
 <p>So, here, it counted up the content, and then sent it on GitHub’s side. On the local side, it unpacked (remember git compressed the content before we sent it). It describes the changes that were made on the
 GitHub side, the main branch was moved from one commit to another. So it then updates the local main branch accordingly (“Updating 6a12db0…caeacb5”).</p>
-<hr class="docutils" />
 <p>We can see that if this updates the working directory too:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>no changes yet. <code class="docutils literal notranslate"><span class="pre">fetch</span></code> updates the .git directory so that git knows more, but does not update our local file system.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">about.md</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <section id="git-merge">
 <h3><span class="section-number">5.5.1. </span>Git Merge<a class="headerlink" href="#git-merge" title="Link to this heading">#</a></h3>
 <div class="mermaid">
@@ -805,8 +738,7 @@ GitHub side, the main branch was moved from one commit to another. So it then up
     commit id:&quot;G&quot;
     checkout origin/main
     commit id:&quot;C&quot;
-        </div><hr class="docutils" />
-<p>After merge, it looks like this:</p>
+        </div><p>After merge, it looks like this:</p>
 <div class="mermaid">
             gitGraph
     commit id:&quot;D&quot;
@@ -825,7 +757,6 @@ GitHub side, the main branch was moved from one commit to another. So it then up
     checkout main
     merge origin/main id:&quot;H (contains A,B,C)&quot;
         </div><p>There is a new commit with the content.</p>
-<hr class="docutils" />
 <p>In our case it is simpler:</p>
 <div class="mermaid">
             gitGraph
@@ -835,14 +766,12 @@ GitHub side, the main branch was moved from one commit to another. So it then up
     checkout origin/main
     commit id:&quot;A&quot;
         </div><p>so it will fast forward</p>
-<hr class="docutils" />
 <div class="mermaid">
             gitGraph
     commit id:&quot;D&quot;
     commit id:&quot;E&quot;
     commit id:&quot;A&quot;
         </div></section>
-<hr class="docutils" />
 <section id="git-rebase">
 <h3><span class="section-number">5.5.2. </span>git rebase<a class="headerlink" href="#git-rebase" title="Link to this heading">#</a></h3>
 <p>If a repo is like this:</p>
@@ -878,7 +807,6 @@ GitHub side, the main branch was moved from one commit to another. So it then up
     checkout main
         </div></section>
 </section>
-<hr class="docutils" />
 <section id="git-pull">
 <h2><span class="section-number">5.6. </span>Git Pull<a class="headerlink" href="#git-pull" title="Link to this heading">#</a></h2>
 <p>remember <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> does:</p>
@@ -889,58 +817,46 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Updating 0e7c990..0c12714</span>
 <span class="go">Fast-forward</span>
 <span class="go"> README.md | 3</span>
 
-<span class="go">---</span>
+
 
 <span class="go">1 file changed, 3 insertions(+)</span>
 <span class="go"> create mode 100644 README.md</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Now, we can check again</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">README.md	about.md</span>
 </pre></div>
 </div>
 <p>and it looks as expected</p>
 </section>
-<hr class="docutils" />
 <section id="making-a-new-branch-locally">
 <h2><span class="section-number">5.7. </span>making a new branch locally<a class="headerlink" href="#making-a-new-branch-locally" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
 <p>We’ve used <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to switch branches before. But last time we had created the branch on GitHub first and applied <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code></p>
-<hr class="docutils" />
 <p>If we use <code class="docutils literal notranslate"><span class="pre">checkout</span></code>and an unkown branch name</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>my_branch
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">error: pathspec &#39;my_branch&#39; did not match any file(s) known to git</span>
 </pre></div>
 </div>
 <p>it give us an error, this does not work</p>
-<hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> expects there to be a branch known in the .git directory. Either a local one or one that was fetched from a remote (upstram/online) repository. If it were the latter, git creates a new local branch that <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches">tracks</a> the online branch (meaning it links them so you can push and pull between them)</p>
-<hr class="docutils" />
 <p>To create a branch at the same time, we use the <code class="docutils literal notranslate"><span class="pre">-b</span></code> option. with <code class="docutils literal notranslate"><span class="pre">-b</span></code> we can make a new branch and switch to it at the same time.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>my_branch
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to a new branch &#39;my_branch&#39;</span>
 </pre></div>
 </div>
 <p>so we see it is done!</p>
-<hr class="docutils" />
 <p>What was this a shortcut for?</p>
-<hr class="docutils" />
 <p>First let’s go back to main</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
 </pre></div>
@@ -949,60 +865,49 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to branch &#39;main&#39;</span>
 <span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">create</span></code> does not exist</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>create<span class="w"> </span>fun_fact
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fatal: not a valid object name: &#39;fun_fact&#39;</span>
 </pre></div>
 </div>
 <p>so it tried to treate create as a name and finds that as extra</p>
-<hr class="docutils" />
 <p>This version gives us two new observations</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>fun_fact<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>fun_fact
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to branch &#39;fun_fact&#39;</span>
 </pre></div>
 </div>
 <p>It switches, but does not say it’s new.  That is because it made the branch first, then switched.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">;</span></code> allowed us to put 2 commands in one line.</p>
-<hr class="docutils" />
 <p>We can view a list of branches:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">  1-create-a-readme</span>
 <span class="go">  main</span>
 <span class="go">* fun_fact</span>
 <span class="go">  my_branch</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>or again look at the log</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;enter log here&gt;</span>
 </pre></div>
 </div>
 <p>branches are pointers, so each one is located at a particular commit.</p>
-<hr class="docutils" />
 <p>the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option shows us the remote ones</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>-r
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">  origin/1-create-a-readme</span>
 <span class="go">  origin/HEAD -&gt; origin/main</span>
 <span class="go">  origin/main</span>
@@ -1011,31 +916,24 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 </section>
 <section id="merge-conflict">
 <h2><span class="section-number">5.8. </span>Merge Conflict<a class="headerlink" href="#merge-conflict" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>about.md<span class="w"> </span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>we used the <a class="reference external" href="https://www.nano-editor.org/dist/latest/nano.html">nano text editor</a>.  <code class="docutils literal notranslate"><span class="pre">nano</span></code> is simpler than other text editors that tend to be more popular among experts, <code class="docutils literal notranslate"><span class="pre">vim</span></code> and <code class="docutils literal notranslate"><span class="pre">emacs</span></code>.  Getting comfortable with nano will get you used to the ideas, without putting as much burden on your memory.  This will set you up to learn those later, if you need a more powerful terminal text editor.</p>
 <p>this opens the nano program on the terminal.  it displays reminders of the commands at the bottom of th screen and allows you to type into the file right away.</p>
-<hr class="docutils" />
 <p>Add any fun fact on the line below your content.  Then, write out (save), it will prompt the file name.  Since we opened nano with a file name (<code class="docutils literal notranslate"><span class="pre">about.md</span></code>) specified, you will not need to type a new name, but to confirm it, by pressing enter/return.</p>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>about.md<span class="w"> </span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Second semster Masters</span>
 
 <span class="go">Expected graduation May 2026</span>
 <span class="go">- Got my BS in 2023 </span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch fun_fact</span>
 <span class="go">Changes not staged for commit:</span>
 <span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
@@ -1045,27 +943,22 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>about.md<span class="w"> </span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch fun_fact</span>
 <span class="go">Changes to be committed:</span>
 <span class="go">  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
 <span class="go">	modified:   about.md</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p><strong>we are going to do it without the <code class="docutils literal notranslate"><span class="pre">-m</span></code> on purpose here to learn how to fix it</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[fun_fact 70759fd] add fun fact</span>
 <span class="go"> 1 file changed, 1 insertion(+)</span>
 </pre></div>
@@ -1078,12 +971,9 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>without a commit message it puts you in vim. Read the content carefully, then press <code class="docutils literal notranslate"><span class="pre">a</span></code> to get into ~insert~ mode. Type your message and/or uncomment the template.</p>
 <p>When you are done use <code class="docutils literal notranslate"><span class="pre">escape</span></code> to go back to command mode, the ~insert~ at the bottom of the screen will go away.  Then type <code class="docutils literal notranslate"><span class="pre">:wq</span></code> and press enter/return.</p>
-<hr class="docutils" />
 <p>What this is doing is adding a temporary file with the commit message that git can use to complete your commit.</p>
-<hr class="docutils" />
 <p>Now let’s go back to <code class="docutils literal notranslate"><span class="pre">main</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
 </pre></div>
@@ -1104,7 +994,6 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 </pre></div>
 </div>
 <p>The file <code class="docutils literal notranslate"><span class="pre">about.md</span></code> in <code class="docutils literal notranslate"><span class="pre">main</span></code> is still unaware of our changes in the <code class="docutils literal notranslate"><span class="pre">fun_fact</span></code> branch</p>
-<hr class="docutils" />
 <p>How can we apply those changes to <code class="docutils literal notranslate"><span class="pre">main</span></code> locally?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>fun_fact
 </pre></div>
@@ -1116,7 +1005,6 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <span class="go"> 1 file changed, 1 insertion(+)</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Let’s check if that worked:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
@@ -1131,7 +1019,6 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>about.md<span class="w"> </span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Second semster Masters</span>
 
 <span class="go">Expected graduation May 2026</span>
@@ -1151,7 +1038,6 @@ GitHub side, the main branch was moved from one commit to another. So it then up
 <p>Merge conflicts are not <strong>always</strong> because someone did something wrong; it can be a conflict in the
 simplest term because two people did two types of work that were supposed to be independent, but
 turned out not to be.</p>
-<hr class="docutils" />
 <p>First, in your browser edit the <a class="reference external" href="http://about.md">about.md</a> file to have a different fun fact.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Second</span> <span class="n">semster</span> <span class="n">Masters</span>
 
@@ -1160,12 +1046,10 @@ turned out not to be.</p>
 </pre></div>
 </div>
 <p>Commit changes directly to main</p>
-<hr class="docutils" />
 <p>Now let’s try updating our local repo with a <code class="docutils literal notranslate"><span class="pre">pull</span></code> command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">hint: You have divergent branches and need to specify how to reconcile them.</span>
 <span class="go">hint: You can do so by running one of the following commands sometime before</span>
 <span class="go">hint: your next pull:</span>
@@ -1181,9 +1065,7 @@ turned out not to be.</p>
 <span class="go">fatal: Need to specify how to reconcile divergent branches.</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Now it cannot work because the branches have diverged.  This illustrates the fact that our two versions of the branch <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">origin/main</span></code> are two separate things.</p>
-<hr class="docutils" />
 <div class="mermaid">
             gitGraph
     commit
@@ -1198,12 +1080,10 @@ turned out not to be.</p>
     checkout origin/main
     commit
     checkout main
-        </div><hr class="docutils" />
-<p>git gave us some options, we will use <a class="reference external" href="https://git-scm.com/docs/git-rebase">rebase</a> which will apply our local commits <em>after</em> the remote commits.</p>
+        </div><p>git gave us some options, we will use <a class="reference external" href="https://git-scm.com/docs/git-rebase">rebase</a> which will apply our local commits <em>after</em> the remote commits.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>--rebase
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Auto-merging about.md</span>
 <span class="go">CONFLICT (content): Merge conflict in about.md</span>
 <span class="go">error: could not apply 62dcf61... local Added fun fact</span>
@@ -1216,11 +1096,9 @@ turned out not to be.</p>
 </pre></div>
 </div>
 <p>it gets most of it, but gets stopped at a conflict.</p>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">interactive rebase in progress; onto 462402f</span>
 <span class="go">Last command done (1 command done):</span>
 <span class="go">   pick 62dcf61 local Added fun fact</span>
@@ -1239,12 +1117,10 @@ turned out not to be.</p>
 </pre></div>
 </div>
 <p>this highlights what file the conflict is in</p>
-<hr class="docutils" />
 <p>we can inspect this file</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>about.md<span class="w"> </span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Second semster Masters</span>
 
 <span class="go">Expected graduation May 2026</span>
@@ -1255,15 +1131,12 @@ turned out not to be.</p>
 <span class="go">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; &quot;local main&quot;</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>We have to  manually edit it to be what we want it to be.  We can take one change the other or both.</p>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>about.md
 </pre></div>
 </div>
 <p>In some situations if it’s actually the same line of code edited in two different ways you might choose to keep one and throw out the other. In other cases it might be two different lines of code (or fun facts) occupying the same line in the file.
 In this case, we will choose to keep both, so my file looks like this in the end.</p>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Second semster Masters</span>
 
 <span class="go">Expected graduation May 2026</span>
@@ -1271,11 +1144,9 @@ In this case, we will choose to keep both, so my file looks like this in the end
 <span class="go">- I graduated from highschool abroad</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">interactive rebase in progress; onto 462402f</span>
 <span class="go">Last command done (1 command done):</span>
 <span class="go">   pick 62dcf61 aded fun fact</span>
@@ -1293,22 +1164,18 @@ In this case, we will choose to keep both, so my file looks like this in the end
 <span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Now, we do git add and commit</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;keep both changes&#39;</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[detached HEAD c3e68a0] keep both changes</span>
 <span class="go"> 1 file changed, 2 insertions(+)</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>and check again</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">interactive rebase in progress; onto 462402f</span>
 <span class="go">Last command done (1 command done):</span>
 <span class="go">   pick 62dcf61 local Added fun fact</span>
@@ -1320,22 +1187,17 @@ In this case, we will choose to keep both, so my file looks like this in the end
 <span class="go">nothing to commit, working tree clean</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Now, we follow the intructions again, and continue the rebase to combine our branches</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rebase<span class="w"> </span>--continue
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Successfully rebased and updated refs/heads/main.</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Once we rebase and everything is done, we can push.</p>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Enumerating objects: 5, done.</span>
 <span class="go">Counting objects: 100% (5/5), done.</span>
 <span class="go">Delta compression using up to 8 threads</span>

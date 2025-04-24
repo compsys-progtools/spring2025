@@ -217,16 +217,8 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-15.html">21. How can we use logical operations?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. Let’s start with a dictionary</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. What is a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-22.html">23. How does timing work in a computer?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -483,19 +475,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys">17.9. Using SSH Keys</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-interactive-session">17.10. Using an interactive session</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overview">17.11. An overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">17.12. An overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-program">17.13. A simple program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-with-gcc">17.14. Preprocessing with gcc</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">17.15. Compiling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembling">17.16. Assembling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking">17.17. Linking</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">17.18. Putting it all together</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-multiple-files">17.19. Working with multiple files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-jobs">17.20. batch jobs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">17.21. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">17.22. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">17.23. Badges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">17.24. Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-program">17.12. A simple program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-with-gcc">17.13. Preprocessing with gcc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">17.14. Compiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembling">17.15. Assembling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking">17.16. Linking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">17.17. Putting it all together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-multiple-files">17.18. Working with multiple files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-jobs">17.19. batch jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">17.20. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">17.21. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">17.22. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">17.23. Questions</a></li>
 </ul>
             </nav>
         </div>
@@ -635,26 +626,26 @@ document.write(`
 <p>Today we will use an interactive session using the <code class="docutils literal notranslate"><span class="pre">interactive</span></code> program.</p>
 <p>The login node has limited resources, and is only usually used to connect to the server and possibly run batch jobs from there. The login node resources are shared among many users, so, out of courtesy, we try not to occupy these resources too much or for too long</p>
 <p>First we’ll look at its help</p>
-<div class="highlight-ayman_sandouk notranslate"><div class="highlight"><pre><span></span>Usage: interactive [-c] [-p] [-J] [-w]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">interactive</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">J</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">w</span><span class="p">]</span>
 
-Optional arguments:
-    -c: number of CPU cores to request (default: 1)
-    -p: partition to run job in (default: general)
-    -J: job name (default: interactive)
-    -w: node name
+<span class="n">Optional</span> <span class="n">arguments</span><span class="p">:</span>
+    <span class="o">-</span><span class="n">c</span><span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">CPU</span> <span class="n">cores</span> <span class="n">to</span> <span class="n">request</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">p</span><span class="p">:</span> <span class="n">partition</span> <span class="n">to</span> <span class="n">run</span> <span class="n">job</span> <span class="ow">in</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">general</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">J</span><span class="p">:</span> <span class="n">job</span> <span class="n">name</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">interactive</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">w</span><span class="p">:</span> <span class="n">node</span> <span class="n">name</span>
 
-NB: interactive jobs have a time limit of 8 hours.
+<span class="n">NB</span><span class="p">:</span> <span class="n">interactive</span> <span class="n">jobs</span> <span class="n">have</span> <span class="n">a</span> <span class="n">time</span> <span class="n">limit</span> <span class="n">of</span> <span class="mi">8</span> <span class="n">hours</span><span class="o">.</span>
 
-Written by: Alan Orth &lt;a.orth@cgiar.org&gt;
+<span class="n">Written</span> <span class="n">by</span><span class="p">:</span> <span class="n">Alan</span> <span class="n">Orth</span> <span class="o">&lt;</span><span class="n">a</span><span class="o">.</span><span class="n">orth</span><span class="nd">@cgiar</span><span class="o">.</span><span class="n">org</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Then we will start one with all default settings</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>ayman_sandouk@seawulf<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>interactive
 </pre></div>
 </div>
-<div class="highlight-ayman_sandouk notranslate"><div class="highlight"><pre><span></span>salloc: Granted job allocation 27371
-salloc: Waiting for resource configuration
-salloc: Nodes n005 are ready for job
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salloc</span><span class="p">:</span> <span class="n">Granted</span> <span class="n">job</span> <span class="n">allocation</span> <span class="mi">27371</span>
+<span class="n">salloc</span><span class="p">:</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">resource</span> <span class="n">configuration</span>
+<span class="n">salloc</span><span class="p">:</span> <span class="n">Nodes</span> <span class="n">n005</span> <span class="n">are</span> <span class="n">ready</span> <span class="k">for</span> <span class="n">job</span>
 </pre></div>
 </div>
 <p>it tells us what it is doing while it gets ready.</p>
@@ -662,16 +653,16 @@ salloc: Nodes n005 are ready for job
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>ayman_sandouk@n005<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ls
 </pre></div>
 </div>
-<div class="highlight-ayman_sandouk notranslate"><div class="highlight"><pre><span></span>bash-lesson.tar.gz                           SRR307026_1.fastq
-dmel-all-r6.19.gtf                           SRR307026_2.fastq
-dmel_unique_protein_isoforms_fb_2016_01.tsv  SRR307027_1.fastq
-gene_association.fb                          SRR307027_2.fastq
-SRR307023_1.fastq                            SRR307028_1.fastq
-SRR307023_2.fastq                            SRR307028_2.fastq
-SRR307024_1.fastq                            SRR307029_1.fastq
-SRR307024_2.fastq                            SRR307029_2.fastq
-SRR307025_1.fastq                            SRR307030_1.fastq
-SRR307025_2.fastq                            SRR307030_2.fastq
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span><span class="o">-</span><span class="n">lesson</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>                           <span class="n">SRR307026_1</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">dmel</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">r6</span><span class="mf">.19</span><span class="o">.</span><span class="n">gtf</span>                           <span class="n">SRR307026_2</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">dmel_unique_protein_isoforms_fb_2016_01</span><span class="o">.</span><span class="n">tsv</span>  <span class="n">SRR307027_1</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">gene_association</span><span class="o">.</span><span class="n">fb</span>                          <span class="n">SRR307027_2</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">SRR307023_1</span><span class="o">.</span><span class="n">fastq</span>                            <span class="n">SRR307028_1</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">SRR307023_2</span><span class="o">.</span><span class="n">fastq</span>                            <span class="n">SRR307028_2</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">SRR307024_1</span><span class="o">.</span><span class="n">fastq</span>                            <span class="n">SRR307029_1</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">SRR307024_2</span><span class="o">.</span><span class="n">fastq</span>                            <span class="n">SRR307029_2</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">SRR307025_1</span><span class="o">.</span><span class="n">fastq</span>                            <span class="n">SRR307030_1</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">SRR307025_2</span><span class="o">.</span><span class="n">fastq</span>                            <span class="n">SRR307030_2</span><span class="o">.</span><span class="n">fastq</span>
 </pre></div>
 </div>
 <p>our files are still there.  The <em>compute</em> node changed, but not our disk space location.</p>
@@ -679,7 +670,7 @@ SRR307025_2.fastq                            SRR307030_2.fastq
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>ayman_sandouk@n005<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span><span class="nb">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-ayman_sandouk notranslate"><div class="highlight"><pre><span></span>/home/ayman_sandouk
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ayman_sandouk</span>
 </pre></div>
 </div>
 <p>still our home directory</p>
@@ -697,13 +688,18 @@ SRR307025_2.fastq                            SRR307030_2.fastq
 </section>
 <section id="an-overview">
 <h2><span class="section-number">17.11. </span>An overview<a class="headerlink" href="#an-overview" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://mermaid.live/edit#pako:eNplkk1vhCAQhv8KmbNrtKzx49DTXntqT9VNgzp2SUEMYHat-t-Lq7tptyQQ3uF5h2HCCJWqETJohDpXJ6YteTsULXGD5bkZjEVJGi7QHI9kt3smk-ClryYiePuFeiXPmlscrytZ0s0rKYePTqtPzaRfTaTT6FSFxihNVt-f0KOFk8klk527e7vmpv6hZiLMGJTlcrgVf9eP8L32jdzEA-aRXxa84ER0345urg9crWWelz0XNam5vrXnhKJD_btD4IFELRmvXZvHxVmAPaHEAjK3rbFhvbAFFO3sUNZb9Tq0FWRW9-hB39XM4oGzpRLIGiaMi3asfVdK3iAnIRvhAhmNQz-J0jBMg6c9pUnkwQBZSv2AulAY0SilUZzOHnxf_YEfJUkU7NM4CGIae4A1t0q_rJ_i-jfmH7qlte8"><img alt="" src="https://mermaid.ink/img/pako:eNplkk1vhCAQhv8KmbNrtKzx49DTXntqT9VNgzp2SUEMYHat-t-Lq7tptyQQ3uF5h2HCCJWqETJohDpXJ6YteTsULXGD5bkZjEVJGi7QHI9kt3smk-ClryYiePuFeiXPmlscrytZ0s0rKYePTqtPzaRfTaTT6FSFxihNVt-f0KOFk8klk527e7vmpv6hZiLMGJTlcrgVf9eP8L32jdzEA-aRXxa84ER0345urg9crWWelz0XNam5vrXnhKJD_btD4IFELRmvXZvHxVmAPaHEAjK3rbFhvbAFFO3sUNZb9Tq0FWRW9-hB39XM4oGzpRLIGiaMi3asfVdK3iAnIRvhAhmNQz-J0jBMg6c9pUnkwQBZSv2AulAY0SilUZzOHnxf_YEfJUkU7NM4CGIae4A1t0q_rJ_i-jfmH7qlte8?type=png" /></a></p>
-</section>
-<section id="id1">
-<h2><span class="section-number">17.12. </span>An overview<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-</section>
+<div class="mermaid">
+            flowchart TD
+    a[[system files]] --&gt; |lib.o| linker
+    write{write code} --&gt; |my_program.c| preprocessor 
+    preprocessor --&gt; |my_program.i | compiler
+    compiler --&gt; |my_program.s| assembler 
+    assembler --&gt; |my_program.o| linker 
+    linker --&gt; |my_program, my_program.exe| run{run code}
+    b[[build dir]] --&gt; |helper.o| linker
+        </div></section>
 <section id="a-simple-program">
-<h2><span class="section-number">17.13. </span>A simple program<a class="headerlink" href="#a-simple-program" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.12. </span>A simple program<a class="headerlink" href="#a-simple-program" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>nano<span class="w"> </span>hello.c
 </pre></div>
 </div>
@@ -726,7 +722,7 @@ program</p>
 </div>
 </section>
 <section id="preprocessing-with-gcc">
-<h2><span class="section-number">17.14. </span>Preprocessing with gcc<a class="headerlink" href="#preprocessing-with-gcc" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.13. </span>Preprocessing with gcc<a class="headerlink" href="#preprocessing-with-gcc" title="Link to this heading">#</a></h2>
 <p>First we handle the preprocessing which pulls in headers that are included in our source code.  We will use the compiler <a class="reference external" href="https://man7.org/linux/man-pages/man1/gcc.1.html">gcc</a></p>
 <p>We will use <code class="docutils literal notranslate"><span class="pre">gcc</span></code> for many steps. We will use different options that it offers to do subsets of the complete compile task:</p>
 <ul class="simple">
@@ -815,7 +811,7 @@ program</p>
 </aside>
 </section>
 <section id="compiling">
-<h2><span class="section-number">17.15. </span>Compiling<a class="headerlink" href="#compiling" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.14. </span>Compiling<a class="headerlink" href="#compiling" title="Link to this heading">#</a></h2>
 <p>Next we take our preprocessed file and compile it to get assembly code.</p>
 <p>Again, we use <code class="docutils literal notranslate"><span class="pre">gcc</span></code>:</p>
 <ul class="simple">
@@ -879,7 +875,7 @@ main:
 </div>
 </section>
 <section id="assembling">
-<h2><span class="section-number">17.16. </span>Assembling<a class="headerlink" href="#assembling" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.15. </span>Assembling<a class="headerlink" href="#assembling" title="Link to this heading">#</a></h2>
 <p>Assembling is to take the assembly code and get object code.  Assembly is relatively broad and there are families of assembly code, it is also still written <em>for humans</em> to understand it readily.  It’s more complex than source code because it is closer to the hardware.  The object code however, is specific instructions to your machine and not human readable.</p>
 <p>Again, with <code class="docutils literal notranslate"><span class="pre">gcc</span></code>:</p>
 <ul class="simple">
@@ -934,7 +930,7 @@ K                                                               A?C
 <p>This is not human readable, though:</p>
 </section>
 <section id="linking">
-<h2><span class="section-number">17.17. </span>Linking<a class="headerlink" href="#linking" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.16. </span>Linking<a class="headerlink" href="#linking" title="Link to this heading">#</a></h2>
 <p>Now we can link it all together; in this program there are not a lot of other depdencies, but this fills in anything from libraries and outputs an executble</p>
 <p>once again with <code class="docutils literal notranslate"><span class="pre">gcc</span></code>:</p>
 <ul class="simple">
@@ -959,7 +955,7 @@ K                                                               A?C
 </div>
 </section>
 <section id="putting-it-all-together">
-<h2><span class="section-number">17.18. </span>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.17. </span>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Link to this heading">#</a></h2>
 <p>We can repeat with a different name and work directly from source to executable:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>gcc<span class="w"> </span>-o<span class="w"> </span>demohello<span class="w"> </span>hello.c<span class="w"> </span>-lm
 </pre></div>
@@ -999,7 +995,7 @@ K                                                               A?C
 This information is crucial for debuggers like GDB, allowing developers to step through code, inspect variables, and understand the program’s execution flow.</p>
 </section>
 <section id="working-with-multiple-files">
-<h2><span class="section-number">17.19. </span>Working with multiple files<a class="headerlink" href="#working-with-multiple-files" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.18. </span>Working with multiple files<a class="headerlink" href="#working-with-multiple-files" title="Link to this heading">#</a></h2>
 <p>This all looks a bit different if we have our code split across files.</p>
 <p>we will make a new file <code class="docutils literal notranslate"><span class="pre">main.c</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>nano<span class="w"> </span>main.c
@@ -1152,7 +1148,7 @@ gcc<span class="w"> </span>-o<span class="w"> </span>demo<span class="w"> </span
 <!-- AS: after fixing muiltiple file link figure out if we have enough time to do any of the shit below or do ssh keys?? -->
 </section>
 <section id="batch-jobs">
-<h2><span class="section-number">17.20. </span>batch jobs<a class="headerlink" href="#batch-jobs" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.19. </span>batch jobs<a class="headerlink" href="#batch-jobs" title="Link to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH -t 1:00:00</span>
 <span class="c1">#SBATCH --nodes=1 --ntasks-per-node=1</span>
@@ -1161,14 +1157,14 @@ gcc<span class="w"> </span>-o<span class="w"> </span>demo<span class="w"> </span
 </div>
 </section>
 <section id="experience-report-evidence">
-<h2><span class="section-number">17.21. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.20. </span>Experience Report Evidence<a class="headerlink" href="#experience-report-evidence" title="Link to this heading">#</a></h2>
 </section>
 <section id="prepare-for-next-class">
-<h2><span class="section-number">17.22. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.21. </span>Prepare for Next Class<a class="headerlink" href="#prepare-for-next-class" title="Link to this heading">#</a></h2>
 <p>TBD</p>
 </section>
 <section id="badges">
-<h2><span class="section-number">17.23. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.22. </span>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
@@ -1192,7 +1188,7 @@ Practice</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="questions">
-<h2><span class="section-number">17.24. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">17.23. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -1271,19 +1267,18 @@ Practice</label><div class="sd-tab-content docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ssh-keys">17.9. Using SSH Keys</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-interactive-session">17.10. Using an interactive session</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-overview">17.11. An overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">17.12. An overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-program">17.13. A simple program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-with-gcc">17.14. Preprocessing with gcc</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">17.15. Compiling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembling">17.16. Assembling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking">17.17. Linking</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">17.18. Putting it all together</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-multiple-files">17.19. Working with multiple files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-jobs">17.20. batch jobs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">17.21. Experience Report Evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">17.22. Prepare for Next Class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">17.23. Badges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">17.24. Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-program">17.12. A simple program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-with-gcc">17.13. Preprocessing with gcc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">17.14. Compiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembling">17.15. Assembling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking">17.16. Linking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">17.17. Putting it all together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-multiple-files">17.18. Working with multiple files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-jobs">17.19. batch jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experience-report-evidence">17.20. Experience Report Evidence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-for-next-class">17.21. Prepare for Next Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badges">17.22. Badges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">17.23. Questions</a></li>
 </ul>
   </nav></div>
 

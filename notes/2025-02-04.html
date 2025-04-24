@@ -217,16 +217,8 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-15.html">21. How can we use logical operations?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. Let’s start with a dictionary</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. What is a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-22.html">23. How does timing work in a computer?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -495,7 +487,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="git-offline">
 <h1><span class="section-number">4. </span>Git Offline<a class="headerlink" href="#git-offline" title="Link to this heading">#</a></h1>
-<hr class="docutils" />
 <section id="absolute-path-vs-relative-path">
 <h2><span class="section-number">4.1. </span>Absolute Path vs Relative Path<a class="headerlink" href="#absolute-path-vs-relative-path" title="Link to this heading">#</a></h2>
 <p>Navigate to your inclass repo on your terminal</p>
@@ -505,7 +496,6 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">ayman</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Which command will help me navigate between folders?</p>
 <ul class="simple">
 <li><p>[ ] ls</p></li>
@@ -517,38 +507,30 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Remember: cd stands for <strong>c</strong>hange <strong>d</strong>irectory</p>
 </div>
-<hr class="docutils" />
 <p>What type of path do I use with the command <code class="docutils literal notranslate"><span class="pre">cd</span></code>?</p>
 <ul class="simple">
 <li><p>[ ] absolute path only</p></li>
 <li><p>[ ] relative path only</p></li>
 <li><p>[x] Either one will work</p></li>
 </ul>
-<hr class="docutils" />
 <p>Using absolute path means you know how to navigate to your desired folder starting from the root <code class="docutils literal notranslate"><span class="pre">/</span></code></p>
-<hr class="docutils" />
 <p>The <code class="docutils literal notranslate"><span class="pre">/</span></code> is the starting point to where all your files and folders can be found</p>
-<hr class="docutils" />
 <p>Using you <strong>relative</strong> path, means that you know how to reach your desired folder relative to where you are right now</p>
 <p>How do I get to Tyler 052?</p>
 <p>Absolute path: USA/Rhode Island/Kingston/Flag rd/Green house rd/Red building/052
 Relative path: leave Ranger 302 (…)/ leave Ranger Hall (…)/ Through quad/ pass by engineering/ Red building/ 052</p>
-<hr class="docutils" />
 <p>The <code class="docutils literal notranslate"><span class="pre">/</span></code> between folder names means “from here, go to”
 We can separate the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command that contains <code class="docutils literal notranslate"><span class="pre">/</span></code> into multiple commands</p>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span> 
 <span class="n">cd</span> <span class="n">systems</span><span class="o">/</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">ayman</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">systems</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Let’s try another way</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../../</span>
 <span class="n">pwd</span>
@@ -557,7 +539,6 @@ We can separate the <code class="docutils literal notranslate"><span class="pre"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">ayman</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span><span class="o">/</span><span class="n">systems</span><span class="o">/</span>
 </pre></div>
 </div>
@@ -567,9 +548,7 @@ We can separate the <code class="docutils literal notranslate"><span class="pre"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">ayman</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">systems</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>We got to the same destination</p>
-<hr class="docutils" />
 <p>Watch your steps carefully for this one (Don’t hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code>)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">gh</span><span class="o">-</span>
 </pre></div>
@@ -579,14 +558,11 @@ We can separate the <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 <p>Now you can hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p>
-<hr class="docutils" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The terminal determined that the existing folders/files that begin with “gh-” are limited to only one and helped you complete it with the press of <code class="docutils literal notranslate"><span class="pre">tab</span></code></p>
 </div>
-<hr class="docutils" />
 <p><strong>getting to GitHub from your local system</strong></p>
-<hr class="docutils" />
 <p>Now on the other side of things, navigate to your inclass repo on GitHub</p>
 <p>the step below requires that you have the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="n">repo</span> <span class="n">view</span> <span class="o">--</span><span class="n">web</span>
@@ -596,18 +572,14 @@ We can separate the <code class="docutils literal notranslate"><span class="pre"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>How many branches do you have?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main</span>
 <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Select the 1-create-an-about-file</p>
 <p>Same files so far (No changes made yet)</p>
-<hr class="docutils" />
 <p>Back to your terminal</p>
-<hr class="docutils" />
 <p>Let’s go back to comparing files between online and local repos</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
 </pre></div>
@@ -624,7 +596,6 @@ We can separate the <code class="docutils literal notranslate"><span class="pre"
 <p>We have three extra files/folders</p>
 <p>We know what <code class="docutils literal notranslate"><span class="pre">..</span></code> refers to by now. It’s a pointer to the parent direcctory</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">.</span></code> is a pointer to where I am right now (the current directory)</p>
-<hr class="docutils" />
 <p>Let’s test out this theory</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
@@ -641,56 +612,39 @@ We can separate the <code class="docutils literal notranslate"><span class="pre"
 </div>
 <p>Our place didn’t change. It checks out!</p>
 </section>
-<hr class="docutils" />
 <section id="git">
 <h2><span class="section-number">4.2. </span>.git<a class="headerlink" href="#git" title="Link to this heading">#</a></h2>
 <p>The third difference was the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder</p>
-<hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">.git</span></code> folder is created by the <code class="docutils literal notranslate"><span class="pre">git</span></code> tool that we use on our terminal to hold special information about the project we’re working on</p>
-<hr class="docutils" />
 <p>Everytime we start a command with the word <code class="docutils literal notranslate"><span class="pre">git</span></code> we’re calling that tool and then telling it what we want it to do</p>
-<hr class="docutils" />
 <p>So far we saw <code class="docutils literal notranslate"><span class="pre">**git**</span> <span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">**git**</span> <span class="pre">fetch</span></code></p>
-<hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">status</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">fetch</span></code> were the commands that we asked git to execute</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">git</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">black</span> <span class="n">box</span> <span class="p">(</span> <span class="n">until</span> <span class="n">furhter</span> <span class="n">notice</span> <span class="p">;</span><span class="o">-</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">It</span> <span class="n">holds</span> <span class="n">tracking</span> <span class="n">information</span> <span class="n">about</span> <span class="n">what</span> <span class="n">changes</span> <span class="n">were</span> <span class="n">made</span> <span class="n">locally</span> <span class="ow">and</span> <span class="n">online</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> to update the .git box with changes that happed on the GitHub repo</p>
-<hr class="docutils" />
 <p>Let’s try it</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>If you got nothing then your .git box is already up to date with the online <strong>repo</strong> (project)</p>
-<hr class="docutils" />
 <p>Check the current status of your project</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
 <span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
 
 <span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> is your friend, we will use it all the time to keep track of our movements</p>
-<hr class="docutils" />
 <p>Notice two key lines here</p>
-<hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">branch</span> <span class="pre">is</span> <span class="pre">up</span> <span class="pre">to</span> <span class="pre">date</span> <span class="pre">with</span> <span class="pre">'origin/1-create-an-about-file'.</span></code> is telling you that your local project matches the online one at the moment (as far as it knows)</p>
-<hr class="docutils" />
 <p>More importantly, <code class="docutils literal notranslate"><span class="pre">nothing</span> <span class="pre">to</span> <span class="pre">commit,</span> <span class="pre">working</span> <span class="pre">tree</span> <span class="pre">clean</span></code> is telling you that your local repo (everything out side of the .git folder) matches the tracking information of git (everything inside the .git folder)</p>
-<hr class="docutils" />
 <p><strong>Much</strong> more on that later</p>
-<hr class="docutils" />
 <p>Lastly, one more small thing we noticed</p>
-<hr class="docutils" />
 <p>Github showed us <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> whereas <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code> only showed my <code class="docutils literal notranslate"><span class="pre">.github</span></code></p>
 <p>As discussed, the <code class="docutils literal notranslate"><span class="pre">/</span></code> tells us that this there is a file/folder within a folder</p>
 <p>Github combined them in one because there are no other files/folders on the .github folder</p>
@@ -702,34 +656,27 @@ We can separate the <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 <p>Listing the contents of .github showed us that it contains the folder “workflows” with it</p>
-<hr class="docutils" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Conclusion: The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command can take an <strong>argument</strong> that is a path and it will list the contents of the folder passed in that path for us</p>
 </div>
 </section>
-<hr class="docutils" />
 <section id="creating-a-file-on-the-terminal">
 <h2><span class="section-number">4.3. </span>Creating a file on the terminal<a class="headerlink" href="#creating-a-file-on-the-terminal" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">touch</span></code> command creates an empty file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>We can use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see our working directory now.</p>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">about</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
 <span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
 
@@ -740,27 +687,21 @@ We can separate the <code class="docutils literal notranslate"><span class="pre"
 <span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Notice: Working tree is not clean anymore.<br />
 There is one “untracked file”</p>
 <p>This means the working directory (everything outside .git) had changes but those changes were not <strong>added</strong> to the .git box to be <strong>tracked</strong></p>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span> 
 </pre></div>
 </div>
 <p>What year are you in? When do you expect to graduate?</p>
-<hr class="docutils" />
 <p>Ctrl + s (Only windows users)
 Ctrl + x
 Enter (Only mac users would need this)</p>
-<hr class="docutils" />
 <p>we used the <a class="reference external" href="https://www.nano-editor.org/dist/latest/nano.html">nano text editor</a>.  <code class="docutils literal notranslate"><span class="pre">nano</span></code> is simpler than other text editors that tend to be more popular among experts, <code class="docutils literal notranslate"><span class="pre">vim</span></code> and <code class="docutils literal notranslate"><span class="pre">emacs</span></code>.  Getting comfortable with nano will get you used to the ideas, without putting as much burden on your memory.  This will set you up to learn those later, if you need a more powerful terminal text editor.</p>
-<hr class="docutils" />
 <p>We put some content in the file, any content then saved and exit.</p>
 <p>On the nano editor the <code class="docutils literal notranslate"><span class="pre">^</span></code> stands for control.</p>
 <p>and we can look at the contents of it.</p>
 <p>Now we will check again with git.</p>
-<hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">cat</span></code> con<strong>cat</strong>enates the contents of a file to standard out, where all of the content that is shown on the terminal is.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -770,11 +711,9 @@ Enter (Only mac users would need this)</p>
 </pre></div>
 </div>
 <p>and we can see the contents</p>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
 <span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
 
@@ -786,7 +725,6 @@ Enter (Only mac users would need this)</p>
 </pre></div>
 </div>
 </section>
-<hr class="docutils" />
 <section id="git-add">
 <h2><span class="section-number">4.4. </span>git add<a class="headerlink" href="#git-add" title="Link to this heading">#</a></h2>
 <p>In this case both say to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to track or to include in what will be committed.  Under untracked files is it says <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;...</span></code>, in our case this would look like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">about.md</span></code>.  However, remember we learned that the <code class="docutils literal notranslate"><span class="pre">.</span></code>  that is always in every directory is a special “file” that points to the current directory, so we can use that to add <strong>all</strong> files. Since we have only one, the two are equivalent, and the <code class="docutils literal notranslate"><span class="pre">.</span></code> is a common shortcut, because most of the time we want to add everything we have recently worked on in a single commit.</p>
@@ -795,12 +733,10 @@ Enter (Only mac users would need this)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>And again, we will check in with git</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">an</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">file</span>
 <span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span><span class="o">.</span>
 
@@ -811,7 +747,6 @@ Enter (Only mac users would need this)</p>
 </pre></div>
 </div>
 <p>Now that one file is marked as a new file and it is in the group “to be committed”. Git also tells us how to undo the thing we just did.</p>
-<hr class="docutils" />
 <p>Notice: git tells you that if you changed your mind on that file and you don’t want it staged to be commited to the next “checkpoint” anymore, you can simply take it out of the staging area using the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">--staged</span> <span class="pre">&lt;file_name&gt;</span></code></p>
 <div class="anchor admonition">
 <p class="admonition-title">Try this yourself</p>
@@ -836,7 +771,6 @@ Enter (Only mac users would need this)</p>
 <p>If you forget the <code class="docutils literal notranslate"><span class="pre">-m</span></code> you will be put into <code class="docutils literal notranslate"><span class="pre">vi</span></code> or <code class="docutils literal notranslate"><span class="pre">vim</span></code> text editor. Press <code class="docutils literal notranslate"><span class="pre">a</span></code> to enter <code class="docutils literal notranslate"><span class="pre">~insert&quot;</span> <span class="pre">mode</span> <span class="pre">(that</span> <span class="pre">will</span> <span class="pre">appear</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">bottom</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">terminal</span> <span class="pre">window),</span> <span class="pre">type</span> <span class="pre">your</span> <span class="pre">commit</span> <span class="pre">message,</span> <span class="pre">then</span> <span class="pre">press</span> </code>escape<code class="docutils literal notranslate"><span class="pre">to</span> <span class="pre">exit</span> <span class="pre">insert</span> <span class="pre">mode.</span> <span class="pre">Then</span> <span class="pre">type</span></code>:wq`and press enter/return  to write(save) and quit.</p>
 </div>
 </aside>
-<hr class="docutils" />
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>When you make your first commit you will need to do some <a class="reference external" href="https://git-scm.com/docs/git-config">config</a> steps to set your email and user name.</p>
@@ -846,12 +780,10 @@ Enter (Only mac users would need this)</p>
  <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">about</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>one more check</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="mi">1</span><span class="o">-</span><span class="n">create</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">readme</span>
 <span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">&#39;origin/1-create-an-about-file&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="o">.</span>
   <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git push&quot;</span> <span class="n">to</span> <span class="n">publish</span> <span class="n">your</span> <span class="n">local</span> <span class="n">commits</span><span class="p">)</span>
@@ -867,12 +799,10 @@ Enter (Only mac users would need this)</p>
 <section id="git-push">
 <h2><span class="section-number">4.6. </span>git push<a class="headerlink" href="#git-push" title="Link to this heading">#</a></h2>
 <p>Git suggests that we use the <code class="docutils literal notranslate"><span class="pre">push</span></code> command to update the online repo with the local one.</p>
-<hr class="docutils" />
 <p>And push to send to <a class="reference external" href="http://github.com">github.com</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
 <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
 <span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">12</span> <span class="n">threads</span>
@@ -883,7 +813,6 @@ Enter (Only mac users would need this)</p>
    <span class="mi">98</span><span class="n">ca2d6</span><span class="o">.</span><span class="mf">.9e8</span><span class="n">a</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Now check out your online repo. Make sure your on the “1-create-an-about-file” branch</p>
 <p><a class="reference external" href="http://about.md">about.md</a> should exist now on there!</p>
 </section>

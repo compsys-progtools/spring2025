@@ -217,16 +217,8 @@
 <li class="toctree-l1"><a class="reference internal" href="2025-04-08.html">19. What <em>is</em> an IDE?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-10.html">20. How does a computer represent non integer quantities?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2025-04-15.html">21. How can we use logical operations?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. Let’s start with a dictionary</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="2025-04-17.html">22. What is a computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2025-04-22.html">23. How does timing work in a computer?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -510,14 +502,11 @@ document.write(`
 <h1><span class="section-number">7. </span>What is a commit?<a class="headerlink" href="#what-is-a-commit" title="Link to this heading">#</a></h1>
 <section id="viewing-commit-history">
 <h2><span class="section-number">7.1. </span>Viewing Commit History<a class="headerlink" href="#viewing-commit-history" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
 <p>Navigate to your in-class repo</p>
-<hr class="docutils" />
 <p>We can see commits with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 162a47b31c7a73969ce9cbcefd206c279a37433d (HEAD -&gt; main, origin/main, origin/HEAD)</span>
 <span class="go">Author: Ayman Sandouk &lt;111829133+AymanBx@users.noreply.github.com&gt;</span>
 <span class="go">Date:   Thu Feb 13 11:32:48 2025 -0500</span>
@@ -562,29 +551,21 @@ document.write(`
 <span class="go">.</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>The logs are soreted in a latest to oldest manner</p>
-<hr class="docutils" />
 <p>this is a program, we can use enter/down arrow to move through it and then <code class="docutils literal notranslate"><span class="pre">q</span></code> to exit.</p>
-<hr class="docutils" />
 <p>Mine will look a bit different that yours because I filled out my <a class="reference external" href="http://README.md">README.md</a> later</p>
-<hr class="docutils" />
 <section id="how-does-that-help">
 <h3><span class="section-number">7.1.1. </span>How does that help?<a class="headerlink" href="#how-does-that-help" title="Link to this heading">#</a></h3>
-<hr class="docutils" />
 <p>Let’s compare</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>fun_fact
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Switched to branch &#39;fun_fact&#39;</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 804055399f6565aca3cb188fe771ef2dca99f959 (HEAD -&gt; fun_fact)</span>
 <span class="go">Author: AymanBx &lt;ayman_sandouk@uri.edu&gt;</span>
 <span class="go">Date:   Tue Feb 11 13:20:41 2025 -0500</span>
@@ -607,9 +588,7 @@ document.write(`
 <span class="go">    removed file</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Notice what the parts of each log are</p>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>commit: The specific checkpoint of the state of your project. It holds some metadata within it</p></li>
 <li><p>Author: The author of the commit.</p>
@@ -622,9 +601,7 @@ document.write(`
 <li><p>Date: Date and time of the commit</p></li>
 <li><p>Content: The message you (or GitHub) added to the commit exoplaining what happened in that particular commit</p></li>
 </ul>
-<hr class="docutils" />
 <p>What do we notice when we compare both logs?</p>
-<hr class="docutils" />
 <p>In branch <code class="docutils literal notranslate"><span class="pre">fun_fact</span></code> the latest commit that branch knows about is the one with the commit message “Added fun fact”. Everything below matches mostly logs of the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.
 Whereas the logs in <code class="docutils literal notranslate"><span class="pre">main</span></code> show two more commits that are more recent (three im my case)</p>
 <ul class="simple">
@@ -632,16 +609,13 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 <li><p>The other has the message “Keeping both fun facts” with the author being my locally configered user data (Yes, I used my GitHub username as my name because at the time I configerred my username locally I didn’t know they didn’t HAVE to match)</p></li>
 <li><p>We also notice a <code class="docutils literal notranslate"><span class="pre">Merge</span></code> tag on that last commit with some numbers next to it</p></li>
 </ul>
-<hr class="docutils" />
 <p>Let’s try to make sense of the number in Merge:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">8040553 9942c3c</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Notice the individual commit identifiers (hash) for the two previous commits
 <strong>9942c3c</strong>00dcde51d52a1c110413522043eca07cd
 <strong>8040553</strong>99f6565aca3cb188fe771ef2dca99f959</p>
-<hr class="docutils" />
 <p>One more thing we will notice:</p>
 <ul class="simple">
 <li><p>At the latest commit in the <code class="docutils literal notranslate"><span class="pre">fun_fact</span></code> branch we see next to the commit “hash” <code class="docutils literal notranslate"><span class="pre">(HEAD</span> <span class="pre">-&gt;</span> <span class="pre">fun_fact)</span></code></p></li>
@@ -653,16 +627,12 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 <li><p>Next to the latest commit <code class="docutils literal notranslate"><span class="pre">fun_fact</span></code> branch knows we see <code class="docutils literal notranslate"><span class="pre">(fun_fact)</span></code>. Notice <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> has been moved</p></li>
 <li><p>Next to the commit hash below it we only see <code class="docutils literal notranslate"><span class="pre">(my_branch)</span></code></p></li>
 </ul>
-<hr class="docutils" />
 <p>Branches are pointers, each one is located (pointing) at a particular commit.</p>
-<hr class="docutils" />
 <p>Instead of storing important things in variables that only have scope of how long the program is active git stores its imporant information in files that it reads each time we run a command. All of git’s data is in the .git directory.</p>
-<hr class="docutils" />
 <p>Everything the git program uses is stored in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory, you can think of that like all of the variables the program would need if it ran all the time.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>.git/
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">COMMIT_EDITMSG	REBASE_HEAD	index		packed-refs</span>
 <span class="go">FETCH_HEAD	config		info		refs</span>
 <span class="go">HEAD		description	logs</span>
@@ -670,28 +640,22 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 <p>the ones in all caps are simple pointers and the others are other formats.</p>
-<hr class="docutils" />
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>.git/HEAD
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bash: cd: .git/HEAD: Not a directory</span>
 </pre></div>
 </div>
 </section>
 </section>
-<hr class="docutils" />
 <section id="id1">
 <h2><span class="section-number">7.2. </span>What <em>is</em> a commit?<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
 <section id="defining-terms">
 <h3><span class="section-number">7.2.1. </span>Defining terms<a class="headerlink" href="#defining-terms" title="Link to this heading">#</a></h3>
 <p>A commit is the most important unit of git. Later we will talk about what git as a whole is in more detail, but understanding a commit is essential to understanding how to fix things using git.</p>
-<hr class="docutils" />
 <p>In CS we often have multiple, overlapping definitions for a term depending on our goal.</p>
 <p>In intro classes, we try really hard to only use one definition for each term to let you focus.</p>
 <p>Now we need to contend with multiple definitions</p>
-<hr class="docutils" />
 <p>These definitons could be based on</p>
 <ul class="simple">
 <li><p>what it conceptually represents</p></li>
@@ -699,18 +663,15 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 <li><p>what its parts are</p></li>
 <li><p>how it is implemented</p></li>
 </ul>
-<hr class="docutils" />
 <p>for a commit, today, we are going to go through all of these, with lighter treatment on the implementation for today, and more detail later.</p>
 </section>
 </section>
-<hr class="docutils" />
 <section id="conceptually-a-commit-is-a-snapshot">
 <h2><span class="section-number">7.3. </span>Conceptually, a commit is a snapshot<a class="headerlink" href="#conceptually-a-commit-is-a-snapshot" title="Link to this heading">#</a></h2>
 <p><img alt="storing data as snapshots over time" src="https://git-scm.com/book/en/v2/images/snapshots.png" /></p>
 <p>git takes a full <em>snapshot</em> of the repo at each commit.</p>
 <p>Under the hood, it only makes a <em>new</em> copy of files that have changed because it uses the same technique to store each snapshot, so any files that have not changed, do not create new files inside of git.</p>
 </section>
-<hr class="docutils" />
 <section id="a-commits-role-is-central-to-git">
 <h2><span class="section-number">7.4. </span>A commit’s role is central to git<a class="headerlink" href="#a-commits-role-is-central-to-git" title="Link to this heading">#</a></h2>
 <p>a commit is the basic unit of what git manages</p>
@@ -722,11 +683,9 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 <li><p>blobs are how files contents are stored when a commit is made</p></li>
 </ul>
 </section>
-<hr class="docutils" />
 <section id="parts-of-a-commit">
 <h2><span class="section-number">7.5. </span>Parts of a commit<a class="headerlink" href="#parts-of-a-commit" title="Link to this heading">#</a></h2>
 <p>We will learn about the structure of a commit by inspecting it.</p>
-<hr class="docutils" />
 <p>First we will go back to our <code class="docutils literal notranslate"><span class="pre">gh-inclass</span></code> repo</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">bash</span>
 <span class="p">:</span><span class="n">tags</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;skip-executio</span>
@@ -734,7 +693,7 @@ Whereas the logs in <code class="docutils literal notranslate"><span class="pre"
 </div>
 <p>cd Documents/inclass/systems/gh-inclass-sp24-brownsarahm/</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
----
+
 
 We can use `git log` to view past commits
 
@@ -742,7 +701,6 @@ We can use `git log` to view past commits
 git log
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;log_here&gt;</span>
 </pre></div>
 </div>
@@ -755,9 +713,7 @@ git log
 <li><p>message</p></li>
 </ul>
 <p>but we know commits are supposed to represent some content and we have no information about that in this view</p>
-<hr class="docutils" />
 <p>the hash is the <em>unique identifier</em> of each commit</p>
-<hr class="docutils" />
 <p>we can view individual commits with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code> and at least 4
 characters of the hash or enough to be unique.  We will try 4 characters
 and I will use the last (my second to last) visible commit above (<code class="docutils literal notranslate"><span class="pre">b0b24aa53537557c582b6f61d409e9b2ee91333f</span></code>)</p>
@@ -779,7 +735,6 @@ and I will use the last (my second to last) visible commit above (`b0b24aa535375
 git cat-file -p 1e2a 
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">:emphasize-lines: 2,3</span>
 <span class="go">tree a9ebb362bb6ccac3d4cd637d4afa34d39a874a9b</span>
 <span class="go">parent 804055399f6565aca3cb188fe771ef2dca99f959</span>
@@ -790,7 +745,6 @@ git cat-file -p 1e2a
 <span class="go">Keeping both fun facts</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>Here we see the actual parts of a commit file:</p>
 <ul class="simple">
 <li><p>a pointer to a tree</p></li>
@@ -799,23 +753,19 @@ git cat-file -p 1e2a
 <li><p>committer info with timestamp</p></li>
 <li><p>commit message</p></li>
 </ul>
-<hr class="docutils" />
 <section id="what-is-the-pgp-signature">
 <h3><span class="section-number">7.5.1. </span>What is the PGP signature?<a class="headerlink" href="#what-is-the-pgp-signature" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits">Signed commits</a> are extra authentication that you are who you say you are.</p>
 <p>The commits that are labeled with the <code class="docutils literal notranslate"><span class="pre">verified</span></code> tag on <a class="reference external" href="http://GitHub.com">GitHub.com</a></p>
-<hr class="docutils" />
 <p>If we pick a commit from the history on GitHub that does not have <code class="docutils literal notranslate"><span class="pre">verified</span></code> on it, then we can see it does not have the PGP signature</p>
 </section>
 </section>
-<hr class="docutils" />
 <section id="commit-parents-help-us-trace-back">
 <h2><span class="section-number">7.6. </span>Commit parents help us trace back<a class="headerlink" href="#commit-parents-help-us-trace-back" title="Link to this heading">#</a></h2>
 <p>kind of like a linked list</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">:emphasize-lines: 2</span>
 <span class="go">tree 657c82a4b3c0aca11df1d3f9f3db46f067753120</span>
 <span class="go">parent 8bd4ea38fe31186b9e5d0c1e19c9aef748c6dce6</span>
@@ -825,15 +775,12 @@ git cat-file -p 1e2a
 <span class="go">Added fun fact</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <section id="commit-trees-are-the-hash-of-the-content">
 <h3><span class="section-number">7.6.1. </span>Commit trees are the hash of the content<a class="headerlink" href="#commit-trees-are-the-hash-of-the-content" title="Link to this heading">#</a></h3>
 <p>This separation is helpful.</p>
-<hr class="docutils" />
 <p>The snapshot is stored via a tree, we can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code> to look at the tree object too.</p>
 <p>The tree being a separate object from the overall commit allows us to be able to  “edit” a
 message or “change” the parent of a commit; we actually make a <em>new</em> commit with the same tree.</p>
-<hr class="docutils" />
 <p>let’s look at the tree for that commit.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 ```bash
@@ -841,7 +788,6 @@ message or “change” the parent of a commit; we actually make a <em>new</em> 
 git cat-file -p 0689
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> console
 :emphasize-lines: 4
 040000 tree 263fb9d22090e88edd2bf1847c24c3511de91b49	.github
@@ -865,7 +811,6 @@ git cat-file -p 0689
 </ul>
 <p>The highlighted line for <code class="docutils literal notranslate"><span class="pre">LICENSE.md</span></code> we all have the same hash (as long as you picked a commit and tree after that file was created). This is because the hashis of the <em>contents</em> and the files all do have the same contents</p>
 </section>
-<hr class="docutils" />
 <section id="trees-point-to-blobs-of-the-file-content">
 <h3><span class="section-number">7.6.2. </span>Trees point to blobs of the file content<a class="headerlink" href="#trees-point-to-blobs-of-the-file-content" title="Link to this heading">#</a></h3>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cat-file</span></code> to view a blob.</p>
@@ -876,13 +821,11 @@ git cat-file -p 0689
 git cat-file -p 2d23
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> console
 the info on how the code
 ```n be reused
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> bash
 :tags: [&quot;skip
 ```ecution&quot;]
@@ -895,16 +838,13 @@ the info on how the code
 <section id="commits-are-implemented-as-files">
 <h2><span class="section-number">7.7. </span>Commits are implemented as files<a class="headerlink" href="#commits-are-implemented-as-files" title="Link to this heading">#</a></h2>
 <p>commits are stored in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory as files.  git itself <em>is</em> a file system, or a way of storing information.</p>
-<hr class="docutils" />
 <p>Everything the git program uses is stored in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory, you can think of that like all of the variables the program would need if it ran all the time.</p>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> bash
 :tags: [&quot;skip-execut
 ```&quot;]
 ls .git
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> console
 COMMIT_EDITMSG	REBASE_HEAD	index		packed-refs
 FETCH_HEAD	config		info		refs
@@ -914,9 +854,7 @@ ORIG_HEAD
 </pre></div>
 </div>
 <p>the ones in all caps are simple pointers and the others are other formats.</p>
-<hr class="docutils" />
 <p>Most of the content is in the <code class="docutils literal notranslate"><span class="pre">objects</span></code> folder, git objects are the items that get stored.</p>
-<hr class="docutils" />
 <p>Recall, we had seen the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> pointer before</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 ```{code-cell} bash
@@ -924,21 +862,18 @@ ORIG_HEAD
 cat .git/HEAD
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> console
 ref: refs/head
 ```rganization
 </pre></div>
 </div>
 <p>which stores our current branch</p>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> bash
 :tags: [&quot;skip-execution&quot;]
 ls 
 ```t/objects/
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> console
 06	29	46	72	93	ab	c7	e9
 0c	2d	4c	76	94	b0	ca	f1
@@ -952,16 +887,13 @@ ls
 </pre></div>
 </div>
 <p>We see a lot more folders here than we had commits.  This is because there are three types of objects.</p>
-<hr class="docutils" />
 <p><a class="reference external" href="https://mermaid.live/edit#pako:eNptkk1TgzAQhv9KZs-0g0CFZjx61JM3h8sC2xIlCZOEGRH574ZCW7TNJdkn-_FuNgOUuiLgUDZo7bPAo0GZK-bXiTBniIYZvAjrOJvPjG1YjbbmrGh0cWXWGaGOnLm-pRt6EA0xhZKWJOO6UKmlFG44B7ElfYuGlPtPJ1VXdi4qyVo83rnAztXasNsLJyTd0TL1tFJSCIWm516icl6MvROhiw8qb9VPzebqj__syZ5-NpvV263ptbk1nd8HApBkJIrKz-xULgdXk68CfjRQofnMIVej9_NN67delcAP2FgKwOjuWF-srq3Q0TLxC21RvWvtbWe62QQ-wBfwKEq2-yTax7soTOI0zgLoPY3TbZo9pGkYJVn8mIW7MYDvU4JwuwuAKuG0eV2-2LSNvwTPveo"><img alt="" src="https://mermaid.ink/img/pako:eNptkk1TgzAQhv9KZs-0g0CFZjx61JM3h8sC2xIlCZOEGRH574ZCW7TNJdkn-_FuNgOUuiLgUDZo7bPAo0GZK-bXiTBniIYZvAjrOJvPjG1YjbbmrGh0cWXWGaGOnLm-pRt6EA0xhZKWJOO6UKmlFG44B7ElfYuGlPtPJ1VXdi4qyVo83rnAztXasNsLJyTd0TL1tFJSCIWm516icl6MvROhiw8qb9VPzebqj__syZ5-NpvV263ptbk1nd8HApBkJIrKz-xULgdXk68CfjRQofnMIVej9_NN67delcAP2FgKwOjuWF-srq3Q0TLxC21RvWvtbWe62QQ-wBfwKEq2-yTax7soTOI0zgLoPY3TbZo9pGkYJVn8mIW7MYDvU4JwuwuAKuG0eV2-2LSNvwTPveo?type=png" /></a></p>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> bash
 :tags: [&quot;skip-execution&quot;]
 cat .git/objects/29/245e4b9cce937fb9e50bc3762a
 ```c6a7a12c3 
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> console
 x%?A
 ?0Fa?9?nt!?]? *(
@@ -970,51 +902,43 @@ x%?A
 ```Gb?????|Ez8
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> bash
 git cat
 ```le -t 2924
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 ```onsole
 blob
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> bash
 :tags: [&quot;skip-execution&quot;]
 git cat
 ```le -p 2924
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> console
 &lt;last blob
 ```ntent here&gt;
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> bash
 :tags: [&quot;skip-execut
 ```&quot;]
 git log
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 ```nsole
 &lt;log&gt;
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> bash
 :tags: [&quot;skip-execution
 ```git status
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> console
 On branch organization
 Your branch is ahead of &#39;origin/organization&#39; by 1 commit.
@@ -1024,14 +948,12 @@ nothing to commit, work
 ``` tree clean
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> bash
 :tags: [&quot;skip-e
 ```ution&quot;]
 ls
 </pre></div>
 </div>
-<hr class="docutils" />
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> console
 CONTRIBUTING.md	README.md	scratch.ipynb	src
 LICENSE.md	docs		
