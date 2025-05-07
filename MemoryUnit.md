@@ -1,0 +1,3 @@
+The Memory Unit is a location where data and instructions are stored. The central idea behind it is to allow for storage and retrieval of information. The predessor to the memory unit in the Von Neumann artchitecture was the Harvard Architecture's two memory units. Whereas data and instructions were stored in one Memory Unit in the Vonn Neumann architecture, data and instructions were each stored in separate memory units in the Harvard Architecture.
+- [Vonn Neumann Architecture](https://www.geeksforgeeks.org/computer-organization-von-neumann-architecture/)
+- [Harvard Architecture](https://www.sciencedirect.com/topics/engineering/harvard-architecture#:~:text=FIGURE%202.2.,performance%20for%20digital%20signal%20processing.)
